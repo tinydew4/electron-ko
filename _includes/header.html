@@ -18,12 +18,12 @@
 
     <nav class="site-header-nav">
       {% capture first_segment %}{{ page.url | remove_first: "/" | split: "/" | first }}{% endcapture %}
-      <a class="site-header-nav-item {% if first_segment == 'docs' %}active{% endif %}" href="{{ site.baseurl }}/docs/">Docs</a>
-      <a class="site-header-nav-item {% if first_segment == 'blog' %}active{% endif %}" href="{{ site.baseurl }}/blog/">Blog</a>
-      <a class="site-header-nav-item {% if first_segment == 'community' %}active{% endif %}" href="{{ site.baseurl }}/community/">Community</a>
-      <a class="site-header-nav-item {% if first_segment == 'apps' %}active{% endif %}" href="{{ site.baseurl }}/apps/">Apps</a>
-      <a class="site-header-nav-item {% if first_segment == 'releases' %}active{% endif %}" href="{{ site.baseurl }}/releases/">Releases</a>
-      <a class="site-header-nav-item" href="https://discuss.atom.io/c/electron">Discuss</a>
+      <a class="site-header-nav-item {% if first_segment == 'docs' %}active{% endif %}" href="{{ site.baseurl }}/docs/">문서</a>
+      <a class="site-header-nav-item {% if first_segment == 'blog' %}active{% endif %}" href="{{ site.baseurl }}/blog/">블로그</a>
+      <a class="site-header-nav-item {% if first_segment == 'community' %}active{% endif %}" href="{{ site.baseurl }}/community/">커뮤니티</a>
+      <a class="site-header-nav-item {% if first_segment == 'apps' %}active{% endif %}" href="{{ site.baseurl }}/apps/">앱</a>
+      <a class="site-header-nav-item {% if first_segment == 'releases' %}active{% endif %}" href="{{ site.baseurl }}/releases/">배포</a>
+      <a class="site-header-nav-item" href="https://discuss.atom.io/c/electron">토론</a>
       <a class="site-header-nav-item" href="https://github.com/electron/electron" title="Github Repository"><span class="mega-octicon octicon-mark-github vertical-middle"></span></a>
     </nav>
   </div>

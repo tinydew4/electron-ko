@@ -1,5 +1,5 @@
 ---
-title: Releases
+title: 배포
 permalink: /releases/
 redirect_from: /releases.html
 layout: releases

@@ -1,9 +1,9 @@
 ---
-title: Electron Documentation
+title: Electron 문서
 author: jlord
 ---
 
-This week we've given Electron's documentation a home on [electron.atom.io](http://electron.atom.io). You can visit [/docs/latest](http://electron.atom.io/docs/latest) for the latest set of docs. We'll keep versions of older docs, too, so you're able to visit [/docs/vX.XX.X](http://electron.atom.io/docs/v0.26.0) for the docs that correlate to the version you're using.
+이번주에 우리는 홈페이지 [electron.atom.io](http://electron.atom.io) 에 Electron 문서를 추가하였습니다. [/docs/latest](http://electron.atom.io/docs/latest) 에서 최신 문서를 볼 수 있습니다. 또한, 이전 버전의 문서도 유지할 것 입니다. [/docs/vX.XX.X](http://electron.atom.io/docs/v0.26.0) 에서 사용중인 버전의 문서를 확인하세요.
 
 ---
 

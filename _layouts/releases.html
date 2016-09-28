@@ -4,7 +4,7 @@ layout: default
 
 <div class='subtron'>
   <div class='container-narrow'>
-    <h1>Electron Releases</h1>
+    <h1>Electron 배포</h1>
     <p>
       {% for release in site.data.releases %}
       <a class='releases-tag' href='{{ release.html_url }}'>{{ release.version }}</a>
@@ -18,12 +18,12 @@ layout: default
 
 <section class='page-section'>
   <div class='container-narrow'>
-    <h3>Tip: Use Electron from the command line</h3>
-    <p>Installing the <code>electron</code> module as a development dependency in your project will let you use Electron from the command line at specific versions. More information on the <a href="https://github.com/electron-userland/electron-prebuilt" target="_blank">module's repository</a>.</p>
+    <h3>Tip: 커맨드 라인에서 Electron 사용하기</h3>
+    <p>프로젝트의 개발 종속성으로 <code>electron</code> 을 설치하면 커맨드 라인에서 특정 버전의 Electron 을 사용할 수 있습니다. 더 많은 정보는 <a href="https://github.com/electron-userland/electron-prebuilt" target="_blank">모듈의 저장소</a>에 있습니다.</p>
 
     <figure class="highlight highlight-dark text-left my-4">
       <pre><code>$ npm install --save-dev electron
-<span class="c1"># Launch from inside your project's directory:</span>
+<span class="c1"># 프로젝트 디렉토리 내부에서 실행하기:</span>
 $ ./node_modules/.bin/electron .</code></pre>
     </figure>
 
@@ -34,8 +34,8 @@ $ ./node_modules/.bin/electron .</code></pre>
     </div>
 
     <div class="text-center">
-      <a href="https://github.com/electron/electron/releases" target="_blank"><span class="octicon octicon-tag mr-1"></span>All Releases</a>
-      <a class="ml-4" href="#"><span class="octicon octicon-arrow-up mr-1"></span>Back to index</a>
+      <a href="https://github.com/electron/electron/releases" target="_blank"><span class="octicon octicon-tag mr-1"></span>모든 배포</a>
+      <a class="ml-4" href="#"><span class="octicon octicon-arrow-up mr-1"></span>Index 로 돌아가기</a>
     </div>
   </div>
 </section>

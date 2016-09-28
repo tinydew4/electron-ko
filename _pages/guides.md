@@ -1,15 +1,15 @@
 ---
-title: Guides
+title: 안내
 permalink: /docs/guides/
 redirect_from:
   - /tutorial/
   - /docs/tutorial/
 layout: docs
 category: ignore
-breadcrumb: Guides
+breadcrumb: 안내
 ---
 
-<h2 class="docs-heading pb-3 mb-3"><span class="mega-octicon octicon-book pr-3"></span>Guides</h2>
+<h2 class="docs-heading pb-3 mb-3"><span class="mega-octicon octicon-book pr-3"></span>안내</h2>
 
 <ul class="docs-list">
 {% assign docs = site.docs | sort: 'sort_title' %}

@@ -748,32 +748,32 @@
   icon: "laverna.png"
 -
   name: "Electron Packager"
-  description: "Package your apps"
+  description: "앱 패키지"
   website: "https://github.com/electron-userland/electron-packager"
   featuredOpenSource: true
 -
   name: "Electron Builder"
-  description: "Deploy your apps"
+  description: "앱 배포"
   website: "https://github.com/electron-userland/electron-builder"
   featuredOpenSource: true
 -
   name: "Spectron"
-  description: "Test your apps"
+  description: "앱 테스트"
   website: "http://electron.atom.io/spectron"
   featuredOpenSource: true
 -
   name: "Devtron"
-  description: "Debug your apps"
+  description: "앱 디버그"
   website: "http://electron.atom.io/devtron"
   featuredOpenSource: true
 -
   name: "Electron Prebuilt"
-  description: "Install Electron"
+  description: "Electron 설치"
   website: "https://github.com/electron-userland/electron-prebuilt"
   featuredOpenSource: true
 -
   name: "Menubar"
-  description: "Create menubar apps"
+  description: "메뉴바 만들기"
   website: "https://github.com/maxogden/menubar"
   repository: ""
   keywords:
