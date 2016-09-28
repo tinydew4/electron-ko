@@ -1,7 +1,8 @@
 title: Electron
-email: electron@github.com
-description: 'Build cross platform desktop apps with JavaScript, HTML, and CSS.'
-url: 'http://electron.atom.io'
+email: tinydew4@gmail.com
+description: 'JavaScript, HTML, CSS 로 크로스 플랫폼 데스크탑 앱 빌드'
+baseurl: "/electron-ko"
+url: 'http://tinydew4.github.io'
 twitter_username: ElectronJS
 github_username: electron
 future: true
