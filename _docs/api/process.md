@@ -1,69 +1,69 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/process/
-    - /docs/v0.25.0/api/process/
-    - /docs/v0.26.0/api/process/
-    - /docs/v0.27.0/api/process/
-    - /docs/v0.28.0/api/process/
-    - /docs/v0.29.0/api/process/
-    - /docs/v0.30.0/api/process/
-    - /docs/v0.31.0/api/process/
-    - /docs/v0.32.0/api/process/
-    - /docs/v0.33.0/api/process/
-    - /docs/v0.34.0/api/process/
-    - /docs/v0.35.0/api/process/
-    - /docs/v0.36.0/api/process/
-    - /docs/v0.36.3/api/process/
-    - /docs/v0.36.4/api/process/
-    - /docs/v0.36.5/api/process/
-    - /docs/v0.36.6/api/process/
-    - /docs/v0.36.7/api/process/
-    - /docs/v0.36.8/api/process/
-    - /docs/v0.36.9/api/process/
-    - /docs/v0.36.10/api/process/
-    - /docs/v0.36.11/api/process/
-    - /docs/v0.37.0/api/process/
-    - /docs/v0.37.1/api/process/
-    - /docs/v0.37.2/api/process/
-    - /docs/v0.37.3/api/process/
-    - /docs/v0.37.4/api/process/
-    - /docs/v0.37.5/api/process/
-    - /docs/v0.37.6/api/process/
-    - /docs/v0.37.7/api/process/
-    - /docs/v0.37.8/api/process/
-    - /docs/latest/api/process/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/process.md'
-excerpt: "Extensions to process object."
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+    - /docs-translations/ko-KR/api/process/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/process.md'
+excerpt: "process &#xAC1D;&#xCCB4;&#xC5D0; &#xB300;&#xD55C; &#xD655;&#xC7A5; &#xAE30;&#xB2A5;."
 title: "process"
 sort_title: "process"
 ---
 
 # process
 
-> Extensions to process object.
+> process 객체에 대한 확장 기능.
 
-The `process` object is extended in Electron with following APIs:
+`process` 객체는 Electron에서 약간 추가적인 기능이 있으며 API는 다음과 같습니다:
 
 ## Events
 
 ### Event: 'loaded'
 
-Emitted when Electron has loaded its internal initialization script and is
-beginning to load the web page or the main script.
+Electron 내부 초기화 스크립트의 로드가 완료되고, 웹 페이지나 메인 스크립트를 로드하기
+시작할 때 발생하는 이벤트입니다.
 
-It can be used by the preload script to add removed Node global symbols back to
-the global scope when node integration is turned off:
+이 이벤트는 preload 스크립트를 통해 node 통합이 꺼져있는 전역 스코프에 node의 전역
+심볼들을 다시 추가할 때 사용할 수 있습니다:
 
 ```javascript
 // preload.js
-const _setImmediate = setImmediate
-const _clearImmediate = clearImmediate
+const _setImmediate = setImmediate;
+const _clearImmediate = clearImmediate;
 process.once('loaded', () => {
-  global.setImmediate = _setImmediate
-  global.clearImmediate = _clearImmediate
-})
+  global.setImmediate = _setImmediate;
+  global.clearImmediate = _clearImmediate;
+});
 ```
 
 ## Properties
@@ -128,13 +128,13 @@ limit, whichever is lower for the current process.
 Returns an object giving memory usage statistics about the current process. Note
 that all statistics are reported in Kilobytes.
 
-* `workingSetSize` Integer - The amount of memory currently pinned to actual physical
+* `workingSetSize` - The amount of memory currently pinned to actual physical
   RAM.
-* `peakWorkingSetSize` Integer - The maximum amount of memory that has ever been pinned
+* `peakWorkingSetSize` - The maximum amount of memory that has ever been pinned
   to actual physical RAM.
-* `privateBytes` Integer - The amount of memory not shared by other processes, such as
+* `privateBytes` - The amount of memory not shared by other processes, such as
   JS heap or HTML content.
-* `sharedBytes` Integer - The amount of memory shared between processes, typically
+* `sharedBytes` - The amount of memory shared between processes, typically
   memory consumed by the Electron code itself
 
 ### `process.getSystemMemoryInfo()`
@@ -142,11 +142,42 @@ that all statistics are reported in Kilobytes.
 Returns an object giving memory usage statistics about the entire system. Note
 that all statistics are reported in Kilobytes.
 
-* `total` Integer - The total amount of physical memory in Kilobytes available to the
+* `total` - The total amount of physical memory in Kilobytes available to the
   system.
-* `free` Integer - The total amount of memory not being used by applications or disk
+* `free` - The total amount of memory not being used by applications or disk
   cache.
-* `swapTotal` Integer - The total amount of swap memory in Kilobytes available to the
-  system.  _Windows_ _Linux_
-* `swapFree` Integer - The free amount of swap memory in Kilobytes available to the
-  system.  _Windows_ _Linux_
+
+On Windows / Linux:
+
+* `swapTotal` - The total amount of swap memory in Kilobytes available to the
+  system.
+* `swapFree` - The free amount of swap memory in Kilobytes available to the
+  system.
+
+----------------------------------------
+
+## Properties
+
+### `process.noAsar`
+
+이 속성을 `true`로 지정하면 Node 빌트인 모듈의 `asar` 아카이브 지원을 비활성화 시킬
+수 있습니다.
+
+## Methods
+
+`process` 객체는 다음과 같은 메서드를 가지고 있습니다:
+
+### `process.crash()`
+
+현재 프로세스의 메인 스레드에 크래시를 일으킵니다.
+
+### `process.hang()`
+
+현재 프로세스의 주 스레드를 중단시킵니다.
+
+### `process.setFdLimit(maxDescriptors)` _macOS_ _Linux_
+
+* `maxDescriptors` Integer
+
+현재 프로세스 파일 디스크립터의 제한 값을 소프트 제한 `maxDescriptors`의 값이나 OS 하드
+제한 중 낮은 값으로 설정합니다.

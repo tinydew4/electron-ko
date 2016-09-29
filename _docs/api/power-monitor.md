@@ -1,81 +1,78 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/power-monitor/
-    - /docs/v0.25.0/api/power-monitor/
-    - /docs/v0.26.0/api/power-monitor/
-    - /docs/v0.27.0/api/power-monitor/
-    - /docs/v0.28.0/api/power-monitor/
-    - /docs/v0.29.0/api/power-monitor/
-    - /docs/v0.30.0/api/power-monitor/
-    - /docs/v0.31.0/api/power-monitor/
-    - /docs/v0.32.0/api/power-monitor/
-    - /docs/v0.33.0/api/power-monitor/
-    - /docs/v0.34.0/api/power-monitor/
-    - /docs/v0.35.0/api/power-monitor/
-    - /docs/v0.36.0/api/power-monitor/
-    - /docs/v0.36.3/api/power-monitor/
-    - /docs/v0.36.4/api/power-monitor/
-    - /docs/v0.36.5/api/power-monitor/
-    - /docs/v0.36.6/api/power-monitor/
-    - /docs/v0.36.7/api/power-monitor/
-    - /docs/v0.36.8/api/power-monitor/
-    - /docs/v0.36.9/api/power-monitor/
-    - /docs/v0.36.10/api/power-monitor/
-    - /docs/v0.36.11/api/power-monitor/
-    - /docs/v0.37.0/api/power-monitor/
-    - /docs/v0.37.1/api/power-monitor/
-    - /docs/v0.37.2/api/power-monitor/
-    - /docs/v0.37.3/api/power-monitor/
-    - /docs/v0.37.4/api/power-monitor/
-    - /docs/v0.37.5/api/power-monitor/
-    - /docs/v0.37.6/api/power-monitor/
-    - /docs/v0.37.7/api/power-monitor/
-    - /docs/v0.37.8/api/power-monitor/
-    - /docs/latest/api/power-monitor/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/power-monitor.md'
-excerpt: "Monitor power state changes."
-title: "powerMonitor"
-sort_title: "powermonitor"
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+    - /docs-translations/ko-KR/api/power-monitor/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/power-monitor.md'
+excerpt: "&#xD30C;&#xC6CC;&#xC758; &#xC0C1;&#xD0DC; &#xBCC0;&#xACBD;&#xC744; &#xBAA8;&#xB2C8;&#xD130;&#xB9C1;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# powerMonitor
+﻿# powerMonitor
 
-> Monitor power state changes.
+> 파워의 상태 변경을 모니터링합니다.
 
-You cannot require or use this module until the `ready` event of the `app`
-module is emitted.
+이 모듈은 메인 프로세스에서만 사용할 수 있습니다. `app` 모듈의 `ready` 이벤트가
+발생한 이후에만 사용할 수 없습니다.
 
-For example:
+예시:
 
 ```javascript
-const electron = require('electron')
-const {app} = electron
+const {app} = require('electron');
 
 app.on('ready', () => {
-  electron.powerMonitor.on('suspend', () => {
-    console.log('The system is going to sleep')
-  })
-})
+  require('electron').powerMonitor.on('suspend', () => {
+    console.log('절전모드로 진입합니다!');
+  });
+});
 ```
 
 ## Events
 
-The `powerMonitor` module emits the following events:
+`power-monitor` 모듈은 다음과 같은 이벤트를 가지고 있습니다:
 
-### Event: 'suspend'
+## Event: `suspend`
 
-Emitted when the system is suspending.
+시스템이 절전모드로 진입할 때 발생하는 이벤트입니다.
 
-### Event: 'resume'
+## Event: `resume`
 
-Emitted when system is resuming.
+시스템의 절전모드가 해제될 때 발생하는 이벤트입니다.
 
-### Event: 'on-ac' _Windows_
+## Event: `on-ac` _Windows_
 
-Emitted when the system changes to AC power.
+시스템이 AC 어뎁터 충전기를 사용하기 시작할 때 발생하는 이벤트입니다.
 
-### Event: 'on-battery' _Windows_
+## Event: `on-battery` _Windows_
 
-Emitted when system changes to battery power.
+시스템이 배터리를 사용하기 시작할 때 발생하는 이벤트입니다.

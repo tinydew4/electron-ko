@@ -1,108 +1,74 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/system-preferences/
-    - /docs/v0.25.0/api/system-preferences/
-    - /docs/v0.26.0/api/system-preferences/
-    - /docs/v0.27.0/api/system-preferences/
-    - /docs/v0.28.0/api/system-preferences/
-    - /docs/v0.29.0/api/system-preferences/
-    - /docs/v0.30.0/api/system-preferences/
-    - /docs/v0.31.0/api/system-preferences/
-    - /docs/v0.32.0/api/system-preferences/
-    - /docs/v0.33.0/api/system-preferences/
-    - /docs/v0.34.0/api/system-preferences/
-    - /docs/v0.35.0/api/system-preferences/
-    - /docs/v0.36.0/api/system-preferences/
-    - /docs/v0.36.3/api/system-preferences/
-    - /docs/v0.36.4/api/system-preferences/
-    - /docs/v0.36.5/api/system-preferences/
-    - /docs/v0.36.6/api/system-preferences/
-    - /docs/v0.36.7/api/system-preferences/
-    - /docs/v0.36.8/api/system-preferences/
-    - /docs/v0.36.9/api/system-preferences/
-    - /docs/v0.36.10/api/system-preferences/
-    - /docs/v0.36.11/api/system-preferences/
-    - /docs/v0.37.0/api/system-preferences/
-    - /docs/v0.37.1/api/system-preferences/
-    - /docs/v0.37.2/api/system-preferences/
-    - /docs/v0.37.3/api/system-preferences/
-    - /docs/v0.37.4/api/system-preferences/
-    - /docs/v0.37.5/api/system-preferences/
-    - /docs/v0.37.6/api/system-preferences/
-    - /docs/v0.37.7/api/system-preferences/
-    - /docs/v0.37.8/api/system-preferences/
-    - /docs/latest/api/system-preferences/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/system-preferences.md'
-excerpt: "Get system preferences."
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+    - /docs-translations/ko-KR/api/system-preferences/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/system-preferences.md'
+excerpt: "&#xC2DC;&#xC2A4;&#xD15C; &#xC124;&#xC815;&#xC744; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;."
 title: "systemPreferences"
 sort_title: "systempreferences"
 ---
 
 # systemPreferences
 
-> Get system preferences.
+> 시스템 설정을 가져옵니다.
 
 ```javascript
-const {systemPreferences} = require('electron')
-console.log(systemPreferences.isDarkMode())
+const {systemPreferences} = require('electron');
+console.log(systemPreferences.isDarkMode());
 ```
-
-## Events
-
-The `systemPreferences` object emits the following events:
-
-### Event: 'accent-color-changed' _Windows_
-
-Returns:
-
-* `event` Event
-* `newColor` String - The new RGBA color the user assigned to be there system
-accent color.
-
 
 ## Methods
 
 ### `systemPreferences.isDarkMode()` _macOS_
 
-This method returns `true` if the system is in Dark Mode, and `false` otherwise.
-
-### `systemPreferences.isSwipeTrackingFromScrollEventsEnabled()` _macOS_
-
-This method returns `true` if the Swipe between pages setting is on, and `false` otherwise.
-
-### `systemPreferences.postNotification(event, userInfo)` _macOS_
-
-* `event` String
-* `userInfo` Object
-
-Posts `event` as native notifications of macOS. The `userInfo` is an Object
-that contains the user information dictionary sent along with the notification.
-
-### `systemPreferences.postLocalNotification(event, userInfo)` _macOS_
-
-* `event` String
-* `userInfo` Object
-
-Posts `event` as native notifications of macOS. The `userInfo` is an Object
-that contains the user information dictionary sent along with the notification.
+이 메서드는 시스템이 어두운 모드 상태인 경우 `true`를 반환하고 아닐 경우 `false`를
+반환합니다.
 
 ### `systemPreferences.subscribeNotification(event, callback)` _macOS_
 
 * `event` String
 * `callback` Function
 
-Subscribes to native notifications of macOS, `callback` will be called with
-`callback(event, userInfo)` when the corresponding `event` happens. The
-`userInfo` is an Object that contains the user information dictionary sent
-along with the notification.
+macOS의 네이티브 알림을 구독하며, 해당하는 `event`가 발생하면 `callback`이
+`callback(event, userInfo)` 형태로 호출됩니다. `userInfo`는 알림과 함께 전송되는
+사용자 정보 딕셔너리를 포함하는 객체입니다.
 
-The `id` of the subscriber is returned, which can be used to unsubscribe the
-`event`.
+구독자의 `id`가 반환되며 `event`를 구독 해제할 때 사용할 수 있습니다.
 
-Under the hood this API subscribes to `NSDistributedNotificationCenter`,
-example values of `event` are:
+이 API는 후드에서 `NSDistributedNotificationCenter`를 구독하며, `event`의 예시
+값은 다음과 같습니다:
 
 * `AppleInterfaceThemeChangedNotification`
 * `AppleAquaColorVariantChanged`
@@ -113,32 +79,29 @@ example values of `event` are:
 
 * `id` Integer
 
-Removes the subscriber with `id`.
+`id`와 함께 구독자를 제거합니다.
 
 ### `systemPreferences.subscribeLocalNotification(event, callback)` _macOS_
 
-* `event` String
-* `callback` Function
+`subscribeNotification`와 같지만, 로컬 기본값으로 `NSNotificationCenter`를
+사용합니다. 다음과 같은 이벤트에 필수적입니다:
 
-Same as `subscribeNotification`, but uses `NSNotificationCenter` for local defaults.
-This is necessary for events such as `NSUserDefaultsDidChangeNotification`
+* `NSUserDefaultsDidChangeNotification`
 
 ### `systemPreferences.unsubscribeLocalNotification(id)` _macOS_
 
-* `id` Integer
-
-Same as `unsubscribeNotification`, but removes the subscriber from `NSNotificationCenter`.
+`unsubscribeNotification`와 같지만, `NSNotificationCenter`에서 구독자를 제거합니다.
 
 ### `systemPreferences.getUserDefault(key, type)` _macOS_
 
 * `key` String
-* `type` String - Can be `string`, `boolean`, `integer`, `float`, `double`,
-  `url`, `array`, `dictionary`
+* `type` String - `string`, `boolean`, `integer`, `float`, `double`, `url`,
+  `array`, `dictionary` 값이 될 수 있습니다.
 
-Get the value of `key` in system preferences.
+시스템 설정에서 `key`에 해당하는 값을 가져옵니다.
 
-This API reads from `NSUserDefaults` on macOS, some popular `key` and `type`s
-are:
+macOS에선 API가 `NSUserDefaults`를 읽어들입니다. 유명한 `key`와 `type`은 다음과
+같습니다:
 
 * `AppleInterfaceStyle: string`
 * `AppleAquaColorVariant: integer`
@@ -150,45 +113,31 @@ are:
 
 ### `systemPreferences.isAeroGlassEnabled()` _Windows_
 
-This method returns `true` if [DWM composition][dwm-composition] (Aero Glass) is
-enabled, and `false` otherwise.
+이 메서드는 [DWM 컴포지션][dwm-composition] (Aero Glass)가 활성화 되어있을 때
+`true`를 반환합니다. 아닌 경우 `false`를 반환합니다.
 
-An example of using it to determine if you should create a transparent window or
-not (transparent windows won't work correctly when DWM composition is disabled):
+다음은 투명한 윈도우를 만들지, 일반 윈도우를 만들지를 판단하여 윈도우를 생성하는
+예시입니다 (투명한 윈도우는 DWM 컴포지션이 비활성화되어있을 시 작동하지 않습니다):
 
 ```javascript
-const {BrowserWindow, systemPreferences} = require('electron')
-let browserOptions = {width: 1000, height: 800}
+let browserOptions = {width: 1000, height: 800};
 
-// Make the window transparent only if the platform supports it.
+// 플랫폼이 지원하는 경우에만 투명 윈도우를 생성.
 if (process.platform !== 'win32' || systemPreferences.isAeroGlassEnabled()) {
-  browserOptions.transparent = true
-  browserOptions.frame = false
+  browserOptions.transparent = true;
+  browserOptions.frame = false;
 }
 
-// Create the window.
-let win = new BrowserWindow(browserOptions)
+// 원도우 생성
+let win = new BrowserWindow(browserOptions);
 
-// Navigate.
+// 페이지 로드.
 if (browserOptions.transparent) {
-  win.loadURL(`file://${__dirname}/index.html`)
+  win.loadURL('file://' + __dirname + '/index.html');
 } else {
-  // No transparency, so we load a fallback that uses basic styles.
-  win.loadURL(`file://${__dirname}/fallback.html`)
+  // 투명 윈도우 상태가 아니라면, 기본적인 스타일 사용
+  win.loadURL('file://' + __dirname + '/fallback.html');
 }
 ```
 
 [dwm-composition]:https://msdn.microsoft.com/en-us/library/windows/desktop/aa969540.aspx
-
-### `SystemPreferences.getAccentColor()` _Windows_
-
-Returns the users current system wide color preference in the form of an RGBA
-hexadecimal string.
-
-```js
-const color = app.getSystemAccentColor() // `"aabbccdd"`
-const red = color.substr(0, 2) // "aa"
-const green = color.substr(2, 2) // "bb"
-const blue = color.substr(4, 2) // "cc"
-const alpha = color.substr(6, 2) // "dd"
-```

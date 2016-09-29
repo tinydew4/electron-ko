@@ -1,88 +1,86 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/protocol/
-    - /docs/v0.25.0/api/protocol/
-    - /docs/v0.26.0/api/protocol/
-    - /docs/v0.27.0/api/protocol/
-    - /docs/v0.28.0/api/protocol/
-    - /docs/v0.29.0/api/protocol/
-    - /docs/v0.30.0/api/protocol/
-    - /docs/v0.31.0/api/protocol/
-    - /docs/v0.32.0/api/protocol/
-    - /docs/v0.33.0/api/protocol/
-    - /docs/v0.34.0/api/protocol/
-    - /docs/v0.35.0/api/protocol/
-    - /docs/v0.36.0/api/protocol/
-    - /docs/v0.36.3/api/protocol/
-    - /docs/v0.36.4/api/protocol/
-    - /docs/v0.36.5/api/protocol/
-    - /docs/v0.36.6/api/protocol/
-    - /docs/v0.36.7/api/protocol/
-    - /docs/v0.36.8/api/protocol/
-    - /docs/v0.36.9/api/protocol/
-    - /docs/v0.36.10/api/protocol/
-    - /docs/v0.36.11/api/protocol/
-    - /docs/v0.37.0/api/protocol/
-    - /docs/v0.37.1/api/protocol/
-    - /docs/v0.37.2/api/protocol/
-    - /docs/v0.37.3/api/protocol/
-    - /docs/v0.37.4/api/protocol/
-    - /docs/v0.37.5/api/protocol/
-    - /docs/v0.37.6/api/protocol/
-    - /docs/v0.37.7/api/protocol/
-    - /docs/v0.37.8/api/protocol/
-    - /docs/latest/api/protocol/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/protocol.md'
-excerpt: "Register a custom protocol and intercept existing protocol requests."
-title: "protocol"
-sort_title: "protocol"
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+    - /docs-translations/ko-KR/api/protocol/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/protocol.md'
+excerpt: "&#xCEE4;&#xC2A4;&#xD140; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xB4F1;&#xB85D;&#xD558;&#xAC70;&#xB098; &#xC774;&#xBBF8; &#xC874;&#xC7AC;&#xD558;&#xB2A5; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC758; &#xC694;&#xCCAD;&#xC758; &#xB3D9;&#xC791;&#xC744; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# protocol
+﻿# protocol
 
-> Register a custom protocol and intercept existing protocol requests.
+> 커스텀 프로토콜을 등록하거나 이미 존재하능 프로토콜의 요청의 동작을 변경합니다.
 
-An example of implementing a protocol that has the same effect as the
-`file://` protocol:
+다음 예시는 `file://` 프로토콜과 비슷한 일을 하는 커스텀 프로토콜을 설정합니다:
 
 ```javascript
-const {app, protocol} = require('electron')
-const path = require('path')
+const {app, protocol} = require('electron');
+const path = require('path');
 
 app.on('ready', () => {
-  protocol.registerFileProtocol('atom', (request, callback) => {
-    const url = request.url.substr(7)
-    callback({path: path.normalize(`${__dirname}/${url}`)})
-  }, (error) => {
-    if (error) console.error('Failed to register protocol')
-  })
-})
+  protocol.registerFileProtocol('atom', function (request, callback) {
+    const url = request.url.substr(7);
+    callback({path: path.normalize(__dirname + '/' + url)});
+  }, function (error) {
+    if (error)
+      console.error('Failed to register protocol');
+  });
+});
 ```
 
-**Note:** All methods unless specified can only be used after the `ready` event
-of the `app` module gets emitted.
+**참고:** 모든 메서드는 따로 표기하지 않는 한 `app` 모듈의 `ready` 이벤트가 발생한
+이후에만 사용할 수 있습니다.
 
 ## Methods
 
-The `protocol` module has the following methods:
+`protocol` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
 ### `protocol.registerStandardSchemes(schemes)`
 
-* `schemes` Array - Custom schemes to be registered as standard schemes.
+* `schemes` Array - 표준 스킴으로 등록할 커스텀 스킴 리스트
 
-A standard scheme adheres to what RFC 3986 calls [generic URI
-syntax](https://tools.ietf.org/html/rfc3986#section-3). For example `http` and
-`https` are standard schemes, while `file` is not.
+표준 스킴의 형식은 RFC 3986 [일반 URI 문법](https://tools.ietf.org/html/rfc3986#section-3)
+표준을 따릅니다. 예를 들어 `http`와 `https` 같은 표준 스킴과 `file`과 같은 표준이
+아닌 스킴이 있습니다.
 
-Registering a scheme as standard, will allow relative and absolute resources to
-be resolved correctly when served. Otherwise the scheme will behave like the
-`file` protocol, but without the ability to resolve relative URLs.
+표준 스킴으로 등록하면, 상대, 절대 경로의 리소스를 올바르게 취할 수 있습니다. 다른
+경우엔 스킴이 상대 경로 URL에 대한 분석 기능이 제외된 `file` 프로토콜과 같이
+작동합니다.
 
-For example when you load following page with custom protocol without
-registering it as standard scheme, the image will not be loaded because
-non-standard schemes can not recognize relative URLs:
+예를 들어 다음과 같은 페이지에서 표준 스킴 등록 절차 없이 커스텀 프로토콜을 사용하여
+이미지를 로드하려 했을 때, 표준 스킴으로 등록되지 않은 상대 경로 URL을 인식하지 못하고
+로드에 실패하게 됩니다:
 
 ```html
 <body>
@@ -90,26 +88,22 @@ non-standard schemes can not recognize relative URLs:
 </body>
 ```
 
-Registering a scheme as standard will allow access to files through the
-[FileSystem API][file-system-api]. Otherwise the renderer will throw a security
-error for the scheme. So in general if you want to register a custom protocol to
-replace the `http` protocol, you have to register it as a standard scheme:
+따라서 커스텀 프로토콜을 등록하여 `http` 프로토콜을 덮어 쓰려면, 표준 스킴으로
+등록해야만 합니다:
 
 ```javascript
-const {app, protocol} = require('electron')
-
-protocol.registerStandardSchemes(['atom'])
+protocol.registerStandardSchemes(['atom']);
 app.on('ready', () => {
-  protocol.registerHttpProtocol('atom', '...')
-})
+  protocol.registerHttpProtocol('atom', ...);
+});
 ```
 
-**Note:** This method can only be used before the `ready` event of the `app`
-module gets emitted.
+**참고:** 이 메서드는 `app` 모듈의 `ready` 이벤트가 발생하기 이전에만 사용할 수
+있습니다.
 
 ### `protocol.registerServiceWorkerSchemes(schemes)`
 
-* `schemes` Array - Custom schemes to be registered to handle service workers.
+* `schemes` Array - 서비스 워커를 제어하기 위해 등록될 커스텀 스킴.
 
 ### `protocol.registerFileProtocol(scheme, handler[, completion])`
 
@@ -117,11 +111,10 @@ module gets emitted.
 * `handler` Function
 * `completion` Function (optional)
 
-Registers a protocol of `scheme` that will send the file as a response. The
-`handler` will be called with `handler(request, callback)` when a `request` is
-going to be created with `scheme`. `completion` will be called with
-`completion(null)` when `scheme` is successfully registered or
-`completion(error)` when failed.
+`scheme`에 파일을 응답으로 보내는 프로토콜을 등록합니다. `handler`는 `scheme`와 함께
+`request`가 생성될 때 `handler(request, callback)` 형식으로 호출됩니다.
+`completion` 콜백은 `scheme`가 성공적으로 등록되었을 때 `completion(null)` 형식으로
+호출되고, 등록에 실패했을 땐 `completion(error)` 형식으로 에러 내용을 담아 호출됩니다.
 
 * `request` Object
   * `url` String
@@ -135,22 +128,18 @@ The `uploadData` is an array of `data` objects:
 * `data` Object
   * `bytes` Buffer - Content being sent.
   * `file` String - Path of file being uploaded.
-  * `blobUUID` String - UUID of blob data. Use [ses.getBlobData](http://electron.atom.io/docs/api/session#sesgetblobdataidentifier-callback) method
-    to retrieve the data.
 
-To handle the `request`, the `callback` should be called with either the file's
-path or an object that has a `path` property, e.g. `callback(filePath)` or
+`request`를 처리할 때 반드시 파일 경로 또는 `path` 속성을 포함하는 객체를 인수에
+포함하여 `callback`을 호출해야 합니다. 예: `callback(filePath)` 또는
 `callback({path: filePath})`.
 
-When `callback` is called with nothing, a number, or an object that has an
-`error` property, the `request` will fail with the `error` number you
-specified. For the available error numbers you can use, please see the
-[net error list][net-error].
+만약 `callback`이 아무 인수도 없이 호출되거나 숫자나 `error` 프로퍼티를 가진 객체가
+인수로 전달될 경우 `request`는 지정한 `error` 코드(숫자)를 출력합니다. 사용할 수 있는
+에러 코드는 [네트워크 에러 목록][net-error]에서 확인할 수 있습니다.
 
-By default the `scheme` is treated like `http:`, which is parsed differently
-than protocols that follow the "generic URI syntax" like `file:`, so you
-probably want to call `protocol.registerStandardSchemes` to have your scheme
-treated as a standard scheme.
+기본적으로 `scheme`은 `http:`와 같이 처리됩니다. `file:`과 같이 "일반적인 URI 문법"
+과는 다르게 인식되는 프로토콜은 `protocol.registerStandardSchemes`을 사용하여 표준
+스킴으로 처리되도록 할 수 있습니다.
 
 ### `protocol.registerBufferProtocol(scheme, handler[, completion])`
 
@@ -158,22 +147,21 @@ treated as a standard scheme.
 * `handler` Function
 * `completion` Function (optional)
 
-Registers a protocol of `scheme` that will send a `Buffer` as a response.
+`Buffer`를 응답으로 전송하는 `scheme`의 프로토콜을 등록합니다.
 
-The usage is the same with `registerFileProtocol`, except that the `callback`
-should be called with either a `Buffer` object or an object that has the `data`,
-`mimeType`, and `charset` properties.
+사용법은 `callback`이 반드시 `Buffer` 객체 또는 `data`, `mimeType`, `charset`
+속성을 포함하는 객체와 함께 호출되어야 한다는 점을 제외하면 `registerFileProtocol`과
+사용법이 같습니다.
 
-Example:
+예시:
 
 ```javascript
-const {protocol} = require('electron')
-
 protocol.registerBufferProtocol('atom', (request, callback) => {
-  callback({mimeType: 'text/html', data: new Buffer('<h5>Response</h5>')})
+  callback({mimeType: 'text/html', data: new Buffer('<h5>Response</h5>')});
 }, (error) => {
-  if (error) console.error('Failed to register protocol')
-})
+  if (error)
+    console.error('Failed to register protocol');
+});
 ```
 
 ### `protocol.registerStringProtocol(scheme, handler[, completion])`
@@ -182,11 +170,11 @@ protocol.registerBufferProtocol('atom', (request, callback) => {
 * `handler` Function
 * `completion` Function (optional)
 
-Registers a protocol of `scheme` that will send a `String` as a response.
+`String`을 응답으로 전송할 `scheme`의 프로토콜을 등록합니다.
 
-The usage is the same with `registerFileProtocol`, except that the `callback`
-should be called with either a `String` or an object that has the `data`,
-`mimeType`, and `charset` properties.
+사용법은 `callback`이 반드시 `String` 또는 `data`, `mimeType`, `charset` 속성을
+포함하는 객체와 함께 호출되어야 한다는 점을 제외하면 `registerFileProtocol`과
+사용법이 같습니다.
 
 ### `protocol.registerHttpProtocol(scheme, handler[, completion])`
 
@@ -194,11 +182,11 @@ should be called with either a `String` or an object that has the `data`,
 * `handler` Function
 * `completion` Function (optional)
 
-Registers a protocol of `scheme` that will send an HTTP request as a response.
+HTTP 요청을 응답으로 전송할 `scheme`의 프로토콜을 등록합니다.
 
-The usage is the same with `registerFileProtocol`, except that the `callback`
-should be called with a `redirectRequest` object that has the `url`, `method`,
-`referrer`, `uploadData` and `session` properties.
+사용법은 `callback`이 반드시 `url`, `method`, `referrer`, `uploadData`와
+`session` 속성을 포함하는 `redirectRequest` 객체와 함께 호출되어야 한다는 점을
+제외하면 `registerFileProtocol`과 사용법이 같습니다.
 
 * `redirectRequest` Object
   * `url` String
@@ -206,29 +194,29 @@ should be called with a `redirectRequest` object that has the `url`, `method`,
   * `session` Object (optional)
   * `uploadData` Object (optional)
 
-By default the HTTP request will reuse the current session. If you want the
-request to have a different session you should set `session` to `null`.
+기본적으로 HTTP 요청은 현재 세션을 재사용합니다. 만약 서로 다른 세션에 요청을 보내고
+싶으면 `session`을 `null`로 지정해야 합니다.
 
-For POST requests the `uploadData` object must be provided.
+POST 요청에는 반드시 `uploadData` 객체가 제공되어야 합니다.
 
 * `uploadData` object
-  * `contentType` String - MIME type of the content.
-  * `data` String - Content to be sent.
+  * `contentType` String - 콘텐츠의 MIME 타입.
+  * `data` String - 전송할 콘텐츠.
 
 ### `protocol.unregisterProtocol(scheme[, completion])`
 
 * `scheme` String
 * `completion` Function (optional)
 
-Unregisters the custom protocol of `scheme`.
+`scheme`의 커스텀 프로토콜 등록을 해제합니다.
 
 ### `protocol.isProtocolHandled(scheme, callback)`
 
 * `scheme` String
 * `callback` Function
 
-The `callback` will be called with a boolean that indicates whether there is
-already a handler for `scheme`.
+`scheme`에 동작(handler)이 등록되어 있는지 여부를 확인합니다. `callback`으로
+결과(boolean)가 반환됩니다.
 
 ### `protocol.interceptFileProtocol(scheme, handler[, completion])`
 
@@ -236,8 +224,7 @@ already a handler for `scheme`.
 * `handler` Function
 * `completion` Function (optional)
 
-Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
-which sends a file as a response.
+`scheme` 프로토콜을 가로채고 `handler`를 파일 전송에 대한 새로운 동작으로 사용합니다.
 
 ### `protocol.interceptStringProtocol(scheme, handler[, completion])`
 
@@ -245,8 +232,7 @@ which sends a file as a response.
 * `handler` Function
 * `completion` Function (optional)
 
-Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
-which sends a `String` as a response.
+`scheme` 프로토콜을 가로채고 `handler`를 문자열 전송에 대한 새로운 동작으로 사용합니다.
 
 ### `protocol.interceptBufferProtocol(scheme, handler[, completion])`
 
@@ -254,8 +240,8 @@ which sends a `String` as a response.
 * `handler` Function
 * `completion` Function (optional)
 
-Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
-which sends a `Buffer` as a response.
+`scheme` 프로토콜을 가로채고 `handler`를 `Buffer` 전송에 대한 새로운 동작으로
+사용합니다.
 
 ### `protocol.interceptHttpProtocol(scheme, handler[, completion])`
 
@@ -263,15 +249,14 @@ which sends a `Buffer` as a response.
 * `handler` Function
 * `completion` Function (optional)
 
-Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
-which sends a new HTTP request as a response.
+`scheme` 프로토콜을 가로채고 `handler`를 HTTP 프로토콜의 요청에 대한 새로운 동작으로
+사용합니다.
 
 ### `protocol.uninterceptProtocol(scheme[, completion])`
 
 * `scheme` String
-* `completion` Function
+* `completion` Function (optional)
 
-Remove the interceptor installed for `scheme` and restore its original handler.
+가로챈 `scheme`를 삭제하고 기본 핸들러로 복구합니다.
 
 [net-error]: https://code.google.com/p/chromium/codesearch#chromium/src/net/base/net_error_list.h
-[file-system-api]: https://developer.mozilla.org/en-US/docs/Web/API/LocalFileSystem

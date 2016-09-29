@@ -1,125 +1,125 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/ipc-renderer/
-    - /docs/v0.25.0/api/ipc-renderer/
-    - /docs/v0.26.0/api/ipc-renderer/
-    - /docs/v0.27.0/api/ipc-renderer/
-    - /docs/v0.28.0/api/ipc-renderer/
-    - /docs/v0.29.0/api/ipc-renderer/
-    - /docs/v0.30.0/api/ipc-renderer/
-    - /docs/v0.31.0/api/ipc-renderer/
-    - /docs/v0.32.0/api/ipc-renderer/
-    - /docs/v0.33.0/api/ipc-renderer/
-    - /docs/v0.34.0/api/ipc-renderer/
-    - /docs/v0.35.0/api/ipc-renderer/
-    - /docs/v0.36.0/api/ipc-renderer/
-    - /docs/v0.36.3/api/ipc-renderer/
-    - /docs/v0.36.4/api/ipc-renderer/
-    - /docs/v0.36.5/api/ipc-renderer/
-    - /docs/v0.36.6/api/ipc-renderer/
-    - /docs/v0.36.7/api/ipc-renderer/
-    - /docs/v0.36.8/api/ipc-renderer/
-    - /docs/v0.36.9/api/ipc-renderer/
-    - /docs/v0.36.10/api/ipc-renderer/
-    - /docs/v0.36.11/api/ipc-renderer/
-    - /docs/v0.37.0/api/ipc-renderer/
-    - /docs/v0.37.1/api/ipc-renderer/
-    - /docs/v0.37.2/api/ipc-renderer/
-    - /docs/v0.37.3/api/ipc-renderer/
-    - /docs/v0.37.4/api/ipc-renderer/
-    - /docs/v0.37.5/api/ipc-renderer/
-    - /docs/v0.37.6/api/ipc-renderer/
-    - /docs/v0.37.7/api/ipc-renderer/
-    - /docs/v0.37.8/api/ipc-renderer/
-    - /docs/latest/api/ipc-renderer/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/ipc-renderer.md'
-excerpt: "Communicate asynchronously from a renderer process to the main process."
-title: "ipcRenderer"
-sort_title: "ipcrenderer"
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+    - /docs-translations/ko-KR/api/ipc-renderer/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/ipc-renderer.md'
+excerpt: "&#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xBE44;&#xB3D9;&#xAE30; &#xD1B5;&#xC2E0;&#xC744; &#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# ipcRenderer
+﻿# ipcRenderer
 
-> Communicate asynchronously from a renderer process to the main process.
+> 렌더러 프로세스에서 메인 프로세스로 비동기 통신을 합니다.
 
-The `ipcRenderer` module is an instance of the
-[EventEmitter](https://nodejs.org/api/events.html) class. It provides a few
-methods so you can send synchronous and asynchronous messages from the render
-process (web page) to the main process.  You can also receive replies from the
-main process.
+`ipcRenderer` 모듈은 [EventEmitter](https://nodejs.org/api/events.html) 클래스의
+인스턴스입니다. 렌더러 프로세스에서 메인 프로세스로 동기/비동기 메시지를 주고 받는
+방법을 제공합니다. 또한 메인 프로세스로부터 받은 메시지에 응답할 수도 있습니다.
 
-See [ipcMain](http://electron.atom.io/docs/api/ipc-main) for code examples.
+[ipcMain](http://electron.atom.io/docs/api/ipc-main)에서 코드 예시를 확인할 수 있습니다.
 
-## Listening for Messages
+## 메시��� 리스닝
 
-The `ipcRenderer` module has the following method to listen for events:
+`ipcRenderer`는 다음과 같은 이벤트 리스닝 메서드를 가지고 있습니다:
 
 ### `ipcRenderer.on(channel, listener)`
 
 * `channel` String
 * `listener` Function
 
-Listens to `channel`, when a new message arrives `listener` would be called with
-`listener(event, args...)`.
+`channel`에 대해 이벤트를 리스닝합니다. 새로운 메시지가 도착하면 `listener`가
+`listener(event, args...)` 형식으로 호출됩니다.
 
 ### `ipcRenderer.once(channel, listener)`
 
 * `channel` String
 * `listener` Function
 
-Adds a one time `listener` function for the event. This `listener` is invoked
-only the next time a message is sent to `channel`, after which it is removed.
+이벤트에 대해 한 번만 작동하는 `listener` 함수를 등록합니다. 이 `listener`는 등록된
+후 `channel`에 보내지는 메시지에 한해 호출됩니다. 호출된 이후엔 리스너가 삭제됩니다.
 
 ### `ipcRenderer.removeListener(channel, listener)`
 
 * `channel` String
 * `listener` Function
 
-Removes the specified `listener` from the listener array for the specified
-`channel`.
+메시지 수신을 완료한 후, 더 이상의 콜백이 필요하지 않을 때 또는 몇 가지 이유로 채널의
+메시지 전송을 멈출수 없을 때, 이 함수를 통해 지정한 채널에 대한 콜백을 삭제할 수
+있습니다.
 
-### `ipcRenderer.removeAllListeners([channel])`
+지정한 `channel`에 대한 리스너를 저장하는 배열에서 지정한 `listener`를 삭제합니다.
+
+### `ipcRenderer.removeAllListeners(channel)`
 
 * `channel` String (optional)
 
-Removes all listeners, or those of the specified `channel`.
+이 ipc 채널에 등록된 모든 핸들러들을 삭제하거나 지정한 `channel`을 삭제합니다.
 
-## Sending Messages
+## 메시지 보내기
 
-The `ipcRenderer` module has the following methods for sending messages:
+`ipcRenderer`는 다음과 같은 메시지 전송 메서드를 가지고 있습니다:
 
 ### `ipcRenderer.send(channel[, arg1][, arg2][, ...])`
 
 * `channel` String
 * `arg` (optional)
 
-Send a message to the main process asynchronously via `channel`, you can also
-send arbitrary arguments. Arguments will be serialized in JSON internally and
-hence no functions or prototype chain will be included.
+`channel`을 통해 메인 프로세스에 비동기 메시지를 보냅니다. 그리고 필요에 따라 임의의
+인수를 사용할 수도 있습니다. 인수들은 내부적으로 JSON 포맷으로 직렬화 되며, 이후 함수와
+프로토타입 체인은 포함되지 않게 됩니다.
 
-The main process handles it by listening for `channel` with `ipcMain` module.
+메인 프로세스는 `ipcMain` 모듈의 `channel` 이벤트를 통해
+이벤트를 리스닝 할 수 있습니다.
 
 ### `ipcRenderer.sendSync(channel[, arg1][, arg2][, ...])`
 
 * `channel` String
 * `arg` (optional)
 
-Send a message to the main process synchronously via `channel`, you can also
-send arbitrary arguments. Arguments will be serialized in JSON internally and
-hence no functions or prototype chain will be included.
+`channel`을 통해 메인 프로세스에 동기 메시지를 보냅니다. 그리고 필요에 따라 임의의
+인수를 사용할 수도 있습니다. 인수들은 내부적으로 JSON 포맷으로 직렬화 되며, 이후 함수와
+프로토타입 체인은 포함되지 않게 됩니다.
 
-The main process handles it by listening for `channel` with `ipcMain` module,
-and replies by setting `event.returnValue`.
+메인 프로세스는 `ipcMain` 모듈을 통해 `channel` 이벤트를 리스닝 할 수 있고,
+`event.returnValue`로 회신 할 수 있습니다.
 
-**Note:** Sending a synchronous message will block the whole renderer process,
-unless you know what you are doing you should never use it.
+**참고:** 동기 메서드는 모든 렌더러 프로세스의 작업을 일시 중단시킵니다. 사용 목적이
+확실하지 않다면 사용하지 않는 것이 좋습니다.
 
 ### `ipcRenderer.sendToHost(channel[, arg1][, arg2][, ...])`
 
 * `channel` String
 * `arg` (optional)
 
-Like `ipcRenderer.send` but the event will be sent to the `<webview>` element in
-the host page instead of the main process.
+`ipcRenderer.send`와 비슷하지만 이벤트를 메인 프로세스 대신 호스트 페이지내의
+`<webview>` 요소로 보냅니다.

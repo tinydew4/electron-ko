@@ -1,156 +1,119 @@
 ---
-version: v1.4.1
-category: Tutorial
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/tutorial/debugging-main-process/
-    - /docs/v0.25.0/tutorial/debugging-main-process/
-    - /docs/v0.26.0/tutorial/debugging-main-process/
-    - /docs/v0.27.0/tutorial/debugging-main-process/
-    - /docs/v0.28.0/tutorial/debugging-main-process/
-    - /docs/v0.29.0/tutorial/debugging-main-process/
-    - /docs/v0.30.0/tutorial/debugging-main-process/
-    - /docs/v0.31.0/tutorial/debugging-main-process/
-    - /docs/v0.32.0/tutorial/debugging-main-process/
-    - /docs/v0.33.0/tutorial/debugging-main-process/
-    - /docs/v0.34.0/tutorial/debugging-main-process/
-    - /docs/v0.35.0/tutorial/debugging-main-process/
-    - /docs/v0.36.0/tutorial/debugging-main-process/
-    - /docs/v0.36.3/tutorial/debugging-main-process/
-    - /docs/v0.36.4/tutorial/debugging-main-process/
-    - /docs/v0.36.5/tutorial/debugging-main-process/
-    - /docs/v0.36.6/tutorial/debugging-main-process/
-    - /docs/v0.36.7/tutorial/debugging-main-process/
-    - /docs/v0.36.8/tutorial/debugging-main-process/
-    - /docs/v0.36.9/tutorial/debugging-main-process/
-    - /docs/v0.36.10/tutorial/debugging-main-process/
-    - /docs/v0.36.11/tutorial/debugging-main-process/
-    - /docs/v0.37.0/tutorial/debugging-main-process/
-    - /docs/v0.37.1/tutorial/debugging-main-process/
-    - /docs/v0.37.2/tutorial/debugging-main-process/
-    - /docs/v0.37.3/tutorial/debugging-main-process/
-    - /docs/v0.37.4/tutorial/debugging-main-process/
-    - /docs/v0.37.5/tutorial/debugging-main-process/
-    - /docs/v0.37.6/tutorial/debugging-main-process/
-    - /docs/v0.37.7/tutorial/debugging-main-process/
-    - /docs/v0.37.8/tutorial/debugging-main-process/
-    - /docs/latest/tutorial/debugging-main-process/
-source_url: 'https://github.com/electron/electron/blob/master/docs/tutorial/debugging-main-process.md'
-title: "Debugging the Main Process"
-sort_title: "debugging the main process"
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+    - /docs-translations/ko-KR/tutorial/debugging-main-process/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/debugging-main-process.md'
 ---
 
-# Debugging the Main Process
+﻿# 메인 프로세스 디버깅하기
 
-The browser window DevTools can only debug the renderer process scripts (i.e.
-the web pages). In order to provide a way to debug the scripts from the main
-process, Electron has provided the `--debug` and `--debug-brk` switches.
+브라우저 창의 개발자 도구는 웹 페이지 같은 렌더러 프로세스의 스크립트만 디버깅이
+가능합니다. 대신 Electron은 메인 프로세스의 디버깅을 위해 `--debug` 과 `--debug-brk`
+스위치들을 제공합니다.
 
-## Command Line Switches
+## 커맨드 라인 스위치(command line switches)
 
-Use the following command line switches to debug Electron's main process:
+다음 스위치들을 사용하여 Electron의 메인 프로세스를 디버깅 할 수 있습니다:
 
 ### `--debug=[port]`
 
-When this switch is used Electron will listen for V8 debugger protocol
-messages on the `port`. The default `port` is `5858`.
+이 스위치를 사용하면 Electron은 지정한 `port`에 V8 디버거 프로토콜을 리스닝합니다.
+기본 `port`는 `5858` 입니다.
 
 ### `--debug-brk=[port]`
 
-Like `--debug` but pauses the script on the first line.
+`--debug`와 비슷하지만 스크립트의 첫번째 라인에서 일시정지합니다.
 
-## Use VSCode for Debugging
+## node-inspector로 디버깅 하기
 
-### 1. Open an Electron project in VSCode.
+**참고:** Electron은 현재 node-inspector 유틸리티와 호환성 문제가 있습니다. 이러한
+이유로 node-inspector 콘솔 내에서 메인 프로세스의 `process` 객체를 탐색할 경우 크래시가
+발생할 수 있습니다.
 
-```bash
-$ git clone git@github.com:electron/electron-quick-start.git
-$ code electron-quick-start
-```
+### 1. [node-gyp 필수 도구][node-gyp-required-tools] 설치
 
-### 2. Add a file `.vscode/launch.json` with the following configuration:
-
-```json
-{
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Debug Main Process",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${workspaceRoot}",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-      "program": "${workspaceRoot}/main.js"
-    }
-  ]
-}
-```
-
-**Note:** For Windows, use `"${workspaceRoot}/node_modules/.bin/electron.cmd"` for `runtimeExecutable`.
-
-### 3. Debugging
-
-Set some breakpoints in `main.js`, and start debugging in the [Debug View](https://code.visualstudio.com/docs/editor/debugging). You should be able to hit the breakpoints.
-
-Here is a pre-configured project that you can download and directly debug in VSCode: https://github.com/octref/vscode-electron-debug/tree/master/electron-quick-start
-
-## Use node-inspector for Debugging
-
-**Note:** Electron doesn't currently work very well with node-inspector, and the
-main process will crash if you inspect the `process` object under
-node-inspector's console.
-
-### 1. Install the [node-gyp required tools][node-gyp-required-tools]
-
-### 2. Install [node-inspector][node-inspector]
+### 2. [node-inspector][node-inspector] 설치
 
 ```bash
 $ npm install node-inspector
 ```
 
-### 3. Install [node-pre-gyp][node-pre-gyp]
+### 3. [node-pre-gyp][node-pre-gyp] 설치
 
 ```bash
 $ npm install node-pre-gyp
 ```
 
-### 4. Recompile the `node-inspector` `v8` modules for Electron
+### 4. Electron용 `node-inspector` `v8` 모듈을 재 컴파일
 
-**Note:** Update the target argument to be your Electron version number
+**참고:** target 인수를 사용하는 Electron의 버전에 맞춰 변경하세요.
 
 ```bash
 $ node_modules/.bin/node-pre-gyp --target=1.2.5 --runtime=electron --fallback-to-build --directory node_modules/v8-debug/ --dist-url=https://atom.io/download/atom-shell reinstall
 $ node_modules/.bin/node-pre-gyp --target=1.2.5 --runtime=electron --fallback-to-build --directory node_modules/v8-profiler/ --dist-url=https://atom.io/download/atom-shell reinstall
 ```
 
-See also [How to install native modules][how-to-install-native-modules].
+또한 [네이티브 모듈을 사용하는 방법][how-to-install-native-modules] 문서도 참고해보세요.
 
-### 5. Enable debug mode for Electron
+### 5. Electron 디버그 모드 활성화
 
-You can either start Electron with a debug flag like:
+다음과 같이 debung 플래그로 Electron을 실행할 수 있습니다:
 
 ```bash
 $ electron --debug=5858 your/app
 ```
 
-or, to pause your script on the first line:
+또는 스크립트 첫번째 라인에서 일시 정지할 수 있습니다:
 
 ```bash
 $ electron --debug-brk=5858 your/app
 ```
 
-### 6. Start the [node-inspector][node-inspector] server using Electron
+### 6. Electron을 사용하는 [node-inspector][node-inspector] 시작하기
 
 ```bash
 $ ELECTRON_RUN_AS_NODE=true path/to/electron.exe node_modules/node-inspector/bin/inspector.js
 ```
 
-### 7. Load the debugger UI
+### 7. 디버거 UI 로드
 
-Open http://127.0.0.1:8080/debug?ws=127.0.0.1:8080&port=5858 in the Chrome
-browser. You may have to click pause if starting with `debug-brk` to see the
-entry line.
+Chrome 브라우저에서 http://127.0.0.1:8080/debug?ws=127.0.0.1:8080&port=5858 주소에
+접속합니다. (기본 포트 또는 지정한 포트로 접속) 엔트리의 라인이 `debug-brk`로 시작하는
+경우 일시정지 버튼을 클릭해야 할 수도 있습니다.
 
 [node-inspector]: https://github.com/node-inspector/node-inspector
 [node-pre-gyp]: https://github.com/mapbox/node-pre-gyp
 [node-gyp-required-tools]: https://github.com/nodejs/node-gyp#installation
-[how-to-install-native-modules]: http://electron.atom.io/docs/tutorial/using-native-node-modules#how-to-install-native-modules
+[how-to-install-native-modules]: http://electron.atom.io/docs/tutorial/using-native-node-modules#네이티브-모듈을-설치하는-방법

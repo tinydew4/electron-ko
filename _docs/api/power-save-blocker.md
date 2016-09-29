@@ -1,94 +1,95 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/power-save-blocker/
-    - /docs/v0.25.0/api/power-save-blocker/
-    - /docs/v0.26.0/api/power-save-blocker/
-    - /docs/v0.27.0/api/power-save-blocker/
-    - /docs/v0.28.0/api/power-save-blocker/
-    - /docs/v0.29.0/api/power-save-blocker/
-    - /docs/v0.30.0/api/power-save-blocker/
-    - /docs/v0.31.0/api/power-save-blocker/
-    - /docs/v0.32.0/api/power-save-blocker/
-    - /docs/v0.33.0/api/power-save-blocker/
-    - /docs/v0.34.0/api/power-save-blocker/
-    - /docs/v0.35.0/api/power-save-blocker/
-    - /docs/v0.36.0/api/power-save-blocker/
-    - /docs/v0.36.3/api/power-save-blocker/
-    - /docs/v0.36.4/api/power-save-blocker/
-    - /docs/v0.36.5/api/power-save-blocker/
-    - /docs/v0.36.6/api/power-save-blocker/
-    - /docs/v0.36.7/api/power-save-blocker/
-    - /docs/v0.36.8/api/power-save-blocker/
-    - /docs/v0.36.9/api/power-save-blocker/
-    - /docs/v0.36.10/api/power-save-blocker/
-    - /docs/v0.36.11/api/power-save-blocker/
-    - /docs/v0.37.0/api/power-save-blocker/
-    - /docs/v0.37.1/api/power-save-blocker/
-    - /docs/v0.37.2/api/power-save-blocker/
-    - /docs/v0.37.3/api/power-save-blocker/
-    - /docs/v0.37.4/api/power-save-blocker/
-    - /docs/v0.37.5/api/power-save-blocker/
-    - /docs/v0.37.6/api/power-save-blocker/
-    - /docs/v0.37.7/api/power-save-blocker/
-    - /docs/v0.37.8/api/power-save-blocker/
-    - /docs/latest/api/power-save-blocker/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/power-save-blocker.md'
-excerpt: "Block the system from entering low-power (sleep) mode."
-title: "powerSaveBlocker"
-sort_title: "powersaveblocker"
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+    - /docs-translations/ko-KR/api/power-save-blocker/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/power-save-blocker.md'
+excerpt: "&#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xC800;&#xC804;&#xB825; (&#xC2AC;&#xB9BD;) &#xBAA8;&#xB4DC;&#xB85C; &#xC9C4;&#xC785;&#xD558;&#xB294; &#xAC83;&#xC744; &#xB9C9;&#xC2B5;&#xB2C8;&#xB2E4;."
 ---
 
-# powerSaveBlocker
+﻿# powerSaveBlocker
 
-> Block the system from entering low-power (sleep) mode.
+> 시스템이 저전력 (슬립) 모드로 진입하는 것을 막습니다.
 
-For example:
+예시:
 
 ```javascript
-const {powerSaveBlocker} = require('electron')
+const {powerSaveBlocker} = require('electron');
 
-const id = powerSaveBlocker.start('prevent-display-sleep')
-console.log(powerSaveBlocker.isStarted(id))
+const id = powerSaveBlocker.start('prevent-display-sleep');
+console.log(powerSaveBlocker.isStarted(id));
 
-powerSaveBlocker.stop(id)
+powerSaveBlocker.stop(id);
 ```
 
 ## Methods
 
-The `powerSaveBlocker` module has the following methods:
+`powerSaveBlocker` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
 ### `powerSaveBlocker.start(type)`
 
-* `type` String - Power save blocker type.
-  * `prevent-app-suspension` - Prevent the application from being suspended.
-    Keeps system active but allows screen to be turned off.  Example use cases:
-    downloading a file or playing audio.
-  * `prevent-display-sleep` - Prevent the display from going to sleep. Keeps
-    system and screen active.  Example use case: playing video.
+* `type` String - Power save blocker 종류
+  * `prevent-app-suspension` - 저전력 모드 등으로 인한 애플리케이션 작동 중단을
+    방지합니다. 시스템을 항시 활성화 상태로 만듭니다. 하지만 화면은 자동으로 꺼질 수
+    있습니다. 사용 예시: 파일 다운로드, 음악 재생 등.
+  * `prevent-display-sleep`- 슬립 모드 등으로 인한 애플리케이션의 작동 중단을
+    방지합니다. 시스템을 항시 활성화 상태로 만들고 슬립 모드(화면 꺼짐)를 방지합니다.
+    사용 예시: 비���오 재생 등.
 
-Starts preventing the system from entering lower-power mode. Returns an integer
-identifying the power save blocker.
+시스템이 저전력 모드(슬립)로 진입하는 것을 막기 시작합니다. 정수로 된 식별 ID를
+반환합니다.
 
-**Note:** `prevent-display-sleep` has higher precedence over
-`prevent-app-suspension`. Only the highest precedence type takes effect. In
-other words, `prevent-display-sleep` always takes precedence over
-`prevent-app-suspension`.
+**참고:** `prevent-display-sleep` 모드는 `prevent-app-suspension` 보다 우선 순위가
+높습니다. 두 모드 중 가장 높은 우선 순위의 모드만 작동합니다. 다시 말해
+`prevent-display-sleep` 모드는 언제나 `prevent-app-suspension` 모드의 효과를
+덮어씌웁니다.
 
-For example, an API calling A requests for `prevent-app-suspension`, and
-another calling B requests for `prevent-display-sleep`. `prevent-display-sleep`
-will be used until B stops its request. After that, `prevent-app-suspension`
-is used.
+예를 들어 A-요청이 `prevent-app-suspension` 모드를 사용하고 B-요청이
+`prevent-display-sleep`를 사용하는 API 호출이 있었다 하면 `prevent-display-sleep`
+모드를 사용하는 B의 작동이 중단(stop)되기 전까지 작동하다 B가 중단되면
+`prevent-app-suspension` 모드를 사용하는 A가 작동하기 시작합니다.
 
 ### `powerSaveBlocker.stop(id)`
 
-* `id` Integer - The power save blocker id returned by `powerSaveBlocker.start`.
+* `id` Integer - `powerSaveBlocker.start`로부터 반환되는 power save blocker 식별
+ID.
 
-Stops the specified power save blocker.
+설정한 power save blocker를 중지합니다.
 
 ### `powerSaveBlocker.isStarted(id)`
 
-* `id` Integer - The power save blocker id returned by `powerSaveBlocker.start`.
+* `id` Integer - `powerSaveBlocker.start`로부터 반환되는 power save blocker 식별
+ID.
 
-Returns a boolean whether the corresponding `powerSaveBlocker` has started.
+지정한 id의 `powerSaveBlocker`가 실행 중인지 확인합니다.

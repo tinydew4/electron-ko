@@ -1,90 +1,90 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/web-frame/
-    - /docs/v0.25.0/api/web-frame/
-    - /docs/v0.26.0/api/web-frame/
-    - /docs/v0.27.0/api/web-frame/
-    - /docs/v0.28.0/api/web-frame/
-    - /docs/v0.29.0/api/web-frame/
-    - /docs/v0.30.0/api/web-frame/
-    - /docs/v0.31.0/api/web-frame/
-    - /docs/v0.32.0/api/web-frame/
-    - /docs/v0.33.0/api/web-frame/
-    - /docs/v0.34.0/api/web-frame/
-    - /docs/v0.35.0/api/web-frame/
-    - /docs/v0.36.0/api/web-frame/
-    - /docs/v0.36.3/api/web-frame/
-    - /docs/v0.36.4/api/web-frame/
-    - /docs/v0.36.5/api/web-frame/
-    - /docs/v0.36.6/api/web-frame/
-    - /docs/v0.36.7/api/web-frame/
-    - /docs/v0.36.8/api/web-frame/
-    - /docs/v0.36.9/api/web-frame/
-    - /docs/v0.36.10/api/web-frame/
-    - /docs/v0.36.11/api/web-frame/
-    - /docs/v0.37.0/api/web-frame/
-    - /docs/v0.37.1/api/web-frame/
-    - /docs/v0.37.2/api/web-frame/
-    - /docs/v0.37.3/api/web-frame/
-    - /docs/v0.37.4/api/web-frame/
-    - /docs/v0.37.5/api/web-frame/
-    - /docs/v0.37.6/api/web-frame/
-    - /docs/v0.37.7/api/web-frame/
-    - /docs/v0.37.8/api/web-frame/
-    - /docs/latest/api/web-frame/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/web-frame.md'
-excerpt: "Customize the rendering of the current web page."
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+    - /docs-translations/ko-KR/api/web-frame/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/web-frame.md'
+excerpt: "&#xD604;&#xC7AC; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xB80C;&#xB354;&#xB9C1; &#xC0C1;&#xD0DC;&#xB97C; &#xCEE4;&#xC2A4;&#xD130;&#xB9C8;&#xC774;&#xC988;&#xD569;&#xB2C8;&#xB2E4;."
 title: "webFrame"
 sort_title: "webframe"
 ---
 
 # webFrame
 
-> Customize the rendering of the current web page.
+> 현재 웹 페이지의 렌더링 상태를 커스터마이즈합니다.
 
-An example of zooming current page to 200%.
+다음 예시는 현재 페이지를 200% 줌 합니다:
 
 ```javascript
-const {webFrame} = require('electron')
+const {webFrame} = require('electron');
 
-webFrame.setZoomFactor(2)
+webFrame.setZoomFactor(2);
 ```
 
 ## Methods
 
-The `webFrame` module has the following methods:
+`webFrame` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
 ### `webFrame.setZoomFactor(factor)`
 
-* `factor` Number - Zoom factor.
+* `factor` Number - Zoom 값
 
-Changes the zoom factor to the specified factor. Zoom factor is
-zoom percent divided by 100, so 300% = 3.0.
+지정한 값으로 페이지를 줌 합니다. 줌 값은 퍼센트를 100으로 나눈 값입니다.
+(예시: 300% = 3.0)
 
 ### `webFrame.getZoomFactor()`
 
-Returns the current zoom factor.
+현재 줌 값을 반환합니다.
 
 ### `webFrame.setZoomLevel(level)`
 
 * `level` Number - Zoom level
 
-Changes the zoom level to the specified level. The original size is 0 and each
-increment above or below represents zooming 20% larger or smaller to default
-limits of 300% and 50% of original size, respectively.
+지정한 레벨로 줌 레벨을 변경합니다. 0은 "기본 크기" 입니다. 그리고 각각 레벨 값을
+올리거나 내릴 때마다 20%씩 커지거나 작아지고 기본 크기의 50%부터 300%까지 조절 제한이
+있습니다.
 
 ### `webFrame.getZoomLevel()`
 
-Returns the current zoom level.
+현재 줌 레벨을 반환합니다.
 
 ### `webFrame.setZoomLevelLimits(minimumLevel, maximumLevel)`
 
 * `minimumLevel` Number
 * `maximumLevel` Number
 
-Sets the maximum and minimum zoom level.
+줌 레벨의 최대, 최소치를 지정합니다.
 
 ### `webFrame.setSpellCheckProvider(language, autoCorrectWord, provider)`
 
@@ -92,74 +92,68 @@ Sets the maximum and minimum zoom level.
 * `autoCorrectWord` Boolean
 * `provider` Object
 
-Sets a provider for spell checking in input fields and text areas.
+Input field나 text area에 철자 검사(spell checking) 제공자를 설정합니다.
 
-The `provider` must be an object that has a `spellCheck` method that returns
-whether the word passed is correctly spelled.
+`provider`는 반드시 전달된 단어의 철자가 맞았는지 검사하는 `spellCheck` 메소드를
+가지고 있어야 합니다.
 
-An example of using [node-spellchecker][spellchecker] as provider:
+[node-spellchecker][spellchecker]를 철자 검사 제공자로 사용하는 예시입니다:
 
 ```javascript
-const {webFrame} = require('electron')
 webFrame.setSpellCheckProvider('en-US', true, {
-  spellCheck (text) {
-    return !(require('spellchecker').isMisspelled(text))
+  spellCheck(text) {
+    return !(require('spellchecker').isMisspelled(text));
   }
-})
+});
 ```
 
 ### `webFrame.registerURLSchemeAsSecure(scheme)`
 
 * `scheme` String
 
-Registers the `scheme` as secure scheme.
+`scheme`을 보안 스킴으로 등록합니다.
 
-Secure schemes do not trigger mixed content warnings. For example, `https` and
-`data` are secure schemes because they cannot be corrupted by active network
-attackers.
+보안 스킴은 혼합된 콘텐츠 경고를 발생시키지 않습니다. 예를 들어 `https` 와 `data`는
+네트워크 공격자로부터 손상될 가능성이 없기 때문에 보안 스킴이라고 할 수 있습니다.
 
 ### `webFrame.registerURLSchemeAsBypassingCSP(scheme)`
 
 * `scheme` String
 
-Resources will be loaded from this `scheme` regardless of the current page's
-Content Security Policy.
+현재 페이지 콘텐츠의 보안 정책에 상관없이 `scheme`로부터 리소스가 로드됩니다.
 
 ### `webFrame.registerURLSchemeAsPrivileged(scheme)`
 
-* `scheme` String
+ * `scheme` String
 
-Registers the `scheme` as secure, bypasses content security policy for resources,
-allows registering ServiceWorker and supports fetch API.
+`scheme`를 보안된 스킴으로 등록합니다. 리소스에 대해 보안 정책을 우회하며,
+ServiceWorker의 등록과 fetch API를 사용할 수 있도록 지원합니다.
 
 ### `webFrame.insertText(text)`
 
 * `text` String
 
-Inserts `text` to the focused element.
+포커스된 요소에 `text`를 삽입합니다.
 
 ### `webFrame.executeJavaScript(code[, userGesture])`
 
 * `code` String
-* `userGesture` Boolean (optional) - Default is `false`.
+* `userGesture` Boolean (optional) - 기본값은 `false` 입니다.
 
-Evaluates `code` in page.
+페이지에서 `code`를 실행합니다.
 
-In the browser window some HTML APIs like `requestFullScreen` can only be
-invoked by a gesture from the user. Setting `userGesture` to `true` will remove
-this limitation.
+브라우저 윈도우에서 어떤 `requestFullScreen` 같은 HTML API는 사용자의 승인이
+필요합니다. `userGesture`를 `true`로 설정하면 이러한 제약을 제거할 수 있습니다.
 
 ### `webFrame.getResourceUsage()`
 
-Returns an object describing usage information of Blink's internal memory
-caches.
+Blink의 내부 메모리 캐시 사용 정보를 담고있는 객체를 반환합니다.
 
 ```javascript
-const {webFrame} = require('electron')
 console.log(webFrame.getResourceUsage())
 ```
 
-This will generate:
+다음이 출력됩니다:
 
 ```javascript
 {
@@ -174,19 +168,17 @@ This will generate:
   cssStyleSheets: { /* same with "images" */ },
   xslStyleSheets: { /* same with "images" */ },
   fonts: { /* same with "images" */ },
-  other: { /* same with "images" */ }
+  other: { /* same with "images" */ },
 }
 ```
 
 ### `webFrame.clearCache()`
 
-Attempts to free memory that is no longer being used (like images from a
-previous navigation).
+사용하지 않는 메모리 비우기를 시도합니다. (이전 페이지의 이미지 등)
 
-Note that blindly calling this method probably makes Electron slower since it
-will have to refill these emptied caches, you should only call it if an event
-in your app has occurred that makes you think your page is actually using less
-memory (i.e. you have navigated from a super heavy page to a mostly empty one,
-and intend to stay there).
+참고로 맹목적으로 이 메서드를 호출하는 것은 이 빈 캐시를 다시 채워야하기 때문에
+Electron을 느리게 만듭니다. 따라서 이 메서드는 페이지가 예상했던 것 보다 실질적으로 더
+적은 메모리를 사용하게 만드는 애플리케이션 이벤트가 발생했을 때만 호출해야 합니다.
+(i.e. 아주 무거운 페이지에서 거의 빈 페이지로 이동한 후 계속 유지할 경우)
 
 [spellchecker]: https://github.com/atom/node-spellchecker

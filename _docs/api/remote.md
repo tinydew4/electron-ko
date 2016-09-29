@@ -1,209 +1,197 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/remote/
-    - /docs/v0.25.0/api/remote/
-    - /docs/v0.26.0/api/remote/
-    - /docs/v0.27.0/api/remote/
-    - /docs/v0.28.0/api/remote/
-    - /docs/v0.29.0/api/remote/
-    - /docs/v0.30.0/api/remote/
-    - /docs/v0.31.0/api/remote/
-    - /docs/v0.32.0/api/remote/
-    - /docs/v0.33.0/api/remote/
-    - /docs/v0.34.0/api/remote/
-    - /docs/v0.35.0/api/remote/
-    - /docs/v0.36.0/api/remote/
-    - /docs/v0.36.3/api/remote/
-    - /docs/v0.36.4/api/remote/
-    - /docs/v0.36.5/api/remote/
-    - /docs/v0.36.6/api/remote/
-    - /docs/v0.36.7/api/remote/
-    - /docs/v0.36.8/api/remote/
-    - /docs/v0.36.9/api/remote/
-    - /docs/v0.36.10/api/remote/
-    - /docs/v0.36.11/api/remote/
-    - /docs/v0.37.0/api/remote/
-    - /docs/v0.37.1/api/remote/
-    - /docs/v0.37.2/api/remote/
-    - /docs/v0.37.3/api/remote/
-    - /docs/v0.37.4/api/remote/
-    - /docs/v0.37.5/api/remote/
-    - /docs/v0.37.6/api/remote/
-    - /docs/v0.37.7/api/remote/
-    - /docs/v0.37.8/api/remote/
-    - /docs/latest/api/remote/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/remote.md'
-excerpt: "Use main process modules from the renderer process."
-title: "remote"
-sort_title: "remote"
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+    - /docs-translations/ko-KR/api/remote/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/remote.md'
+excerpt: "&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xBAA8;&#xB4C8;&#xC744; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# remote
+﻿# remote
 
-> Use main process modules from the renderer process.
+> 메인 프로세스 모듈을 렌더러 프로세스에서 사용합니다.
 
-The `remote` module provides a simple way to do inter-process communication
-(IPC) between the renderer process (web page) and the main process.
+`remote` 모듈은 메인 프로세스와 렌더러 프로세스(웹 페이지) 사이의 inter-process
+(IPC) 통신을 간단하게 추상화 한 모듈입니다.
 
-In Electron, GUI-related modules (such as `dialog`, `menu` etc.) are only
-available in the main process, not in the renderer process. In order to use them
-from the renderer process, the `ipc` module is necessary to send inter-process
-messages to the main process. With the `remote` module, you can invoke methods
-of the main process object without explicitly sending inter-process messages,
-similar to Java's [RMI][rmi]. An example of creating a browser window from a
-renderer process:
+Electron의 메인 프로세스에선 GUI와 관련 있는(`dialog`, `menu`등) 모듈만 사용할 수
+있습니다. 렌더러 프로세스에서 이러한 모듈들을 사용하려면 `ipc` 모듈을 통해 메인
+프로세스와 inter-process 통신을 해야 합니다. 또한, `remote` 모듈을 사용하면
+inter-process 통신을 하지 않고도 간단한 API를 통해 직접 메인 프로세스의 모듈과
+메서드를 사용할 수 있습니다. 이 개념은 Java의 [RMI][rmi]와 비슷합니다.
+
+다음 예시는 렌더러 프로세스에서 브라우저 창을 만드는 예시입니다:
 
 ```javascript
-const {BrowserWindow} = require('electron').remote
-let win = new BrowserWindow({width: 800, height: 600})
-win.loadURL('https://github.com')
+const {BrowserWindow} = require('electron').remote;
+
+let win = new BrowserWindow({width: 800, height: 600});
+win.loadURL('https://github.com');
 ```
 
-**Note:** For the reverse (access the renderer process from the main process),
-you can use [webContents.executeJavascript](http://electron.atom.io/docs/api/web-contents#webcontentsexecutejavascriptcode-usergesture-callback).
+**참고:** 반대로 메인 프로세스에서 렌더러 프로세스에 접근 하려면 [webContents.executeJavascript](http://electron.atom.io/docs/api/web-contents#webcontentsexecutejavascriptcode-usergesture-callback)
+메서드를 사용하면 됩니다.
 
-## Remote Objects
+## Remote 객체
 
-Each object (including functions) returned by the `remote` module represents an
-object in the main process (we call it a remote object or remote function).
-When you invoke methods of a remote object, call a remote function, or create
-a new object with the remote constructor (function), you are actually sending
-synchronous inter-process messages.
+`remote` 모듈로부터 반환된 각 객체(메서드 포함)는 메인 프로세스의 객체를 추상화 한
+객체입니다. (우리는 그것을 remote 객체 또는 remote 함수라고 부릅니다) Remote 모듈의
+메서드를 호출하거나, 객체에 접근하거나, 생성자로 객체를 생성하는 등의 작업은 실질적으로
+동기형 inter-process 메시지를 보냅니다.
 
-In the example above, both `BrowserWindow` and `win` were remote objects and
-`new BrowserWindow` didn't create a `BrowserWindow` object in the renderer
-process. Instead, it created a `BrowserWindow` object in the main process and
-returned the corresponding remote object in the renderer process, namely the
-`win` object.
+위의 예시에서 사용한 두 `BrowserWindow`와 `win`은 remote 객체입니다. 그리고
+`new BrowserWindow`이 생성하는 `BrowserWindow` 객체는 렌더러 프로세스에서 생성되지
+않습니다. 대신에 이 `BrowserWindow` 객체는 메인 프로세스에서 생성되며 렌더러
+프로세스에 `win` 객체와 같이 이에 대응하는 remote 객체를 반환합니다.
 
-**Note:** Only [enumerable properties][enumerable-properties] which are present
-when the remote object is first referenced are accessible via remote.
+참고로 remote 객체가 처음 참조될 때 표시되는
+[enumerable 속성](https://developer.mozilla.org/ko/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)은
+remote를 통해서만 접근할 수 있습니다.
 
-**Note:** Arrays and Buffers are copied over IPC when accessed via the `remote`
-module. Modifying them in the renderer process does not modify them in the main
-process and vice versa.
+## Remote 객체의 생명 주기
 
-## Lifetime of Remote Objects
+Electron은 렌더러 프로세스의 remote 객체가 살아있는 한(다시 말해서 GC(garbage
+collection)가 일어나지 않습니다) 대응하는 메인 프로세스의 객체는 릴리즈되지 않습니다.
+Remote 객체가 GC 되려면 대응하는 메인 프로세스 내부 객체의 참조가 해제되어야만 합니다.
 
-Electron makes sure that as long as the remote object in the renderer process
-lives (in other words, has not been garbage collected), the corresponding object
-in the main process will not be released. When the remote object has been
-garbage collected, the corresponding object in the main process will be
-dereferenced.
+만약 remote 객체가 렌더러 프로세스에서 누수가 생겼다면 (예시: 맵에 저장하고 할당
+해제하지 않음) 대응하는 메인 프로세스의 객체도 누수가 생깁니다. 그래서 remote 객체를
+사용할 땐 메모리 누수가 생기지 않도록 매우 주의해서 사용해야 합니다.
 
-If the remote object is leaked in the renderer process (e.g. stored in a map but
-never freed), the corresponding object in the main process will also be leaked,
-so you should be very careful not to leak remote objects.
+참고로 문자열, 숫자와 같은 원시 값 타입은 복사에 의한 참조로 전달됩니다.
 
-Primary value types like strings and numbers, however, are sent by copy.
+## 메인 프로세스로 콜백 넘기기
 
-## Passing callbacks to the main process
+메인 프로세스의 코드는 `remote` 모듈을 통해 렌더러 프로세스가 전달하는 콜백 함수를
+받을 수 있습니다. 하지만 이 작업은 반드시 주의를 기울여 사용해야 합니다.
 
-Code in the main process can accept callbacks from the renderer - for instance
-the `remote` module - but you should be extremely careful when using this
-feature.
+첫째, 데드락을 피하기 위해 메인 프로세스로 전달된 콜백들은 비동기로 호출됩니다. 이러한
+이유로 메인 프로세스에 전달된 콜백의 반환 값을 내부 함수에서 언제나 정상적으로 받을
+것이라고 예측해선 안됩니다.
 
-First, in order to avoid deadlocks, the callbacks passed to the main process
-are called asynchronously. You should not expect the main process to
-get the return value of the passed callbacks.
-
-For instance you can't use a function from the renderer process in an
-`Array.map` called in the main process:
+예를 들어 메인 프로세스에서 `Array.map` 같은 메서드를 사용할 때 렌더러 프로세스에서
+전달된 함수를 사용해선 안됩니다:
 
 ```javascript
-// main process mapNumbers.js
+// mapNumbers.js 메인 프로세스
 exports.withRendererCallback = (mapper) => {
-  return [1, 2, 3].map(mapper)
-}
+  return [1,2,3].map(mapper);
+;
 
 exports.withLocalCallback = () => {
-  return [1, 2, 3].map(x => x + 1)
-}
+  return [1,2,3].map(x => x + 1);
+};
 ```
 
 ```javascript
-// renderer process
-const mapNumbers = require('electron').remote.require('./mapNumbers')
-const withRendererCb = mapNumbers.withRendererCallback(x => x + 1)
-const withLocalCb = mapNumbers.withLocalCallback()
+// 렌더러 프로세스
+const mapNumbers = require('electron').remote.require('./mapNumbers');
 
-console.log(withRendererCb, withLocalCb)
-// [undefined, undefined, undefined], [2, 3, 4]
+const withRendererCb = mapNumbers.withRendererCallback(x => x + 1);
+
+const withLocalCb = mapNumbers.withLocalCallback();
+
+console.log(withRendererCb, withLocalCb); // [undefined, undefined, undefined], [2, 3, 4]
 ```
 
-As you can see, the renderer callback's synchronous return value was not as
-expected, and didn't match the return value of an identical callback that lives
-in the main process.
+보다시피 동기적인 렌더러 콜백 함수의 반환 값은 예상되지 않은 값입니다. 그리고 메인
+프로세스에서 처리한 함수의 반환 값과 일치하지 않습니다.
 
-Second, the callbacks passed to the main process will persist until the
-main process garbage-collects them.
+둘째, 콜백들은 메인 프로세스로 전달, 호출된 이후에도 자동으로 함수의 참조가 릴리즈 되지
+않습니다. 함수 참조는 메인 프로세스에서 GC가 일어나기 전까지 계속 프로세스에 남아있게
+됩니다.
 
-For example, the following code seems innocent at first glance. It installs a
-callback for the `close` event on a remote object:
+다음 코드를 보면 느낌이 올 것입니다. 이 예시는 remote 객체에 `close` 이벤트 콜백을
+등록합니다:
 
 ```javascript
-require('electron').remote.getCurrentWindow().on('close', () => {
-  // window was closed...
-})
+const remote = require('remote');
+
+remote.getCurrentWindow().on('close', () => {
+  // blabla...
+});
 ```
 
-But remember the callback is referenced by the main process until you
-explicitly uninstall it. If you do not, each time you reload your window the
-callback will be installed again, leaking one callback for each restart.
+하지만 이 코드와 같이 등록된 이벤트는 명시적으로 제거하지 않는 이상 콜백 함수의 참조가
+계속해서 메인 프로세스에 남아있게 됩니다. 만약 명시적으로 콜백을 제거하지 않으면 매 번
+창을 새로고침 할 때마다 콜백을 새로 설치합니다. 게다가 이전 콜백이 제거되지 않고
+계속해서 쌓이면서 메모리 누수가 발생합니다.
 
-To make things worse, since the context of previously installed callbacks has
-been released, exceptions will be raised in the main process when the `close`
-event is emitted.
+설상가상으로 이전에 등록된 콜백의 컨텍스트가 릴리즈 되고 난 후 (e.g. 페이지 새로고침)
+`close` 이벤트가 발생하면 예외가 발생하고 메인 프로세스가 작동 중지됩니다.
 
-To avoid this problem, ensure you clean up any references to renderer callbacks
-passed to the main process. This involves cleaning up event handlers, or
-ensuring the main process is explicitly told to deference callbacks that came
-from a renderer process that is exiting.
+이러한 문제를 피하려면 렌더러 프로세스에서 메인 프로세스로 넘긴 함수의 참조를 사용 후
+확실하게 제거해야 합니다. 작업 후 이벤트 콜백을 포함하여 책임 있게 함수의 참조를
+제거하거나 메인 프로세스에서 렌더러 프로세스가 종료될 때 내부적으로 함수 참조를
+제거하도록 설계해야 합니다.
 
-## Accessing built-in modules in the main process
+## 메인 프로세스의 빌트인 모듈에 접근
 
-The built-in modules in the main process are added as getters in the `remote`
-module, so you can use them directly like the `electron` module.
+메인 프로세스의 빌트인 모듈은 `remote` 모듈에 getter로 등록되어 있습니다. 따라서
+`remote` 모듈을 `electron` 모듈처럼 직접 사용할 수 있습니다.
 
 ```javascript
-const app = require('electron').remote.app
-console.log(app)
+const app = remote.app;
 ```
 
 ## Methods
 
-The `remote` module has the following methods:
+`remote` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
 ### `remote.require(module)`
 
 * `module` String
 
-Returns the object returned by `require(module)` in the main process.
+메인 프로세스의 `require(module)` API를 실행한 후 결과 객체를 반환합니다.
 
 ### `remote.getCurrentWindow()`
 
-Returns the [`BrowserWindow`](http://electron.atom.io/docs/api/browser-window) object to which this web page
-belongs.
+현재 웹 페이지가 들어있는 [`BrowserWindow`](http://electron.atom.io/docs/api/browser-window) 객체를 반환합니다.
 
 ### `remote.getCurrentWebContents()`
 
-Returns the [`WebContents`](http://electron.atom.io/docs/api/web-contents) object of this web page.
+현재 웹 페이지의 [`WebContents`](http://electron.atom.io/docs/api/web-contents) 객체를 반환합니다.
 
 ### `remote.getGlobal(name)`
 
 * `name` String
 
-Returns the global variable of `name` (e.g. `global[name]`) in the main
-process.
-
-## Properties
+메인 프로세스의 전역 변수(`name`)를 가져옵니다. (예시: `global[name]`)
 
 ### `remote.process`
 
-The `process` object in the main process. This is the same as
-`remote.getGlobal('process')` but is cached.
+메인 프로세스의 `process` 객체를 반환합니다. `remote.getGlobal('process')`와
+같습니다. 하지만 캐시 됩니다.
 
 [rmi]: http://en.wikipedia.org/wiki/Java_remote_method_invocation
-[enumerable-properties]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties

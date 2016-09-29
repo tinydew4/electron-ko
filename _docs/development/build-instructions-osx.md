@@ -1,114 +1,103 @@
 ---
-version: v1.4.1
-category: Development
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/development/build-instructions-osx/
-    - /docs/v0.25.0/development/build-instructions-osx/
-    - /docs/v0.26.0/development/build-instructions-osx/
-    - /docs/v0.27.0/development/build-instructions-osx/
-    - /docs/v0.28.0/development/build-instructions-osx/
-    - /docs/v0.29.0/development/build-instructions-osx/
-    - /docs/v0.30.0/development/build-instructions-osx/
-    - /docs/v0.31.0/development/build-instructions-osx/
-    - /docs/v0.32.0/development/build-instructions-osx/
-    - /docs/v0.33.0/development/build-instructions-osx/
-    - /docs/v0.34.0/development/build-instructions-osx/
-    - /docs/v0.35.0/development/build-instructions-osx/
-    - /docs/v0.36.0/development/build-instructions-osx/
-    - /docs/v0.36.3/development/build-instructions-osx/
-    - /docs/v0.36.4/development/build-instructions-osx/
-    - /docs/v0.36.5/development/build-instructions-osx/
-    - /docs/v0.36.6/development/build-instructions-osx/
-    - /docs/v0.36.7/development/build-instructions-osx/
-    - /docs/v0.36.8/development/build-instructions-osx/
-    - /docs/v0.36.9/development/build-instructions-osx/
-    - /docs/v0.36.10/development/build-instructions-osx/
-    - /docs/v0.36.11/development/build-instructions-osx/
-    - /docs/v0.37.0/development/build-instructions-osx/
-    - /docs/v0.37.1/development/build-instructions-osx/
-    - /docs/v0.37.2/development/build-instructions-osx/
-    - /docs/v0.37.3/development/build-instructions-osx/
-    - /docs/v0.37.4/development/build-instructions-osx/
-    - /docs/v0.37.5/development/build-instructions-osx/
-    - /docs/v0.37.6/development/build-instructions-osx/
-    - /docs/v0.37.7/development/build-instructions-osx/
-    - /docs/v0.37.8/development/build-instructions-osx/
-    - /docs/latest/development/build-instructions-osx/
-source_url: 'https://github.com/electron/electron/blob/master/docs/development/build-instructions-osx.md'
-title: "Build Instructions (macOS)"
-sort_title: "build instructions (macos)"
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+    - /docs-translations/ko-KR/development/build-instructions-osx/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/development/build-instructions-osx.md'
 ---
 
-# Build Instructions (macOS)
+﻿# 빌드 설명서 (macOS)
 
-Follow the guidelines below for building Electron on macOS.
+이 가이드는 macOS 운영체제에서 Electron을 빌드하는 방법을 설명합니다.
 
-## Prerequisites
+## 빌드전 요구 사항
 
 * macOS >= 10.8
 * [Xcode](https://developer.apple.com/technologies/tools/) >= 5.1
 * [node.js](http://nodejs.org) (external)
 
-If you are using the Python downloaded by Homebrew, you also need to install
-following python modules:
+만약 Homebrew를 이용해 파이선을 설치했다면 다음 Python 모듈도 같이 설치해야 합니다:
 
 * pyobjc
 
-## Getting the Code
+## 코드 가져오기
 
 ```bash
 $ git clone https://github.com/electron/electron.git
 ```
 
-## Bootstrapping
+## 부트 스트랩
 
-The bootstrap script will download all necessary build dependencies and create
-the build project files. Notice that we're using [ninja](https://ninja-build.org/)
-to build Electron so there is no Xcode project generated.
+부트스트랩 스크립트는 필수적인 빌드 종속성 라이브러리들을 모두 다운로드하고 프로젝트
+파일을 생성합니다. 참고로 Electron은 [ninja](https://ninja-build.org/)를 빌드
+툴체인으로 사용하므로 Xcode 프로젝트는 생성되지 않습니다.
 
 ```bash
 $ cd electron
 $ ./script/bootstrap.py -v
 ```
 
-## Building
+## 빌드하기
 
-Build both `Release` and `Debug` targets:
+`Release` 와 `Debug` 두 타겟 모두 빌드 합니다:
 
 ```bash
 $ ./script/build.py
 ```
 
-You can also only build the `Debug` target:
+또는 `Debug` 타겟만 빌드 할 수 있습니다:
 
 ```bash
 $ ./script/build.py -c D
 ```
 
-After building is done, you can find `Electron.app` under `out/D`.
+빌드가 모두 끝나면 `out/D` 디렉터리에서 `Electron.app` 실행 파일을 찾을 수 있습니다.
 
-## 32bit Support
+## 32비트 지원
 
-Electron can only be built for a 64bit target on macOS and there is no plan to
-support 32bit macOS in the future.
+Electron은 현재 macOS 64비트만 지원하고 있습니다. 그리고 앞으로도 macOS 32비트는 지원할
+계획이 없습니다.
 
-## Cleaning
+## 테스트
 
-To clean the build files:
-
-```bash
-$ npm run clean
-```
-
-## Tests
-
-Test your changes conform to the project coding style using:
+프로젝트 코딩 스타일을 확인하려면:
 
 ```bash
 $ ./script/cpplint.py
 ```
 
-Test functionality using:
+테스트를 실행하려면:
 
 ```bash
 $ ./script/test.py

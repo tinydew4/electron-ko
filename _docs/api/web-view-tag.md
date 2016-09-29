@@ -1,113 +1,108 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/web-view-tag/
-    - /docs/v0.25.0/api/web-view-tag/
-    - /docs/v0.26.0/api/web-view-tag/
-    - /docs/v0.27.0/api/web-view-tag/
-    - /docs/v0.28.0/api/web-view-tag/
-    - /docs/v0.29.0/api/web-view-tag/
-    - /docs/v0.30.0/api/web-view-tag/
-    - /docs/v0.31.0/api/web-view-tag/
-    - /docs/v0.32.0/api/web-view-tag/
-    - /docs/v0.33.0/api/web-view-tag/
-    - /docs/v0.34.0/api/web-view-tag/
-    - /docs/v0.35.0/api/web-view-tag/
-    - /docs/v0.36.0/api/web-view-tag/
-    - /docs/v0.36.3/api/web-view-tag/
-    - /docs/v0.36.4/api/web-view-tag/
-    - /docs/v0.36.5/api/web-view-tag/
-    - /docs/v0.36.6/api/web-view-tag/
-    - /docs/v0.36.7/api/web-view-tag/
-    - /docs/v0.36.8/api/web-view-tag/
-    - /docs/v0.36.9/api/web-view-tag/
-    - /docs/v0.36.10/api/web-view-tag/
-    - /docs/v0.36.11/api/web-view-tag/
-    - /docs/v0.37.0/api/web-view-tag/
-    - /docs/v0.37.1/api/web-view-tag/
-    - /docs/v0.37.2/api/web-view-tag/
-    - /docs/v0.37.3/api/web-view-tag/
-    - /docs/v0.37.4/api/web-view-tag/
-    - /docs/v0.37.5/api/web-view-tag/
-    - /docs/v0.37.6/api/web-view-tag/
-    - /docs/v0.37.7/api/web-view-tag/
-    - /docs/v0.37.8/api/web-view-tag/
-    - /docs/latest/api/web-view-tag/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/web-view-tag.md'
-excerpt: "Display external web content in an isolated frame and process."
-title: "&lt;webview&gt; Tag"
-sort_title: "webview> tag"
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+    - /docs-translations/ko-KR/api/web-view-tag/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/web-view-tag.md'
+excerpt: "&#xC678;&#xBD80; &#xC6F9; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xACE0;&#xB9BD;&#xB41C; &#xD504;&#xB808;&#xC784;&#xACFC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# `<webview>` Tag
+﻿# `<webview>` 태그
 
-> Display external web content in an isolated frame and process.
+> 외부 웹 콘텐츠를 고립된 프레임과 프로세스에서 표시합니다.
 
-Use the `webview` tag to embed 'guest' content (such as web pages) in your
-Electron app. The guest content is contained within the `webview` container.
-An embedded page within your app controls how the guest content is laid out and
-rendered.
+`guest` 콘텐츠(웹 페이지)를 Electron 앱 페이지에 삽입하기 위해 `webview` 태그를
+사용할 수 있습니다. 게스트 콘텐츠는 `webview` 컨테이너에 담겨 대상 페이지에 삽입되고
+해당 페이지에선 게스트 콘텐츠의 배치 및 렌더링 과정을 조작할 수 있습니다.
 
-Unlike an `iframe`, the `webview` runs in a separate process than your
-app. It doesn't have the same permissions as your web page and all interactions
-between your app and embedded content will be asynchronous. This keeps your app
-safe from the embedded content.
+`iframe`과는 달리 `webview`는 애플리케이션과 분리된 프로세스에서 작동합니다.
+이는 웹 페이지와 같은 권한을 가지지 않고 앱과 임베디드(게스트) 콘텐츠간의 모든
+상호작용이 비동기로 작동한다는 것을 의미합니다. 따라서 임베디드 콘텐츠로부터
+애플리케이션을 안전하게 유지할 수 있습니다.
 
-For security purposes, `webview` can only be used in `BrowserWindow`s that have
-`nodeIntegration` enabled.
+보안상의 이유로, `webview`는 `nodeIntegration`이 활성화된 `BrowserWindow`에서만 사용할 수 있습니다.
 
-## Example
+## 예시
 
-To embed a web page in your app, add the `webview` tag to your app's embedder
-page (this is the app page that will display the guest content). In its simplest
-form, the `webview` tag includes the `src` of the web page and css styles that
-control the appearance of the `webview` container:
+웹 페이지를 애플리케이션에 삽입하려면 `webview` 태그를 사용해 원하는 타겟 페이지에
+추가하면 됩니다. (게스트 콘텐츠가 앱 페이지에 추가 됩니다) 간단한 예로 `webview`
+태그의 `src` 속성에 페이지를 지정하고 css 스타일을 이용해서 컨테이너의 외관을 설정할
+수 있습니다:
 
 ```html
 <webview id="foo" src="https://www.github.com/" style="display:inline-flex; width:640px; height:480px"></webview>
 ```
 
-If you want to control the guest content in any way, you can write JavaScript
-that listens for `webview` events and responds to those events using the
-`webview` methods. Here's sample code with two event listeners: one that listens
-for the web page to start loading, the other for the web page to stop loading,
-and displays a "loading..." message during the load time:
+게스트 콘텐츠를 조작하기 위해 자바스크립트로 `webview` 태그의 이벤트를 리스닝 하여
+응답을 받을 수 있습니다. 다음 예시를 참고하세요: 첫번째 리스너는 페이지 로딩 시작시의
+이벤트를 확인하고 두번째 리스너는 페이지의 로딩이 끝난시점을 확인합니다. 그리고
+페이지를 로드하는 동안 "loading..." 메시지를 표시합니다.
 
 ```html
 <script>
   onload = () => {
-    const webview = document.getElementById('foo')
-    const indicator = document.querySelector('.indicator')
+    const webview = document.getElementById('foo');
+    const indicator = document.querySelector('.indicator');
 
     const loadstart = () => {
-      indicator.innerText = 'loading...'
-    }
+      indicator.innerText = 'loading...';
+    };
 
     const loadstop = () => {
-      indicator.innerText = ''
-    }
+      indicator.innerText = '';
+    };
 
-    webview.addEventListener('did-start-loading', loadstart)
-    webview.addEventListener('did-stop-loading', loadstop)
-  }
+    webview.addEventListener('did-start-loading', loadstart);
+    webview.addEventListener('did-stop-loading', loadstop);
+  };
 </script>
 ```
 
-## CSS Styling Notes
+## CSS 스타일링 참고
 
-Please note that the `webview` tag's style uses `display:flex;` internally to
-ensure the child `object` element fills the full height and width of its `webview`
-container when used with traditional and flexbox layouts (since v0.36.11). Please
-do not overwrite the default `display:flex;` CSS property, unless specifying
-`display:inline-flex;` for inline layout.
+주의할 점은 `webview` 태그의 스타일은 전통적인 flexbox 레이아웃을 사용했을 때 자식
+`object` 요소가 해당 `webview` 컨테이너의 전체 높이와 넓이를 확실히 채우도록
+내부적으로 `display:flex;`를 사용합니다. (v0.36.11 부터) 따라서 인라인 레이아웃을
+위해 `display:inline-flex;`를 쓰지 않는 한, 기본 `display:flex;` CSS 속성을
+덮어쓰지 않도록 주의해야 합니다.
 
-`webview` has issues being hidden using the `hidden` attribute or using `display: none;`.
-It can cause unusual rendering behaviour within its child `browserplugin` object
-and the web page is reloaded, when the `webview` is un-hidden, as opposed to just
-becoming visible again. The recommended approach is to hide the `webview` using
-CSS by zeroing the `width` & `height` and allowing the element to shrink to the 0px
-dimensions via `flex`.
+`webview`는 `hidden` 또는 `display: none;` 속성을 사용할 때 발생하는 문제를 한 가지
+가지고 있습니다. 자식 `browserplugin` 객체 내에서 비정상적인 랜더링 동작을 발생시킬 수
+있으며 웹 페이지가 로드되었을 때, `webview`가 숨겨지지 않았을 때, 반대로 그냥 바로
+다시 보이게 됩니다. `webview`를 숨기는 방법으로 가장 권장되는 방법은 `width` &
+`height`를 0으로 지정하는 CSS를 사용하는 것이며 `flex`를 통해 0px로 요소를 수축할 수
+있도록 합니다.
 
 ```html
 <style>
@@ -124,9 +119,9 @@ dimensions via `flex`.
 </style>
 ```
 
-## Tag Attributes
+## 태그 속성
 
-The `webview` tag has the following attributes:
+`webview` 태그는 다음과 같은 속성을 가지고 있습니다:
 
 ### `src`
 
@@ -134,13 +129,12 @@ The `webview` tag has the following attributes:
 <webview src="https://www.github.com/"></webview>
 ```
 
-Returns the visible URL. Writing to this attribute initiates top-level
-navigation.
+지정한 URL을 페이지 소스로 사용합니다. 이 속성을 지정할 경우 `webview`의 최상위
+페이지가 됩니다.
 
-Assigning `src` its own value will reload the current page.
+`src`에 같은 페이지를 지정하면 페이지를 새로고침합니다.
 
-The `src` attribute can also accept data URLs, such as
-`data:text/plain,Hello, world!`.
+`src` 속성은 `data:text/plain,Hello, world!` 같은 data URL도 사용할 수 있습니다.
 
 ### `autosize`
 
@@ -148,11 +142,10 @@ The `src` attribute can also accept data URLs, such as
 <webview src="https://www.github.com/" autosize="on" minwidth="576" minheight="432"></webview>
 ```
 
-If "on", the `webview` container will automatically resize within the
-bounds specified by the attributes `minwidth`, `minheight`, `maxwidth`, and
-`maxheight`. These constraints do not impact the `webview` unless `autosize` is
-enabled. When `autosize` is enabled, the `webview` container size cannot be less
-than the minimum values or greater than the maximum.
+"on" 으로 지정하면 `webview` 컨테이너는 `minwidth`, `minheight`, `maxwidth`,
+`maxheight`에 맞춰서 자동으로 크기를 조절합니다. 이 속성들은 `autosize`가
+활성화되어있지 않는 한 프레임에 영향을 주지 않습니다. `autosize`가 활성화 되어있으면
+`webview` 컨테이너의 크기는 각각의 지정한 최대, 최소값에 따라 조절됩니다.
 
 ### `nodeintegration`
 
@@ -160,8 +153,11 @@ than the minimum values or greater than the maximum.
 <webview src="http://www.google.com/" nodeintegration></webview>
 ```
 
-If "on", the guest page in `webview` will have node integration and can use node
-APIs like `require` and `process` to access low level system resources.
+"on"으로 지정하면 `webview` 페이지 내에서 `require`와 `process 객체`같은 node.js
+API를 사용할 수 있습니다. 이를 지정하면 내부에서 로우레벨 리소스에 접근할 수 있습니다.
+
+**참고:** Node 통합 기능은 `webview`에서 부모 윈도우가 해당 옵션이 비활성화되어있는
+경우 항상 비활성화됩니다.
 
 ### `plugins`
 
@@ -169,7 +165,7 @@ APIs like `require` and `process` to access low level system resources.
 <webview src="https://www.github.com/" plugins></webview>
 ```
 
-If "on", the guest page in `webview` will be able to use browser plugins.
+"on"으로 지정하면 `webview` 내부에서 브라우저 플러그인을 사용할 수 있습니다.
 
 ### `preload`
 
@@ -177,13 +173,12 @@ If "on", the guest page in `webview` will be able to use browser plugins.
 <webview src="https://www.github.com/" preload="./test.js"></webview>
 ```
 
-Specifies a script that will be loaded before other scripts run in the guest
-page. The protocol of script's URL must be either `file:` or `asar:`, because it
-will be loaded by `require` in guest page under the hood.
+페이지가 로드되기 전에 실행할 스크립트를 지정합니다. 스크립트 URL은 `file:` 또는
+`asar:` 프로토콜 중 하나를 반드시 사용해야 합니다. 왜냐하면 페이지 내에서 `require`를
+사용하여 스크립트를 로드하기 때문입니다.
 
-When the guest page doesn't have node integration this script will still have
-access to all Node APIs, but global objects injected by Node will be deleted
-after this script has finished executing.
+페이지가 nodeintegration을 활성화 하지 않아도 지정한 스크립트는 정상적으로 작동합니다.
+하지만 스크립트 내에서 사용할 수 있는 global 객체는 스크립트 작동이 끝나면 삭제됩니다.
 
 ### `httpreferrer`
 
@@ -191,7 +186,7 @@ after this script has finished executing.
 <webview src="https://www.github.com/" httpreferrer="http://cheng.guru"></webview>
 ```
 
-Sets the referrer URL for the guest page.
+페이지의 referrer URL을 설정합니다.
 
 ### `useragent`
 
@@ -199,8 +194,8 @@ Sets the referrer URL for the guest page.
 <webview src="https://www.github.com/" useragent="Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko"></webview>
 ```
 
-Sets the user agent for the guest page before the page is navigated to. Once the
-page is loaded, use the `setUserAgent` method to change the user agent.
+페이지의 `User-Agent`를 설정합니다. 페이지가 로드된 후엔 `setUserAgent` 메소드를
+사용해서 변경할 수 있습니다.
 
 ### `disablewebsecurity`
 
@@ -208,7 +203,7 @@ page is loaded, use the `setUserAgent` method to change the user agent.
 <webview src="https://www.github.com/" disablewebsecurity></webview>
 ```
 
-If "on", the guest page will have web security disabled.
+"on"으로 지정하면 페이지의 웹 보안을 해제합니다.
 
 ### `partition`
 
@@ -217,16 +212,15 @@ If "on", the guest page will have web security disabled.
 <webview src="http://electron.atom.io" partition="electron"></webview>
 ```
 
-Sets the session used by the page. If `partition` starts with `persist:`, the
-page will use a persistent session available to all pages in the app with the
-same `partition`. if there is no `persist:` prefix, the page will use an
-in-memory session. By assigning the same `partition`, multiple pages can share
-the same session. If the `partition` is unset then default session of the app
-will be used.
+페이지에서 사용하는 세션을 설정합니다.
+만약 `partition` 속성이 `persist:` 접두사를 시작하면 같은 `partition` 속성을 가진
+앱 내 모든 페이지가 공유하는 영구 세션을 사용합니다. `persist:` 접두사가 없을 경우
+페이지는 인 메모리 세션을 사용합니다. 동일한 `partition`을 지정하여 다중 페이지에서
+동일한 세션을 공유할 수 있도록 할 수 있습니다. 만약 `partition`이 지정되지 않으면 앱의
+기본 세션을 사용합니다.
 
-This value can only be modified before the first navigation, since the session
-of an active renderer process cannot change. Subsequent attempts to modify the
-value will fail with a DOM exception.
+이 값은 첫 탐색 이전에만 지정할 수 있습니다. 즉. 작동중인 렌더러 프로세스의 세션은
+변경할 수 없습니다. 이후 이 값을 바꾸려고 시도하면 DOM 예외를 발생시킵니다.
 
 ### `allowpopups`
 
@@ -234,7 +228,7 @@ value will fail with a DOM exception.
 <webview src="https://www.github.com/" allowpopups></webview>
 ```
 
-If "on", the guest page will be allowed to open new windows.
+"on"으로 지정하면 페이지에서 새로운 창을 열 수 있도록 허용합니다.
 
 ### `blinkfeatures`
 
@@ -242,9 +236,9 @@ If "on", the guest page will be allowed to open new windows.
 <webview src="https://www.github.com/" blinkfeatures="PreciseMemoryInfo, CSSVariables"></webview>
 ```
 
-A list of strings which specifies the blink features to be enabled separated by `,`.
-The full list of supported feature strings can be found in the
-[RuntimeEnabledFeatures.in][blink-feature-string] file.
+활성화할 blink 기능을 지정한 `,`로 구분된 문자열의 리스트입니다. 지원하는 기능
+문자열의 전체 목록은 [RuntimeEnabledFeatures.in][blink-feature-string] 파일에서
+찾을 수 있습니다.
 
 ### `disableblinkfeatures`
 
@@ -252,329 +246,294 @@ The full list of supported feature strings can be found in the
 <webview src="https://www.github.com/" disableblinkfeatures="PreciseMemoryInfo, CSSVariables"></webview>
 ```
 
-A list of strings which specifies the blink features to be disabled separated by `,`.
-The full list of supported feature strings can be found in the
-[RuntimeEnabledFeatures.in][blink-feature-string] file.
-
-### `guestinstance`
-
-```html
-<webview src="https://www.github.com/" guestinstance="3"></webview>
-```
-
-A value that links the webview to a specific webContents. When a webview
-first loads a new webContents is created and this attribute is set to its
-instance identifier. Setting this attribute on a new or existing webview
-connects it to the existing webContents that currently renders in a different
-webview.
-
-The existing webview will see the `destroy` event and will then create a new
-webContents when a new url is loaded.
+비활성화할 blink 기능을 지정한 `,`로 구분된 문자열의 리스트입니다. 지원하는 기능
+문자열의 전체 목록은 [RuntimeEnabledFeatures.in][blink-feature-string] 파일에서
+찾을 수 있습니다.
 
 ## Methods
 
-The `webview` tag has the following methods:
+`webview` 태그는 다음과 같은 메서드를 가지고 있습니다:
 
-**Note:** The webview element must be loaded before using the methods.
+**참고:** <webview> 태그 객체의 메서드는 페이지 로드가 끝난 뒤에만 사용할 수 있습니다.
 
-**Example**
+**예시**
 
 ```javascript
-const webview = document.getElementById('foo')
 webview.addEventListener('dom-ready', () => {
-  webview.openDevTools()
-})
+  webview.openDevTools();
+});
 ```
 
 ### `<webview>.loadURL(url[, options])`
 
 * `url` URL
 * `options` Object (optional)
-  * `httpReferrer` String - A HTTP Referrer url.
-  * `userAgent` String - A user agent originating the request.
-  * `extraHeaders` String - Extra headers separated by "\n"
+  * `httpReferrer` String - HTTP 레퍼러 url.
+  * `userAgent` String - 요청을 시작한 유저 에이전트.
+  * `extraHeaders` String - "\n"로 구분된 Extra 헤더들.
 
-Loads the `url` in the webview, the `url` must contain the protocol prefix,
-e.g. the `http://` or `file://`.
+Webview에 웹 페이지 `url`을 로드합니다. `url`은 `http://`, `file://`과 같은
+프로토콜 접두사를 가지고 있어야 합니다.
 
 ### `<webview>.getURL()`
 
-Returns URL of guest page.
+페이지의 URL을 반환합니다.
 
 ### `<webview>.getTitle()`
 
-Returns the title of guest page.
+페이지의 제목을 반환합니다.
 
 ### `<webview>.isLoading()`
 
-Returns a boolean whether guest page is still loading resources.
+페이지가 아직 리소스를 로딩하고 있는지 확인합니다. 불린 값을 반환합니다.
 
 ### `<webview>.isWaitingForResponse()`
 
-Returns a boolean whether the guest page is waiting for a first-response for the
-main resource of the page.
+페이지가 메인 리소스의 첫 응답을 기다리고 있는지 확인합니다. 불린 값을 반환합니다.
 
 ### `<webview>.stop()`
 
-Stops any pending navigation.
+모든 탐색을 취소합니다.
 
 ### `<webview>.reload()`
 
-Reloads the guest page.
+페이지를 새로고침합니다.
 
 ### `<webview>.reloadIgnoringCache()`
 
-Reloads the guest page and ignores cache.
+캐시를 무시하고 페이지를 새로고침합니다.
 
 ### `<webview>.canGoBack()`
 
-Returns a boolean whether the guest page can go back.
+페이지 히스토리를 한 칸 뒤로 가기를 할 수 있는지 확인합니다. 불린 값을 반환합니다.
 
 ### `<webview>.canGoForward()`
 
-Returns a boolean whether the guest page can go forward.
+페이지 히스토리를 한 칸 앞으로 가기를 할 수 있는지 확인합니다. 불린 값을 반환합니다.
 
 ### `<webview>.canGoToOffset(offset)`
 
 * `offset` Integer
 
-Returns a boolean whether the guest page can go to `offset`.
+페이지 히스토리를 `offset` 만큼 이동할 수 있는지 확인합니다. 불린값을 반환합니다.
 
 ### `<webview>.clearHistory()`
 
-Clears the navigation history.
+탐색 히스토리를 비웁니다.
 
 ### `<webview>.goBack()`
 
-Makes the guest page go back.
+페이지 뒤로 가기를 실행합니다.
 
 ### `<webview>.goForward()`
 
-Makes the guest page go forward.
+페이지 앞으로 가기를 실행합니다.
 
 ### `<webview>.goToIndex(index)`
 
 * `index` Integer
 
-Navigates to the specified absolute index.
+페이지를 지정한 `index`로 이동합니다.
 
 ### `<webview>.goToOffset(offset)`
 
 * `offset` Integer
 
-Navigates to the specified offset from the "current entry".
+페이지로부터 `offset` 만큼 이동합니다.
 
 ### `<webview>.isCrashed()`
 
-Whether the renderer process has crashed.
+렌더러 프로세스가 크래시 됬는지 확인합니다.
 
 ### `<webview>.setUserAgent(userAgent)`
 
 * `userAgent` String
 
-Overrides the user agent for the guest page.
+`User-Agent`를 지정합니다.
 
 ### `<webview>.getUserAgent()`
 
-Returns a `String` representing the user agent for guest page.
+페이지의 `User-Agent 문자열`을 가져옵니다.
 
 ### `<webview>.insertCSS(css)`
 
 * `css` String
 
-Injects CSS into the guest page.
+페이지에 CSS를 삽입합니다.
 
-### `<webview>.executeJavaScript(code, userGesture, callback)`
+### `<webview>.executeJavaScript(code[, userGesture, callback])`
 
 * `code` String
-* `userGesture` Boolean - Default `false`.
-* `callback` Function (optional) - Called after script has been executed.
+* `userGesture` Boolean
+* `callback` Function (optional) - 스크립트의 실행이 완료되면 호출됩니다.
   * `result`
 
-Evaluates `code` in page. If `userGesture` is set, it will create the user
-gesture context in the page. HTML APIs like `requestFullScreen`, which require
-user action, can take advantage of this option for automation.
+페이지에서 자바스크립트 코드를 실행합니다.
+
+만약 `userGesture`가 `true`로 설정되어 있으면 페이지에 유저 제스쳐 컨텍스트를 만듭니다.
+이 옵션을 활성화 시키면 `requestFullScreen`와 같은 HTML API에서 유저의 승인을
+무시하고 개발자가 API를 바로 사용할 수 있도록 허용합니다.
+
+**역자주:** 기본적으로 브라우저에선 전체화면, 웹캠, 파일 열기등의 API를 사용하려면 유저의
+승인(이벤트)이 필요합니다.
 
 ### `<webview>.openDevTools()`
 
-Opens a DevTools window for guest page.
+페이지에 대한 개발자 도구를 엽니다.
 
 ### `<webview>.closeDevTools()`
 
-Closes the DevTools window of guest page.
+페이지에 대한 개발자 도구를 닫습니다.
 
 ### `<webview>.isDevToolsOpened()`
 
-Returns a boolean whether guest page has a DevTools window attached.
+페이지에 대한 개발자 도구가 열려있는지 확인합니다. 불린 값을 반환합니다.
 
 ### `<webview>.isDevToolsFocused()`
 
-Returns a boolean whether DevTools window of guest page is focused.
+페이지의 개발자 도구에 포커스 되어있는지 여부를 반화합니다.
 
 ### `<webview>.inspectElement(x, y)`
 
 * `x` Integer
 * `y` Integer
 
-Starts inspecting element at position (`x`, `y`) of guest page.
+(`x`, `y`) 위치에 있는 엘리먼트를 inspect합니다.
 
 ### `<webview>.inspectServiceWorker()`
 
-Opens the DevTools for the service worker context present in the guest page.
-
-### `<webview>.setAudioMuted(muted)`
-
-* `muted` Boolean
-
-Set guest page muted.
-
-### `<webview>.isAudioMuted()`
-
-Returns whether guest page has been muted.
+Service worker에 대한 개발자 도구를 엽니다.
 
 ### `<webview>.undo()`
 
-Executes editing command `undo` in page.
+페이지에서 실행 취소 커맨드를 실행합니다.
 
 ### `<webview>.redo()`
 
-Executes editing command `redo` in page.
+페이지에서 다시 실행 커맨드를 실행합니다.
 
 ### `<webview>.cut()`
 
-Executes editing command `cut` in page.
+페이지에서 잘라내기 커맨드를 실행합니다.
 
 ### `<webview>.copy()`
 
-Executes editing command `copy` in page.
+페이지에서 복사 커맨드를 실행합니다.
 
 ### `<webview>.paste()`
 
-Executes editing command `paste` in page.
+페이지에서 붙여넣기 커맨드를 실행합니다.
 
 ### `<webview>.pasteAndMatchStyle()`
 
-Executes editing command `pasteAndMatchStyle` in page.
+페이지에서 `pasteAndMatchStyle` 편집 커맨드를 실행합니다.
 
 ### `<webview>.delete()`
 
-Executes editing command `delete` in page.
+페이지에서 삭제 커맨드를 실행합니다.
 
 ### `<webview>.selectAll()`
 
-Executes editing command `selectAll` in page.
+페이지에서 전체 선택 커맨드를 실행합니다.
 
 ### `<webview>.unselect()`
 
-Executes editing command `unselect` in page.
+페이지에서 `unselect` 커맨드를 실행합니다.
 
 ### `<webview>.replace(text)`
 
 * `text` String
 
-Executes editing command `replace` in page.
+페이지에서 `replace` 커맨드를 실행합니다.
 
 ### `<webview>.replaceMisspelling(text)`
 
 * `text` String
 
-Executes editing command `replaceMisspelling` in page.
+페이지에서 `replaceMisspelling` 커맨드를 실행합니다.
 
 ### `<webview>.insertText(text)`
 
 * `text` String
 
-Inserts `text` to the focused element.
+포커스된 요소에 `text`를 삽입합니다.
 
-### `<webview>.findInPage(text[, options])`
+### `webContents.findInPage(text[, options])`
 
-* `text` String - Content to be searched, must not be empty.
+* `text` String - 찾을 콘텐츠, 반드시 공백이 아니여야 합니다.
 * `options` Object (optional)
-  * `forward` Boolean - Whether to search forward or backward, defaults to `true`.
-  * `findNext` Boolean - Whether the operation is first request or a follow up,
-    defaults to `false`.
-  * `matchCase` Boolean - Whether search should be case-sensitive,
-    defaults to `false`.
-  * `wordStart` Boolean - Whether to look only at the start of words.
-    defaults to `false`.
-  * `medialCapitalAsWordStart` Boolean - When combined with `wordStart`,
-    accepts a match in the middle of a word if the match begins with an
-    uppercase letter followed by a lowercase or non-letter.
-    Accepts several other intra-word matches, defaults to `false`.
+  * `forward` Boolean - 앞에서부터 검색할지 뒤에서부터 검색할지 여부입니다. 기본값은
+    `true`입니다.
+  * `findNext` Boolean - 작업을 계속 처리할지 첫 요청만 처리할지 여부입니다. 기본값은
+    `false`입니다.
+  * `matchCase` Boolean - 검색이 대소문자를 구분할지 여부입니다. 기본값은
+    `false`입니다.
+  * `wordStart` Boolean - 단어의 시작 부분만 볼 지 여부입니다. 기본값은
+    `false`입니다.
+  * `medialCapitalAsWordStart` Boolean - `wordStart`와 합쳐질 때, 소문자 또는
+    비문자가 따라붙은 대문자로 일치가 시작하는 경우 단어 중간의 일치를 허용합니다.
+    여러가지 다른 단어 내의 일치를 허용합니다. 기본값은 `false`입니다.
 
-Starts a request to find all matches for the `text` in the web page and returns an `Integer`
-representing the request id used for the request. The result of the request can be
-obtained by subscribing to [`found-in-page`](http://electron.atom.io/docs/api/web-view-tag#event-found-in-page) event.
+웹 페이지에서 `text`에 일치하는 모든 대상을 찾는 요청을 시작하고 요청에 사용된 요청을
+표현하는 `정수(integer)`를 반환합니다. 요청의 결과는
+[`found-in-page`](http://electron.atom.io/docs/api/web-view-tag#event-found-in-page) 이벤트를 통해 취득할 수
+있습니다.
 
-### `<webview>.stopFindInPage(action)`
+### `webContents.stopFindInPage(action)`
 
-* `action` String - Specifies the action to take place when ending
-  [`<webview>.findInPage`](http://electron.atom.io/docs/api/web-view-tag#webviewtagfindinpage) request.
-  * `clearSelection` - Clear the selection.
-  * `keepSelection` - Translate the selection into a normal selection.
-  * `activateSelection` - Focus and click the selection node.
+* `action` String - [`<webview>.findInPage`](http://electron.atom.io/docs/api/web-view-tag#webviewtagfindinpage)
+  요청이 종료되었을 때 일어날 수 있는 작업을 지정합니다.
+  * `clearSelection` - 선택을 취소합니다.
+  * `keepSelection` - 선택을 일반 선택으로 변경합니다.
+  * `activateSelection` - 포커스한 후 선택된 노드를 클릭합니다.
 
-Stops any `findInPage` request for the `webview` with the provided `action`.
+제공된 `action`에 대한 `webContents`의 모든 `findInPage` 요청을 중지합니다.
 
 ### `<webview>.print([options])`
 
-Prints `webview`'s web page. Same as `webContents.print([options])`.
+`webview` 페이지를 인쇄합니다. `webContents.print([options])` 메서드와 같습니다.
 
 ### `<webview>.printToPDF(options, callback)`
 
-Prints `webview`'s web page as PDF, Same as `webContents.printToPDF(options, callback)`.
+`webview` 페이지를 PDF 형식으로 인쇄합니다.
+`webContents.printToPDF(options, callback)` 메서드와 같습니다.
 
 ### `<webview>.capturePage([rect, ]callback)`
 
-Captures a snapshot of the `webview`'s page. Same as `webContents.capturePage([rect, ]callback)`.
+`webview`의 페이지의 스냅샷을 캡쳐합니다.
+`webContents.printToPDF(options, callback)` 메서드와 같습니다.
 
 ### `<webview>.send(channel[, arg1][, arg2][, ...])`
 
 * `channel` String
-* `arg` (optional)
+* `args` (optional)
 
-Send an asynchronous message to renderer process via `channel`, you can also
-send arbitrary arguments. The renderer process can handle the message by
-listening to the `channel` event with the `ipcRenderer` module.
+`channel`을 통해 렌더러 프로세스로 비동기 메시지를 보냅니다. 또한 `args`를 지정하여
+임의의 인수를 보낼 수도 있습니다. 렌더러 프로세스는 `ipcRenderer` 모듈의 `channel`
+이벤트로 이 메시지를 받아 처리할 수 있습니다.
 
-See [webContents.send](http://electron.atom.io/docs/api/web-contents#webcontentssendchannel-args) for
-examples.
+예시는 [webContents.send](http://electron.atom.io/docs/api/web-contents#webcontentssendchannel-args)를 참고하세요.
 
 ### `<webview>.sendInputEvent(event)`
 
 * `event` Object
 
-Sends an input `event` to the page.
+페이지에 입력 `event`를 보냅니다.
 
-See [webContents.sendInputEvent](http://electron.atom.io/docs/api/web-contents#webcontentssendinputeventevent)
-for detailed description of `event` object.
-
-### `<webview>.setZoomFactor(factor)`
-
-* `factor` Number - Zoom factor.
-
-Changes the zoom factor to the specified factor. Zoom factor is
-zoom percent divided by 100, so 300% = 3.0.
-
-### `<webview>.setZoomLevel(level)`
-
-* `level` Number - Zoom level
-
-Changes the zoom level to the specified level. The original size is 0 and each
-increment above or below represents zooming 20% larger or smaller to default
-limits of 300% and 50% of original size, respectively.
+`event` 객체에 대해 자세히 알아보려면 [webContents.sendInputEvent](http://electron.atom.io/docs/api/web-contents#webcontentssendinputeventevent)를
+참고하세요.
 
 ### `<webview>.showDefinitionForSelection()` _macOS_
 
-Shows pop-up dictionary that searches the selected word on the page.
+페이지에서 선택된 단어에 대한 사전 검색 결과 팝업을 표시합니다.
 
 ### `<webview>.getWebContents()`
 
-Returns the [WebContents](http://electron.atom.io/docs/api/web-contents) associated with this `webview`.
+이 `webview`에 해당하는 [WebContents](http://electron.atom.io/docs/api/web-contents)를 반환합니다.
 
-## DOM events
+## DOM 이벤트
 
-The following DOM events are available to the `webview` tag:
+`webview` 태그는 다음과 같은 DOM 이벤트를 가지고 있습니다:
 
 ### Event: 'load-commit'
 
@@ -583,14 +542,14 @@ Returns:
 * `url` String
 * `isMainFrame` Boolean
 
-Fired when a load has committed. This includes navigation within the current
-document as well as subframe document-level loads, but does not include
-asynchronous resource loads.
+로드가 시작됬을 때 발생하는 이벤트입니다.
+이 이벤트는 현재 문서내의 탐색뿐만 아니라 서브 프레임 문서 레벨의 로드도 포함됩니다.
+하지만 비동기 리소스 로드는 포함되지 않습니다.
 
 ### Event: 'did-finish-load'
 
-Fired when the navigation is done, i.e. the spinner of the tab will stop
-spinning, and the `onload` event is dispatched.
+탐색이 끝나면 발생하는 이벤트입니다. 브라우저 탭의 스피너가 멈추고 `onload` 이벤트가
+발생할 때를 생각하면 됩니다.
 
 ### Event: 'did-fail-load'
 
@@ -601,8 +560,8 @@ Returns:
 * `validatedURL` String
 * `isMainFrame` Boolean
 
-This event is like `did-finish-load`, but fired when the load failed or was
-cancelled, e.g. `window.stop()` is invoked.
+`did-finish-load`와 비슷합니다. 하지만 이 이벤트는 `window.stop()`과 같이 취소
+함수가 호출되었거나 로드에 실패했을 때 발생하는 이벤트입니다.
 
 ### Event: 'did-frame-finish-load'
 
@@ -610,15 +569,16 @@ Returns:
 
 * `isMainFrame` Boolean
 
-Fired when a frame has done navigation.
+프레임의 탐색이 끝나면 발생하는 이벤트입니다.
 
 ### Event: 'did-start-loading'
 
-Corresponds to the points in time when the spinner of the tab starts spinning.
+브라우저 탭의 스피너가 돌기 시작할 때 처럼 페이지의 로드가 시작될 때 발생하는
+이벤트입니다.
 
 ### Event: 'did-stop-loading'
 
-Corresponds to the points in time when the spinner of the tab stops spinning.
+브라우저 탭의 스피너가 멈출 때 처럼 페이지의 로드가 끝나면 발생하는 이벤트입니다.
 
 ### Event: 'did-get-response-details'
 
@@ -633,8 +593,8 @@ Returns:
 * `headers` Object
 * `resourceType` String
 
-Fired when details regarding a requested resource is available.
-`status` indicates socket connection to download the resource.
+요청한 리소스에 관해 자세한 내용을 알 수 있을 때 발생하는 이벤트입니다.
+`status`는 리소스를 다운로드할 소켓 커낵션을 나타냅니다.
 
 ### Event: 'did-get-redirect-request'
 
@@ -644,11 +604,11 @@ Returns:
 * `newURL` String
 * `isMainFrame` Boolean
 
-Fired when a redirect was received while requesting a resource.
+리소스를 요청하고 받는 도중에 리다이렉트가 생기면 발생하는 이벤트입니다.
 
 ### Event: 'dom-ready'
 
-Fired when document in the given frame is loaded.
+프레임 문서의 로드가 끝나면 발생하는 이벤트입니다.
 
 ### Event: 'page-title-updated'
 
@@ -657,24 +617,24 @@ Returns:
 * `title` String
 * `explicitSet` Boolean
 
-Fired when page title is set during navigation. `explicitSet` is false when
-title is synthesized from file url.
+탐색하는 동안에 페이지의 제목이 설정되면 발생하는 이벤트입니다. `explicitSet`는 파일
+URL에서 합성(synthesised)된 제목인 경우 false로 표시됩니다.
 
 ### Event: 'page-favicon-updated'
 
 Returns:
 
-* `favicons` Array - Array of URLs.
+* `favicons` Array - URL 배열
 
-Fired when page receives favicon urls.
+페이지가 favicon URL을 받았을 때 발생하는 이벤트입니다.
 
 ### Event: 'enter-html-full-screen'
 
-Fired when page enters fullscreen triggered by HTML API.
+페이지가 HTML API에 의해 전체 화면 모드에 돌입했을 때 발생하는 이벤트입니다.
 
 ### Event: 'leave-html-full-screen'
 
-Fired when page leaves fullscreen triggered by HTML API.
+페이지의 전체 화면 모드가 해제됬을 때 발생하는 이벤트입니다.
 
 ### Event: 'console-message'
 
@@ -685,16 +645,15 @@ Returns:
 * `line` Integer
 * `sourceId` String
 
-Fired when the guest window logs a console message.
+`console.log` API에 의해 로깅될 때 발생하는 이벤트입니다.
 
-The following example code forwards all log messages to the embedder's console
-without regard for log level or other properties.
+다음 예시는 모든 로그 메시지를 로그 레벨이나 다른 속성에 관련 없이 호스트 페이지의
+콘솔에 다시 로깅하는 예시입니다.
 
 ```javascript
-const webview = document.getElementById('foo')
 webview.addEventListener('console-message', (e) => {
-  console.log('Guest page logged a message:', e.message)
-})
+  console.log('Guest page logged a message:', e.message);
+});
 ```
 
 ### Event: 'found-in-page'
@@ -703,21 +662,21 @@ Returns:
 
 * `result` Object
   * `requestId` Integer
-  * `activeMatchOrdinal` Integer - Position of the active match.
-  * `matches` Integer - Number of Matches.
-  * `selectionArea` Object - Coordinates of first match region.
+  * `finalUpdate` Boolean - 더 많은 응답이 따르는 경우를 표시합니다.
+  * `activeMatchOrdinal` Integer (optional) - 활성화 일치의 위치.
+  * `matches` Integer (optional) - 일치하는 개수.
+  * `selectionArea` Object (optional) - 첫 일치 부위의 좌표.
 
-Fired when a result is available for
-[`webview.findInPage`](http://electron.atom.io/docs/api/web-view-tag#webviewtagfindinpage) request.
+[`webContents.findInPage`](http://electron.atom.io/docs/api/web-contents#webcontentsfindinpage) 요청의 결과를
+사용할 수 있을 때 발생하는 이벤트입니다.
 
 ```javascript
-const webview = document.getElementById('foo')
 webview.addEventListener('found-in-page', (e) => {
-  webview.stopFindInPage('keepSelection')
-})
+  if (e.result.finalUpdate)
+    webview.stopFindInPage('keepSelection');
+});
 
-const requestId = webview.findInPage('test')
-console.log(requestId)
+const requestId = webview.findInPage('test');
 ```
 
 ### Event: 'new-window'
@@ -726,25 +685,23 @@ Returns:
 
 * `url` String
 * `frameName` String
-* `disposition` String - Can be `default`, `foreground-tab`, `background-tab`,
-  `new-window`, `save-to-disk` and `other`.
-* `options` Object - The options which should be used for creating the new
-  `BrowserWindow`.
+* `disposition` String - `default`, `foreground-tab`, `background-tab`,
+  `new-window`, `other`를 사용할 수 있습니다.
+* `options` Object - 새로운 `BrowserWindow`를 만들 ��� 사용되어야 하는 옵션.
 
-Fired when the guest page attempts to open a new browser window.
+페이지가 새로운 브라우저 창을 생성할 때 발생하는 이벤트입니다.
 
-The following example code opens the new url in system's default browser.
+다음 예시 코드는 새 URL을 시스템의 기본 브라우저로 여는 코드입니다.
 
 ```javascript
-const {shell} = require('electron')
-const webview = document.getElementById('foo')
+const {shell} = require('electron');
 
 webview.addEventListener('new-window', (e) => {
-  const protocol = require('url').parse(e.url).protocol
+  const protocol = require('url').parse(e.url).protocol;
   if (protocol === 'http:' || protocol === 'https:') {
-    shell.openExternal(e.url)
+    shell.openExternal(e.url);
   }
-})
+});
 ```
 
 ### Event: 'will-navigate'
@@ -753,17 +710,16 @@ Returns:
 
 * `url` String
 
-Emitted when a user or the page wants to start navigation. It can happen when
-the `window.location` object is changed or a user clicks a link in the page.
+사용자 또는 페이지가 새로운 페이지로 이동할 때 발생하는 이벤트입니다.
+`window.location` 객체가 변경되거나 사용자가 페이지의 링크를 클릭했을 때 발생합니다.
 
-This event will not emit when the navigation is started programmatically with
-APIs like `<webview>.loadURL` and `<webview>.back`.
+이 이벤트는 `<webview>.loadURL`과 `<webview>.back` 같은 API를 이용한
+프로그램적으로 시작된 탐색에 대해서는 발생하지 않습니다.
 
-It is also not emitted during in-page navigation, such as clicking anchor links
-or updating the `window.location.hash`. Use `did-navigate-in-page` event for
-this purpose.
+이 이벤트는 앵커 링크를 클릭하거나 `window.location.hash`의 값을 변경하는 등의 페이지
+내 탐색시엔 발생하지 않습니다. 대신 `did-navigate-in-page` 이벤트를 사용해야 합니다.
 
-Calling `event.preventDefault()` does __NOT__ have any effect.
+`event.preventDefault()`를 호출하는 것은 __아무__ 효과도 내지 않습니다.
 
 ### Event: 'did-navigate'
 
@@ -771,37 +727,34 @@ Returns:
 
 * `url` String
 
-Emitted when a navigation is done.
+탐색이 완료되면 발생하는 이벤트입니다.
 
-This event is not emitted for in-page navigations, such as clicking anchor links
-or updating the `window.location.hash`. Use `did-navigate-in-page` event for
-this purpose.
+이 이벤트는 앵커 링크를 클릭하거나 `window.location.hash`의 값을 변경하는 등의 페이지
+내 탐색시엔 발생하지 않습니다. 대신 `did-navigate-in-page` 이벤트를 사용해야 합니다.
 
 ### Event: 'did-navigate-in-page'
 
 Returns:
 
-* `isMainFrame` Boolean
 * `url` String
 
-Emitted when an in-page navigation happened.
+페이지 내의 탐색이 완료되면 발생하는 이벤트입니다.
 
-When in-page navigation happens, the page URL changes but does not cause
-navigation outside of the page. Examples of this occurring are when anchor links
-are clicked or when the DOM `hashchange` event is triggered.
+페이지 내의 탐색이 발생하면 페이지 URL이 변경되지만 페이지 밖으로의 탐색은 일어나지
+않습니다. 예를 들어 앵커 링크를 클릭했을 때, 또는 DOM `hashchange` 이벤트가 발생했을
+때로 볼 수 있습니다.
 
 ### Event: 'close'
 
-Fired when the guest page attempts to close itself.
+페이지가 자체적으로 닫힐 때 발생하는 이벤트입니다.
 
-The following example code navigates the `webview` to `about:blank` when the
-guest attempts to close itself.
+다음 예시 코드는 페이지가 자체적으로 닫힐 때 `webview`를 `about:blank` 페이지로
+이동시키는 예시입니다.
 
 ```javascript
-const webview = document.getElementById('foo')
 webview.addEventListener('close', () => {
-  webview.src = 'about:blank'
-})
+  webview.src = 'about:blank';
+});
 ```
 
 ### Event: 'ipc-message'
@@ -811,36 +764,35 @@ Returns:
 * `channel` String
 * `args` Array
 
-Fired when the guest page has sent an asynchronous message to embedder page.
+호스트 페이지에서 비동기 IPC 메시지를 보낼 때 발생하는 이벤트입니다.
 
-With `sendToHost` method and `ipc-message` event you can easily communicate
-between guest page and embedder page:
+`sendToHost` 메소드와 `ipc-message` 이벤트로 호스트 페이지와 쉽게 통신을 할 수
+있습니다:
 
 ```javascript
 // In embedder page.
-const webview = document.getElementById('foo')
 webview.addEventListener('ipc-message', (event) => {
-  console.log(event.channel)
+  console.log(event.channel);
   // Prints "pong"
-})
-webview.send('ping')
+});
+webview.send('ping');
 ```
 
 ```javascript
 // In guest page.
-const {ipcRenderer} = require('electron')
+const {ipcRenderer} = require('electron');
 ipcRenderer.on('ping', () => {
-  ipcRenderer.sendToHost('pong')
-})
+  ipcRenderer.sendToHost('pong');
+});
 ```
 
 ### Event: 'crashed'
 
-Fired when the renderer process is crashed.
+렌더러 프로세스가 크래시 되었을 때 발생하는 이벤트입니다.
 
 ### Event: 'gpu-crashed'
 
-Fired when the gpu process is crashed.
+GPU 프로세스가 크래시 되었을 때 발생하는 이벤트입니다.
 
 ### Event: 'plugin-crashed'
 
@@ -849,19 +801,19 @@ Returns:
 * `name` String
 * `version` String
 
-Fired when a plugin process is crashed.
+플러그인 프로세스가 크래시 되었을 때 발생하는 이벤트입니다.
 
 ### Event: 'destroyed'
 
-Fired when the WebContents is destroyed.
+WebContents가 파괴될 때 발생하는 이벤트입니다.
 
 ### Event: 'media-started-playing'
 
-Emitted when media starts playing.
+미디어가 재생되기 시작할 때 발생하는 이벤트입니다.
 
 ### Event: 'media-paused'
 
-Emitted when media is paused or done playing.
+미디어가 중지되거나 재생이 완료되었을 때 발생하는 이벤트입니다.
 
 ### Event: 'did-change-theme-color'
 
@@ -869,7 +821,8 @@ Returns:
 
 * `themeColor` String
 
-Emitted when a page's theme color changes. This is usually due to encountering a meta tag:
+페이지의 테마 색이 변경될 때 발생하는 이벤트입니다. 이 이벤트는 보통 meta 태그에
+의해서 발생합니다:
 
 ```html
 <meta name='theme-color' content='#ff0000'>
@@ -881,18 +834,18 @@ Returns:
 
 * `url` String
 
-Emitted when mouse moves over a link or the keyboard moves the focus to a link.
+마우스나 키보드를 사용해 링크에 포커스할 때 발생하는 이벤트입니다.
 
 ### Event: 'devtools-opened'
 
-Emitted when DevTools is opened.
+개발자 도구가 열렸을 때 발생하는 이벤트입니다.
 
 ### Event: 'devtools-closed'
 
-Emitted when DevTools is closed.
+개발자 도구가 닫혔을 때 발생하는 이벤트입니다.
 
 ### Event: 'devtools-focused'
 
-Emitted when DevTools is focused / opened.
+개발자 도구가 포커스되거나 열렸을 때 발생하는 이벤트입니다.
 
 [blink-feature-string]: https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/RuntimeEnabledFeatures.in

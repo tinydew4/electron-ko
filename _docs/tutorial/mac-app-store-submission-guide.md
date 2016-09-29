@@ -1,80 +1,80 @@
 ---
-version: v1.4.1
-category: Tutorial
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.25.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.26.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.27.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.28.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.29.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.30.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.31.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.32.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.33.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.34.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.35.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.36.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.36.3/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.36.4/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.36.5/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.36.6/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.36.7/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.36.8/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.36.9/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.36.10/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.36.11/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.37.0/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.37.1/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.37.2/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.37.3/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.37.4/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.37.5/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.37.6/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.37.7/tutorial/mac-app-store-submission-guide/
-    - /docs/v0.37.8/tutorial/mac-app-store-submission-guide/
-    - /docs/latest/tutorial/mac-app-store-submission-guide/
-source_url: 'https://github.com/electron/electron/blob/master/docs/tutorial/mac-app-store-submission-guide.md'
-title: "Mac App Store Submission Guide"
-sort_title: "mac app store submission guide"
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+    - /docs-translations/ko-KR/tutorial/mac-app-store-submission-guide/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/mac-app-store-submission-guide.md'
+title: "Mac 앱 스토어 애플리케이션 제출 가이드"
+sort_title: "mac 앱 스토어 애플리케이션 제출 가이드"
 ---
 
-# Mac App Store Submission Guide
+# Mac 앱 스토어 애플리케이션 제출 가이드
 
-Since v0.34.0, Electron allows submitting packaged apps to the Mac App Store
-(MAS). This guide provides information on: how to submit your app and the
-limitations of the MAS build.
+Electron은 v0.34.0 버전부터 앱 패키지를 Mac App Store(MAS)에 제출할 수 있게
+되었습니다. 이 가이드는 애플리케이션을 앱 스토어에 등록하는 방법과 빌드의 한계에 대한
+설명을 제공합니다.
 
-**Note:** Submitting an app to Mac App Store requires enrolling [Apple Developer
-Program][developer-program], which costs money.
+**참고:** Mac App Store에 애플리케이션을 등록하려면
+[Apple Developer Program][developer-program]에 등록되어 있어야 하며 비용이 발생할
+수 있습니다.
 
-## How to Submit Your App
+## 앱 스토어에 애플리케이션을 등록하는 방법
 
-The following steps introduce a simple way to submit your app to Mac App Store.
-However, these steps do not ensure your app will be approved by Apple; you
-still need to read Apple's [Submitting Your App][submitting-your-app] guide on
-how to meet the Mac App Store requirements.
+다음 몇 가지 간단한 절차에 따라 앱 스토어에 애플리케이션을 등록하는 방법을 알아봅니다.
+한가지, 이 절차는 제출한 앱이 Apple로부터 승인되는 것을 보장하지 않습니다. 따라서
+여전히 Apple의 [Submitting Your App][submitting-your-app] 가이드를 숙지하고 있어야
+하며 앱 스토어 제출 요구 사항을 확실히 인지하고 있어야 합니다.
 
-### Get Certificate
+### 인증서 취득
 
-To submit your app to the Mac App Store, you first must get a certificate from
-Apple. You can follow these [existing guides][nwjs-guide] on web.
+앱 스토어에 애플리케이션을 제출하려면, 먼저 Apple로부터 인증서를 취득해야 합니다. 취득
+방법은 웹에서 찾아볼 수 있는 [가이드][nwjs-guide]를 참고하면 됩니다.
 
-### Get Team ID
+### Team ID 얻기
 
-Before signing your app, you need to know the Team ID of your account. To locate
-your Team ID, Sign in to [Apple Developer Center](https://developer.apple.com/account/),
-and click Membership in the sidebar. Your Team ID appears in the Membership
-Information section under the team name.
+애플리케이션에 서명하기 전에, 먼저 개발 계정의 Team ID를 알아야 합니다. Team ID를
+알아보려면 [Apple Developer Center](https://developer.apple.com/account/)에
+로그인한 후, 사이드바의 Membership을 클릭합니다. Team ID는 Membership Information
+섹션의 팀 이름 밑에 위치합니다.
 
-### Sign Your App
+### 앱에 서명하기
 
-After finishing the preparation work, you can package your app by following
-[Application Distribution](http://electron.atom.io/docs/tutorial/application-distribution), and then proceed to
-signing your app.
+준비 작업이 끝난 후, [애플리케이션 배포](http://electron.atom.io/docs/tutorial/application-distribution) 문서에 따라
+애플리케이션을 패키징한 후 애플리케이션에 서명합니다.
 
-First, you have to add a `ElectronTeamID` key to your app's `Info.plist`, which
-has your Team ID as key:
+먼저, Team ID를 키로 가지고 있는 애플리케이션의 `Info.plist`에 `ElectronTeamID` 키를
+추가해야 합니다:
 
 ```xml
 <plist version="1.0">
@@ -86,7 +86,7 @@ has your Team ID as key:
 </plist>
 ```
 
-Then, you need to prepare two entitlements files.
+그리고, 다음 두 자격 파일을 준비해야 합니다.
 
 `child.plist`:
 
@@ -118,24 +118,24 @@ Then, you need to prepare two entitlements files.
 </plist>
 ```
 
-You have to replace `TEAM_ID` with your Team ID, and replace `your.bundle.id`
-with the Bundle ID of your app.
+`TEAM_ID` 부분은 Team ID로 치환하고, `your.bundle.id` 부분은 애플리케이션의 Bundle
+ID로 치환해야 합니다.
 
-And then sign your app with the following script:
+그리고 다음 스크립트를 통해 애플리케이션에 서명합니다:
 
 ```bash
 #!/bin/bash
 
-# Name of your app.
+# 애플리케이션의 이름.
 APP="YourApp"
-# The path of your app to sign.
+# 서명할 애플리케이션의 경로.
 APP_PATH="/path/to/YourApp.app"
-# The path to the location you want to put the signed package.
+# 서명된 패키지의 출력 경로.
 RESULT_PATH="~/Desktop/$APP.pkg"
-# The name of certificates you requested.
+# 요청한 인증서의 이름.
 APP_KEY="3rd Party Mac Developer Application: Company Name (APPIDENTITY)"
 INSTALLER_KEY="3rd Party Mac Developer Installer: Company Name (APPIDENTITY)"
-# The path of your plist files.
+# plist 파일의 경로.
 CHILD_PLIST="/path/to/child.plist"
 PARENT_PLIST="/path/to/parent.plist"
 
@@ -157,81 +157,60 @@ codesign -s "$APP_KEY" -f --entitlements "$PARENT_PLIST" "$APP_PATH"
 productbuild --component "$APP_PATH" /Applications --sign "$INSTALLER_KEY" "$RESULT_PATH"
 ```
 
-If you are new to app sandboxing under macOS, you should also read through
-Apple's [Enabling App Sandbox][enable-app-sandbox] to have a basic idea, then
-add keys for the permissions needed by your app to the entitlements files.
+만약 macOS의 샌드박스 개념에 대해 처음 접한다면 Apple의 [Enabling App Sandbox][enable-app-sandbox]
+문서를 참고하여 기본적인 개념을 이해해야 합니다. 그리고 자격(plist) 파일에
+애플리케이션에서 요구하는 권한의 키를 추가합니다.
 
-Apart from manually signing your app, you can also choose to use the
-[electron-osx-sign][electron-osx-sign] module to do the job.
 
-#### Sign Native Modules
+그 외에 별로도 [electron-osx-sign][electron-osx-sign] 모듈을 사용하여 직접 서명할
+수도 있습니다.
 
-Native modules used in your app also need to be signed. If using
-electron-osx-sign, be sure to include the path to the built binaries in the
-argument list:
+#### 네이티브 모듈에 서명하기
+
+앱 내부에서 사용한 네이티브 모듈도 서명이 필요합니다. `electron-osx-sign`을
+사용한다면, 인수 목록에 빌트인 바이너리 경로가 포함되어 있는지 확인해야 합니다:
 
 ```bash
 electron-osx-sign YourApp.app YourApp.app/Contents/Resources/app/node_modules/nativemodule/build/release/nativemodule
 ```
 
-Also note that native modules may have intermediate files produced which should
-not be included (as they would also need to be signed). If you use
-[electron-packager][electron-packager], add `--ignore=.+\.o$` to build step to
-ignore these files.
+참고로 네이티브 모듈이 의도하지 않게 중간 파일을 포함하는 경우도 있으며 이 파일은
+포함되어선 안됩니다. (해당 파일에도 서명해야 할 수도 있습니다)
+[electron-packager][electron-packager]를 사용한다면, 빌드 과정에 `--ignore=.+\.o$`
+인수를 추가하여 중간 파일을 무시할 수 있습니다.
 
-### Upload Your App
+### 애플리케이션 업로드
 
-After signing your app, you can use Application Loader to upload it to iTunes
-Connect for processing, making sure you have [created a record][create-record]
-before uploading.
+애플리케이션 서명을 완료한 후 iTunes Connect에 업로드하기 위해 Application Loader를
+사용할 수 있습니다. 참고로 업로드하기 전에 [레코드][create-record]를 만들었는지
+확인해야 합니다.
 
-### Submit Your App for Review
+### 애플리케이션을 심사에 제출
 
-After these steps, you can [submit your app for review][submit-for-review].
+위 과정을 마치면 [애플리케이션을 심사를 위해 제출][submit-for-review]할 수 있습니다.
 
-## Limitations of MAS Build
+## MAS 빌드의 한계
 
-In order to satisfy all requirements for app sandboxing, the following modules
-have been disabled in the MAS build:
+모든 애플리케이션 샌드박스에 대한 요구 사항을 충족시키기 위해, 다음 모듈들은 MAS
+빌드에서 비활성화됩니다:
 
 * `crashReporter`
 * `autoUpdater`
 
-and the following behaviors have been changed:
+그리고 다음 동작으로 대체됩니다:
 
-* Video capture may not work for some machines.
-* Certain accessibility features may not work.
-* Apps will not be aware of DNS changes.
+* 비디오 캡쳐 기능은 몇몇 장치에서 작동하지 않을 수 있습니다.
+* 특정 접근성 기능이 작동하지 않을 수 있습니다.
+* 애플리케이션이 DNS의 변경을 감지하지 못할 수 있습니다.
 
-Also, due to the usage of app sandboxing, the resources which can be accessed by
-the app are strictly limited; you can read [App Sandboxing][app-sandboxing] for
-more information.
+또한 애플리케이션 샌드박스 개념으로 인해 애플리케이션에서 접근할 수 있는 리소스는
+엄격하게 제한되어 있습니다. 자세한 내용은 [앱 샌드박싱][app-sandboxing] 문서를
+참고하세요.
 
-### Additional Entitlements
+### 추가적인 권한
 
-Depending on which Electron APIs your app uses, you may need to add additional
-entitlements to your `parent.plist` file to be able to use these APIs from your
-app's Mac App Store build.
-
-#### Network Access
-
-Enable outgoing network connections to allow your app to connect to a server:
-
-```xml
-<key>com.apple.security.network.client</key>
-<true/>
-```
-
-Enable incoming network connections to allow your app to open a network
-listening socket:
-
-```xml
-<key>com.apple.security.network.server</key>
-<true/>
-```
-
-See the [Enabling Network Access documentation][network-access] for more
-details.
+Mac 앱 스토어 빌드를 위해 앱에서 사용하는 Electron API에 따라 `parent.plist` 파일에
+추가적인 기능에 대한 권한을 추가해야 할 수도 있습니다.
 
 #### dialog.showOpenDialog
 
@@ -240,8 +219,7 @@ details.
 <true/>
 ```
 
-See the [Enabling User-Selected File Access documentation][user-selected] for
-more details.
+자세한 내용은 [User-Selected 파일 접근 활성화 문서][user-selected]를 참고하세요.
 
 #### dialog.showSaveDialog
 
@@ -250,16 +228,15 @@ more details.
 <true/>
 ```
 
-See the [Enabling User-Selected File Access documentation][user-selected] for
-more details.
+자세한 내용은 [User-Selected 파일 접근 활성화 문서][user-selected]를 참고하세요.
 
-## Cryptographic Algorithms Used by Electron
+## Electron에서 사용하는 암호화 알고리즘
 
-Depending on the country and region you are located, Mac App Store may require
-documenting the cryptographic algorithms used in your app, and even ask you to
-submit a copy of U.S. Encryption Registration (ERN) approval.
+국가와 살고 있는 지역에 따라, 맥 앱스토어는 제출한 애플리케이션에서 사용하는 암호화
+알고리즘의 문서를 요구할 수 있습니다. 심지어 U.S. Encryption Registration (ERN)의
+승인 사본을 제출하라고 할 수도 있습니다.
 
-Electron uses following cryptographic algorithms:
+Electron은 다음과 같은 암호화 알고리즘을 사용합니다:
 
 * AES - [NIST SP 800-38A](http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf), [NIST SP 800-38D](http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf), [RFC 3394](http://www.ietf.org/rfc/rfc3394.txt)
 * HMAC - [FIPS 198-1](http://csrc.nist.gov/publications/fips/fips198-1/FIPS-198-1_final.pdf)
@@ -285,9 +262,10 @@ Electron uses following cryptographic algorithms:
 * RC5 - http://people.csail.mit.edu/rivest/Rivest-rc5rev.pdf
 * RIPEMD - [ISO/IEC 10118-3](http://webstore.ansi.org/RecordDetail.aspx?sku=ISO%2FIEC%2010118-3:2004)
 
-On how to get the ERN approval, you can reference the article: [How to legally
-submit an app to Apple’s App Store when it uses encryption (or how to obtain an
-ERN)][ern-tutorial].
+ERN의 승인을 얻는 방법은, 다음 글을 참고하는 것이 좋습니다:
+[애플리케이션이 암호화를 사용할 때, 합법적으로 Apple의 앱 스토어에 제출하는 방법 (또는 ERN의 승인을 얻는 방법)][ern-tutorial].
+
+**역자주:** [Mac 앱 배포 가이드 공식 한국어 문서](https://developer.apple.com/osx/distribution/kr/)
 
 [developer-program]: https://developer.apple.com/support/compare-memberships/
 [submitting-your-app]: https://developer.apple.com/library/mac/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html
@@ -300,5 +278,4 @@ ERN)][ern-tutorial].
 [app-sandboxing]: https://developer.apple.com/app-sandboxing/
 [ern-tutorial]: https://carouselapps.com/2015/12/15/legally-submit-app-apples-app-store-uses-encryption-obtain-ern/
 [temporary-exception]: https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/AppSandboxTemporaryExceptionEntitlements.html
-[user-selected]: https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW6
-[network-access]: https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW9
+[user-selected]: https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW6]

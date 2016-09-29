@@ -1,125 +1,95 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/environment-variables/
-    - /docs/v0.25.0/api/environment-variables/
-    - /docs/v0.26.0/api/environment-variables/
-    - /docs/v0.27.0/api/environment-variables/
-    - /docs/v0.28.0/api/environment-variables/
-    - /docs/v0.29.0/api/environment-variables/
-    - /docs/v0.30.0/api/environment-variables/
-    - /docs/v0.31.0/api/environment-variables/
-    - /docs/v0.32.0/api/environment-variables/
-    - /docs/v0.33.0/api/environment-variables/
-    - /docs/v0.34.0/api/environment-variables/
-    - /docs/v0.35.0/api/environment-variables/
-    - /docs/v0.36.0/api/environment-variables/
-    - /docs/v0.36.3/api/environment-variables/
-    - /docs/v0.36.4/api/environment-variables/
-    - /docs/v0.36.5/api/environment-variables/
-    - /docs/v0.36.6/api/environment-variables/
-    - /docs/v0.36.7/api/environment-variables/
-    - /docs/v0.36.8/api/environment-variables/
-    - /docs/v0.36.9/api/environment-variables/
-    - /docs/v0.36.10/api/environment-variables/
-    - /docs/v0.36.11/api/environment-variables/
-    - /docs/v0.37.0/api/environment-variables/
-    - /docs/v0.37.1/api/environment-variables/
-    - /docs/v0.37.2/api/environment-variables/
-    - /docs/v0.37.3/api/environment-variables/
-    - /docs/v0.37.4/api/environment-variables/
-    - /docs/v0.37.5/api/environment-variables/
-    - /docs/v0.37.6/api/environment-variables/
-    - /docs/v0.37.7/api/environment-variables/
-    - /docs/v0.37.8/api/environment-variables/
-    - /docs/latest/api/environment-variables/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/environment-variables.md'
-excerpt: "Control application configuration and behavior without changing code."
-title: "Environment Variables"
-sort_title: "environment variables"
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+    - /docs-translations/ko-KR/api/environment-variables/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/environment-variables.md'
+excerpt: "&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xAD6C;&#xC131;&#xACFC; &#xB3D9;&#xC791;&#xC744; &#xCF54;&#xB4DC; &#xBCC0;&#xACBD; &#xC5C6;&#xC774; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;."
+title: "환경 변수"
+sort_title: ""
 ---
 
-# Environment Variables
+# 환경 변수
 
-> Control application configuration and behavior without changing code.
+> 애플리케이션의 구성과 동작을 코드 변경 없이 제어합니다.
 
-Certain Electron behaviors are controlled by environment variables because they
-are initialized earlier than the command line flags and the app's code.
+특정 Electron 동작은 명령줄 플래그와 애플리케이션의 코드보다 먼저 초기화되어야 하므로
+환경 변수에 의해 작동합니다.
 
-POSIX shell example:
+POSIX 쉘의 예시입니다:
 
 ```bash
 $ export ELECTRON_ENABLE_LOGGING=true
 $ electron
 ```
 
-Windows console example:
+Windows 콘솔의 예시입니다:
 
 ```powershell
 > set ELECTRON_ENABLE_LOGGING=true
 > electron
 ```
 
-## Production Variables
-
-The following environment variables are intended primarily for use at runtime
-in packaged Electron applications.
-
-### `GOOGLE_API_KEY`
-
-Electron includes a hardcoded API key for making requests to Google's geocoding
-webservice. Because this API key is included in every version of Electron, it
-often exceeds its usage quota. To work around this, you can supply your own
-Google API key in the environment. Place the following code in your main process
-file, before opening any browser windows that will make geocoding requests:
-
-```javascript
-process.env.GOOGLE_API_KEY = 'YOUR_KEY_HERE'
-```
-
-For instructions on how to acquire a Google API key, see
-https://www.chromium.org/developers/how-tos/api-keys
-
-By default, a newly generated Google API key may not be allowed to make
-geocoding requests. To enable geocoding requests, visit this page:
-https://console.developers.google.com/apis/api/geolocation/overview
-
-## Development Variables
-
-The following environment variables are intended primarily for development and
-debugging purposes.
-
 ### `ELECTRON_RUN_AS_NODE`
 
-Starts the process as a normal Node.js process.
+프로세스를 일반 Node.js 프로세스처럼 시작합니다. (electron 모듈 제외)
 
 ### `ELECTRON_ENABLE_LOGGING`
 
-Prints Chrome's internal logging to the console.
+Chrome의 내부 로그를 콘솔에 출력합니다.
 
 ### `ELECTRON_LOG_ASAR_READS`
 
-When Electron reads from an ASAR file, log the read offset and file path to
-the system `tmpdir`. The resulting file can be provided to the ASAR module
-to optimize file ordering.
+Electron이 ASAR 파일을 읽을 때, 읽기 오프셋의 로그를 남기고 시스템 `tmpdir`에 파일로
+저장합니다. 결과 파일은 ASAR 모듈의 파일 순서를 최적화 하는데 사용할 수 있습니다.
 
 ### `ELECTRON_ENABLE_STACK_DUMPING`
 
-Prints the stack trace to the console when Electron crashes.
+Electron이 크래시되면, 콘솔에 stack trace를 출력합니다.
 
-This environment variable will not work if the `crashReporter` is started.
+이 환경 변수는 `crashReporter`가 시작되지 않았을 경우 작동하지 않습니다.
 
 ### `ELECTRON_DEFAULT_ERROR_MODE` _Windows_
 
-Shows the Windows's crash dialog when Electron crashes.
+Electron이 크래시되면 스택 출력 정보를 콘솔에 출력합니다.
 
-This environment variable will not work if the `crashReporter` is started.
+이 환경 변수는 `crashReporter`가 시작되지 않았을 경우 작동하지 않습니다.
 
 ### `ELECTRON_NO_ATTACH_CONSOLE` _Windows_
 
-Don't attach to the current console session.
+현재 콘솔 세션에 소속시키지 않습니다.
 
 ### `ELECTRON_FORCE_WINDOW_MENU_BAR` _Linux_
 
-Don't use the global menu bar on Linux.
+Linux의 전역 메뉴바를 사용하지 않습니다.

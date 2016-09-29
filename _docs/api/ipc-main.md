@@ -1,139 +1,137 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/ipc-main/
-    - /docs/v0.25.0/api/ipc-main/
-    - /docs/v0.26.0/api/ipc-main/
-    - /docs/v0.27.0/api/ipc-main/
-    - /docs/v0.28.0/api/ipc-main/
-    - /docs/v0.29.0/api/ipc-main/
-    - /docs/v0.30.0/api/ipc-main/
-    - /docs/v0.31.0/api/ipc-main/
-    - /docs/v0.32.0/api/ipc-main/
-    - /docs/v0.33.0/api/ipc-main/
-    - /docs/v0.34.0/api/ipc-main/
-    - /docs/v0.35.0/api/ipc-main/
-    - /docs/v0.36.0/api/ipc-main/
-    - /docs/v0.36.3/api/ipc-main/
-    - /docs/v0.36.4/api/ipc-main/
-    - /docs/v0.36.5/api/ipc-main/
-    - /docs/v0.36.6/api/ipc-main/
-    - /docs/v0.36.7/api/ipc-main/
-    - /docs/v0.36.8/api/ipc-main/
-    - /docs/v0.36.9/api/ipc-main/
-    - /docs/v0.36.10/api/ipc-main/
-    - /docs/v0.36.11/api/ipc-main/
-    - /docs/v0.37.0/api/ipc-main/
-    - /docs/v0.37.1/api/ipc-main/
-    - /docs/v0.37.2/api/ipc-main/
-    - /docs/v0.37.3/api/ipc-main/
-    - /docs/v0.37.4/api/ipc-main/
-    - /docs/v0.37.5/api/ipc-main/
-    - /docs/v0.37.6/api/ipc-main/
-    - /docs/v0.37.7/api/ipc-main/
-    - /docs/v0.37.8/api/ipc-main/
-    - /docs/latest/api/ipc-main/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/ipc-main.md'
-excerpt: "Communicate asynchronously from the main process to renderer processes."
-title: "ipcMain"
-sort_title: "ipcmain"
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+    - /docs-translations/ko-KR/api/ipc-main/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/ipc-main.md'
+excerpt: "&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xBE44;&#xB3D9;&#xAE30; &#xD1B5;&#xC2E0;&#xC744; &#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# ipcMain
+﻿# ipcMain
 
-> Communicate asynchronously from the main process to renderer processes.
+> 메인 프로세스에서 렌더러 프로세스로 비동기 통신을 합니다.
 
-The `ipcMain` module is an instance of the
-[EventEmitter](https://nodejs.org/api/events.html) class. When used in the main
-process, it handles asynchronous and synchronous messages sent from a renderer
-process (web page). Messages sent from a renderer will be emitted to this
-module.
+`ipcMain` 모듈은 [EventEmitter](https://nodejs.org/api/events.html) 클래스의
+인스턴스입니다. 메인 프로세스에서 사용하면, 렌더러 프로세스(웹 페이지)에서 전달된
+동기, 비동기 메시지를 주고 받는 방법을 제공합니다. 렌더러 프로세스에서 메시지를 전달하면
+이 모듈을 통해 메시지를 받을 수 있습니다.
 
-## Sending Messages
+## 메시지 전송
 
-It is also possible to send messages from the main process to the renderer
-process, see [webContents.send][web-contents-send] for more information.
+물론 메시지를 받는 것 말고도 메인 프로세스에서 렌더러 프로세스로 보내는 것도 가능합니다.
+자세한 내용은 [webContents.send][web-contents-send]를 참고하세요.
 
-* When sending a message, the event name is the `channel`.
-* To reply a synchronous message, you need to set `event.returnValue`.
-* To send an asynchronous back to the sender, you can use
-  `event.sender.send(...)`.
+* 메시지를 전송할 때 이벤트 이름은 `channel`이 됩니다.
+* 메시지에 동기로 응답할 땐 반드시 `event.returnValue`를 설정해야 합니다.
+* 메시지를 비동기로 응답할 땐 `event.sender.send(...)` 메서드를 사용할 수 있습니다.
 
-An example of sending and handling messages between the render and main
-processes:
+다음 예시는 렌더러 프로세스와 메인 프로세스간에 메시지를 전달하고 받는 예시입니다:
 
 ```javascript
-// In main process.
-const {ipcMain} = require('electron')
+// 메인 프로세스
+const {ipcMain} = require('electron');
 ipcMain.on('asynchronous-message', (event, arg) => {
-  console.log(arg)  // prints "ping"
-  event.sender.send('asynchronous-reply', 'pong')
-})
+  console.log(arg);  // "ping" 출력
+  event.sender.send('asynchronous-reply', 'pong');
+});
 
 ipcMain.on('synchronous-message', (event, arg) => {
-  console.log(arg)  // prints "ping"
-  event.returnValue = 'pong'
-})
+  console.log(arg);  // "ping" 출력
+  event.returnValue = 'pong';
+});
 ```
 
 ```javascript
-// In renderer process (web page).
-const {ipcRenderer} = require('electron')
-console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
+// 렌더러 프로세스 (웹 페이지)
+const {ipcRenderer} = require('electron');
+console.log(ipc.sendSync('synchronous-message', 'ping')); // "pong" 출력
 
-ipcRenderer.on('asynchronous-reply', (event, arg) => {
-  console.log(arg) // prints "pong"
-})
-ipcRenderer.send('asynchronous-message', 'ping')
+ipcRenderer.on('asynchronous-reply', (arg) => {
+  console.log(arg); // "pong" 출력
+});
+ipcRenderer.send('asynchronous-message', 'ping');
 ```
 
-## Listening for Messages
+## 메시지 리스닝
 
-The `ipcMain` module has the following method to listen for events:
+`ipcMain`은 다음과 같은 이벤트 리스닝 메서드를 가지고 있습니다:
 
 ### `ipcMain.on(channel, listener)`
 
 * `channel` String
 * `listener` Function
 
-Listens to `channel`, when a new message arrives `listener` would be called with
-`listener(event, args...)`.
+`channel`에 대해 이벤트를 리스닝합니다. 새로운 메시지가 도착하면 `listener`가
+`listener(event, args...)` 형식으로 호출됩니다.
 
 ### `ipcMain.once(channel, listener)`
 
 * `channel` String
 * `listener` Function
 
-Adds a one time `listener` function for the event. This `listener` is invoked
-only the next time a message is sent to `channel`, after which it is removed.
+이벤트에 대해 한 번만 작동하는 `listener` 함수를 등록합니다. 이 `listener`는 등록된
+후 `channel`에 보내지는 메시지에 한해 호출됩니다. 호출된 이후엔 리스너가 삭제됩니다.
 
 ### `ipcMain.removeListener(channel, listener)`
 
 * `channel` String
 * `listener` Function
 
-Removes the specified `listener` from the listener array for the specified
-`channel`.
+메시지 수신을 완료한 후, 더 이상의 콜백이 필요하지 않을 때 또는 몇 가지 이유로 채널의
+메시지 전송을 멈출수 없을 때, 이 함수를 통해 지정한 채널에 대한 콜백을 삭제할 수
+있습니다.
 
-### `ipcMain.removeAllListeners([channel])`
+지정한 `channel`에 대한 리스너를 저장하는 배열에서 지정한 `listener`를 삭제합니다.
+
+### `ipcMain.removeAllListeners(channel)`
 
 * `channel` String (optional)
 
-Removes all listeners, or those of the specified `channel`.
+이 ipc 채널에 등록된 모든 핸들러들을 삭제하거나 지정한 `channel`을 삭제합니다.
 
-## Event object
+## Event 객체
 
-The `event` object passed to the `callback` has the following methods:
+`callback`에서 전달된 `event` 객체는 다음과 같은 메서드와 속성을 가지고 있습니다:
 
 ### `event.returnValue`
 
-Set this to the value to be returned in a synchronous message.
+이 메시지를 지정하면 동기 메시지를 전달합니다.
 
 ### `event.sender`
 
-Returns the `webContents` that sent the message, you can call
-`event.sender.send` to reply to the asynchronous message, see
-[webContents.send][web-contents-send] for more information.
+메시지를 보낸 `webContents` 객체를 반환합니다. `event.sender.send` 메서드를 통해
+비동기로 메시지를 전달할 수 있습니다. 자세한 내용은
+[webContents.send][web-contents-send]를 참고하세요.
 
 [web-contents-send]: http://electron.atom.io/docs/api/web-contents#webcontentssendchannel-arg1-arg2-

@@ -1,72 +1,71 @@
 ---
-version: v1.4.1
-category: Tutorial
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/tutorial/supported-platforms/
-    - /docs/v0.25.0/tutorial/supported-platforms/
-    - /docs/v0.26.0/tutorial/supported-platforms/
-    - /docs/v0.27.0/tutorial/supported-platforms/
-    - /docs/v0.28.0/tutorial/supported-platforms/
-    - /docs/v0.29.0/tutorial/supported-platforms/
-    - /docs/v0.30.0/tutorial/supported-platforms/
-    - /docs/v0.31.0/tutorial/supported-platforms/
-    - /docs/v0.32.0/tutorial/supported-platforms/
-    - /docs/v0.33.0/tutorial/supported-platforms/
-    - /docs/v0.34.0/tutorial/supported-platforms/
-    - /docs/v0.35.0/tutorial/supported-platforms/
-    - /docs/v0.36.0/tutorial/supported-platforms/
-    - /docs/v0.36.3/tutorial/supported-platforms/
-    - /docs/v0.36.4/tutorial/supported-platforms/
-    - /docs/v0.36.5/tutorial/supported-platforms/
-    - /docs/v0.36.6/tutorial/supported-platforms/
-    - /docs/v0.36.7/tutorial/supported-platforms/
-    - /docs/v0.36.8/tutorial/supported-platforms/
-    - /docs/v0.36.9/tutorial/supported-platforms/
-    - /docs/v0.36.10/tutorial/supported-platforms/
-    - /docs/v0.36.11/tutorial/supported-platforms/
-    - /docs/v0.37.0/tutorial/supported-platforms/
-    - /docs/v0.37.1/tutorial/supported-platforms/
-    - /docs/v0.37.2/tutorial/supported-platforms/
-    - /docs/v0.37.3/tutorial/supported-platforms/
-    - /docs/v0.37.4/tutorial/supported-platforms/
-    - /docs/v0.37.5/tutorial/supported-platforms/
-    - /docs/v0.37.6/tutorial/supported-platforms/
-    - /docs/v0.37.7/tutorial/supported-platforms/
-    - /docs/v0.37.8/tutorial/supported-platforms/
-    - /docs/latest/tutorial/supported-platforms/
-source_url: 'https://github.com/electron/electron/blob/master/docs/tutorial/supported-platforms.md'
-title: "Supported Platforms"
-sort_title: "supported platforms"
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+    - /docs-translations/ko-KR/tutorial/supported-platforms/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/supported-platforms.md'
+title: "지원하는 플랫폼"
+sort_title: ""
 ---
 
-# Supported Platforms
+# 지원하는 플랫폼
 
-Following platforms are supported by Electron:
+Electron에선 다음과 같은 플랫폼을 지원합니다:
 
 ### macOS
 
-Only 64bit binaries are provided for macOS, and the minimum macOS version
-supported is macOS 10.9.
+macOS는 64비트 바이너리만 제공됩니다. 그리고 최소 macOS 지원 버전은 10.9입니다.
 
 ### Windows
 
-Windows 7 and later are supported, older operating systems are not supported
-(and do not work).
+Windows 7 이후 버전만 지원됩니다. Windows Vista에서도 작동할 수 있지만 아직 모든 작동
+테스트가 완료되지 않았습니다.
 
-Both `ia32` (`x86`) and `x64` (`amd64`) binaries are provided for Windows.
-Please note, the `ARM` version of Windows is not supported for now.
+윈도우용 바이너리는 `x86`과 `x64` 모두 제공됩니다. 그리고 `ARM` 버전 윈도우는 아직
+지원하지 않습니다.
 
 ### Linux
 
-The prebuilt `ia32` (`i686`) and `x64` (`amd64`) binaries of Electron are built on
-Ubuntu 12.04, the `arm` binary is built against ARM v7 with hard-float ABI and
-NEON for Debian Wheezy.
+Ubuntu 12.04 버전에서 빌드된 `ia32`(`i686`), `x64`(`amd64`) 바이너리가 제공됩니다.
+그리고 `arm` 버전 바이너리는 ARM v7 hard-float ABI와 Debian Wheezy용 NEON에 맞춰
+제공됩니다.
 
-Whether the prebuilt binary can run on a distribution depends on whether the
-distribution includes the libraries that Electron is linked to on the building
-platform, so only Ubuntu 12.04 is guaranteed to work, but following platforms
-are also verified to be able to run the prebuilt binaries of Electron:
+미리 빌드된 바이너리가 배포판에서 작동할 수 있는지 여부는 Electron이 빌드된 플랫폼에서
+링크된 라이브러리에 따라 달라집니다. 그래서 현재 Linux 바이너리는 Ubuntu 12.04 버전만
+정상적인 작동이 보장됩니다. 하지만 다음 플랫폼들은 미리 빌드된 Electron 바이너리가
+정상적으로 작동하는 것을 확인했습니다:
 
-* Ubuntu 12.04 and later
+* Ubuntu 12.04 이후 버전
 * Fedora 21
 * Debian 8

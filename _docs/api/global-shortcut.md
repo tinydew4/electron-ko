@@ -1,115 +1,113 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/global-shortcut/
-    - /docs/v0.25.0/api/global-shortcut/
-    - /docs/v0.26.0/api/global-shortcut/
-    - /docs/v0.27.0/api/global-shortcut/
-    - /docs/v0.28.0/api/global-shortcut/
-    - /docs/v0.29.0/api/global-shortcut/
-    - /docs/v0.30.0/api/global-shortcut/
-    - /docs/v0.31.0/api/global-shortcut/
-    - /docs/v0.32.0/api/global-shortcut/
-    - /docs/v0.33.0/api/global-shortcut/
-    - /docs/v0.34.0/api/global-shortcut/
-    - /docs/v0.35.0/api/global-shortcut/
-    - /docs/v0.36.0/api/global-shortcut/
-    - /docs/v0.36.3/api/global-shortcut/
-    - /docs/v0.36.4/api/global-shortcut/
-    - /docs/v0.36.5/api/global-shortcut/
-    - /docs/v0.36.6/api/global-shortcut/
-    - /docs/v0.36.7/api/global-shortcut/
-    - /docs/v0.36.8/api/global-shortcut/
-    - /docs/v0.36.9/api/global-shortcut/
-    - /docs/v0.36.10/api/global-shortcut/
-    - /docs/v0.36.11/api/global-shortcut/
-    - /docs/v0.37.0/api/global-shortcut/
-    - /docs/v0.37.1/api/global-shortcut/
-    - /docs/v0.37.2/api/global-shortcut/
-    - /docs/v0.37.3/api/global-shortcut/
-    - /docs/v0.37.4/api/global-shortcut/
-    - /docs/v0.37.5/api/global-shortcut/
-    - /docs/v0.37.6/api/global-shortcut/
-    - /docs/v0.37.7/api/global-shortcut/
-    - /docs/v0.37.8/api/global-shortcut/
-    - /docs/latest/api/global-shortcut/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/global-shortcut.md'
-excerpt: "Detect keyboard events when the application does not have keyboard focus."
-title: "globalShortcut"
-sort_title: "globalshortcut"
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+    - /docs-translations/ko-KR/api/global-shortcut/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/global-shortcut.md'
+excerpt: "&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0; &#xD0A4;&#xBCF4;&#xB4DC; &#xD3EC;&#xCEE4;&#xC2A4;&#xAC00; &#xC5C6;&#xC744; &#xB54C;&#xB3C4; &#xD0A4;&#xBCF4;&#xB4DC; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# globalShortcut
+﻿# globalSortcut
 
-> Detect keyboard events when the application does not have keyboard focus.
+> 애플리케이션에 키보드 포커스가 없을 때도 키보드 이벤트를 받을 수 있도록 합니다.
 
-The `globalShortcut` module can register/unregister a global keyboard shortcut
-with the operating system so that you can customize the operations for various
-shortcuts.
+`globalShortcut` 모듈은 운영체제의 전역 키보드 단축키를 등록/해제 하는 방법을
+제공합니다. 이 모듈을 사용하여 사용자가 다양한 작업을 편하게 할 수 있도록 단축키를
+정의 할 수 있습니다.
 
-**Note:** The shortcut is global; it will work even if the app does
-not have the keyboard focus. You should not use this module until the `ready`
-event of the app module is emitted.
+**참고:** 등록된 단축키는 애플리케이션이 백그라운드로 작동(창이 포커스 되지 않음) 할
+때도 계속해서 작동합니다. 이 모듈은 `app` 모듈의 `ready` 이벤트가 발생하기 전까지
+사용할 수 없습니다.
 
 ```javascript
-const {app, globalShortcut} = require('electron')
+const {app, globalShortcut} = require('electron');
 
 app.on('ready', () => {
-  // Register a 'CommandOrControl+X' shortcut listener.
+  // 'CommandOrControl+X' 단축키를 리스너에 등록합니다.
   const ret = globalShortcut.register('CommandOrControl+X', () => {
-    console.log('CommandOrControl+X is pressed')
-  })
+    console.log('CommandOrControl+X is pressed');
+  });
 
   if (!ret) {
-    console.log('registration failed')
+    console.log('registration failed');
   }
 
-  // Check whether a shortcut is registered.
-  console.log(globalShortcut.isRegistered('CommandOrControl+X'))
-})
+  // 단축키가 등록되었는지 확인합니다.
+  console.log(globalShortcut.isRegistered('CommandOrControl+X'));
+});
 
 app.on('will-quit', () => {
-  // Unregister a shortcut.
-  globalShortcut.unregister('CommandOrControl+X')
+  // 단축키의 등록을 해제합니다.
+  globalShortcut.unregister('CommandOrControl+X');
 
-  // Unregister all shortcuts.
-  globalShortcut.unregisterAll()
-})
+  // 모든 단축키의 등록을 해제합니다.
+  globalShortcut.unregisterAll();
+});
 ```
 
 ## Methods
 
-The `globalShortcut` module has the following methods:
+`globalShortcut` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
 ### `globalShortcut.register(accelerator, callback)`
 
 * `accelerator` [Accelerator](http://electron.atom.io/docs/api/accelerator)
 * `callback` Function
 
-Registers a global shortcut of `accelerator`. The `callback` is called when
-the registered shortcut is pressed by the user.
+`accelerator`의 전역 단축키를 등록합니다. 유저로부터 등록된 단축키가 눌렸을 경우
+`callback` 함수가 호출됩니다.
 
-When the accelerator is already taken by other applications, this call will
-silently fail. This behavior is intended by operating systems, since they don't
-want applications to fight for global shortcuts.
+accelerator가 이미 다른 애플리케이션에서 사용 중일 경우, 이 작업은 조용히 실패합니다.
+이러한 동작은 애플리케이션이 전역 키보드 단축키를 가지고 충돌이 일어나지 않도록 하기
+위해 운영체제에 의해 예정된 동작입니다.
 
 ### `globalShortcut.isRegistered(accelerator)`
 
 * `accelerator` [Accelerator](http://electron.atom.io/docs/api/accelerator)
 
-Returns whether this application has registered `accelerator`.
+지정된 `accelerator` 단축키가 등록되었는지 여부를 확인합니다.
 
-When the accelerator is already taken by other applications, this call will
-still return `false`. This behavior is intended by operating systems, since they
-don't want applications to fight for global shortcuts.
+Accelerator가 이미 다른 애플리케이션에서 사용 중일 경우, 여전히 `false`를 반환합니다.
+이러한 동작은 애플리케이션이 전역 키보드 단축키를 가지고 충돌이 일어나지 않도록 하기
+위해 운영체제에 의해 예정된 동작입니다.
 
 ### `globalShortcut.unregister(accelerator)`
 
 * `accelerator` [Accelerator](http://electron.atom.io/docs/api/accelerator)
 
-Unregisters the global shortcut of `accelerator`.
+`accelerator`에 해당하는 전역 단축키를 등록 해제합니다.
 
 ### `globalShortcut.unregisterAll()`
 
-Unregisters all of the global shortcuts.
+모든 전역 단축키의 등록을 해제합니다.

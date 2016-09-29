@@ -1,209 +1,201 @@
 ---
-version: v1.4.1
-category: Tutorial
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/tutorial/desktop-environment-integration/
-    - /docs/v0.25.0/tutorial/desktop-environment-integration/
-    - /docs/v0.26.0/tutorial/desktop-environment-integration/
-    - /docs/v0.27.0/tutorial/desktop-environment-integration/
-    - /docs/v0.28.0/tutorial/desktop-environment-integration/
-    - /docs/v0.29.0/tutorial/desktop-environment-integration/
-    - /docs/v0.30.0/tutorial/desktop-environment-integration/
-    - /docs/v0.31.0/tutorial/desktop-environment-integration/
-    - /docs/v0.32.0/tutorial/desktop-environment-integration/
-    - /docs/v0.33.0/tutorial/desktop-environment-integration/
-    - /docs/v0.34.0/tutorial/desktop-environment-integration/
-    - /docs/v0.35.0/tutorial/desktop-environment-integration/
-    - /docs/v0.36.0/tutorial/desktop-environment-integration/
-    - /docs/v0.36.3/tutorial/desktop-environment-integration/
-    - /docs/v0.36.4/tutorial/desktop-environment-integration/
-    - /docs/v0.36.5/tutorial/desktop-environment-integration/
-    - /docs/v0.36.6/tutorial/desktop-environment-integration/
-    - /docs/v0.36.7/tutorial/desktop-environment-integration/
-    - /docs/v0.36.8/tutorial/desktop-environment-integration/
-    - /docs/v0.36.9/tutorial/desktop-environment-integration/
-    - /docs/v0.36.10/tutorial/desktop-environment-integration/
-    - /docs/v0.36.11/tutorial/desktop-environment-integration/
-    - /docs/v0.37.0/tutorial/desktop-environment-integration/
-    - /docs/v0.37.1/tutorial/desktop-environment-integration/
-    - /docs/v0.37.2/tutorial/desktop-environment-integration/
-    - /docs/v0.37.3/tutorial/desktop-environment-integration/
-    - /docs/v0.37.4/tutorial/desktop-environment-integration/
-    - /docs/v0.37.5/tutorial/desktop-environment-integration/
-    - /docs/v0.37.6/tutorial/desktop-environment-integration/
-    - /docs/v0.37.7/tutorial/desktop-environment-integration/
-    - /docs/v0.37.8/tutorial/desktop-environment-integration/
-    - /docs/latest/tutorial/desktop-environment-integration/
-source_url: 'https://github.com/electron/electron/blob/master/docs/tutorial/desktop-environment-integration.md'
-title: "Desktop Environment Integration"
-sort_title: "desktop environment integration"
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+    - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/desktop-environment-integration.md'
+title: "데스크톱 환경 통합"
+sort_title: ""
 ---
 
-# Desktop Environment Integration
+# 데스크톱 환경 통합
 
-Different operating systems provide different features for integrating desktop
-applications into their desktop environments. For example, on Windows,
-applications can put shortcuts in the JumpList of task bar, and on Mac,
-applications can put a custom menu in the dock menu.
+애플리케이션 배포의 대상이 되는 서로 다른 운영체제 시스템의 환경에 맞춰 애플리케이션의
+기능을 통합할 수 있습니다. 예를 들어 Windows에선 태스크바의 JumpList에 바로가기를
+추가할 수 있고 Mac(macOS)에선 dock 메뉴에 커스텀 메뉴를 추가할 수 있습니다.
 
-This guide explains how to integrate your application into those desktop
-environments with Electron APIs.
+이 문서는 Electron API를 이용하여 각 운영체제 시스템의 기능을 활용하는 방법을
+설명합니다.
 
-## Notifications (Windows, Linux, macOS)
+## 데스크톱 알림 (Windows, Linux, macOS)
 
-All three operating systems provide means for applications to send notifications
-to the user. Electron conveniently allows developers to send notifications with
-the [HTML5 Notification API](https://notifications.spec.whatwg.org/), using
-the currently running operating system's native notification APIs to display it.
+Windows, Linux, macOS 운영체제 모두 기본적으로 애플리케이션에서 유저에게 알림을 보내는
+방법을 제공합니다. Electron은 [HTML5 Notification API](https://notifications.spec.whatwg.org/)를
+통해 개발자가 편리하게 데스크톱 알림을 사용할 수 있는 기능을 제공합니다. 데스크톱 알림은
+운영체제의 네이티브 알림 API를 사용하여 표시합니다.
 
-**Note:** Since this is an HTML5 API it is only available in the renderer process.
+**참고:** 이 API는 HTML5 API이기 때문에 렌더러 프로세스에서만 사용할 수 있습니다.
 
 ```javascript
 let myNotification = new Notification('Title', {
   body: 'Lorem Ipsum Dolor Sit Amet'
-})
+});
 
 myNotification.onclick = () => {
-  console.log('Notification clicked')
-}
+  console.log('Notification clicked');
+};
 ```
 
-While code and user experience across operating systems are similar, there
-are fine differences.
+위 코드를 통해 생성한 데스크톱 알림은 각 운영체제 모두 비슷한 사용자 경험을 제공하지만,
+하지만 몇 가지 다른 점들이 있습니다.
 
 ### Windows
 
-* On Windows 10, notifications "just work".
-* On Windows 8.1 and Windows 8, a shortcut to your app, with a [Application User
-Model ID][app-user-model-id], must be installed to the Start screen. Note,
-however, that it does not need to be pinned to the Start screen.
-* On Windows 7, notifications are not supported. You can however send
-"balloon notifications" using the [Tray API][tray-balloon].
+* Windows 10에선 "아무 문제 없이 잘" 작동합니다.
+* Windows 8.1과 8에선 [Application User Model ID][app-user-model-id]로 바로가기를
+  만들어 놔야 합니다. 이 바로가기는 반드시 시작 화면에 설치되어 있어야 합니다. 참고로
+  반드시 시작 화면에 고정 할 필요는 없습니다.
+* Windows 7과 그 이하 버전은 데스크톱 알림을 지원하지 않습니다.
+  혹시 "풍선 팝업 알림" 기능을 찾는다면 [Tray API][tray-balloon]를 사용하세요.
 
-Furthermore, the maximum length for the notification body is 250 characters,
-with the Windows team recommending that notifications should be kept to 200
-characters.
+또한 알림 본문의 최대 길이는 250자 입니다. Windows 개발팀에선 알림 문자열을 200자
+이하로 유지하는 것을 권장합니다.
 
 ### Linux
 
-Notifications are sent using `libnotify`, it can show notifications on any
-desktop environment that follows [Desktop Notifications
-Specification][notification-spec], including Cinnamon, Enlightenment, Unity,
-GNOME, KDE.
+데스크톱 알림의 구현으로 `libnotify`를 사용합니다. 따라서 [Desktop Notifications Specification][notification-spec]을
+따르는 모든 데스크탑 환경에서 데스크톱 알림 기능을 사용할 수 있습니다. Cinnamon,
+Enlightenment, Unity, GNOME, KDE등을 지원합니다.
 
 ### macOS
 
-Notifications are straight-forward on macOS, you should however be aware of
-[Apple's Human Interface guidelines regarding notifications](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/NotificationCenter.html).
+macOS에서의 데스크톱 알림은 아주 직관적입니다. 하지만 데스크톱 알림을 사용할 땐
+[Apple's Human Interface guidelines regarding notifications](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/NotificationCenter.html)
+가이드를 고려해야 합니다.
 
-Note that notifications are limited to 256 bytes in size - and will be truncated
-if you exceed that limit.
+참고로 데스크롭 알림의 최대 길이는 256 바이트 입니다. 길이가 초과할 경우 초과한 글자가
+잘립니다.
 
-## Recent documents (Windows & macOS)
+## 최근 사용한 문서 (Windows & macOS)
 
-Windows and macOS provide easy access to a list of recent documents opened by
-the application via JumpList or dock menu, respectively.
+Windows와 macOS는 JumpList 또는 dock 메뉴를 통해 최근 문서 리스트에 쉽게 접근할 수
+있습니다.
 
 __JumpList:__
 
-![JumpList Recent Files](http://i.msdn.microsoft.com/dynimg/IC420538.png)
+![JumpList 최근 문서](http://i.msdn.microsoft.com/dynimg/IC420538.png)
 
-__Application dock menu:__
+__애플리케이션 dock menu:__
 
 <img src="https://cloud.githubusercontent.com/assets/639601/5069610/2aa80758-6e97-11e4-8cfb-c1a414a10774.png" height="353" width="428" >
 
-To add a file to recent documents, you can use the
-[app.addRecentDocument][addrecentdocument] API:
+파일을 최근 문서에 추가하려면 [app.addRecentDocument][addrecentdocument] API를
+사용할 수 있습니다:
 
 ```javascript
-const {app} = require('electron')
-app.addRecentDocument('/Users/USERNAME/Desktop/work.type')
+app.addRecentDocument('/Users/USERNAME/Desktop/work.type');
 ```
 
-And you can use [app.clearRecentDocuments][clearrecentdocuments] API to empty
-the recent documents list:
+그리고 [app.clearRecentDocuments][clearrecentdocuments] API로 최근 문서 리스트를
+비울 수 있습니다:
 
 ```javascript
-const {app} = require('electron')
-app.clearRecentDocuments()
+app.clearRecentDocuments();
 ```
 
-### Windows Notes
+### Windows에서 주의할 점
 
-In order to be able to use this feature on Windows, your application has to be
-registered as a handler of the file type of the document, otherwise the file
-won't appear in JumpList even after you have added it. You can find everything
-on registering your application in [Application Registration][app-registration].
+이 기능을 Windows에서 사용할 땐 운영체제 시스템에 애플리케이션에서 사용하는 파일
+확장자가 등록되어 있어야 합니다. 그렇지 않은 경우 파일을 JumpList에 추가해도 추가되지
+않습니다. 애플리케이션 등록에 관련된 API의 모든 내용은 [Application Registration][app-registration]에서
+찾아볼 수 있습니다.
 
-When a user clicks a file from the JumpList, a new instance of your application
-will be started with the path of the file added as a command line argument.
+유저가 JumpList에서 파일을 클릭할 경우 클릭된 파일의 경로가 커맨드 라인 인수로 추가되어
+새로운 인스턴스의 애플리케이션이 실행됩니다.
 
-### macOS Notes
+### macOS에서 주의할 점
 
-When a file is requested from the recent documents menu, the `open-file` event
-of `app` module will be emitted for it.
+파일이 최근 문서 메뉴에서 요청될 경우 `app` 모듈의 `open-file` 이벤트가 호출됩니다.
 
-## Custom Dock Menu (macOS)
+## 커스텀 독 메뉴 (macOS)
 
-macOS enables developers to specify a custom menu for the dock, which usually
-contains some shortcuts for commonly used features of your application:
+macOS는 개발자가 dock에 커스텀 메뉴를 만들 수 있도록 허용하고 있습니다.
+보통 애플리케이션의 특정 기능 바로가기를 만들 때 사용합니다:
 
-__Dock menu of Terminal.app:__
+__Terminal.app의 dock menu:__
 
 <img src="https://cloud.githubusercontent.com/assets/639601/5069962/6032658a-6e9c-11e4-9953-aa84006bdfff.png" height="354" width="341" >
 
-To set your custom dock menu, you can use the `app.dock.setMenu` API, which is
-only available on macOS:
+커스텀 dock menu를 설정하려면 `app.dock.setMenu` API를 사용하면 됩니다.
+macOS에서만 사용 가능합니다:
 
 ```javascript
-const {app, Menu} = require('electron')
+const {app, Menu} = require('electron');
 
 const dockMenu = Menu.buildFromTemplate([
-  {label: 'New Window', click () { console.log('New Window') }},
+  {label: 'New Window', click() { console.log('New Window'); }},
   {label: 'New Window with Settings', submenu: [
     {label: 'Basic'},
     {label: 'Pro'}
   ]},
   {label: 'New Command...'}
-])
-app.dock.setMenu(dockMenu)
+]);
+
+app.dock.setMenu(dockMenu);
 ```
 
-## User Tasks (Windows)
+## 사용자 작업 (Windows)
 
-On Windows you can specify custom actions in the `Tasks` category of JumpList,
-as quoted from MSDN:
+Windows에선 JumpList의 `Tasks` 카테고리에 원하는 작업을 설정할 수 있습니다.
+MSDN에선 해당 기능을 다음과 같이 설명하고 있습니다:
 
-> Applications define tasks based on both the program's features and the key
-> things a user is expected to do with them. Tasks should be context-free, in
-> that the application does not need to be running for them to work. They
-> should also be the statistically most common actions that a normal user would
-> perform in an application, such as compose an email message or open the
-> calendar in a mail program, create a new document in a word processor, launch
-> an application in a certain mode, or launch one of its subcommands. An
-> application should not clutter the menu with advanced features that standard
-> users won't need or one-time actions such as registration. Do not use tasks
-> for promotional items such as upgrades or special offers.
+> 애플리케이션 작업은 프로그램의 기능 그리고 주요사양 두가지를 기반으로 유저의 행동을
+> 예측하여 정의합니다. 실행할 필요가 없는 애플리케이션 작업은 작동하지 않을 때 반드시
+> context-free를 유지해야 합니다. 작업은 일반 사용자가 프로그램을 실행하거나 이메일
+> 프로그램으로 이메일을 작성하거나 달력을 불러오고, 워드 프로세서로 새 문서를 작성,
+> 특정 모드, 부속 명령으로 프로그램을 실행하는 등의 통계적, 일반적으로 가장 많이
+> 사용되는 작업인지를 고려해야 합니다. 애플리케이션 작업은 일반 유저가 필요로 하지
+> 않는 고급 기능을 조잡하게 채우거나 등록과 같은 일회성의 작업을 포함해선 안됩니다.
+> 또한 작업에 특별 이벤트 또는 업그레이드 등의 홍보성 작업을 추가하면 안됩니다.
 >
-> It is strongly recommended that the task list be static. It should remain the
-> same regardless of the state or status of the application. While it is
-> possible to vary the list dynamically, you should consider that this could
-> confuse the user who does not expect that portion of the destination list to
-> change.
+> 작업 리스트는 가능한 한 정적으로 유지되는 것을 적극 권장합니다.
+> 이것은 동일한 상태 또는 응용 프로그램의 상태에 관계없이 유지되어야 합니다.
+> 작업 목록은 동적으로 변경할 수 있지만 몇몇 유저는 예상하지 못한 작업 목록 변경에
+> 혼란을 일으킬 수 있다는 점을 고려해야 합니다.
 
-__Tasks of Internet Explorer:__
+__Internet Explorer의 작업:__
 
 ![IE](http://i.msdn.microsoft.com/dynimg/IC420539.png)
 
-Unlike the dock menu in macOS which is a real menu, user tasks in Windows work
-like application shortcuts such that when user clicks a task, a program will be
-executed with specified arguments.
+macOS의 dock menu(진짜 메뉴)와는 달리 Windows의 사용자 작업은 애플리케이션 바로
+가기처럼 작동합니다. 유저가 작업을 클릭할 때 설정한 인수와 함께 새로운 애플리케이션이
+실행됩니다.
 
-To set user tasks for your application, you can use
-[app.setUserTasks][setusertaskstasks] API:
+사용자 작업을 설정하려면 [app.setUserTasks][setusertaskstasks] 메서드를 통해 구현할
+수 있습니다:
 
 ```javascript
-const {app} = require('electron')
 app.setUserTasks([
   {
     program: process.execPath,
@@ -213,114 +205,109 @@ app.setUserTasks([
     title: 'New Window',
     description: 'Create a new window'
   }
-])
+]);
 ```
 
-To clean your tasks list, just call `app.setUserTasks` with an empty array:
+작업 리스트를 비우려면 간단히 `app.setUserTasks` 메서드의 첫번째 인수에 빈 배열을 넣어
+호출하면 됩니다:
 
 ```javascript
-const {app} = require('electron')
-app.setUserTasks([])
+app.setUserTasks([]);
 ```
 
-The user tasks will still show even after your application closes, so the icon
-and program path specified for a task should exist until your application is
-uninstalled.
 
-## Thumbnail Toolbars
+사용자 작업 리스트는 애플리케이션이 삭제되지 않는 한 종료되어도 태스크바에 보존됩니다.
+이러한 이유로 반드시 프로그램 경로와 아이콘 경로를 지정해야 합니다.
 
-On Windows you can add a thumbnail toolbar with specified buttons in a taskbar
-layout of an application window. It provides users a way to access to a
-particular window's command without restoring or activating the window.
+## 미리보기 툴바
 
-From MSDN, it's illustrated:
+Windows에선 작업 표시줄의 애플리케이션 선택시 나오는 미리보기에 특정한 미리보기 툴바를
+추가할 수 있습니다. 이 기능은 유저가 윈도우를 활성화 하지 않고 특정한 커맨드를 실행시킬
+수 있도록 할 수 있습니다.
 
-> This toolbar is simply the familiar standard toolbar common control. It has a
-> maximum of seven buttons. Each button's ID, image, tooltip, and state are defined
-> in a structure, which is then passed to the taskbar. The application can show,
-> enable, disable, or hide buttons from the thumbnail toolbar as required by its
-> current state.
+MSDN의 설명에 의하면:
+
+> 이 툴바는 표준 툴바의 공통 컨트롤과 비슷한 역할을 합니다. 버튼은 최대 7개 까지
+> 만들 수 있습니다. 각 버튼의 구조엔 ID, 이미지, 툴팁, 상태 등이 정의되어있습니다.
+> 작업표시줄에 구조가 전달되면 애플리케이션이 상태에 따라 버튼을 숨기거나, 활성화하거나,
+> 비활성화 할 수 있습니다.
 >
-> For example, Windows Media Player might offer standard media transport controls
-> such as play, pause, mute, and stop.
+> 예를 들어, 윈도우 미디어 플레이어는(WMP) 미디어 플레이어가 공통적으로 사용하는
+> 재생, 일시정지, 음소거, 정지등의 컨트롤을 포함하고 있습니다.
 
-__Thumbnail toolbar of Windows Media Player:__
+__Windows Media Player의 미리보기 툴바:__
 
 ![player](https://i-msdn.sec.s-msft.com/dynimg/IC420540.png)
 
-You can use [BrowserWindow.setThumbarButtons][setthumbarbuttons] to set
-thumbnail toolbar in your application:
+[BrowserWindow.setThumbarButtons][setthumbarbuttons] API를 통해 애플리케이션에
+미리보기 툴바를 설정할 수 있습니다:
 
 ```javascript
-const {BrowserWindow} = require('electron')
-const path = require('path')
+const {BrowserWindow} = require('electron');
+const path = require('path');
 
 let win = new BrowserWindow({
   width: 800,
   height: 600
-})
+});
 
 win.setThumbarButtons([
   {
     tooltip: 'button1',
     icon: path.join(__dirname, 'button1.png'),
-    click () { console.log('button1 clicked') }
+    click() { console.log('button1 clicked'); }
   },
   {
     tooltip: 'button2',
     icon: path.join(__dirname, 'button2.png'),
-    flags: ['enabled', 'dismissonclick'],
-    click () { console.log('button2 clicked.') }
+    flags:['enabled', 'dismissonclick'],
+    click() { console.log('button2 clicked.'); }
   }
-])
+]);
 ```
 
-To clean thumbnail toolbar buttons, just call `BrowserWindow.setThumbarButtons`
-with an empty array:
+미리보기 툴바를 비우려면 간단히 `BrowserWindow.setThumbarButtons` API에 빈 배열을
+전달하면 됩니다:
 
 ```javascript
-const {BrowserWindow} = require('electron')
-let win = new BrowserWindow()
-win.setThumbarButtons([])
+win.setThumbarButtons([]);
 ```
 
-## Unity Launcher Shortcuts (Linux)
+## Unity 런처 숏컷 기능 (Linux)
 
-In Unity, you can add custom entries to its launcher via modifying the
-`.desktop` file, see [Adding Shortcuts to a Launcher][unity-launcher].
+Unity 환경에선 `.desktop` 파일을 수정함으로써 런처에 새로운 커스텀 엔트리를 추가할 수
+있습니다. [Adding Shortcuts to a Launcher][unity-launcher] 가이드를 참고하세요.
 
-__Launcher shortcuts of Audacious:__
+__Audacious의 런처 숏컷:__
 
 ![audacious](https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles?action=AttachFile&do=get&target=shortcuts.png)
 
-## Progress Bar in Taskbar (Windows, macOS, Unity)
+## 작업 표시줄 안의 프로그래스 바 (Windows, macOS, Unity)
 
-On Windows a taskbar button can be used to display a progress bar. This enables
-a window to provide progress information to the user without the user having to
-switch to the window itself.
+Windows에선 작업 표시줄의 애플리케이션 버튼에 프로그래스 바를 추가할 수 있습니다.
+이 기능은 사용자가 애플리케이션의 창을 열지 않고도 애플리케이션의 작업의 상태 정보를
+시각적으로 보여줄 수 있도록 해줍니다.
 
-On macOS the progress bar will be displayed as a part of the dock icon.
+macOS에선 프로그래스바가 dock 아이콘의 일부에 표시됩니다.
 
-The Unity DE also has a similar feature that allows you to specify the progress
-bar in the launcher.
+또한 Unity DE도 런처에 프로그래스 바를 부착할 수 있습니다.
 
-__Progress bar in taskbar button:__
+__작업 표시줄 버튼의 프로그래스 바:__
 
 ![Taskbar Progress Bar](https://cloud.githubusercontent.com/assets/639601/5081682/16691fda-6f0e-11e4-9676-49b6418f1264.png)
 
-To set the progress bar for a Window, you can use the
-[BrowserWindow.setProgressBar][setprogressbar] API:
+이 기능은 [BrowserWindow.setProgressBar][setprogressbar] API를 사용하여 구현할 수
+있습니다:
 
 ```javascript
-const {BrowserWindow} = require('electron')
-let win = new BrowserWindow()
-win.setProgressBar(0.5)
+let win = new BrowserWindow({...});
+win.setProgressBar(0.5);
 ```
 
-## Icon Overlays in Taskbar (Windows)
+## 작업 표시줄의 아이콘 오버레이 (Windows)
 
-On Windows a taskbar button can use a small overlay to display application
-status, as quoted from MSDN:
+Windows에선 작업 표시줄 버튼에 애플리케이션의 상태를 표시하는 작은 오버레이를 사용할
+수 있습니다. MSDN에서 인용하자면 (영문):
 
 > Icon overlays serve as a contextual notification of status, and are intended
 > to negate the need for a separate notification area status icon to communicate
@@ -332,50 +319,46 @@ status, as quoted from MSDN:
 > network status, messenger status, or new mail. The user should not be
 > presented with constantly changing overlays or animations.
 
-__Overlay on taskbar button:__
+__작업 표시줄 버튼 위의 오버레이:__
 
-![Overlay on taskbar button](https://i-msdn.sec.s-msft.com/dynimg/IC420441.png)
+![작업 표시줄 버튼 위의 오버레이](https://i-msdn.sec.s-msft.com/dynimg/IC420441.png)
 
-To set the overlay icon for a window, you can use the
-[BrowserWindow.setOverlayIcon][setoverlayicon] API:
+윈도우에 오버레이 아이콘을 설정하려면 [BrowserWindow.setOverlayIcon][setoverlayicon]
+API를 사용할 수 있습니다:
 
 ```javascript
-const {BrowserWindow} = require('electron')
-let win = new BrowserWindow()
-win.setOverlayIcon('path/to/overlay.png', 'Description for overlay')
+let win = new BrowserWindow({...});
+win.setOverlayIcon('path/to/overlay.png', 'Description for overlay');
 ```
 
-## Represented File of Window (macOS)
+## 대표 파일 제시 (macOS)
 
-On macOS a window can set its represented file, so the file's icon can show in
-the title bar and when users Command-Click or Control-Click on the title a path
-popup will show.
+macOS는 창에서 대표 파일을 설정할 수 있습니다. 타이틀바에서 파일 아이콘이 있고, 사용자가
+Command-Click 또는 Control-Click 키를 누를 경우 파일 경로 팝업이 보여집니다. 또한
+창의 상태도 지정할 수 있습니다. 다시 말해 로드된 문서의 수정 여부를 제목의 파일
+아이콘에 표시할 수 있습니다.
 
-You can also set the edited state of a window so that the file icon can indicate
-whether the document in this window has been modified.
-
-__Represented file popup menu:__
+__대표 파일 팝업 메뉴:__
 
 <img src="https://cloud.githubusercontent.com/assets/639601/5082061/670a949a-6f14-11e4-987a-9aaa04b23c1d.png" height="232" width="663" >
 
-To set the represented file of window, you can use the
-[BrowserWindow.setRepresentedFilename][setrepresentedfilename] and
-[BrowserWindow.setDocumentEdited][setdocumentedited] APIs:
+대표 파일 관련 API는 [BrowserWindow.setRepresentedFilename][setrepresentedfilename] 과
+[BrowserWindow.setDocumentEdited][setdocumentedited]를 사용할 수 있습니다:
 
 ```javascript
-const {BrowserWindow} = require('electron')
-let win = new BrowserWindow()
-win.setRepresentedFilename('/etc/passwd')
-win.setDocumentEdited(true)
+let win = new BrowserWindow({...});
+win.setRepresentedFilename('/etc/passwd');
+win.setDocumentEdited(true);
 ```
 
-## Dragging files out of the window
+## 파일을 윈도우 밖으로 드래그할 수 있도록 만들기
 
-For certain kinds of apps that manipulate on files, it is important to be able
-to drag files from Electron to other apps. To implement this feature in your
-app, you need to call `webContents.startDrag(item)` API on `ondragstart` event.
+파일을 조작하는 특정 종류의 애플리케이션들에서 파일을 Electron에서 다른 애플리케이션으로
+드래그할 수 있는 기능은 중요합니다. 이 기능을 구현하려면 애플리케이션에서
+`ondragstart` 이벤트가 발생했을 때 `webContents.startDrag(item)` API를 호출해야
+합니다:
 
-In web page:
+웹 페이지에서:
 
 ```html
 <a href="#" id="drag">item</a>
@@ -387,10 +370,9 @@ In web page:
 </script>
 ```
 
-In the main process:
+메인 프로세스에서:
 
 ```javascript
-const {ipcMain} = require('electron')
 ipcMain.on('ondragstart', (event, filePath) => {
   event.sender.startDrag({
     file: filePath,

@@ -1,110 +1,98 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/session/
-    - /docs/v0.25.0/api/session/
-    - /docs/v0.26.0/api/session/
-    - /docs/v0.27.0/api/session/
-    - /docs/v0.28.0/api/session/
-    - /docs/v0.29.0/api/session/
-    - /docs/v0.30.0/api/session/
-    - /docs/v0.31.0/api/session/
-    - /docs/v0.32.0/api/session/
-    - /docs/v0.33.0/api/session/
-    - /docs/v0.34.0/api/session/
-    - /docs/v0.35.0/api/session/
-    - /docs/v0.36.0/api/session/
-    - /docs/v0.36.3/api/session/
-    - /docs/v0.36.4/api/session/
-    - /docs/v0.36.5/api/session/
-    - /docs/v0.36.6/api/session/
-    - /docs/v0.36.7/api/session/
-    - /docs/v0.36.8/api/session/
-    - /docs/v0.36.9/api/session/
-    - /docs/v0.36.10/api/session/
-    - /docs/v0.36.11/api/session/
-    - /docs/v0.37.0/api/session/
-    - /docs/v0.37.1/api/session/
-    - /docs/v0.37.2/api/session/
-    - /docs/v0.37.3/api/session/
-    - /docs/v0.37.4/api/session/
-    - /docs/v0.37.5/api/session/
-    - /docs/v0.37.6/api/session/
-    - /docs/v0.37.7/api/session/
-    - /docs/v0.37.8/api/session/
-    - /docs/latest/api/session/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/session.md'
-excerpt: "Manage browser sessions, cookies, cache, proxy settings, etc."
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+    - /docs-translations/ko-KR/api/session/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/session.md'
+excerpt: "&#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xC138;&#xC158;, &#xCFE0;&#xD0A4;, &#xCE90;&#xC2DC;, &#xD504;&#xB85D;&#xC2DC; &#xC124;&#xC815; &#xB4F1;&#xC744; &#xAD00;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;."
 title: "session"
 sort_title: "session"
 ---
 
 # session
 
-> Manage browser sessions, cookies, cache, proxy settings, etc.
+> 브라우저 세션, 쿠키, 캐시, 프록시 설정 등을 관리합니다.
 
-The `session` module can be used to create new `Session` objects.
+`session` 모듈은 새로운 `Session` 객체를 만드는데 사용할 수 있습니다.
 
-You can also access the `session` of existing pages by using the `session`
-property of [`WebContents`](http://electron.atom.io/docs/api/web-contents), or from the `session` module.
+또한 [`WebContents`](http://electron.atom.io/docs/api/web-contents)의 `session` 속성이나 `session` 모듈을 통해 현재 존재하는 페이지의 `session`에 접근할 수 있습니다.
 
 ```javascript
-const {BrowserWindow} = require('electron')
+const {session, BrowserWindow} = require('electron')
 
 let win = new BrowserWindow({width: 800, height: 600})
 win.loadURL('http://github.com')
 
-const ses = win.webContents.session
-console.log(ses.getUserAgent())
+let ses = win.webContents.session
 ```
 
 ## Methods
 
-The `session` module has the following methods:
+`session` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
-### `session.fromPartition(partition[, options])`
+### session.fromPartition(partition)
 
 * `partition` String
-* `options` Object
-  * `cache` Boolean - Whether to enable cache.
 
-Returns a `Session` instance from `partition` string. When there is an existing
-`Session` with the same `partition`, it will be returned; othewise a new
-`Session` instance will be created with `options`.
+`partition` 문자열로 부터 새로운 `Session` 인스턴스를 만들어 반환합니다.
 
-If `partition` starts with `persist:`, the page will use a persistent session
-available to all pages in the app with the same `partition`. if there is no
-`persist:` prefix, the page will use an in-memory session. If the `partition` is
-empty then default session of the app will be returned.
-
-To create a `Session` with `options`, you have to ensure the `Session` with the
-`partition` has never been used before. There is no way to change the `options`
-of an existing `Session` object.
+`partition`이 `persist:`로 시작하면 페이지는 지속성 세션을 사용하며 다른 모든 앱 내의
+페이지에서 같은 `partition`을 사용할 수 있습니다. 만약 `persist:` 접두어로 시작하지
+않으면 페이지는 인-메모리 세션을 사용합니다. `partition`을 지정하지 않으면 애플리케이션의
+기본 세션이 반환됩니다.
 
 ## Properties
 
-The `session` module has the following properties:
+`session` 모듈은 다음과 같은 속성을 가지고 있습니다:
 
-### `session.defaultSession`
+### session.defaultSession
 
-Returns the default session object of the app.
+애플리케이션의 기본 세션 객체를 반환합니다.
 
 ## Class: Session
 
-> Get and set properties of a session.
-
-You can create a `Session` object in the `session` module:
+`session` 모듈을 사용하여 `Session` 객체를 생성할 수 있습니다:
 
 ```javascript
-const {session} = require('electron')
-const ses = session.fromPartition('persist:name')
-console.log(ses.getUserAgent())
-```
+const session = require('electron').session;
+
+const ses = session.fromPartition('persist:name');
+ ```
 
 ### Instance Events
 
-The following events are available on instances of `Session`:
+`Session` 객체는 다음과 같은 이벤트를 가지고 있습니다:
 
 #### Event: 'will-download'
 
@@ -112,71 +100,68 @@ The following events are available on instances of `Session`:
 * `item` [DownloadItem](http://electron.atom.io/docs/api/download-item)
 * `webContents` [WebContents](http://electron.atom.io/docs/api/web-contents)
 
-Emitted when Electron is about to download `item` in `webContents`.
+Electron의 `webContents`에서 `item`을 다운로드할 때 발생하는 이벤트입니다.
 
-Calling `event.preventDefault()` will cancel the download and `item` will not be
-available from next tick of the process.
+`event.preventDefault()` 메서드를 호출하면 다운로드를 취소하고, 프로세스의 다음
+틱부터 `item`을 사용할 수 없게 됩니다.
 
 ```javascript
-const {session} = require('electron')
 session.defaultSession.on('will-download', (event, item, webContents) => {
-  event.preventDefault()
+  event.preventDefault();
   require('request')(item.getURL(), (data) => {
-    require('fs').writeFileSync('/somewhere', data)
-  })
-})
+    require('fs').writeFileSync('/somewhere', data);
+  });
+});
 ```
 
 ### Instance Methods
 
-The following methods are available on instances of `Session`:
+`Session` 객체는 다음과 같은 메서드를 가지고 있습니다:
 
 #### `ses.getCacheSize(callback)`
 
 * `callback` Function
-  * `size` Integer - Cache size used in bytes.
+  * `size` Integer - 바이트로 표현된 캐시 크기
 
-Returns the session's current cache size.
+세션의 현재 캐시 크기를 반환합니다.
 
 #### `ses.clearCache(callback)`
 
-* `callback` Function - Called when operation is done
+* `callback` Function - 작업이 완료되면 호출됩니다.
 
-Clears the session’s HTTP cache.
+세션의 HTTP 캐시를 비웁니다.
 
-#### `ses.clearStorageData([options, callback])`
+#### `ses.clearStorageData([options, ]callback)`
 
-* `options` Object (optional)
-  * `origin` String - Should follow `window.location.origin`’s representation
-    `scheme://host:port`.
-  * `storages` Array - The types of storages to clear, can contain:
+* `options` Object (optional), proprties:
+  * `origin` String - `scheme://host:port`와 같은 `window.location.origin` 규칙을
+    따르는 origin 문자열.
+  * `storages` Array - 비우려는 스토리지의 종류, 다음과 같은 타입을 포함할 수 있습니다:
     `appcache`, `cookies`, `filesystem`, `indexdb`, `local storage`,
     `shadercache`, `websql`, `serviceworkers`
-  * `quotas` Array - The types of quotas to clear, can contain:
+  * `quotas` Array - 비우려는 할당의 종류, 다음과 같은 타입을 포함할 수 있습니다:
     `temporary`, `persistent`, `syncable`.
-* `callback` Function (optional) - Called when operation is done.
+* `callback` Function - 작업이 완료되면 호출됩니다.
 
-Clears the data of web storages.
+웹 스토리지의 데이터를 비웁니다.
 
 #### `ses.flushStorageData()`
 
-Writes any unwritten DOMStorage data to disk.
+디스크에 사용되지 않은 DOMStorage 데이터를 모두 덮어씌웁니다.
 
 #### `ses.setProxy(config, callback)`
 
 * `config` Object
-  * `pacScript` String - The URL associated with the PAC file.
-  * `proxyRules` String - Rules indicating which proxies to use.
-  * `proxyBypassRules` String - Rules indicating which URLs should
-    bypass the proxy settings.
-* `callback` Function - Called when operation is done.
+  * `pacScript` String - PAC 파일과 관련된 URL입니다.
+  * `proxyRules` String - 사용할 프록시의 규칙을 나타냅니다.
+* `callback` Function - 작업이 완료되면 호출됩니다.
 
-Sets the proxy settings.
+프록시 설정을 적용합니다.
 
-When `pacScript` and `proxyRules` are provided together, the `proxyRules`
-option is ignored and `pacScript` configuration is applied.
+`pacScript`와 `proxyRules`이 같이 제공되면 `proxyRules` 옵션은 무시되며 `pacScript`
+컨픽만 적용됩니다.
 
-The `proxyRules` has to follow the rules below:
+`proxyRules`는 다음과 같은 규칙을 따릅니다:
 
 ```
 proxyRules = schemeProxies[";"<schemeProxies>]
@@ -186,168 +171,127 @@ proxyURIList = <proxyURL>[","<proxyURIList>]
 proxyURL = [<proxyScheme>"://"]<proxyHost>[":"<proxyPort>]
 ```
 
-For example:
+예시:
 
-* `http=foopy:80;ftp=foopy2` - Use HTTP proxy `foopy:80` for `http://` URLs, and
-  HTTP proxy `foopy2:80` for `ftp://` URLs.
-* `foopy:80` - Use HTTP proxy `foopy:80` for all URLs.
-* `foopy:80,bar,direct://` - Use HTTP proxy `foopy:80` for all URLs, failing
-  over to `bar` if `foopy:80` is unavailable, and after that using no proxy.
-* `socks4://foopy` - Use SOCKS v4 proxy `foopy:1080` for all URLs.
-* `http=foopy,socks5://bar.com` - Use HTTP proxy `foopy` for http URLs, and fail
-  over to the SOCKS5 proxy `bar.com` if `foopy` is unavailable.
-* `http=foopy,direct://` - Use HTTP proxy `foopy` for http URLs, and use no
-  proxy if `foopy` is unavailable.
-* `http=foopy;socks=foopy2` -  Use HTTP proxy `foopy` for http URLs, and use
-  `socks4://foopy2` for all other URLs.
+* `http=foopy:80;ftp=foopy2` - http:// URL에 `foopy:80` HTTP 프록시를 사용합니다.
+  `foopy2:80` 는 ftp:// URL에 사용됩니다.
+* `foopy:80` - 모든 URL에 `foopy:80` 프록시를 사용합니다.
+* `foopy:80,bar,direct://` - 모든 URL에 `foopy:80` HTTP 프록시를 사용합니다.
+  문제가 발생하여 `foopy:80`를 사용할 수 없는 경우 `bar`를 대신 사용하여 장애를
+  복구하며 그 다음 문제가 생긴 경우 프록시를 사용하지 않습니다.
+* `socks4://foopy` - 모든 URL에 `foopy:1000` SOCKS v4 프록시를 사용합니다.
+* `http=foopy,socks5://bar.com` - http:// URL에 `foopy` HTTP 프록시를 사용합니다.
+  문제가 발생하여 `foopy`를 사용할 수 없는 경우 SOCKS5 `bar.com` 프록시를 대신
+  사용합니다.
+*  `http=foopy,direct://` - http:// URL에 `foopy` HTTP 프록시를 사용합니다. 그리고
+  문제가 발생하여 `foopy`를 사용할 수 없는 경우 프록시를 사용하지 않습니다.
+* `http=foopy;socks=foopy2` - http:// URL에 `foopy` HTTP 프록시를 사용합니다.
+  그리고 `socks4://foopy2` 프록시를 다른 모든 URL에 사용합니다.
 
-The `proxyBypassRules` is a comma separated list of rules described below:
-
-* `[ URL_SCHEME "://" ] HOSTNAME_PATTERN [ ":" <port> ]`
-
-   Match all hostnames that match the pattern HOSTNAME_PATTERN.
-
-   Examples:
-     "foobar.com", "*foobar.com", "*.foobar.com", "*foobar.com:99",
-     "https://x.*.y.com:99"
-
- * `"." HOSTNAME_SUFFIX_PATTERN [ ":" PORT ]`
-
-   Match a particular domain suffix.
-
-   Examples:
-     ".google.com", ".com", "http://.google.com"
-
-* `[ SCHEME "://" ] IP_LITERAL [ ":" PORT ]`
-
-   Match URLs which are IP address literals.
-
-   Examples:
-     "127.0.1", "[0:0::1]", "[::1]", "http://[::1]:99"
-
-*  `IP_LITERAL "/" PREFIX_LENGHT_IN_BITS`
-
-   Match any URL that is to an IP literal that falls between the
-   given range. IP range is specified using CIDR notation.
-
-   Examples:
-     "192.168.1.1/16", "fefe:13::abc/33".
-
-*  `<local>`
-
-   Match local addresses. The meaning of `<local>` is whether the
-   host matches one of: "127.0.0.1", "::1", "localhost".
-
-### `ses.resolveProxy(url, callback)`
+#### `ses.resolveProxy(url, callback)`
 
 * `url` URL
 * `callback` Function
 
-Resolves the proxy information for `url`. The `callback` will be called with
-`callback(proxy)` when the request is performed.
+`url`의 프록시 정보를 해석합니다. `callback`은 요청이 수행되었을 때
+`callback(proxy)` 형태로 호출됩니다.
 
 #### `ses.setDownloadPath(path)`
 
-* `path` String - The download location
+* `path` String - 다운로드 위치
 
-Sets download saving directory. By default, the download directory will be the
-`Downloads` under the respective app folder.
+다운로드 저장 위치를 지정합니다. 기본 다운로드 위치는 각 애플리케이션 데이터 디렉터리의
+`Downloads` 폴더입니다.
 
 #### `ses.enableNetworkEmulation(options)`
 
 * `options` Object
-  * `offline` Boolean (optional) - Whether to emulate network outage. Defaults
-    to false.
-  * `latency` Double (optional) - RTT in ms. Defaults to 0 which will disable
-    latency throttling.
-  * `downloadThroughput` Double (optional) - Download rate in Bps. Defaults to 0
-    which will disable download throttling.
-  * `uploadThroughput` Double (optional) - Upload rate in Bps. Defaults to 0
-    which will disable upload throttling.
+  * `offline` Boolean - 네트워크의 오프라인 상태 여부
+  * `latency` Double - 밀리세컨드 단위의 RTT
+  * `downloadThroughput` Double - Bps 단위의 다운로드 주기
+  * `uploadThroughput` Double - Bps 단위의 업로드 주기
 
-Emulates network with the given configuration for the `session`.
+제공된 설정으로 `session`의 네트워크를 에뮬레이트합니다.
 
 ```javascript
-// To emulate a GPRS connection with 50kbps throughput and 500 ms latency.
+// 50kbps의 처리량과 함께 500ms의 레이턴시로 GPRS 연결을 에뮬레이트합니다.
 window.webContents.session.enableNetworkEmulation({
-  latency: 500,
-  downloadThroughput: 6400,
-  uploadThroughput: 6400
-})
+    latency: 500,
+    downloadThroughput: 6400,
+    uploadThroughput: 6400
+});
 
-// To emulate a network outage.
-window.webContents.session.enableNetworkEmulation({offline: true})
+// 네트워크가 끊긴 상태를 에뮬레이트합니다.
+window.webContents.session.enableNetworkEmulation({offline: true});
 ```
 
 #### `ses.disableNetworkEmulation()`
 
-Disables any network emulation already active for the `session`. Resets to
-the original network configuration.
+활성화된 `session`의 에뮬레이션을 비활성화합니다. 기본 네트워크 설정으로 돌아갑니다.
 
 #### `ses.setCertificateVerifyProc(proc)`
 
-* `proc` Function
+ * `proc` Function
 
-Sets the certificate verify proc for `session`, the `proc` will be called with
-`proc(hostname, certificate, callback)` whenever a server certificate
-verification is requested. Calling `callback(true)` accepts the certificate,
-calling `callback(false)` rejects it.
+`session`에 인증서의 유효성을 확인하는 프로세스(proc)를 등록합니다. `proc`은 서버
+인증서 유효성 검증 요청이 들어왔을 때 언제나 `proc(hostname, certificate, callback)`
+형식으로 호출됩니다. `callback(true)`을 호출하면 인증을 승인하고 `callback(false)`를
+호출하면 인증을 거부합니다.
 
-Calling `setCertificateVerifyProc(null)` will revert back to default certificate
-verify proc.
+`setCertificateVerifyProc(null)`을 호출하면 기본 검증 프로세스로 되돌립니다.
 
 ```javascript
-const {BrowserWindow} = require('electron')
-let win = new BrowserWindow()
-
-win.webContents.session.setCertificateVerifyProc((hostname, cert, callback) => {
-  callback(hostname === 'github.com')
-})
+myWindow.webContents.session.setCertificateVerifyProc((hostname, cert, callback) => {
+ if (hostname === 'github.com')
+   callback(true);
+ else
+   callback(false);
+});
 ```
-
 #### `ses.setPermissionRequestHandler(handler)`
 
 * `handler` Function
-  * `webContents` Object - [WebContents](http://electron.atom.io/docs/api/web-contents) requesting the permission.
-  * `permission` String - Enum of 'media', 'geolocation', 'notifications', 'midiSysex',
-    'pointerLock', 'fullscreen', 'openExternal'.
-  * `callback` Function - Allow or deny the permission.
+  * `webContents` Object - [WebContents](http://electron.atom.io/docs/api/web-contents) 권한을 요청.
+  * `permission` String - 'media', 'geolocation', 'notifications',
+    'midiSysex', 'pointerLock', 'fullscreen', 'openExternal'의 나열.
+  * `callback` Function - 권한 허용 및 거부.
 
-Sets the handler which can be used to respond to permission requests for the `session`.
-Calling `callback(true)` will allow the permission and `callback(false)` will reject it.
+`session`의 권한 요청에 응답을 하는데 사용하는 핸들러를 설정합니다.
+`callback(true)`를 호출하면 권한 제공을 허용하고 `callback(false)`를
+호출하면 권한 제공을 거부합니다.
 
 ```javascript
-const {session} = require('electron')
-session.fromPartition('some-partition').setPermissionRequestHandler((webContents, permission, callback) => {
-  if (webContents.getURL() === 'some-host' && permission === 'notifications') {
-    return callback(false) // denied.
+session.fromPartition(partition).setPermissionRequestHandler((webContents, permission, callback) => {
+  if (webContents.getURL() === host) {
+    if (permission === 'notifications') {
+      callback(false); // 거부됨.
+      return;
+    }
   }
 
-  callback(true)
-})
+  callback(true);
+});
 ```
 
 #### `ses.clearHostResolverCache([callback])`
 
-* `callback` Function (optional) - Called when operation is done.
+* `callback` Function (optional) - 작업이 완료되면 호출됩니다.
 
-Clears the host resolver cache.
+호스트 리소버(resolver) 캐시를 지웁니다.
 
 #### `ses.allowNTLMCredentialsForDomains(domains)`
 
-* `domains` String - A comma-seperated list of servers for which
-  integrated authentication is enabled.
+* `domains` String - 통합 인증을 사용하도록 설정할 쉼표로 구분된 서버의 리스트.
 
-Dynamically sets whether to always send credentials for HTTP NTLM or Negotiate
-authentication.
+동적으로 HTTP NTML 또는 Negotiate 인증을 위해 언제나 자격 증명을 보낼지 여부를
+설정합니다.
 
 ```javascript
-const {session} = require('electron')
-// consider any url ending with `example.com`, `foobar.com`, `baz`
-// for integrated authentication.
+// 통합 인증을 위해 `example.com`, `foobar.com`, `baz`로 끝나는
+// 모든 url을 지정합니다.
 session.defaultSession.allowNTLMCredentialsForDomains('*example.com, *foobar.com, *baz')
 
-// consider all urls for integrated authentication.
+// 통합 인증을 위해 모든 url을 지정합니다.
 session.defaultSession.allowNTLMCredentialsForDomains('*')
 ```
 
@@ -356,198 +300,183 @@ session.defaultSession.allowNTLMCredentialsForDomains('*')
 * `userAgent` String
 * `acceptLanguages` String (optional)
 
-Overrides the `userAgent` and `acceptLanguages` for this session.
+현재 세션에 대해 `userAgent`와 `acceptLanguages`를 덮어씁니다.
 
-The `acceptLanguages` must a comma separated ordered list of language codes, for
-example `"en-US,fr,de,ko,zh-CN,ja"`.
+`acceptLanguages`는 반드시 쉼표로 구분된 순서에 맞춘 언어 코드의 리스트여야 하며
+예를 들면 `"en-US,fr,de,ko,zh-CN,ja"` 입니다.
 
-This doesn't affect existing `WebContents`, and each `WebContents` can use
-`webContents.setUserAgent` to override the session-wide user agent.
+이는 현재 존재하는 `WebContents`에 적용되지 않으며 각 `WebContents`는
+`webContents.setUserAgent`를 사용하여 세션 전체의 유저 에이전트를 덮어쓸 수 있습니다.
 
 #### `ses.getUserAgent()`
 
-Returns a `String` representing the user agent for this session.
-
-#### `ses.getBlobData(identifier, callback)`
-
-* `identifier` String - Valid UUID.
-* `callback` Function
-  * `result` Buffer - Blob data.
-
-Returns the blob data associated with the `identifier`.
+현재 세션의 유저 에이전트를 표현하는 `String`을 반환합니다.
 
 ### Instance Properties
 
-The following properties are available on instances of `Session`:
+다음은 `Session` 인스턴스에서 사용할 수 있는 속성들입니다:
 
 #### `ses.cookies`
 
-Returns an instance of `Cookies` class for this session.
+현재 세션의 `Cookies` 클래스 인스턴스를 반환합니다.
 
 #### `ses.webRequest`
 
-Returns an instance of `WebRequest` class for this session.
+현재 세션의 `WebRequest` 클래스 인스턴스를 반환합니다.
 
 #### `ses.protocol`
 
-Returns an instance of [protocol](http://electron.atom.io/docs/api/protocol) module for this session.
+현재 세션의 [protocol](http://electron.atom.io/docs/api/protocol) 모듈 인스턴스를 반환합니다.
 
 ```javascript
 const {app, session} = require('electron')
 const path = require('path')
 
 app.on('ready', function () {
-  const protocol = session.fromPartition('some-partition').protocol
+  const protocol = session.fromPartition(partitionName).protocol
   protocol.registerFileProtocol('atom', function (request, callback) {
     var url = request.url.substr(7)
-    callback({path: path.normalize(`${__dirname}/${url}`)})
+    callback({path: path.normalize(__dirname + '/' + url)})
   }, function (error) {
-    if (error) console.error('Failed to register protocol')
+    if (error)
+      console.error('Failed to register protocol')
   })
 })
 ```
 
 ## Class: Cookies
 
-> Query and modify a session's cookies.
+`Cookies` 클래스는 쿠키를 탐색하고 조작하는 방법을 제공합니다. `Cookies` 클래스의
+인스턴스는 반드시 `Session` 클래스의 `cookies` 속성에서 접근해야 합니다.
 
-Instances of the `Cookies` class are accessed by using `cookies` property of
-a `Session`.
-
-For example:
+예를 들어:
 
 ```javascript
-const {session} = require('electron')
-
-// Query all cookies.
+// 모든 쿠키를 요청합니다.
 session.defaultSession.cookies.get({}, (error, cookies) => {
-  console.log(error, cookies)
-})
+  console.log(cookies);
+});
 
-// Query all cookies associated with a specific url.
+// url에 관련된 쿠키를 모두 가져옵니다.
 session.defaultSession.cookies.get({url: 'http://www.github.com'}, (error, cookies) => {
-  console.log(error, cookies)
-})
+  console.log(cookies);
+});
 
-// Set a cookie with the given cookie data;
-// may overwrite equivalent cookies if they exist.
-const cookie = {url: 'http://www.github.com', name: 'dummy_name', value: 'dummy'}
+// 지정한 쿠키 데이터를 설정합니다.
+// 동일한 쿠키가 있으면 해당 쿠키를 덮어씁니다.
+const cookie = {url: 'http://www.github.com', name: 'dummy_name', value: 'dummy'};
 session.defaultSession.cookies.set(cookie, (error) => {
-  if (error) console.error(error)
-})
+  if (error)
+    console.error(error);
+});
 ```
 
 ### Instance Methods
 
-The following methods are available on instances of `Cookies`:
+다음은 `Cookies` 객체에서 사용할 수 있는 메서드들입니다:
 
-#### `cookies.get(filter, callback)`
+#### `ses.cookies.get(filter, callback)`
 
 * `filter` Object
-  * `url` String (optional) - Retrieves cookies which are associated with
-    `url`. Empty implies retrieving cookies of all urls.
-  * `name` String (optional) - Filters cookies by name.
-  * `domain` String (optional) - Retrieves cookies whose domains match or are
-    subdomains of `domains`
-  * `path` String (optional) - Retrieves cookies whose path matches `path`.
-  * `secure` Boolean (optional) - Filters cookies by their Secure property.
-  * `session` Boolean (optional) - Filters out session or persistent cookies.
+  * `url` String (optional) - `url`에 해당하는 쿠키를 취득합니다. 이 속성을
+  생략하면 모든 url에서 찾습니다.
+  * `name` String (optional) - 쿠키의 이름입니다.
+  * `domain` String (optional) - 도메인 또는 서브 도메인에 일치하는 쿠키를
+  취득합니다.
+  * `path` String (optional) - `path`에 일치하는 쿠키를 취득합니다.
+  * `secure` Boolean (optional) - 보안 속성에 따라 쿠키를 필터링합니다.
+  * `session` Boolean (optional) - 세션 또는 지속성 쿠키를 필터링합니다.
 * `callback` Function
 
-Sends a request to get all cookies matching `details`, `callback` will be called
-with `callback(error, cookies)` on complete.
+`details` 객체에서 묘사한 모든 쿠키를 요청합니다. 모든 작업이 끝나면 `callback`이
+`callback(error, cookies)` 형태로 호출됩니다.
 
-`cookies` is an Array of `cookie` objects.
+`cookies`는 `cookie` 객체의 배열입니다.
 
 * `cookie` Object
-  *  `name` String - The name of the cookie.
-  *  `value` String - The value of the cookie.
-  *  `domain` String - The domain of the cookie.
-  *  `hostOnly` String - Whether the cookie is a host-only cookie.
-  *  `path` String - The path of the cookie.
-  *  `secure` Boolean - Whether the cookie is marked as secure.
-  *  `httpOnly` Boolean - Whether the cookie is marked as HTTP only.
-  *  `session` Boolean - Whether the cookie is a session cookie or a persistent
-     cookie with an expiration date.
-  *  `expirationDate` Double (optional) - The expiration date of the cookie as
-     the number of seconds since the UNIX epoch. Not provided for session
-     cookies.
+  *  `name` String - 쿠키의 이름.
+  *  `value` String - 쿠키의 값.
+  *  `domain` String - 쿠키의 도메인.
+  *  `hostOnly` String - 쿠키가 호스트 전용인가에 대한 여부.
+  *  `path` String - 쿠키의 경로.
+  *  `secure` Boolean - 쿠키가 안전한 것으로 표시되는지에 대한 여부.
+  *  `httpOnly` Boolean - 쿠키가 HTTP로만 표시되는지에 대한 여부.
+  *  `session` Boolean - 쿠키가 세션 쿠키 또는 만료일이 있는 영구 쿠키인지에 대한
+    여부.
+  *  `expirationDate` Double - (Option) UNIX 시간으로 표시되는 쿠키의 만료일에
+    대한 초 단위 시간. 세션 쿠키는 지원되지 않음.
 
-#### `cookies.set(details, callback)`
+#### `ses.cookies.set(details, callback)`
 
 * `details` Object
-  * `url` String - The url to associate the cookie with.
-  * `name` String - The name of the cookie. Empty by default if omitted.
-  * `value` String - The value of the cookie. Empty by default if omitted.
-  * `domain` String - The domain of the cookie. Empty by default if omitted.
-  * `path` String - The path of the cookie. Empty by default if omitted.
-  * `secure` Boolean - Whether the cookie should be marked as Secure. Defaults to
-    false.
-  * `httpOnly` Boolean - Whether the cookie should be marked as HTTP only.
-    Defaults to false.
-  * `expirationDate` Double -	The expiration date of the cookie as the number of
-    seconds since the UNIX epoch. If omitted then the cookie becomes a session
-    cookie and will not be retained between sessions.
+  * `url` String - 쿠키에 대한 `url` 링크.
+  * `name` String - 쿠키의 이름입니다. 기본적으로 비워두면 생략됩니다.
+  * `value` String - 쿠키의 값입니다. 기본적으로 비워두면 생략됩니다.
+  * `domain` String - 쿠키의 도메인입니다. 기본적으로 비워두면 생략됩니다.
+  * `path` String - 쿠키의 경로입니다. 기본적으로 비워두면 생략됩니다.
+  * `secure` Boolean - 쿠키가 안전한 것으로 표시되는지에 대한 여부입니다. 기본값은
+    false입니다.
+  * `httpOnly` Boolean - 쿠키가 Http 전용으로 표시되는지에 대한 여부입니다. 기본값은
+    false입니다.
+  * `expirationDate` Double (optional) -	UNIX 시간으로 표시되는 쿠키의 만료일에
+    대한 초 단위 시간입니다. 생략되면 쿠키가 세션 쿠기가 되며 세션 사이에 유지되지
+    않게 됩니다.
 * `callback` Function
 
-Sets a cookie with `details`, `callback` will be called with `callback(error)`
-on complete.
+`details` 객체에 따라 쿠키를 설정합니다. 작업이 완료되면 `callback`이
+`callback(error)` 형태로 호출됩니다.
 
-#### `cookies.remove(url, name, callback)`
+#### `ses.cookies.remove(url, name, callback)`
 
-* `url` String - The URL associated with the cookie.
-* `name` String - The name of cookie to remove.
+* `url` String - 쿠키와 관련된 URL입니다.
+* `name` String - 지울 쿠키의 이름입니다.
 * `callback` Function
 
-Removes the cookies matching `url` and `name`, `callback` will called with
-`callback()` on complete.
+`url`과 `name`에 일치하는 쿠키를 삭제합니다. 작업이 완료되면 `callback`이
+`callback()` 형식으로 호출됩니다.
 
 ## Class: WebRequest
 
-> Intercept and modify the contents of a request at various stages of its lifetime.
+`WebRequest` 클래스는 생명 주기의 다양한 단계에서 요청의 콘텐츠를 조작하거나 가로채는
+방법을 제공합니다. `WebRequest` 클래스는 반드시 `Session` 클래스의 `webRequest`
+속성에서 접근해야 합니다.
 
-Instances of the `WebRequest` class are accessed by using the `webRequest`
-property of a `Session`.
+`WebRequest`의 메서드는 선택적인 `filter`와 `listener` 속성을 허용하며 `listener`는
+API의 이벤트가 발생했을 때 `listener(details)` 형식으로 호출되고, `details`는 요청에
+관한 내용을 표현하는 객체입니다. `listener`에 `null`을 전달하면 이벤트의 구독을
+해제합니다.
 
-The methods of `WebRequest` accept an optional `filter` and a `listener`. The
-`listener` will be called with `listener(details)` when the API's event has
-happened. The `details` object describes the request. Passing `null`
-as `listener` will unsubscribe from the event.
+`filter`는 `urls` 속성을 가진 객체입니다. 이 속성은 URL 규칙의 배열이며 URL 규칙에
+일치하지 않는 요청을 모두 거르는데 사용됩니다. 만약 `filter`가 생략되면 모든 요청을
+여과 없이 통과시킵니다.
 
-The `filter` object has a `urls` property which is an Array of URL
-patterns that will be used to filter out the requests that do not match the URL
-patterns. If the `filter` is omitted then all requests will be matched.
+어떤 `listener`의 이벤트들은 `callback`을 같이 전달하는데, 이벤트 처리시
+`listener`의 작업을 완료한 후 `response` 객체를 포함하여 호출해야 합니다.
 
-For certain events the `listener` is passed with a `callback`, which should be
-called with a `response` object when `listener` has done its work.
-
-An example of adding `User-Agent` header for requests:
+다음은 요청에 `User-Agent` 헤더를 추가하는 예시입니다:
 
 ```javascript
-const {session} = require('electron')
-
-// Modify the user agent for all requests to the following urls.
+// 다음 url에 대한 User Agent를 조작합니다.
 const filter = {
   urls: ['https://*.github.com/*', '*://electron.github.io']
 }
 
 session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
-  details.requestHeaders['User-Agent'] = 'MyAgent'
+  details.requestHeaders['User-Agent'] = "MyAgent"
   callback({cancel: false, requestHeaders: details.requestHeaders})
 })
 ```
 
 ### Instance Methods
 
-The following methods are available on instances of `WebRequest`:
+다음은 `WebRequest` 객체에서 사용할 수 있는 메서드들입니다:
 
 #### `webRequest.onBeforeRequest([filter, ]listener)`
 
 * `filter` Object
 * `listener` Function
 
-The `listener` will be called with `listener(details, callback)` when a request
-is about to occur.
+요청이 발생하면 `listener`가 `listener(details, callback)` 형태로 호출됩니다.
 
 * `details` Object
   * `id` Integer
@@ -558,29 +487,27 @@ is about to occur.
   * `uploadData` Array (optional)
 * `callback` Function
 
-The `uploadData` is an array of `data` objects:
+`uploadData`는 `data` 객체의 배열입니다:
 
 * `data` Object
-  * `bytes` Buffer - Content being sent.
-  * `file` String - Path of file being uploaded.
-  * `blobUUID` String - UUID of blob data. Use [ses.getBlobData](http://electron.atom.io/docs/api/session#sesgetblobdataidentifier-callback) method
-    to retrieve the data.
+  * `bytes` Buffer - 전송될 콘텐츠.
+  * `file` String - 업로드될 파일의 경로.
 
-The `callback` has to be called with an `response` object:
+`callback`은 `response` 객체와 함께 호출되어야 합니다:
 
 * `response` Object
   * `cancel` Boolean (optional)
-  * `redirectURL` String (optional) - The original request is prevented from
-    being sent or completed, and is instead redirected to the given URL.
+  * `redirectURL` String (optional) - 원래 요청은 전송과 완료가 방지되지만 이
+    속성을 지정하면 해당 URL로 리다이렉트됩니다.
 
 #### `webRequest.onBeforeSendHeaders([filter, ]listener)`
 
 * `filter` Object
 * `listener` Function
 
-The `listener` will be called with `listener(details, callback)` before sending
-an HTTP request, once the request headers are available. This may occur after a
-TCP connection is made to the server, but before any http data is sent.
+HTTP 요청을 보내기 전 요청 헤더를 사용할 수 있을 때 `listener`가
+`listener(details, callback)` 형태로 호출됩니다. 이 이벤트는 서버와의 TCP 연결이
+완료된 후에 발생할 수도 있지만 http 데이터가 전송되기 전에 발생합니다.
 
 * `details` Object
   * `id` Integer
@@ -591,21 +518,21 @@ TCP connection is made to the server, but before any http data is sent.
   * `requestHeaders` Object
 * `callback` Function
 
-The `callback` has to be called with an `response` object:
+`callback`은 `response` 객체와 함께 호출되어야 합니다:
 
 * `response` Object
   * `cancel` Boolean (optional)
-  * `requestHeaders` Object (optional) - When provided, request will be made
-    with these headers.
+  * `requestHeaders` Object (optional) - 이 속성이 제공되면, 요청은 이 헤더로
+    만들어 집니다.
 
 #### `webRequest.onSendHeaders([filter, ]listener)`
 
 * `filter` Object
 * `listener` Function
 
-The `listener` will be called with `listener(details)` just before a request is
-going to be sent to the server, modifications of previous `onBeforeSendHeaders`
-response are visible by the time this listener is fired.
+서버에 요청이 전송되기 바로 전에 `listener`가 `listener(details)` 형태로 호출됩니다.
+이전 `onBeforeSendHeaders`의 response와 다른점은 리스너가 호출되는 시간으로 볼 수
+있습니다.
 
 * `details` Object
   * `id` Integer
@@ -620,8 +547,8 @@ response are visible by the time this listener is fired.
 * `filter` Object
 * `listener` Function
 
-The `listener` will be called with `listener(details, callback)` when HTTP
-response headers of a request have been received.
+요청의 HTTP 응답 헤더를 받았을 때 `listener`가 `listener(details, callback)` 형태로
+호출됩니다.
 
 * `details` Object
   * `id` String
@@ -634,24 +561,23 @@ response headers of a request have been received.
   * `responseHeaders` Object
 * `callback` Function
 
-The `callback` has to be called with an `response` object:
+`callback`은 `response` 객체와 함께 호출되어야 합니다:
 
 * `response` Object
   * `cancel` Boolean
-  * `responseHeaders` Object (optional) - When provided, the server is assumed
-    to have responded with these headers.
-  * `statusLine` String (optional) - Should be provided when overriding
-    `responseHeaders` to change header status otherwise original response
-    header's status will be used.
+  * `responseHeaders` Object (optional) - 이 속성이 제공되면 서버는 이 헤더와
+    함께 응답합니다.
+  * `statusLine` String (optional) - `responseHeaders`를 덮어쓸 땐, 헤더의 상태를
+    변경하기 위해 반드시 지정되어야 합니다. 그렇지 않은 경우, 기존의 응답 헤더의 상태가
+    사용됩니다.
 
 #### `webRequest.onResponseStarted([filter, ]listener)`
 
 * `filter` Object
 * `listener` Function
 
-The `listener` will be called with `listener(details)` when first byte of the
-response body is received. For HTTP requests, this means that the status line
-and response headers are available.
+요청 본문의 첫 번째 바이트를 받았을 때 `listener`가 `listener(details)` 형태로
+호출됩니다. 이는 HTTP 요청에서 상태 줄과 요청 헤더가 사용 가능한 상태를 의미합니다.
 
 * `details` Object
   * `id` Integer
@@ -660,8 +586,7 @@ and response headers are available.
   * `resourceType` String
   * `timestamp` Double
   * `responseHeaders` Object
-  * `fromCache` Boolean - Indicates whether the response was fetched from disk
-    cache.
+  * `fromCache` Boolean  - 응답을 디스크 캐시에서 가져올지에 대한 여부.
   * `statusCode` Integer
   * `statusLine` String
 
@@ -670,8 +595,8 @@ and response headers are available.
 * `filter` Object
 * `listener` Function
 
-The `listener` will be called with `listener(details)` when a server initiated
-redirect is about to occur.
+서버에서 시작된 리다이렉트가 발생했을 때 `listener`가 `listener(details)` 형태로
+호출됩니다.
 
 * `details` Object
   * `id` String
@@ -681,8 +606,7 @@ redirect is about to occur.
   * `timestamp` Double
   * `redirectURL` String
   * `statusCode` Integer
-  * `ip` String (optional) - The server IP address that the request was
-    actually sent to.
+  * `ip` String (optional) - 요청이 실질적으로 전송될 서버 아이피 주소.
   * `fromCache` Boolean
   * `responseHeaders` Object
 
@@ -691,8 +615,7 @@ redirect is about to occur.
 * `filter` Object
 * `listener` Function
 
-The `listener` will be called with `listener(details)` when a request is
-completed.
+요청이 완료되면 `listener`가 `listener(details)` 형태로 호출됩니다.
 
 * `details` Object
   * `id` Integer
@@ -710,7 +633,7 @@ completed.
 * `filter` Object
 * `listener` Function
 
-The `listener` will be called with `listener(details)` when an error occurs.
+에러가 발생하면 `listener`가 `listener(details)` 형태로 호출됩니다.
 
 * `details` Object
   * `id` Integer
@@ -719,4 +642,4 @@ The `listener` will be called with `listener(details)` when an error occurs.
   * `resourceType` String
   * `timestamp` Double
   * `fromCache` Boolean
-  * `error` String - The error description.
+  * `error` String - 에러 설명.

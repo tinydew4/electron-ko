@@ -1,109 +1,98 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/tray/
-    - /docs/v0.25.0/api/tray/
-    - /docs/v0.26.0/api/tray/
-    - /docs/v0.27.0/api/tray/
-    - /docs/v0.28.0/api/tray/
-    - /docs/v0.29.0/api/tray/
-    - /docs/v0.30.0/api/tray/
-    - /docs/v0.31.0/api/tray/
-    - /docs/v0.32.0/api/tray/
-    - /docs/v0.33.0/api/tray/
-    - /docs/v0.34.0/api/tray/
-    - /docs/v0.35.0/api/tray/
-    - /docs/v0.36.0/api/tray/
-    - /docs/v0.36.3/api/tray/
-    - /docs/v0.36.4/api/tray/
-    - /docs/v0.36.5/api/tray/
-    - /docs/v0.36.6/api/tray/
-    - /docs/v0.36.7/api/tray/
-    - /docs/v0.36.8/api/tray/
-    - /docs/v0.36.9/api/tray/
-    - /docs/v0.36.10/api/tray/
-    - /docs/v0.36.11/api/tray/
-    - /docs/v0.37.0/api/tray/
-    - /docs/v0.37.1/api/tray/
-    - /docs/v0.37.2/api/tray/
-    - /docs/v0.37.3/api/tray/
-    - /docs/v0.37.4/api/tray/
-    - /docs/v0.37.5/api/tray/
-    - /docs/v0.37.6/api/tray/
-    - /docs/v0.37.7/api/tray/
-    - /docs/v0.37.8/api/tray/
-    - /docs/latest/api/tray/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/tray.md'
-excerpt: "Add icons and context menus to the system&apos;s notification area."
-title: "Tray"
-sort_title: "tray"
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+    - /docs-translations/ko-KR/api/tray/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/tray.md'
+excerpt: "&#xC544;&#xC774;&#xCF58;&#xACFC; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xB97C; &#xC2DC;&#xC2A4;&#xD15C; &#xC54C;&#xB9BC; &#xC601;&#xC5ED;&#xC5D0; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# Tray
+﻿# Tray
 
-> Add icons and context menus to the system's notification area.
+> 아이콘과 컨텍스트 메뉴를 시스템 알림 영역에 추가합니다.
 
 ```javascript
 const {app, Menu, Tray} = require('electron')
 
 let tray = null
 app.on('ready', () => {
-  tray = new Tray('/path/to/my/icon')
+  tray = new Tray('/path/to/my/icon') // 현재 애플리케이션 디렉터리를 기준으로 하려면 `__dirname + '/images/tray.png'` 형식으로 입력해야 합니다.
   const contextMenu = Menu.buildFromTemplate([
     {label: 'Item1', type: 'radio'},
     {label: 'Item2', type: 'radio'},
     {label: 'Item3', type: 'radio', checked: true},
     {label: 'Item4', type: 'radio'}
-  ])
-  tray.setToolTip('This is my application.')
+  ]);
+  tray.setToolTip('이것은 나의 애플리케이션 입니다!')
   tray.setContextMenu(contextMenu)
 })
 ```
 
-__Platform limitations:__
+__플랫폼별 한계:__
 
-* On Linux the app indicator will be used if it is supported, otherwise
-  `GtkStatusIcon` will be used instead.
-* On Linux distributions that only have app indicator support, you have to
-  install `libappindicator1` to make the tray icon work.
-* App indicator will only be shown when it has a context menu.
-* When app indicator is used on Linux, the `click` event is ignored.
-* On Linux in order for changes made to individual `MenuItem`s to take effect,
-  you have to call `setContextMenu` again. For example:
+* Linux에서는 앱 알림 표시기(app indicator)가 지원되면 해당 기능을 사용합니다. 만약
+  지원하지 않으면 `GtkStatusIcon`을 대신 사용합니다.
+* Linux 배포판이 앱 알림 표시기만 지원하고 있다면 `libappindicator1`를 설치하여
+  트레이 아이콘이 작동하도록 만들 수 있습니다.
+* 앱 알림 표시기는 컨텍스트 메뉴를 가지고 있을 때만 보입니다.
+* Linux에서 앱 표시기가 사용될 경우, `click` 이벤트는 무시됩니다.
+* Windows에선 가장 좋은 시각적 효과를 얻기 위해 `ICO` 아이콘을 사용하는 것을
+  권장합니다.
+* Linux에서 각각 개별 `MenuItem`의 변경을 적용하려면 `setContextMenu`를 다시
+  호출해야 합니다. 예를 들면:
 
 ```javascript
-const {Menu, Tray} = require('electron')
-const appIcon = new Tray('/path/to/my/icon')
-const contextMenu = Menu.buildFromTemplate([
-  {label: 'Item1', type: 'radio'},
-  {label: 'Item2', type: 'radio'}
-])
-
-// Make a change to the context menu
 contextMenu.items[2].checked = false
-
-// Call this again for Linux because we modified the context menu
 appIcon.setContextMenu(contextMenu)
 ```
-* On Windows it is recommended to use `ICO` icons to get best visual effects.
 
-If you want to keep exact same behaviors on all platforms, you should not
-rely on the `click` event and always attach a context menu to the tray icon.
+이러한 이유로 Tray API가 모든 플랫폼에서 똑같이 작동하게 하고 싶다면 `click` 이벤트에
+의존해선 안되며 언제나 컨텍스트 메뉴를 포함해야 합니다.
 
 ## Class: Tray
 
-`Tray` is an [EventEmitter][event-emitter].
+`Tray`는 [EventEmitter][event-emitter]를 상속 받았습니다.
 
 ### `new Tray(image)`
 
 * `image` [NativeImage](http://electron.atom.io/docs/api/native-image)
 
-Creates a new tray icon associated with the `image`.
+전달된 `image`를 이용하여 트레이 아이콘을 만듭니다.
 
 ### Instance Events
 
-The `Tray` module emits the following events:
+`Tray` 모듈은 다음과 같은 이벤트를 가지고 있습니다:
 
 #### Event: 'click'
 
@@ -112,13 +101,13 @@ The `Tray` module emits the following events:
   * `shiftKey` Boolean
   * `ctrlKey` Boolean
   * `metaKey` Boolean
-* `bounds` Object _macOS_ _Windows_ - the bounds of tray icon.
+* `bounds` Object _macOS_ _Windows_ - 트레이 아이콘의 범위
   * `x` Integer
   * `y` Integer
   * `width` Integer
   * `height` Integer
 
-Emitted when the tray icon is clicked.
+트레이 아이콘이 클릭될 때 발생하는 이벤트입니다.
 
 #### Event: 'right-click' _macOS_ _Windows_
 
@@ -127,13 +116,13 @@ Emitted when the tray icon is clicked.
   * `shiftKey` Boolean
   * `ctrlKey` Boolean
   * `metaKey` Boolean
-* `bounds` Object - the bounds of tray icon.
+* `bounds` Object - 트레이 아이콘의 범위
   * `x` Integer
   * `y` Integer
   * `width` Integer
   * `height` Integer
 
-Emitted when the tray icon is right clicked.
+트레이 아이콘을 오른쪽 클릭될 때 호출 됩니다.
 
 #### Event: 'double-click' _macOS_ _Windows_
 
@@ -142,119 +131,87 @@ Emitted when the tray icon is right clicked.
   * `shiftKey` Boolean
   * `ctrlKey` Boolean
   * `metaKey` Boolean
-* `bounds` Object - the bounds of tray icon
+* `bounds` Object - 트레이 아이콘의 범위
   * `x` Integer
   * `y` Integer
   * `width` Integer
   * `height` Integer
 
-Emitted when the tray icon is double clicked.
+트레이 아이콘이 더블 클릭될 때 발생하는 이벤트입니다.
 
 #### Event: 'balloon-show' _Windows_
 
-Emitted when the tray balloon shows.
+풍선 팝업이 보여질 때 발생하는 이벤트입니다.
 
 #### Event: 'balloon-click' _Windows_
 
-Emitted when the tray balloon is clicked.
+풍선 팝업이 클릭될 때 발생하는 이벤트입니다.
 
 #### Event: 'balloon-closed' _Windows_
 
-Emitted when the tray balloon is closed because of timeout or user manually
-closes it.
+풍선 팝업이 시간이 지나 사라지거나 유저가 클릭하여 닫을 때 발생하는 이벤트입니다.
 
 #### Event: 'drop' _macOS_
 
-Emitted when any dragged items are dropped on the tray icon.
+드래그 가능한 아이템이 트레이 아이콘에 드롭되면 발생하는 이벤트입니다.
 
 #### Event: 'drop-files' _macOS_
 
 * `event` Event
-* `files` Array - the file path of dropped files.
+* `files` Array - 드롭된 파일의 경로
 
-Emitted when dragged files are dropped in the tray icon.
-
-#### Event: 'drop-text' _macOS_
-
-* `event` Event
-* `text` String - the dropped text string
-
-Emitted when dragged text is dropped in the tray icon.
+트레이 아이콘에 파일이 드롭되면 발생하는 이벤트입니다.
 
 #### Event: 'drag-enter' _macOS_
 
-Emitted when a drag operation enters the tray icon.
+트레이 아이콘에 드래그 작업이 시작될 때 발생하는 이벤트입니다.
 
 #### Event: 'drag-leave' _macOS_
 
-Emitted when a drag operation exits the tray icon.
+트레이 아이콘에 드래그 작업이 종료될 때 발생하는 이벤트입니다.
 
 #### Event: 'drag-end' _macOS_
 
-Emitted when a drag operation ends on the tray or ends at another location.
+트레이 아이콘에 드래그 작업이 종료되거나 다른 위치에서 종료될 때 발생하는 이벤트입니다.
 
 ### Instance Methods
 
-The `Tray` class has the following methods:
+`Tray` 클래스는 다음과 같은 메서드를 가지고 있습니다:
 
 #### `tray.destroy()`
 
-Destroys the tray icon immediately.
+트레이 아이콘을 즉시 삭제시킵니다.
 
 #### `tray.setImage(image)`
 
 * `image` [NativeImage](http://electron.atom.io/docs/api/native-image)
 
-Sets the `image` associated with this tray icon.
+`image`를 사용하여 트레이 아이콘의 이미지를 설정합니다.
 
 #### `tray.setPressedImage(image)` _macOS_
 
 * `image` [NativeImage](http://electron.atom.io/docs/api/native-image)
 
-Sets the `image` associated with this tray icon when pressed on macOS.
+`image`를 사용하여 트레이 아이콘이 눌렸을 때의 이미지를 설정합니다.
 
 #### `tray.setToolTip(toolTip)`
 
 * `toolTip` String
 
-Sets the hover text for this tray icon.
+트레이 아이콘의 툴팁 텍스트를 설정합니다.
 
 #### `tray.setTitle(title)` _macOS_
 
 * `title` String
 
-Sets the title displayed aside of the tray icon in the status bar.
+상태바에서 트레이 아이콘 옆에 표시되는 제목 텍스트를 설정합니다.
 
-#### `tray.setHighlightMode(mode)` _macOS_
+#### `tray.setHighlightMode(highlight)` _macOS_
 
-* `mode` String - Highlight mode with one of the following values:
-  * `selection` - Highlight the tray icon when it is clicked and also when
-    its context menu is open. This is the default.
-  * `always` - Always highlight the tray icon.
-  * `never` - Never highlight the tray icon.
+* `highlight` Boolean
 
-Sets when the tray's icon background becomes highlighted (in blue).
-
-**Note:** You can use `highlightMode` with a [`BrowserWindow`](http://electron.atom.io/docs/api/browser-window)
-by toggling between `'never'` and `'always'` modes when the window visibility
-changes.
-
-```javascript
-const {BrowserWindow, Tray} = require('electron')
-
-const win = new BrowserWindow({width: 800, height: 600})
-const tray = new Tray('/path/to/my/icon')
-
-tray.on('click', () => {
-  win.isVisible() ? win.hide() : win.show()
-})
-win.on('show', () => {
-  tray.setHighlightMode('always')
-})
-win.on('hide', () => {
-  tray.setHighlightMode('never')
-})
-```
+트레이 아이콘이 클릭됐을 때 아이콘의 배경이 파���색으로 하이라이트 될지 여부를 지정합니다.
+기본값은 true입니다.
 
 #### `tray.displayBalloon(options)` _Windows_
 
@@ -263,29 +220,29 @@ win.on('hide', () => {
   * `title` String
   * `content` String
 
-Displays a tray balloon.
+트레이에 풍선 팝업을 생성합니다.
 
 #### `tray.popUpContextMenu([menu, position])` _macOS_ _Windows_
 
 * `menu` Menu (optional)
-* `position` Object (optional) - The pop up position.
+* `position` Object (optional) - 팝업 메뉴의 위치
   * `x` Integer
   * `y` Integer
 
-Pops up the context menu of the tray icon. When `menu` is passed, the `menu` will
-be shown instead of the tray icon's context menu.
+트레이 아이콘의 컨텍스트 메뉴를 팝업시킵니다. `menu`가 전달되면, `menu`가 트레이
+아이콘의 컨텍스트 메뉴 대신 표시됩니다.
 
-The `position` is only available on Windows, and it is (0, 0) by default.
+`position`은 Windows에서만 사용할 수 있으며 기본값은 (0, 0)입니다.
 
-#### `tray.setContextMenu(menu)`
+### `tray.setContextMenu(menu)`
 
 * `menu` Menu
 
-Sets the context menu for this icon.
+트레이에 컨텍스트 메뉴를 설정합니다.
 
-#### `tray.getBounds()` _macOS_ _Windows_
+### `tray.getBounds()` _macOS_ _Windows_
 
-Returns the `bounds` of this tray icon as `Object`.
+이 트레이 아이콘의 `bounds`를 `Object` 형식으로 반환합니다.
 
 * `bounds` Object
   * `x` Integer

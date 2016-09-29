@@ -1,71 +1,68 @@
 ---
-version: v1.4.1
-category: Tutorial
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.25.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.26.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.27.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.28.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.29.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.30.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.31.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.32.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.33.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.34.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.35.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.36.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.36.3/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.36.4/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.36.5/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.36.6/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.36.7/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.36.8/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.36.9/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.36.10/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.36.11/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.37.0/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.37.1/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.37.2/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.37.3/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.37.4/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.37.5/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.37.6/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.37.7/tutorial/using-selenium-and-webdriver/
-    - /docs/v0.37.8/tutorial/using-selenium-and-webdriver/
-    - /docs/latest/tutorial/using-selenium-and-webdriver/
-source_url: 'https://github.com/electron/electron/blob/master/docs/tutorial/using-selenium-and-webdriver.md'
-excerpt: "WebDriver is an open source tool for automated testing of web apps across many
-    browsers. It provides capabilities for navigating to web pages, user input,
-    JavaScript execution, and more. ChromeDriver is a standalone server which
-    implements WebDriver&apos;s wire protocol for Chromium. It is being developed by
-    members of the Chromium and WebDriver teams."
-title: "Using Selenium and WebDriver"
-sort_title: "using selenium and webdriver"
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+    - /docs-translations/ko-KR/tutorial/using-selenium-and-webdriver/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/using-selenium-and-webdriver.md'
+excerpt: "WebDriver&#xB294; &#xB9CE;&#xC740; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xC6F9; &#xC571;&#xC744; &#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; &#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xB294; &#xD234;&#xC785;&#xB2C8;&#xB2E4;.
+    &#xC774; &#xD234;&#xD0B7;&#xC740; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD0D0;&#xC0C9;&#xD558;&#xACE0; &#xC720;&#xC800; &#xD3FC;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB294;
+    &#xB4F1;&#xC758; &#xC791;&#xC5C5;&#xC744; &#xC218;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. ChromeDriver&#xB294; Chromium&#xC758; WebDriver wire &#xD504;&#xB85C;&#xD1A0;&#xCF5C;
+    &#xC2A4;&#xD150;&#xB4DC;&#xC5BC;&#xB860; &#xC11C;&#xBC84; &#xAD6C;&#xD604;&#xC785;&#xB2C8;&#xB2E4;. Chromium &#xACFC; WebDriver &#xD300; &#xBA64;&#xBC84;&#xC5D0; &#xC758;&#xD574; &#xAC1C;&#xBC1C;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;."
 ---
 
-# Using Selenium and WebDriver
+﻿# Selenium 과 WebDriver 사용하기
 
-From [ChromeDriver - WebDriver for Chrome][chrome-driver]:
+[ChromeDriver - WebDriver for Chrome][chrome-driver]로부터 인용:
 
-> WebDriver is an open source tool for automated testing of web apps across many
-> browsers. It provides capabilities for navigating to web pages, user input,
-> JavaScript execution, and more. ChromeDriver is a standalone server which
-> implements WebDriver's wire protocol for Chromium. It is being developed by
-> members of the Chromium and WebDriver teams.
+> WebDriver는 많은 브라우저에서 웹 앱을 자동적으로 테스트하는 툴입니다.
+> 이 툴킷은 웹 페이지를 자동으로 탐색하고 유저 폼을 사용하거나 자바스크립트를 실행하는
+> 등의 작업을 수행할 수 있습니다. ChromeDriver는 Chromium의 WebDriver wire 프로토콜
+> 스텐드얼론 서버 구현입니다. Chromium 과 WebDriver 팀 멤버에 의해 개발되었습니다.
 
-## Setting up Spectron
+## Spectron 설정하기
 
-[Spectron][spectron] is the officially supported ChromeDriver testing framework
-for Electron. It is built on top of [WebdriverIO](http://webdriver.io/) and
-has helpers to access Electron APIs in your tests and bundles ChromeDriver.
+[Spectron][spectron]은 공식적으로 지원하는 Electron을 위한 ChromeDriver 테스팅
+프레임워크입니다. 이는 [WebdriverIO](http://webdriver.io/)를 기반으로 만들어졌고,
+테스트에서 Electron API에 접근하기 위한 헬퍼를 가지고 있으며 ChromeDriver를 포함하고
+있습니다.
 
 ```bash
 $ npm install --save-dev spectron
 ```
 
-```javascript
-// A simple test to verify a visible window is opened with a title
+```js
+// 윈도우가 제목과 함께 보이는지 검증하는 간단한 테스트.
 var Application = require('spectron').Application
 var assert = require('assert')
 
@@ -74,34 +71,34 @@ var app = new Application({
 })
 
 app.start().then(function () {
-  // Check if the window is visible
+  // 윈도우가 보이는지 확인합니다.
   return app.browserWindow.isVisible()
 }).then(function (isVisible) {
-  // Verify the window is visible
+  // 윈도우가 보이는지 검증합니다.
   assert.equal(isVisible, true)
 }).then(function () {
-  // Get the window's title
+  // 윈도우의 제목을 가져옵니다.
   return app.client.getTitle()
 }).then(function (title) {
-  // Verify the window's title
+  // 윈도우의 제목을 검증합니다.
   assert.equal(title, 'My App')
 }).catch(function (error) {
-  // Log any failures
+  // 테스트의 실패가 있다면 로깅합니다.
   console.error('Test failed', error.message)
 }).then(function () {
-  // Stop the application
+  // 애플리케이션을 중지합니다.
   return app.stop()
 })
 ```
 
-## Setting up with WebDriverJs
+## WebDriverJs 설정하기
 
-[WebDriverJs](https://code.google.com/p/selenium/wiki/WebDriverJs) provides
-a Node package for testing with web driver, we will use it as an example.
+[WebDriverJs](https://code.google.com/p/selenium/wiki/WebDriverJs)는 WebDriver를
+사용하여 테스트 할 수 있도록 도와주는 node 패키지입니다. 다음 예시를 참고하세요.
 
-### 1. Start ChromeDriver
+### 1. 크롬 드라이버 시작
 
-First you need to download the `chromedriver` binary, and run it:
+먼저, `chromedriver` 바이너리를 다운로드 받고 실행합니다:
 
 ```bash
 $ npm install electron-chromedriver
@@ -110,55 +107,55 @@ Starting ChromeDriver (v2.10.291558) on port 9515
 Only local connections are allowed.
 ```
 
-Remember the port number `9515`, which will be used later
+포트 `9515`는 나중에 사용하므로 기억해 놓습니다.
 
-### 2. Install WebDriverJS
+### 2. WebDriverJS 설치
 
 ```bash
 $ npm install selenium-webdriver
 ```
 
-### 3. Connect to ChromeDriver
+### 3. 크롬 드라이버에 연결
 
-The usage of `selenium-webdriver` with Electron is basically the same with
-upstream, except that you have to manually specify how to connect chrome driver
-and where to find Electron's binary:
+`selenium-webdriver`를 Electron과 같이 사용하는 방법은 기본적으로 upstream과
+같습니다. 한가지 다른점이 있다면 수동으로 크롬 드라이버 연결에 대해 설정하고 Electron
+실행파일의 위치를 전달합니다:
 
 ```javascript
-const webdriver = require('selenium-webdriver')
+const webdriver = require('selenium-webdriver');
 
 const driver = new webdriver.Builder()
-  // The "9515" is the port opened by chrome driver.
+  // 작동하고 있는 크롬 드라이버의 포트 "9515"를 사용합니다.
   .usingServer('http://localhost:9515')
   .withCapabilities({
     chromeOptions: {
-      // Here is the path to your Electron binary.
-      binary: '/Path-to-Your-App.app/Contents/MacOS/Electron'
+      // 여기에 사용중인 Electron 바이너리의 경로를 지정하세요.
+      binary: '/Path-to-Your-App.app/Contents/MacOS/Electron',
     }
   })
   .forBrowser('electron')
-  .build()
+  .build();
 
-driver.get('http://www.google.com')
-driver.findElement(webdriver.By.name('q')).sendKeys('webdriver')
-driver.findElement(webdriver.By.name('btnG')).click()
+driver.get('http://www.google.com');
+driver.findElement(webdriver.By.name('q')).sendKeys('webdriver');
+driver.findElement(webdriver.By.name('btnG')).click();
 driver.wait(() => {
-  return driver.getTitle().then((title) => {
-    return title === 'webdriver - Google Search'
-  })
-}, 1000)
+ return driver.getTitle().then((title) => {
+   return title === 'webdriver - Google Search';
+ });
+}, 1000);
 
-driver.quit()
+driver.quit();
 ```
 
-## Setting up with WebdriverIO
+## WebdriverIO 설정하기
 
-[WebdriverIO](http://webdriver.io/) provides a Node package for testing with web
-driver.
+[WebdriverIO](http://webdriver.io/)는 웹 드라이버와 함께 테스트를 위해 제공되는
+node 패키지입니다.
 
-### 1. Start ChromeDriver
+### 1. 크롬 드라이버 시작
 
-First you need to download the `chromedriver` binary, and run it:
+먼저, `chromedriver` 바이너리를 다운로드 받고 실행합니다:
 
 ```bash
 $ npm install electron-chromedriver
@@ -167,31 +164,30 @@ Starting ChromeDriver (v2.10.291558) on port 9515
 Only local connections are allowed.
 ```
 
-Remember the port number `9515`, which will be used later
+포트 `9515`는 나중에 사용하므로 기억해 놓읍시다
 
-### 2. Install WebdriverIO
+### 2. WebDriverIO 설치
 
 ```bash
 $ npm install webdriverio
 ```
 
-### 3. Connect to chrome driver
-
+### 3. 크롬 드라이버에 연결
 ```javascript
-const webdriverio = require('webdriverio')
-const options = {
-  host: 'localhost', // Use localhost as chrome driver server
-  port: 9515,        // "9515" is the port opened by chrome driver.
+const webdriverio = require('webdriverio');
+let options = {
+  host: 'localhost', // localhost에서 작동중인 크롬 드라이버 서버를 사용합니다.
+  port: 9515,        // 연결할 크롬 드라이버 서버의 포트를 설정합니다.
   desiredCapabilities: {
     browserName: 'chrome',
     chromeOptions: {
-      binary: '/Path-to-Your-App/electron', // Path to your Electron binary.
-      args: [/* cli arguments */]           // Optional, perhaps 'app=' + /path/to/your/app/
+      binary: '/Path-to-Your-App/electron', // Electron 바이너리 경로
+      args: [/* cli arguments */]           // 선택 사항, 'app=' + /path/to/your/app/
     }
   }
-}
+};
 
-let client = webdriverio.remote(options)
+let client = webdriverio.remote(options);
 
 client
   .init()
@@ -199,20 +195,19 @@ client
   .setValue('#q', 'webdriverio')
   .click('#btnG')
   .getTitle().then((title) => {
-    console.log('Title was: ' + title)
+    console.log('Title was: ' + title);
   })
-  .end()
+  .end();
 ```
 
-## Workflow
+## 작업 환경
 
-To test your application without rebuilding Electron, simply
-[place](https://github.com/electron/electron/blob/master/docs/tutorial/application-distribution.md)
-your app source into Electron's resource directory.
+따로 Electron을 다시 빌드하지 않는 경우 간단히 애플리케이션을 Electron의 리소스
+디렉터리에 [배치](http://electron.atom.io/docs/tutorial/application-distribution)하여 바로 테스트 할 수 있습니다.
 
-Alternatively, pass an argument to run with your electron binary that points to
-your app's folder. This eliminates the need to copy-paste your app into
-Electron's resource directory.
+또한, Electron 바이너리의 명령줄 인수에 애플리케이션 폴더를 지정하는 방법으로 실행할
+수도 있습니다. 이 방법을 사용하면 애플리케이션 폴더를 Electron의 `resource`
+디렉터리로 복사하는 불필요한 과정을 생략할 수 있습니다.
 
 [chrome-driver]: https://sites.google.com/a/chromium.org/chromedriver/
 [spectron]: http://electron.atom.io/spectron

@@ -1,62 +1,61 @@
 ---
-version: v1.4.1
-category: Tutorial
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/tutorial/electron-versioning/
-    - /docs/v0.25.0/tutorial/electron-versioning/
-    - /docs/v0.26.0/tutorial/electron-versioning/
-    - /docs/v0.27.0/tutorial/electron-versioning/
-    - /docs/v0.28.0/tutorial/electron-versioning/
-    - /docs/v0.29.0/tutorial/electron-versioning/
-    - /docs/v0.30.0/tutorial/electron-versioning/
-    - /docs/v0.31.0/tutorial/electron-versioning/
-    - /docs/v0.32.0/tutorial/electron-versioning/
-    - /docs/v0.33.0/tutorial/electron-versioning/
-    - /docs/v0.34.0/tutorial/electron-versioning/
-    - /docs/v0.35.0/tutorial/electron-versioning/
-    - /docs/v0.36.0/tutorial/electron-versioning/
-    - /docs/v0.36.3/tutorial/electron-versioning/
-    - /docs/v0.36.4/tutorial/electron-versioning/
-    - /docs/v0.36.5/tutorial/electron-versioning/
-    - /docs/v0.36.6/tutorial/electron-versioning/
-    - /docs/v0.36.7/tutorial/electron-versioning/
-    - /docs/v0.36.8/tutorial/electron-versioning/
-    - /docs/v0.36.9/tutorial/electron-versioning/
-    - /docs/v0.36.10/tutorial/electron-versioning/
-    - /docs/v0.36.11/tutorial/electron-versioning/
-    - /docs/v0.37.0/tutorial/electron-versioning/
-    - /docs/v0.37.1/tutorial/electron-versioning/
-    - /docs/v0.37.2/tutorial/electron-versioning/
-    - /docs/v0.37.3/tutorial/electron-versioning/
-    - /docs/v0.37.4/tutorial/electron-versioning/
-    - /docs/v0.37.5/tutorial/electron-versioning/
-    - /docs/v0.37.6/tutorial/electron-versioning/
-    - /docs/v0.37.7/tutorial/electron-versioning/
-    - /docs/v0.37.8/tutorial/electron-versioning/
-    - /docs/latest/tutorial/electron-versioning/
-source_url: 'https://github.com/electron/electron/blob/master/docs/tutorial/electron-versioning.md'
-title: "Electron Versioning"
-sort_title: "electron versioning"
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+    - /docs-translations/ko-KR/tutorial/electron-versioning/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/electron-versioning.md'
+title: "Electron 버전 관리"
+sort_title: "electron 버전 관리"
 ---
 
-# Electron Versioning
+# Electron 버전 관리
 
-If you are a seasoned Node developer, you are surely aware of `semver` - and
-might be used to giving your dependency management systems only rough guidelines
-rather than fixed version numbers. Due to the hard dependency on Node and
-Chromium, Electron is in a slightly more difficult position and does not follow
-semver. You should therefore always reference a specific version of Electron.
+노련한 Node 개발자라면, `semver` (유의적 버전)에 대해 확실히 알고 있을 것입니다 -
+그리고 제공된 의존성 관리 시스템은 고정된 버전 숫자 대신 견고한 가이드라인을 따릅니다.
+Electron은 Node와 Chromium에 큰 의존성을 지니고 있는 만큼, 유의적 버전을 그대로
+따르지 않습니다. 따라서 항상 Electron의 특정 버전을 참조해야 합니다.
 
-Version numbers are bumped using the following rules:
+버전 숫자는 다음과 같은 규칙으로 올라갑니다:
 
-* Major: For breaking changes in Electron's API - if you upgrade from `0.37.0`
-  to `1.0.0`, you will have to update your app.
-* Minor: For major Chrome and minor Node upgrades; or significant Electron
-  changes - if you upgrade from `1.0.0` to `1.1.0`, your app is supposed to
-  still work, but you might have to work around small changes.
-* Patch: For new features and bug fixes - if you upgrade from `1.0.0` to
-  `1.0.1`, your app will continue to work as-is.
+* Major: Electron API의 주요 변경 사항을 반영합니다 - 만약 `0.37.0`에서 `1.0.0`로
+  업그레이드하는 경우, 애플리케이션을 업데이트해야 합니다.
+* Minor: 주요 Chrome과 Node 버전의 업그레이드를 반영하거나; Electron의 중요한 변경
+  사항을 반영합니다 - 만약 `1.0.0`에서 `1.1.0`로 업그레이드하는 경우, 애플리케이션은
+  여전히 작동하겠지만, 약간의 업데이트가 필요할 수 있습니다.
+* Patch: 새로운 기능과 버그 수정을 반영합니다 - 만약 `1.0.0`에서 `1.0.1`로
+  업그레이드하는 경우, 애플리케이션은 잘 작동할 것입니다.
 
-If you are using `electron` or `electron-prebuilt`, we recommend that you set a fixed version
-number (`1.1.0` instead of `^1.1.0`) to ensure that all upgrades of Electron are
-a manual operation made by you, the developer.
+`electron-prebuilt`를 사용하고 있다면, Electron의 변경 사항을 확실하게 인지하고
+개발자 스스로 업그레이드를 적용하기 위해 고정된 버전 숫자를 사용하는 것을 권장합니다.
+(`^1.1.0` 대신 `1.1.0` 사용)

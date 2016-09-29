@@ -1,137 +1,117 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/synopsis/
-    - /docs/v0.25.0/api/synopsis/
-    - /docs/v0.26.0/api/synopsis/
-    - /docs/v0.27.0/api/synopsis/
-    - /docs/v0.28.0/api/synopsis/
-    - /docs/v0.29.0/api/synopsis/
-    - /docs/v0.30.0/api/synopsis/
-    - /docs/v0.31.0/api/synopsis/
-    - /docs/v0.32.0/api/synopsis/
-    - /docs/v0.33.0/api/synopsis/
-    - /docs/v0.34.0/api/synopsis/
-    - /docs/v0.35.0/api/synopsis/
-    - /docs/v0.36.0/api/synopsis/
-    - /docs/v0.36.3/api/synopsis/
-    - /docs/v0.36.4/api/synopsis/
-    - /docs/v0.36.5/api/synopsis/
-    - /docs/v0.36.6/api/synopsis/
-    - /docs/v0.36.7/api/synopsis/
-    - /docs/v0.36.8/api/synopsis/
-    - /docs/v0.36.9/api/synopsis/
-    - /docs/v0.36.10/api/synopsis/
-    - /docs/v0.36.11/api/synopsis/
-    - /docs/v0.37.0/api/synopsis/
-    - /docs/v0.37.1/api/synopsis/
-    - /docs/v0.37.2/api/synopsis/
-    - /docs/v0.37.3/api/synopsis/
-    - /docs/v0.37.4/api/synopsis/
-    - /docs/v0.37.5/api/synopsis/
-    - /docs/v0.37.6/api/synopsis/
-    - /docs/v0.37.7/api/synopsis/
-    - /docs/v0.37.8/api/synopsis/
-    - /docs/latest/api/synopsis/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/synopsis.md'
-excerpt: "How to use Node.js and Electron APIs."
-title: "Synopsis"
-sort_title: "synopsis"
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+    - /docs-translations/ko-KR/api/synopsis/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/synopsis.md'
+excerpt: "Node.js&#xC640; Electron API&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;."
+title: "개요"
+sort_title: ""
 ---
 
-# Synopsis
+# 개요
 
-> How to use Node.js and Electron APIs.
+> Node.js와 Electron API를 사용하는 방법.
 
-All of [Node.js's built-in modules](http://nodejs.org/api/) are available in
-Electron and third-party node modules also fully supported as well (including
-the [native modules](http://electron.atom.io/docs/tutorial/using-native-node-modules)).
+Electron은 모든 [Node.js의 built-in 모듈](http://nodejs.org/api/)과 third-party
+node 모듈을 완벽하게 지원합니다. ([네이티브 모듈](http://electron.atom.io/docs/tutorial/using-native-node-modules)
+포함)
 
-Electron also provides some extra built-in modules for developing native
-desktop applications. Some modules are only available in the main process, some
-are only available in the renderer process (web page), and some can be used in
-both processes.
+또한 Electron은 네이티브 데스크톱 애플리케이션을 개발 할 수 있도록 추가적인 built-in
+모듈을 제공합니다. 몇몇 모듈은 메인 프로세스에서만 사용할 수 있고 어떤 모듈은 렌더러
+프로세스(웹 페이지)에서만 사용할 수 있습니다. 또한 두 프로세스 모두 사용할 수 있는
+모듈도 있습니다.
 
-The basic rule is: if a module is [GUI][gui] or low-level system related, then
-it should be only available in the main process. You need to be familiar with
-the concept of [main process vs. renderer process](http://electron.atom.io/docs/tutorial/quick-start#the-main-process)
-scripts to be able to use those modules.
+기본적인 규칙으로 [GUI][gui]와 저 수준 시스템에 관련된 모듈들은 오직 메인
+프로세스에서만 사용할 수 있습니다. [메인 프로세스 vs. 렌더러 프로세스](http://electron.atom.io/docs/tutorial/quick-start#메인-프로세스)
+컨셉에 익숙해야 모듈을 다루기 쉬우므로 관련 문서를 읽어 보는 것을 권장합니다.
 
-The main process script is just like a normal Node.js script:
+메인 프로세스 스크립트는 일반 Node.js 스크립트와 비슷합니다:
 
 ```javascript
-const {app, BrowserWindow} = require('electron')
-let win = null
+const {app, BrowserWindow} = require('electron');
+
+let win = null;
 
 app.on('ready', () => {
-  win = new BrowserWindow({width: 800, height: 600})
-  win.loadURL('https://github.com')
-})
+  win = new BrowserWindow({width: 800, height: 600});
+  win.loadURL('https://github.com');
+});
 ```
 
-The renderer process is no different than a normal web page, except for the
-extra ability to use node modules:
+렌더러 프로세스도 예외적인 node module들을 사용할 수 있다는 점을 제외하면 일반 웹
+페이지와 크게 다를게 없습니다:
 
 ```html
 <!DOCTYPE html>
 <html>
 <body>
 <script>
-  const {app} = require('electron').remote
-  console.log(app.getVersion())
+  const {app} = require('electron').remote;
+  console.log(app.getVersion());
 </script>
 </body>
 </html>
 ```
 
-To run your app, read [Run your app](http://electron.atom.io/docs/tutorial/quick-start#run-your-app).
+애플리케이션을 실행하려면 [앱 실행하기](http://electron.atom.io/docs/tutorial/quick-start#앱 실행하기)
+문서를 참고하기 바랍니다.
 
-## Destructuring assignment
+## 분리 할당
 
-As of 0.37, you can use
-[destructuring assignment][destructuring-assignment] to make it easier to use
-built-in modules.
+0.37 버전부터, [분리 할당][destructuring-assignment]을 통해 빌트인 모듈을 더
+직관적으로 사용할 수 있습니다:
 
 ```javascript
-const {app, BrowserWindow} = require('electron')
-
-let win
-
-app.on('ready', () => {
-  win = new BrowserWindow()
-  win.loadURL('https://github.com')
-})
+const {app, BrowserWindow} = require('electron');
 ```
 
-If you need the entire `electron` module, you can require it and then using
-destructuring to access the individual modules from `electron`.
+모든 `electron` 모듈이 필요하다면, 먼저 require한 후 각 독립적인 모듈을
+`electron`에서 분리 할당함으로써 모듈을 사용할 수 있습니다.
 
 ```javascript
-const electron = require('electron')
-const {app, BrowserWindow} = electron
+const electron = require('electron');
+const {app, BrowserWindow} = electron;
+ ```
 
-let win
-
-app.on('ready', () => {
-  win = new BrowserWindow()
-  win.loadURL('https://github.com')
-})
-```
-
-This is equivalent to the following code:
+위 코드는 다음과 같습니다:
 
 ```javascript
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
-let win
-
-app.on('ready', () => {
-  win = new BrowserWindow()
-  win.loadURL('https://github.com')
-})
+const electron = require('electron');
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
 ```
 
 [gui]: https://en.wikipedia.org/wiki/Graphical_user_interface
-[destructuring-assignment]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+[destructuring-assignment]: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment

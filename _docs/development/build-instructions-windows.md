@@ -1,170 +1,154 @@
 ---
-version: v1.4.1
-category: Development
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/development/build-instructions-windows/
-    - /docs/v0.25.0/development/build-instructions-windows/
-    - /docs/v0.26.0/development/build-instructions-windows/
-    - /docs/v0.27.0/development/build-instructions-windows/
-    - /docs/v0.28.0/development/build-instructions-windows/
-    - /docs/v0.29.0/development/build-instructions-windows/
-    - /docs/v0.30.0/development/build-instructions-windows/
-    - /docs/v0.31.0/development/build-instructions-windows/
-    - /docs/v0.32.0/development/build-instructions-windows/
-    - /docs/v0.33.0/development/build-instructions-windows/
-    - /docs/v0.34.0/development/build-instructions-windows/
-    - /docs/v0.35.0/development/build-instructions-windows/
-    - /docs/v0.36.0/development/build-instructions-windows/
-    - /docs/v0.36.3/development/build-instructions-windows/
-    - /docs/v0.36.4/development/build-instructions-windows/
-    - /docs/v0.36.5/development/build-instructions-windows/
-    - /docs/v0.36.6/development/build-instructions-windows/
-    - /docs/v0.36.7/development/build-instructions-windows/
-    - /docs/v0.36.8/development/build-instructions-windows/
-    - /docs/v0.36.9/development/build-instructions-windows/
-    - /docs/v0.36.10/development/build-instructions-windows/
-    - /docs/v0.36.11/development/build-instructions-windows/
-    - /docs/v0.37.0/development/build-instructions-windows/
-    - /docs/v0.37.1/development/build-instructions-windows/
-    - /docs/v0.37.2/development/build-instructions-windows/
-    - /docs/v0.37.3/development/build-instructions-windows/
-    - /docs/v0.37.4/development/build-instructions-windows/
-    - /docs/v0.37.5/development/build-instructions-windows/
-    - /docs/v0.37.6/development/build-instructions-windows/
-    - /docs/v0.37.7/development/build-instructions-windows/
-    - /docs/v0.37.8/development/build-instructions-windows/
-    - /docs/latest/development/build-instructions-windows/
-source_url: 'https://github.com/electron/electron/blob/master/docs/development/build-instructions-windows.md'
-title: "Build Instructions (Windows)"
-sort_title: "build instructions (windows)"
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+    - /docs-translations/ko-KR/development/build-instructions-windows/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/development/build-instructions-windows.md'
+title: "빌드 설명서 (Windows)"
+sort_title: "windows)"
 ---
 
-# Build Instructions (Windows)
+# 빌드 설명서 (Windows)
 
-Follow the guidelines below for building Electron on Windows.
+이 가이드는 Windows 운영체제에서 Electron을 빌드하는 방법을 설명합니다.
 
-## Prerequisites
+## 빌드전 요구 사항
 
-* Windows 7 / Server 2008 R2 or higher
-* Visual Studio 2015 - [download VS 2015 Community Edition for
-  free](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)
+* Windows 7 / Server 2008 R2 또는 최신 버전
+* Visual Studio 2015 - [VS 2015 커뮤니티 에디션 무료 다운로드](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)
 * [Python 2.7](http://www.python.org/download/releases/2.7/)
 * [Node.js](http://nodejs.org/download/)
 * [Git](http://git-scm.com)
 
-If you don't currently have a Windows installation,
-[dev.microsoftedge.com](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
-has timebombed versions of Windows that you can use to build Electron.
+현재 사용하고 있는 PC에 Windows를 설치하지 않았다면
+[dev.microsoftedge.com](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)에서
+사용 기한이 정해져있는 무료 가상머신 버전의 Windows를 받아 Electron을 빌드하는 방법도
+있습니다.
 
-Building Electron is done entirely with command-line scripts and cannot be done
-with Visual Studio. You can develop Electron with any editor but support for
-building with Visual Studio will come in the future.
+Electron은 모든 빌드를 command-line 스크립트를 통해 빌드합니다. 따라서 빌드에 Visual
+Studio를 사용할 수 없습니다. 하지만 여전히 Electron을 개발할 땐 어떤 에디터든 사용이
+가능합니다. 그리고 빠른 시일내에 Visual Studio를 이용한 빌드도 지원할 계획입니다.
 
-**Note:** Even though Visual Studio is not used for building, it's still
-**required** because we need the build toolchains it provides.
+**참고:** Visual Studio가 직접 빌드에 사용되지 않더라도 IDE와 같이 제공된 빌드
+툴체인이 빌드에 **반드시** 사용되므로 여전히 필요합니다.
 
-**Note:** While older versions of Electron required Visual Studio 2013, Electron 1.1 and later does require Visual Studio 2015.
+**참고:** Visual Studio 2013은 사용할 수 없습니다 MSVS **2015** 을 사용하고 있는지
+확인해주세요.
 
-## Getting the Code
+## 코드 가져오기
 
 ```powershell
 $ git clone https://github.com/electron/electron.git
 ```
 
-## Bootstrapping
+## 부트 스트랩
 
-The bootstrap script will download all necessary build dependencies and create
-the build project files. Notice that we're using `ninja` to build Electron so
-there is no Visual Studio project generated.
+부트스트랩 스크립트는 필수적인 빌드 종속성 라이브러리들을 모두 다운로드하고 프로젝트
+파일을 생성합니다. 참고로 Electron은 `ninja`를 빌드 툴체인으로 사용하므로 Visual
+Studio 프로젝트는 생성되지 않습니다.
 
 ```powershell
 $ cd electron
 $ python script\bootstrap.py -v
 ```
 
-## Building
+## 빌드하기
 
-Build both Release and Debug targets:
+`Release` 와 `Debug` 두 타겟 모두 빌드 합니다:
 
 ```powershell
 $ python script\build.py
 ```
 
-You can also only build the Debug target:
+또는 `Debug` 타겟만 빌드 할 수 있습니다:
 
 ```powershell
 $ python script\build.py -c D
 ```
 
-After building is done, you can find `electron.exe` under `out\D` (debug
-target) or under `out\R` (release target).
+빌드가 모두 끝나면 `out/D` (디버그 타겟) 또는 `out/R` (릴리즈 타겟) 디렉터리에서
+`electron.exe` 실행 파일을 찾을 수 있습니다.
 
-## 32bit Build
+## 64비트 빌드
 
-To build for the 32bit target, you need to pass `--target_arch=ia32` when
-running the bootstrap script:
-
-```powershell
-$ python script\bootstrap.py -v --target_arch=ia32
-```
-
-The other building steps are exactly the same.
-
-## Visual Studio project
-
-To generate a Visual Studio project, you can pass the `--msvs` parameter:
+64비트를 타겟으로 빌드 하려면 부트스트랩 스크립트를 실행할 때 `--target_arch=x64`
+인수를 같이 넘겨주면 됩니다:
 
 ```powershell
-$ python script\bootstrap.py --msvs
+$ python script\bootstrap.py -v --target_arch=x64
 ```
 
-## Cleaning
+다른 빌드 단계도 정확하게 같습니다.
 
-To clean the build files:
+## 테스트
 
-```powershell
-$ npm run clean
-```
-
-## Tests
-
-Test your changes conform to the project coding style using:
+프로젝트 코딩 스타일을 확인하려면:
 
 ```powershell
 $ python script\cpplint.py
 ```
 
-Test functionality using:
+테스트를 실행하려면:
 
 ```powershell
 $ python script\test.py
 ```
 
-Tests that include native modules (e.g. `runas`) can't be executed with the
-debug build (see [#2558](https://github.com/electron/electron/issues/2558) for
-details), but they will work with the release build.
+테스트 실행시 `runas`와 같은 네이티브 모듈을 포함하는데 이 모듈은 디버그 빌드에서 같이
+사용할 수 없습니다. 하지만 여전히 릴리즈 빌드에선 사용할 수 있습니다.
 
-To run the tests with the release build use:
+릴리즈 빌드로 테스트를 실행하려면 다음 커맨드를 사용하면 됩니다:
 
 ```powershell
 $ python script\test.py -R
 ```
 
-## Troubleshooting
+## 문제 해결
 
 ### Command xxxx not found
 
-If you encountered an error like `Command xxxx not found`, you may try to use
-the `VS2015 Command Prompt` console to execute the build scripts.
+만약 `Command xxxx not found`와 같은 형식의 에러가 발생했다면
+`VS2015 Command Prompt` 콘솔로 빌드 스크립트를 실행해 보는게 좋습니다.
 
 ### Fatal internal compiler error: C1001
 
-Make sure you have the latest Visual Studio update installed.
+Visual Studio가 업데이트까지 완벽하게 설치된 최신버전인지 확인하세요.
 
 ### Assertion failed: ((handle))->activecnt >= 0
 
-If building under Cygwin, you may see `bootstrap.py` failed with following
-error:
+Cygwin에서 빌드 할 경우 `bootstrap.py` 스크립트가 다음의 에러와 함께 빌드에 실패할 수
+있습니다:
 
 ```
 Assertion failed: ((handle))->activecnt >= 0, file src\win\pipe.c, line 1430
@@ -181,21 +165,21 @@ Traceback (most recent call last):
 subprocess.CalledProcessError: Command '['npm.cmd', 'install']' returned non-zero exit status 3
 ```
 
-This is caused by a bug when using Cygwin Python and Win32 Node together. The
-solution is to use the Win32 Python to execute the bootstrap script (assuming
-you have installed Python under `C:\Python27`):
+이 버그는 Cygwin Python과 Win32 Node를 같이 사용할 때 발생합니다. 부트스트랩
+스크립트에서 Win32 Python을 사용함으로써 이 문제를 해결할 수 있습니다. `C:\Python27`
+디렉터리에 Python이 설치되었다는 가정하에 다음 명령을 실행하면 됩니다:
 
-```powershell
+```bash
 $ /cygdrive/c/Python27/python.exe script/bootstrap.py
 ```
 
 ### LNK1181: cannot open input file 'kernel32.lib'
 
-Try reinstalling 32bit Node.js.
+32비트 Node.js를 다시 설치하세요.
 
 ### Error: ENOENT, stat 'C:\Users\USERNAME\AppData\Roaming\npm'
 
-Simply making that directory [should fix the problem](http://stackoverflow.com/a/25095327/102704):
+간단하게 해당 디렉터리를 생성하면 [문제가 해결될 겁니다](http://stackoverflow.com/a/25095327/102704):
 
 ```powershell
 $ mkdir ~\AppData\Roaming\npm
@@ -203,5 +187,5 @@ $ mkdir ~\AppData\Roaming\npm
 
 ### node-gyp is not recognized as an internal or external command
 
-You may get this error if you are using Git Bash for building, you should use
-PowerShell or VS2015 Command Prompt instead.
+Git Bash로 빌드 했을 때 이러한 에러가 발생할 수 있습니다. 반드시 PowerShell이나
+VS2015 Command Prompt에서 빌드를 진행해야 합니다.

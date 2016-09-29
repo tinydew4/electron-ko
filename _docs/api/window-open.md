@@ -1,60 +1,57 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/window-open/
-    - /docs/v0.25.0/api/window-open/
-    - /docs/v0.26.0/api/window-open/
-    - /docs/v0.27.0/api/window-open/
-    - /docs/v0.28.0/api/window-open/
-    - /docs/v0.29.0/api/window-open/
-    - /docs/v0.30.0/api/window-open/
-    - /docs/v0.31.0/api/window-open/
-    - /docs/v0.32.0/api/window-open/
-    - /docs/v0.33.0/api/window-open/
-    - /docs/v0.34.0/api/window-open/
-    - /docs/v0.35.0/api/window-open/
-    - /docs/v0.36.0/api/window-open/
-    - /docs/v0.36.3/api/window-open/
-    - /docs/v0.36.4/api/window-open/
-    - /docs/v0.36.5/api/window-open/
-    - /docs/v0.36.6/api/window-open/
-    - /docs/v0.36.7/api/window-open/
-    - /docs/v0.36.8/api/window-open/
-    - /docs/v0.36.9/api/window-open/
-    - /docs/v0.36.10/api/window-open/
-    - /docs/v0.36.11/api/window-open/
-    - /docs/v0.37.0/api/window-open/
-    - /docs/v0.37.1/api/window-open/
-    - /docs/v0.37.2/api/window-open/
-    - /docs/v0.37.3/api/window-open/
-    - /docs/v0.37.4/api/window-open/
-    - /docs/v0.37.5/api/window-open/
-    - /docs/v0.37.6/api/window-open/
-    - /docs/v0.37.7/api/window-open/
-    - /docs/v0.37.8/api/window-open/
-    - /docs/latest/api/window-open/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/window-open.md'
-excerpt: "Open a new window and load a URL."
-title: "window.open Function"
-sort_title: "window.open function"
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+    - /docs-translations/ko-KR/api/window-open/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/window-open.md'
+excerpt: "&#xC0C8; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xC5F4;&#xACE0; URL&#xC744; &#xB85C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# `window.open` Function
+﻿# `window.open` 함수
 
-> Open a new window and load a URL.
+> 새 윈도우를 열고 URL을 로드합니다.
 
-When `window.open` is called to create a new window in a web page, a new instance
-of `BrowserWindow` will be created for the `url` and a proxy will be returned
-to `window.open` to let the page have limited control over it.
+`window.open` 함수가 호출되면 새 창을 생성하고 `url` 페이지를 불러옵니다. 이 창은
+지정한 `url`을 로드하여 만들어진 `BrowserWindow`의 새 인스턴스이며 본래 창 객체 대신
+페이지의 컨트롤이 제한된 프록시 객체를 반환합니다.
 
-The proxy has limited standard functionality implemented to be
-compatible with traditional web pages. For full control of the new window
-you should create a `BrowserWindow` directly.
+프록시 객체는 브라우저의 웹 페이지 창과 호환될 수 있도록 일부 제한된 표준 기능만 가지고
+있습니다. 창의 모든 컨트롤 권한을 가지려면 `BrowserWindow`를 직접 생성해서 사용해야
+합니다.
 
-The newly created `BrowserWindow` will inherit the parent window's options by
-default. To override inherited options you can set them in the `features`
-string.
+새롭게 생성된 `BrowserWindow`는 기본적으로 부모 창의 옵션을 상속합니다. 이 옵션을
+변경하려면 새 창을 열 때 `features` 인수를 지정해야 합니다.
 
 ### `window.open(url[, frameName][, features])`
 
@@ -62,70 +59,57 @@ string.
 * `frameName` String (optional)
 * `features` String (optional)
 
-Creates a new window and returns an instance of `BrowserWindowProxy` class.
+`BrowserWindowProxy` 클래스의 객체를 반환하는 새로운 윈도우를 생성합니다.
 
-The `features` string follows the format of standard browser, but each feature
-has to be a field of `BrowserWindow`'s options.
+`features` 문자열은 표준 브라우저의 포맷을 따르고 있지만, 각 기능은 `BrowserWindow`의
+옵션이어야 합니다.
 
-**Note:** Node integration will always be disabled in the opened `window` if it
-is disabled on the parent window.
+**참고:** Node 통합 기능은 열린 `window`에서 부모 윈도우가 해당 옵션이
+비활성화되어있는 경우 항상 비활성화됩니다.
 
 ### `window.opener.postMessage(message, targetOrigin)`
 
 * `message` String
 * `targetOrigin` String
 
-Sends a message to the parent window with the specified origin or `*` for no
-origin preference.
+부모 윈도우에 메시지를 보냅니다. origin을 특정할 수 있으며 `*`를 지정하면 따로 origin
+설정을 사용하지 않습니다.
 
 ## Class: BrowserWindowProxy
 
-> Manipulate the child browser window
+### `BrowserWindowProxy.blur()`
 
-The `BrowserWindowProxy` object is returned from `window.open` and provides
-limited functionality with the child window.
+자식 윈도우의 포커스를 해제합니다.
 
-### Instance Methods
+### `BrowserWindowProxy.close()`
 
-The `BrowserWindowProxy` object has the following instance methods:
+자식 윈도우를 강제로 닫습니다. unload 이벤트가 발생하지 않습니다.
 
-#### `win.blur()`
+### `BrowserWindowProxy.closed`
 
-Removes focus from the child window.
+자식 윈도우가 닫히면 true로 설정됩니다.
 
-#### `win.close()`
-
-Forcefully closes the child window without calling its unload event.
-
-#### `win.eval(code)`
+### `BrowserWindowProxy.eval(code)`
 
 * `code` String
 
-Evaluates the code in the child window.
+자식 윈도우에서 특정 스크립트를 실행합니다.
 
-#### `win.focus()`
+### `BrowserWindowProxy.focus()`
 
-Focuses the child window (brings the window to front).
+자식 윈도우에 포커스를 맞춥니다. (창을 맨 앞으로 가져옵니다)
 
-#### `win.print()`
+### `BrowserWindowProxy.print()`
 
-Invokes the print dialog on the child window.
+자식 윈도우에 프린트 대화 상자를 호출합니다.
 
-#### `win.postMessage(message, targetOrigin)`
+### `BrowserWindowProxy.postMessage(message, targetOrigin)`
 
 * `message` String
 * `targetOrigin` String
 
-Sends a message to the child window with the specified origin or `*` for no
-origin preference.
+자식 윈도우에 메시지를 보냅니다. origin을 특정할 수 있으며 `*`를 지정하면 따로 origin
+설정을 사용하지 않습니다.
 
-In addition to these methods, the child window implements `window.opener` object
-with no properties and a single method.
-
-### Instance Properties
-
-The `BrowserWindowProxy` object has the following instance properties:
-
-#### `win.closed`
-
-Set to true after the child window gets closed.
+참고로 자식 윈도우의 `window.opener` 객체에는 다른 속성 없이 이 메서드 한 개만
+구현되어 있습니다.

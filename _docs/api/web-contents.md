@@ -1,102 +1,73 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/web-contents/
-    - /docs/v0.25.0/api/web-contents/
-    - /docs/v0.26.0/api/web-contents/
-    - /docs/v0.27.0/api/web-contents/
-    - /docs/v0.28.0/api/web-contents/
-    - /docs/v0.29.0/api/web-contents/
-    - /docs/v0.30.0/api/web-contents/
-    - /docs/v0.31.0/api/web-contents/
-    - /docs/v0.32.0/api/web-contents/
-    - /docs/v0.33.0/api/web-contents/
-    - /docs/v0.34.0/api/web-contents/
-    - /docs/v0.35.0/api/web-contents/
-    - /docs/v0.36.0/api/web-contents/
-    - /docs/v0.36.3/api/web-contents/
-    - /docs/v0.36.4/api/web-contents/
-    - /docs/v0.36.5/api/web-contents/
-    - /docs/v0.36.6/api/web-contents/
-    - /docs/v0.36.7/api/web-contents/
-    - /docs/v0.36.8/api/web-contents/
-    - /docs/v0.36.9/api/web-contents/
-    - /docs/v0.36.10/api/web-contents/
-    - /docs/v0.36.11/api/web-contents/
-    - /docs/v0.37.0/api/web-contents/
-    - /docs/v0.37.1/api/web-contents/
-    - /docs/v0.37.2/api/web-contents/
-    - /docs/v0.37.3/api/web-contents/
-    - /docs/v0.37.4/api/web-contents/
-    - /docs/v0.37.5/api/web-contents/
-    - /docs/v0.37.6/api/web-contents/
-    - /docs/v0.37.7/api/web-contents/
-    - /docs/v0.37.8/api/web-contents/
-    - /docs/latest/api/web-contents/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/web-contents.md'
-excerpt: "Render and control web pages."
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+    - /docs-translations/ko-KR/api/web-contents/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/web-contents.md'
+excerpt: "&#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xACE0; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;."
 title: "webContents"
 sort_title: "webcontents"
 ---
 
 # webContents
 
-> Render and control web pages.
+> 웹 페이지를 렌더링하고 제어합니다.
 
-`webContents` is an
-[EventEmitter](http://nodejs.org/api/events.html#events_class_events_eventemitter).
-It is responsible for rendering and controlling a web page and is a property of
-the [`BrowserWindow`](http://electron.atom.io/docs/api/browser-window) object. An example of accessing the
-`webContents` object:
-
-```javascript
-const {BrowserWindow} = require('electron')
-
-let win = new BrowserWindow({width: 800, height: 1500})
-win.loadURL('http://github.com')
-
-let contents = win.webContents
-console.log(contents)
-```
-
-## Methods
-
-These methods can be accessed from the `webContents` module:
+`webContents`는 [EventEmitter](http://nodejs.org/api/events.html#events_class_events_eventemitter)를
+상속받았습니다. 웹 페이지의 렌더링과 관리를 책임지며
+[`BrowserWindow`](http://electron.atom.io/docs/api/browser-window)의 속성입니다. 다음은 `webContents` 객체에
+접근하는 예시입니다:
 
 ```javascript
-const {webContents} = require('electron')
-console.log(webContents)
+const {BrowserWindow} = require('electron');
+
+let win = new BrowserWindow({width: 800, height: 1500});
+win.loadURL('http://github.com');
+
+let webContents = win.webContents;
 ```
 
-### `webContents.getAllWebContents()`
+## Events
 
-Returns an array of all `WebContents` instances. This will contain web contents
-for all windows, webviews, opened devtools, and devtools extension background pages.
+`webContents` 객체는 다음과 같은 이벤트들을 발생시킵니다:
 
-### `webContents.getFocusedWebContents()`
+### Event: 'did-finish-load'
 
-Returns the web contents that is focused in this application, otherwise
-returns `null`.
+탐색 작업이 끝났을 때 발생하는 이벤트입니다. 브라우저의 탭의 스피너가 멈추고 `onload`
+이벤트가 발생했을 때를 말합니다.
 
-### `webContents.fromId(id)`
-
-* `id` Integer
-
-Find a `WebContents` instance according to its ID.
-
-## Class: WebContents
-
-> Render and control the contents of a BrowserWindow instance.
-
-### Instance Events
-
-#### Event: 'did-finish-load'
-
-Emitted when the navigation is done, i.e. the spinner of the tab has stopped
-spinning, and the `onload` event was dispatched.
-
-#### Event: 'did-fail-load'
+### Event: 'did-fail-load'
 
 Returns:
 
@@ -106,30 +77,30 @@ Returns:
 * `validatedURL` String
 * `isMainFrame` Boolean
 
-This event is like `did-finish-load` but emitted when the load failed or was
-cancelled, e.g. `window.stop()` is invoked.
-The full list of error codes and their meaning is available [here](https://code.google.com/p/chromium/codesearch#chromium/src/net/base/net_error_list.h).
-Note that redirect responses will emit `errorCode` -3; you may want to ignore
-that error explicitly.
+이 이벤트는 `did-finish-load`와 비슷하나, 로드가 실패했거나 취소되었을 때 발생합니다.
+예를 들면 `window.stop()`이 실행되었을 때 발생합니다. 발생할 수 있는 전체 에러 코드의
+목록과 설명은 [여기서](https://code.google.com/p/chromium/codesearch#chromium/src/net/base/net_error_list.h)
+확인할 수 있습니다. 참고로 리다이렉트 응답은 `errorCode` -3과 함께 발생합니다; 이
+에러는 명시적으로 무시할 수 있습니다.
 
-#### Event: 'did-frame-finish-load'
+### Event: 'did-frame-finish-load'
 
 Returns:
 
 * `event` Event
 * `isMainFrame` Boolean
 
-Emitted when a frame has done navigation.
+프레임(Frame)이 탐색을 끝냈을 때 발생하는 이벤트입니다.
 
-#### Event: 'did-start-loading'
+### Event: 'did-start-loading'
 
-Corresponds to the points in time when the spinner of the tab started spinning.
+브라우저 탭의 스피너가 회전을 시작한 때와 같은 시점에 대응하는 이벤트입니다.
 
-#### Event: 'did-stop-loading'
+### Event: 'did-stop-loading'
 
-Corresponds to the points in time when the spinner of the tab stopped spinning.
+브라우저 탭의 스피너가 회전을 멈추었을 때와 같은 시점에 대응하는 이벤트입니다.
 
-#### Event: 'did-get-response-details'
+### Event: 'did-get-response-details'
 
 Returns:
 
@@ -143,10 +114,10 @@ Returns:
 * `headers` Object
 * `resourceType` String
 
-Emitted when details regarding a requested resource are available.
-`status` indicates the socket connection to download the resource.
+요청한 리소스에 관련된 자세한 정보를 사용할 수 있을 때 발생하는 이벤트입니다.
+`status`는 리소스를 다운로드하기 위한 소켓 연결을 나타냅니다.
 
-#### Event: 'did-get-redirect-request'
+### Event: 'did-get-redirect-request'
 
 Returns:
 
@@ -159,100 +130,91 @@ Returns:
 * `referrer` String
 * `headers` Object
 
-Emitted when a redirect is received while requesting a resource.
+리소스를 요청하는 동안에 리다이렉트 응답을 받았을 때 발생하는 이벤트입니다.
 
-#### Event: 'dom-ready'
-
-Returns:
-
-* `event` Event
-
-Emitted when the document in the given frame is loaded.
-
-#### Event: 'page-favicon-updated'
+### Event: 'dom-ready'
 
 Returns:
 
 * `event` Event
-* `favicons` Array - Array of URLs
 
-Emitted when page receives favicon urls.
+주어진 프레임의 문서가 로드되었을 때 발생하는 이벤트입니다.
 
-#### Event: 'new-window'
+### Event: 'page-favicon-updated'
+
+Returns:
+
+* `event` Event
+* `favicons` Array - URL 배열
+
+페이지가 favicon(파비콘) URL을 받았을 때 발생하는 이벤트입니다.
+
+### Event: 'new-window'
 
 Returns:
 
 * `event` Event
 * `url` String
 * `frameName` String
-* `disposition` String - Can be `default`, `foreground-tab`, `background-tab`,
-  `new-window`, `save-to-disk` and `other`.
-* `options` Object - The options which will be used for creating the new
-  `BrowserWindow`.
+* `disposition` String - `default`, `foreground-tab`, `background-tab`,
+  `new-window`, `other`중 하나일 수 있습니다.
+* `options` Object - 새로운 `BrowserWindow` 객체를 만들 때 사용되는 옵션 객체입니다.
 
-Emitted when the page requests to open a new window for a `url`. It could be
-requested by `window.open` or an external link like `<a target='_blank'>`.
+페이지가 `url`에 대하여 새로운 윈도우를 열기위해 요청한 경우 발생하는 이벤트입니다.
+`window.open`이나 `<a target='_blank'>`과 같은 외부 링크에 의해 요청될 수 있습니다.
 
-By default a new `BrowserWindow` will be created for the `url`.
+기본값으로 `BrowserWindow`는 `url`을 기반으로 생성됩니다.
 
-Calling `event.preventDefault()` will prevent creating new windows.
+`event.preventDefault()`를 호출하면 새로운 창이 생성되는 것을 방지할 수 있습니다.
 
-#### Event: 'will-navigate'
-
-Returns:
-
-* `event` Event
-* `url` String
-
-Emitted when a user or the page wants to start navigation. It can happen when
-the `window.location` object is changed or a user clicks a link in the page.
-
-This event will not emit when the navigation is started programmatically with
-APIs like `webContents.loadURL` and `webContents.back`.
-
-It is also not emitted for in-page navigations, such as clicking anchor links
-or updating the `window.location.hash`. Use `did-navigate-in-page` event for
-this purpose.
-
-Calling `event.preventDefault()` will prevent the navigation.
-
-#### Event: 'did-navigate'
+### Event: 'will-navigate'
 
 Returns:
 
 * `event` Event
 * `url` String
 
-Emitted when a navigation is done.
+사용자 또는 페이지가 새로운 페이지로 이동할 때 발생하는 이벤트입니다.
+`window.location` 객체가 변경되거나 사용자가 페이지의 링크를 클릭했을 때 발생합니다.
 
-This event is not emitted for in-page navigations, such as clicking anchor links
-or updating the `window.location.hash`. Use `did-navigate-in-page` event for
-this purpose.
+이 이벤트는 `webContents.loadURL`과 `webContents.back` 같은 API를 이용한
+프로그램적으로 시작된 탐색에 대해서는 발생하지 않습니다.
 
-#### Event: 'did-navigate-in-page'
+이 이벤트는 앵커 링크를 클릭하거나 `window.location.hash`의 값을 변경하는 등의 페이지
+내 탐색시엔 발생하지 않습니다. 대신 `did-navigate-in-page` 이벤트를 사용해야 합니다.
+
+`event.preventDefault()`를 호출하면 탐색을 방지할 수 있습니다.
+
+### Event: 'did-navigate'
 
 Returns:
 
 * `event` Event
 * `url` String
-* `isMainFrame` Boolean
 
-Emitted when an in-page navigation happened.
+탐색이 완료되면 발생하는 이벤트입니다.
 
-When in-page navigation happens, the page URL changes but does not cause
-navigation outside of the page. Examples of this occurring are when anchor links
-are clicked or when the DOM `hashchange` event is triggered.
+이 이벤트는 앵커 링크를 클릭하거나 `window.location.hash`의 값을 변경하는 등의 페이지
+내 탐색시엔 발생하지 않습니다. 대신 `did-navigate-in-page` 이벤트를 사용해야 합니다.
 
-#### Event: 'crashed'
+### Event: 'did-navigate-in-page'
 
 Returns:
 
 * `event` Event
-* `killed` Boolean
+* `url` String
 
-Emitted when the renderer process crashes or is killed.
+페이지 내의 탐색이 완료되면 발생하는 이벤트입니다.
 
-#### Event: 'plugin-crashed'
+페이지 내의 탐색이 발생하면 페이지 URL이 변경되지만 페이지 밖으로의 탐색은 일어나지
+않습니다. 예를 들어 앵커 링크를 클릭했을 때, 또는 DOM `hashchange` 이벤트가 발생했을
+때로 볼 수 있습니다.
+
+### Event: 'crashed'
+
+렌더러 프로세스가 예기치 못하게 종료되었을 때 발생되는 이벤트입니다.
+
+### Event: 'plugin-crashed'
 
 Returns:
 
@@ -260,68 +222,58 @@ Returns:
 * `name` String
 * `version` String
 
-Emitted when a plugin process has crashed.
+플러그인 프로세스가 예기치 못하게 종료되었을 때 발생되는 이벤트입니다.
 
-#### Event: 'destroyed'
+### Event: 'destroyed'
 
-Emitted when `webContents` is destroyed.
+`webContents`가 소멸될 때 발생되는 이벤트입니다.
 
-#### Event: 'devtools-opened'
+### Event: 'devtools-opened'
 
-Emitted when DevTools is opened.
+개발자 도구가 열렸을 때 발생되는 이벤트입니다.
 
-#### Event: 'devtools-closed'
+### Event: 'devtools-closed'
 
-Emitted when DevTools is closed.
+개발자 도구가 닫혔을 때 발생되는 이벤트입니다.
 
-#### Event: 'devtools-focused'
+### Event: 'devtools-focused'
 
-Emitted when DevTools is focused / opened.
+개발자 도구에 포커스가 가거나 개발자 도구가 열렸을 때 발생되는 이벤트입니다.
 
-#### Event: 'certificate-error'
+### Event: 'certificate-error'
 
 Returns:
 
 * `event` Event
 * `url` URL
-* `error` String - The error code
+* `error` String - 에러 코드
 * `certificate` Object
-  * `data` String - PEM encoded data
-  * `issuerName` String - Issuer's Common Name
-  * `subjectName` String - Subject's Common Name
-  * `serialNumber` String - Hex value represented string
-  * `validStart` Integer - Start date of the certificate being valid in seconds
-  * `validExpiry` Integer - End date of the certificate being valid in seconds
-  * `fingerprint` String - Fingerprint of the certificate
+  * `data` Buffer - PEM 인코딩된 데이터
+  * `issuerName` String
 * `callback` Function
 
-Emitted when failed to verify the `certificate` for `url`.
+`url`에 대한 `certificate` 인증서의 유효성 검증에 실패했을 때 발생하는 이벤트입니다.
 
-The usage is the same with [the `certificate-error` event of
-`app`](http://electron.atom.io/docs/api/app#event-certificate-error).
+사용법은 [`app`의 `certificate-error` 이벤트](http://electron.atom.io/docs/api/app#event-certificate-error)와
+같습니다.
 
-#### Event: 'select-client-certificate'
+### Event: 'select-client-certificate'
 
 Returns:
 
 * `event` Event
 * `url` URL
 * `certificateList` [Objects]
-  * `data` String - PEM encoded data
-  * `issuerName` String - Issuer's Common Name
-  * `subjectName` String - Subject's Common Name
-  * `serialNumber` String - Hex value represented string
-  * `validStart` Integer - Start date of the certificate being valid in seconds
-  * `validExpiry` Integer - End date of the certificate being valid in seconds
-  * `fingerprint` String - Fingerprint of the certificate
+  * `data` Buffer - PEM 인코딩된 데이터
+  * `issuerName` String - 인증서 발급자 이름
 * `callback` Function
 
-Emitted when a client certificate is requested.
+클라이언트 인증이 요청되었을 때 발생하는 이벤트입니다.
 
-The usage is the same with [the `select-client-certificate` event of
-`app`](http://electron.atom.io/docs/api/app#event-select-client-certificate).
+사용법은 [`app`의 `select-client-certificate` 이벤트](http://electron.atom.io/docs/api/app#event-select-client-certificate)와
+같습니다.
 
-#### Event: 'login'
+### Event: 'login'
 
 Returns:
 
@@ -338,67 +290,62 @@ Returns:
   * `realm` String
 * `callback` Function
 
-Emitted when `webContents` wants to do basic auth.
+`webContents`가 기본 인증을 수행하길 원할 때 발생되는 이벤트입니다.
 
-The usage is the same with [the `login` event of `app`](http://electron.atom.io/docs/api/app#event-login).
+[`app`의 `login`이벤트](http://electron.atom.io/docs/api/app#event-login)와 사용 방법은 같습니다.
 
-#### Event: 'found-in-page'
+### Event: 'found-in-page'
 
 Returns:
 
 * `event` Event
 * `result` Object
   * `requestId` Integer
-  * `activeMatchOrdinal` Integer - Position of the active match.
-  * `matches` Integer - Number of Matches.
-  * `selectionArea` Object - Coordinates of first match region.
+  * `finalUpdate` Boolean - 더 많은 응답이 따르는 경우를 표시합니다.
+  * `activeMatchOrdinal` Integer (optional) - 활성화 일치의 위치.
+  * `matches` Integer (optional) - 일치하는 개수.
+  * `selectionArea` Object (optional) - 첫 일치 부위의 좌표.
 
-Emitted when a result is available for
-[`webContents.findInPage`](http://electron.atom.io/docs/api/web-contents#webcontentsfindinpage) request.
+[`webContents.findInPage`](http://electron.atom.io/docs/api/web-contents#webcontentsfindinpage) 요청의 결과를
+사용할 수 있을 때 발생하는 이벤트입니다.
 
-#### Event: 'media-started-playing'
+### Event: 'media-started-playing'
 
-Emitted when media starts playing.
+미디어가 재생되기 시작할 때 발생하는 이벤트입니다.
 
-#### Event: 'media-paused'
+### Event: 'media-paused'
 
-Emitted when media is paused or done playing.
+미디어가 중지되거나 재생이 완료되었을 때 발생하는 이벤트입니다.
 
-#### Event: 'did-change-theme-color'
+### Event: 'did-change-theme-color'
 
-Emitted when a page's theme color changes. This is usually due to encountering
-a meta tag:
+페이지의 테마 색이 변경될 때 발생하는 이벤트입니다. 이 이벤트는 보통 meta 태그에
+의해서 발생합니다:
 
 ```html
 <meta name='theme-color' content='#ff0000'>
 ```
 
-#### Event: 'update-target-url'
+### Event: 'update-target-url'
 
 Returns:
 
 * `event` Event
 * `url` String
 
-Emitted when mouse moves over a link or the keyboard moves the focus to a link.
+마우스나 키보드를 사용해 링크에 포커스할 때 발생하는 이벤트입니다.
 
-#### Event: 'cursor-changed'
+### Event: 'cursor-changed'
 
 Returns:
 
 * `event` Event
 * `type` String
 * `image` NativeImage (optional)
-* `scale` Float (optional) - scaling factor for the custom cursor
-* `size` Object (optional) - the size of the `image`
-  * `width` Integer
-  * `height` Integer
-* `hotspot` Object (optional) - coordinates of the custom cursor's hotspot
-  * `x` Integer - x coordinate
-  * `y` Integer - y coordinate
+* `scale` Float (optional)
 
-Emitted when the cursor's type changes. The `type` parameter can be `default`,
-`crosshair`, `pointer`, `text`, `wait`, `help`, `e-resize`, `n-resize`,
+커서 종류가 변경될 때 발생하는 이벤트입니다. `type` 인수는 다음 값이 될 수 있습니다:
+`default`, `crosshair`, `pointer`, `text`, `wait`, `help`, `e-resize`, `n-resize`,
 `ne-resize`, `nw-resize`, `s-resize`, `se-resize`, `sw-resize`, `w-resize`,
 `ns-resize`, `ew-resize`, `nesw-resize`, `nwse-resize`, `col-resize`,
 `row-resize`, `m-panning`, `e-panning`, `n-panning`, `ne-panning`, `nw-panning`,
@@ -406,76 +353,67 @@ Emitted when the cursor's type changes. The `type` parameter can be `default`,
 `cell`, `context-menu`, `alias`, `progress`, `nodrop`, `copy`, `none`,
 `not-allowed`, `zoom-in`, `zoom-out`, `grab`, `grabbing`, `custom`.
 
-If the `type` parameter is `custom`, the `image` parameter will hold the custom
-cursor image in a `NativeImage`, and `scale`, `size` and `hotspot` will hold
-additional information about the custom cursor.
+만약 `type` 인수가 `custom` 이고 `image` 인수가 `NativeImage`를 통한 커스텀
+커서를 지정했을 때, 해당 이미지로 커서가 변경됩니다. 또한 `scale` 인수는 이미지의
+크기를 조정합니다.
 
-#### Event: 'context-menu'
+### Event: 'context-menu'
 
 Returns:
 
 * `event` Event
 * `params` Object
-  * `x` Integer - x coordinate
-  * `y` Integer - y coordinate
-  * `linkURL` String - URL of the link that encloses the node the context menu
-    was invoked on.
-  * `linkText` String - Text associated with the link. May be an empty
-    string if the contents of the link are an image.
-  * `pageURL` String - URL of the top level page that the context menu was
-    invoked on.
-  * `frameURL` String - URL of the subframe that the context menu was invoked
-    on.
-  * `srcURL` String - Source URL for the element that the context menu
-    was invoked on. Elements with source URLs are images, audio and video.
-  * `mediaType` String - Type of the node the context menu was invoked on. Can
-    be `none`, `image`, `audio`, `video`, `canvas`, `file` or `plugin`.
-  * `hasImageContents` Boolean - Whether the context menu was invoked on an image
-    which has non-empty contents.
-  * `isEditable` Boolean - Whether the context is editable.
-  * `selectionText` String - Text of the selection that the context menu was
-    invoked on.
-  * `titleText` String - Title or alt text of the selection that the context
-    was invoked on.
-  * `misspelledWord` String - The misspelled word under the cursor, if any.
-  * `frameCharset` String - The character encoding of the frame on which the
-    menu was invoked.
-  * `inputFieldType` String - If the context menu was invoked on an input
-    field, the type of that field. Possible values are `none`, `plainText`,
-    `password`, `other`.
-  * `menuSourceType` String - Input source that invoked the context menu.
-    Can be `none`, `mouse`, `keyboard`, `touch`, `touchMenu`.
-  * `mediaFlags` Object - The flags for the media element the context menu was
-    invoked on. See more about this below.
-  * `editFlags` Object - These flags indicate whether the renderer believes it is
-    able to perform the corresponding action. See more about this below.
+  * `x` Integer - x 좌표
+  * `y` Integer - y 좌표
+  * `linkURL` String - 컨텍스트 메뉴가 호출된 노드를 둘러싸는 링크의 URL.
+  * `linkText` String - 링크에 연관된 텍스트. 콘텐츠의 링크가 이미지인 경우 빈
+    문자열이 됩니다.
+  * `pageURL` String - 컨텍스트 메뉴가 호출된 상위 수준 페이지의 URL.
+  * `frameURL` String - 컨텍스트 메뉴가 호출된 서브 프레임의 URL.
+  * `srcURL` String - 컨텍스트 메뉴가 호출된 요소에 대한 소스 URL. 요소와 소스 URL은
+    이미지, 오디오, 비디오입니다.
+  * `mediaType` String - 컨텍스트 메뉴가 호출된 노드의 종류. 값은 `none`, `image`,
+    `audio`, `video`, `canvas`, `file` 또는 `plugin`이 될 수 있습니다.
+  * `hasImageContent` Boolean - 컨텍스트 메뉴가 내용이 있는 이미지에서 호출되었는지
+    여부.
+  * `isEditable` Boolean - 컨텍스트를 편집할 수 있는지 여부.
+  * `selectionText` String - 컨텍스트 메뉴가 호출된 부분에 있는 선택된 텍스트.
+  * `titleText` String - 컨텍스트 메뉴가 호출된 선택된 제목 또는 알림 텍스트.
+  * `misspelledWord` String - 만약 있는 경우, 커서가 가르키는 곳에서 발생한 오타.
+  * `frameCharset` String - 메뉴가 호출된 프레임의 문자열 인코딩.
+  * `inputFieldType` String - 컨텍스트 메뉴가 입력 필드에서 호출되었을 때, 그 필드의
+    종류. 값은 `none`, `plainText`, `password`, `other` 중 한 가지가 될 수 있습니다.
+  * `menuSourceType` String - 컨텍스트 메뉴를 호출한 입력 소스. 값은 `none`,
+    `mouse`, `keyboard`, `touch`, `touchMenu` 중 한 가지가 될 수 있습니다.
+  * `mediaFlags` Object - 컨텍스트 메뉴가 호출된 미디어 요소에 대한 플래그. 자세한
+    사항은 아래를 참고하세요.
+  * `editFlags` Object - 이 플래그는 렌더러가 어떤 행동을 이행할 수 있는지 여부를
+    표시합니다. 자세한 사항은 아래를 참고하세요.
 
-The `mediaFlags` is an object with the following properties:
+`mediaFlags`는 다음과 같은 속성을 가지고 있습니다:
 
-* `inError` Boolean - Whether the media element has crashed.
-* `isPaused` Boolean - Whether the media element is paused.
-* `isMuted` Boolean - Whether the media element is muted.
-* `hasAudio` Boolean - Whether the media element has audio.
-* `isLooping` Boolean - Whether the media element is looping.
-* `isControlsVisible` Boolean - Whether the media element's controls are
-  visible.
-* `canToggleControls` Boolean - Whether the media element's controls are
-  toggleable.
-* `canRotate` Boolean - Whether the media element can be rotated.
+* `inError` Boolean - 미디어 객체가 크래시되었는지 여부.
+* `isPaused` Boolean - 미디어 객체가 일시중지되었는지 여부.
+* `isMuted` Boolean - 미디어 객체가 음소거되었는지 여부.
+* `hasAudio` Boolean - 미디어 객체가 오디오를 가지고 있는지 여부.
+* `isLooping` Boolean - 미디어 객체가 루프중인지 여부.
+* `isControlsVisible` Boolean - 미디어 객체의 컨트롤이 보이는지 여부.
+* `canToggleControls` Boolean - 미디어 객체의 컨트롤을 토글할 수 있는지 여부.
+* `canRotate` Boolean - 미디어 객체를 돌릴 수 있는지 여부.
 
-The `editFlags` is an object with the following properties:
+`editFlags`는 다음과 같은 속성을 가지고 있습니다:
 
-* `canUndo` Boolean - Whether the renderer believes it can undo.
-* `canRedo` Boolean - Whether the renderer believes it can redo.
-* `canCut` Boolean - Whether the renderer believes it can cut.
-* `canCopy` Boolean - Whether the renderer believes it can copy
-* `canPaste` Boolean - Whether the renderer believes it can paste.
-* `canDelete` Boolean - Whether the renderer believes it can delete.
-* `canSelectAll` Boolean - Whether the renderer believes it can select all.
+* `canUndo` Boolean - 렌더러에서 실행 취소할 수 있는지 여부.
+* `canRedo` Boolean - 렌더러에서 다시 실행할 수 있는지 여부.
+* `canCut` Boolean - 렌더러에서 잘라내기를 실행할 수 있는지 여부.
+* `canCopy` Boolean - 렌더러에서 복사를 실행할 수 있는지 여부.
+* `canPaste` Boolean - 렌더러에서 붙여넣기를 실행할 수 있는지 여부.
+* `canDelete` Boolean - 렌더러에서 삭제를 실행할 수 있는지 여부.
+* `canSelectAll` Boolean - 렌더러에서 모두 선택을 실행할 수 있는지 여부.
 
-Emitted when there is a new context menu that needs to be handled.
+새로운 컨텍스트 메뉴의 제어가 필요할 때 발생하는 이벤트입니다.
 
-#### Event: 'select-bluetooth-device'
+### Event: 'select-bluetooth-device'
 
 Returns:
 
@@ -486,15 +424,13 @@ Returns:
 * `callback` Function
   * `deviceId` String
 
-Emitted when bluetooth device needs to be selected on call to
-`navigator.bluetooth.requestDevice`. To use `navigator.bluetooth` api
-`webBluetooth` should be enabled.  If `event.preventDefault` is not called,
-first available device will be selected. `callback` should be called with
-`deviceId` to be selected, passing empty string to `callback` will
-cancel the request.
+`navigator.bluetooth.requestDevice`의 호출에 의해 블루투스 기기가 선택되어야 할 때
+발생하는 이벤트입니다. `navigator.bluetooth` API를 사용하려면 `webBluetooth`가
+활성화되어 있어야 합니다. 만약 `event.preventDefault`이 호출되지 않으면, 첫 번째로
+사용 가능한 기기가 선택됩니다. `callback`은 반드시 선택될 `deviceId`와 함께
+호출되어야 하며, 빈 문자열을 `callback`에 보내면 요청이 취소됩니다.
 
 ```javascript
-const {app, webContents} = require('electron')
 app.commandLine.appendSwitch('enable-web-bluetooth')
 
 app.on('ready', () => {
@@ -512,392 +448,310 @@ app.on('ready', () => {
 })
 ```
 
-#### Event: 'paint'
+## Instance Methods
 
-Returns:
+`webContents`객체는 다음과 같은 인스턴스 메서드들을 가지고 있습니다.
 
-* `event` Event
-* `dirtyRect` Object
-  * `x` Integer - The x coordinate on the image.
-  * `y` Integer - The y coordinate on the image.
-  * `width` Integer - The width of the dirty area.
-  * `height` Integer - The height of the dirty area.
-* `image` [NativeImage](http://electron.atom.io/docs/api/native-image) - The image data of the whole frame.
-
-Emitted when a new frame is generated. Only the dirty area is passed in the
-buffer.
-
-```javascript
-const {BrowserWindow} = require('electron')
-
-let win = new BrowserWindow({webPreferences: {offscreen: true}})
-win.webContents.on('paint', (event, dirty, image) => {
-  // updateBitmap(dirty, image.getBitmap())
-})
-win.loadURL('http://github.com')
-```
-
-### Instance Methods
-
-#### `contents.loadURL(url[, options])`
+### `webContents.loadURL(url[, options])`
 
 * `url` URL
 * `options` Object (optional)
-  * `httpReferrer` String - A HTTP Referrer url.
-  * `userAgent` String - A user agent originating the request.
-  * `extraHeaders` String - Extra headers separated by "\n"
+  * `httpReferrer` String - HTTP 레퍼러 url.
+  * `userAgent` String - 요청을 시작한 유저 에이전트.
+  * `extraHeaders` String - "\n"로 구분된 Extra 헤더들.
 
-Loads the `url` in the window. The `url` must contain the protocol prefix,
-e.g. the `http://` or `file://`. If the load should bypass http cache then
-use the `pragma` header to achieve it.
+윈도우에 웹 페이지 `url`을 로드합니다. `url`은 `http://`, `file://`과 같은
+프로토콜 접두사를 가지고 있어야 합니다. 만약 반드시 http 캐시를 사용하지 않고 로드해야
+하는 경우 `pragma` 헤더를 사용할 수 있습니다.
 
 ```javascript
-const {webContents} = require('electron')
-const options = {extraHeaders: 'pragma: no-cache\n'}
-webContents.loadURL('https://github.com', options)
+const options = {extraHeaders: 'pragma: no-cache\n'};
+webContents.loadURL(url, options)
 ```
 
-#### `contents.downloadURL(url)`
+### `webContents.downloadURL(url)`
 
 * `url` URL
 
-Initiates a download of the resource at `url` without navigating. The
-`will-download` event of `session` will be triggered.
+`url`의 리소스를 탐색 없이 다운로드를 시작합니다. `session`의 `will-download`
+이벤트가 발생합니다.
 
-#### `contents.getURL()`
+### `webContents.getURL()`
 
-Returns URL of the current web page.
+현재 웹 페이지의 URL을 반환합니다.
 
 ```javascript
-const {BrowserWindow} = require('electron')
-let win = new BrowserWindow({width: 800, height: 600})
-win.loadURL('http://github.com')
+let win = new BrowserWindow({width: 800, height: 600});
+win.loadURL('http://github.com');
 
-let currentURL = win.webContents.getURL()
-console.log(currentURL)
+let currentURL = win.webContents.getURL();
 ```
 
-#### `contents.getTitle()`
+### `webContents.getTitle()`
 
-Returns the title of the current web page.
+현재 웹 페이지의 제목을 반환합니다.
 
-#### `contents.isDestroyed()`
+### `webContents.isLoading()`
 
-Returns a Boolean, whether the web page is destroyed.
+현재 웹 페이지가 리소스를 로드중인지 여부를 반환합니다.
 
-#### `contents.isFocused()`
+### `webContents.isLoadingMainFrame()`
 
-Returns a Boolean, whether the web page is focused.
+메인 프레임이 여전히 로딩중인지 여부를 반환합니다. (내부 iframe 또는 frame 포함)
 
-#### `contents.isLoading()`
+### `webContents.isWaitingForResponse()`
 
-Returns whether web page is still loading resources.
+현재 웹 페이지가 페이지의 메인 리소스로부터 첫 응답을 기다리고있는지 여부를 반환합니다.
 
-#### `contents.isLoadingMainFrame()`
+### `webContents.stop()`
 
-Returns whether the main frame (and not just iframes or frames within it) is
-still loading.
+대기중인 탐색 작업을 모두 멈춥니다.
 
-#### `contents.isWaitingForResponse()`
+### `webContents.reload()`
 
-Returns whether the web page is waiting for a first-response from the main
-resource of the page.
+현재 웹 페이지를 새로고침합니다.
 
-#### `contents.stop()`
+### `webContents.reloadIgnoringCache()`
 
-Stops any pending navigation.
+현재 웹 페이지의 캐시를 무시한 채로 새로고침합니다.
 
-#### `contents.reload()`
+### `webContents.canGoBack()`
 
-Reloads the current web page.
+브라우저가 이전 웹 페이지로 돌아갈 수 있는지 여부를 반환합니다.
 
-#### `contents.reloadIgnoringCache()`
+### `webContents.canGoForward()`
 
-Reloads current page and ignores cache.
+브라우저가 다음 웹 페이지로 이동할 수 있는지 여부를 반환합니다.
 
-#### `contents.canGoBack()`
-
-Returns whether the browser can go back to previous web page.
-
-#### `contents.canGoForward()`
-
-Returns whether the browser can go forward to next web page.
-
-#### `contents.canGoToOffset(offset)`
+### `webContents.canGoToOffset(offset)`
 
 * `offset` Integer
 
-Returns whether the web page can go to `offset`.
+웹 페이지가 `offset`로 이동할 수 있는지 여부를 반환합니다.
 
-#### `contents.clearHistory()`
+### `webContents.clearHistory()`
 
-Clears the navigation history.
+탐색 기록을 삭제합니다.
 
-#### `contents.goBack()`
+### `webContents.goBack()`
 
-Makes the browser go back a web page.
+브라우저가 이전 웹 페이지로 이동하게 합니다.
 
-#### `contents.goForward()`
+### `webContents.goForward()`
 
-Makes the browser go forward a web page.
+브라우저가 다음 웹 페이지로 이동하게 합니다.
 
-#### `contents.goToIndex(index)`
+### `webContents.goToIndex(index)`
 
 * `index` Integer
 
-Navigates browser to the specified absolute web page index.
+브라우저가 지정된 절대 웹 페이지 인덱스로 탐색하게 합니다.
 
-#### `contents.goToOffset(offset)`
+### `webContents.goToOffset(offset)`
 
 * `offset` Integer
 
-Navigates to the specified offset from the "current entry".
+"current entry"에서 지정된 offset으로 탐색합니다.
 
-#### `contents.isCrashed()`
+### `webContents.isCrashed()`
 
-Whether the renderer process has crashed.
+렌더러 프로세스가 예기치 않게 종료되었는지 여부를 반환합니다.
 
-#### `contents.setUserAgent(userAgent)`
+### `webContents.setUserAgent(userAgent)`
 
 * `userAgent` String
 
-Overrides the user agent for this web page.
+현재 웹 페이지의 유저 에이전트를 덮어씌웁니다.
 
-#### `contents.getUserAgent()`
+### `webContents.getUserAgent()`
 
-Returns a `String` representing the user agent for this web page.
+현재 웹 페이지의 유저 에이전트 문자열을 반환합니다.
 
-#### `contents.insertCSS(css)`
+### `webContents.insertCSS(css)`
 
 * `css` String
 
-Injects CSS into the current web page.
+CSS 코드를 현재 웹 페이지에 삽입합니다.
 
-#### `contents.executeJavaScript(code[, userGesture, callback])`
+### `webContents.executeJavaScript(code[, userGesture, callback])`
 
 * `code` String
 * `userGesture` Boolean (optional)
-* `callback` Function (optional) - Called after script has been executed.
+* `callback` Function (optional) - 스크립트의 실행이 완료되면 호출됩니다.
   * `result`
 
-Evaluates `code` in page.
+페이지에서 자바스크립트 코드를 실행합니다.
 
-In the browser window some HTML APIs like `requestFullScreen` can only be
-invoked by a gesture from the user. Setting `userGesture` to `true` will remove
-this limitation.
+기본적으로 `requestFullScreen`와 같은 몇몇 HTML API들은 사용자의 조작에 의해서만
+호출될 수 있습니다. `userGesture`를 `true`로 설정하면 이러한 제약을 무시할 수
+있습니다.
 
-#### `contents.setAudioMuted(muted)`
+### `webContents.setAudioMuted(muted)`
 
 * `muted` Boolean
 
-Mute the audio on the current web page.
+현재 웹 페이지의 소리를 음소거합니다.
 
-#### `contents.isAudioMuted()`
+### `webContents.isAudioMuted()`
 
-Returns whether this page has been muted.
+현재 페이지가 음소거 되어있는지 여부를 반환합니다.
 
-#### `contents.setZoomFactor(factor)`
+### `webContents.undo()`
 
-* `factor` Number - Zoom factor.
+웹 페이지에서 `undo` 편집 커맨드를 실행합니다.
 
-Changes the zoom factor to the specified factor. Zoom factor is
-zoom percent divided by 100, so 300% = 3.0.
+### `webContents.redo()`
 
-#### `contents.getZoomFactor(callback)`
+웹 페이지에서 `redo` 편집 커맨드를 실행합니다.
 
-* `callback` Function
+### `webContents.cut()`
 
-Sends a request to get current zoom factor, the `callback` will be called with
-`callback(zoomFactor)`.
+웹 페이지에서 `cut` 편집 커맨드를 실행합니다.
 
-#### `contents.setZoomLevel(level)`
+### `webContents.copy()`
 
-* `level` Number - Zoom level
+웹 페이지에서 `copy` 편집 커맨드를 실행합니다.
 
-Changes the zoom level to the specified level. The original size is 0 and each
-increment above or below represents zooming 20% larger or smaller to default
-limits of 300% and 50% of original size, respectively.
+### `webContents.paste()`
 
-#### `contents.getZoomLevel(callback)`
+웹 페이지에서 `paste` 편집 커맨드를 실행합니다.
 
-* `callback` Function
+### `webContents.pasteAndMatchStyle()`
 
-Sends a request to get current zoom level, the `callback` will be called with
-`callback(zoomLevel)`.
+웹 페이지에서 `pasteAndMatchStyle` 편집 커맨드를 실행합니다.
 
-#### `contents.setZoomLevelLimits(minimumLevel, maximumLevel)`
+### `webContents.delete()`
 
-* `minimumLevel` Number
-* `maximumLevel` Number
+웹 페이지에서 `delete` 편집 커맨드를 실행합니다.
 
-Sets the maximum and minimum zoom level.
+### `webContents.selectAll()`
 
-#### `contents.undo()`
+웹 페이지에서 `selectAll` 편집 커맨드를 실행합니다.
 
-Executes the editing command `undo` in web page.
+### `webContents.unselect()`
 
-#### `contents.redo()`
+웹 페이지에서 `unselect` 편집 커맨드를 실행합니다.
 
-Executes the editing command `redo` in web page.
-
-#### `contents.cut()`
-
-Executes the editing command `cut` in web page.
-
-#### `contents.copy()`
-
-Executes the editing command `copy` in web page.
-
-#### `contents.copyImageAt(x, y)`
-
-* `x` Integer
-* `y` Integer
-
-Copy the image at the given position to the clipboard.
-
-#### `contents.paste()`
-
-Executes the editing command `paste` in web page.
-
-#### `contents.pasteAndMatchStyle()`
-
-Executes the editing command `pasteAndMatchStyle` in web page.
-
-#### `contents.delete()`
-
-Executes the editing command `delete` in web page.
-
-#### `contents.selectAll()`
-
-Executes the editing command `selectAll` in web page.
-
-#### `contents.unselect()`
-
-Executes the editing command `unselect` in web page.
-
-#### `contents.replace(text)`
+### `webContents.replace(text)`
 
 * `text` String
 
-Executes the editing command `replace` in web page.
+웹 페이지에서 `replace` 편집 커맨드를 실행합니다.
 
-#### `contents.replaceMisspelling(text)`
-
-* `text` String
-
-Executes the editing command `replaceMisspelling` in web page.
-
-#### `contents.insertText(text)`
+### `webContents.replaceMisspelling(text)`
 
 * `text` String
 
-Inserts `text` to the focused element.
+웹 페이지에서 `replaceMisspelling` 편집 커맨드를 실행합니다.
 
-#### `contents.findInPage(text[, options])`
+### `webContents.insertText(text)`
 
-* `text` String - Content to be searched, must not be empty.
+* `text` String
+
+포커스된 요소에 `text`를 삽입합니다.
+
+### `webContents.findInPage(text[, options])`
+
+* `text` String - 찾을 콘텐츠, 반드시 공백이 아니여야 합니다.
 * `options` Object (optional)
-  * `forward` Boolean - Whether to search forward or backward, defaults to `true`.
-  * `findNext` Boolean - Whether the operation is first request or a follow up,
-    defaults to `false`.
-  * `matchCase` Boolean - Whether search should be case-sensitive,
-    defaults to `false`.
-  * `wordStart` Boolean - Whether to look only at the start of words.
-    defaults to `false`.
-  * `medialCapitalAsWordStart` Boolean - When combined with `wordStart`,
-    accepts a match in the middle of a word if the match begins with an
-    uppercase letter followed by a lowercase or non-letter.
-    Accepts several other intra-word matches, defaults to `false`.
+  * `forward` Boolean - 앞에서부터 검색할지 뒤에서부터 검색할지 여부입니다. 기본값은
+    `true`입니다.
+  * `findNext` Boolean - 작업을 계속 처리할지 첫 요청만 처리할지 여부입니다. 기본값은
+    `false`입니다.
+  * `matchCase` Boolean - 검색이 대소문자를 구분할지 여부입니다. 기본값은
+    `false`입니다.
+  * `wordStart` Boolean - 단어의 시작 부분만 볼 지 여부입니다. 기본값은
+    `false`입니다.
+  * `medialCapitalAsWordStart` Boolean - `wordStart`와 합쳐질 때, 소문자 또는
+    비문자가 따라붙은 대문자로 일치가 시작하는 경우 단어 중간의 일치를 허용합니다.
+    여러가지 다른 단어 내의 일치를 허용합니다. 기본값은 `false`입니다.
 
-Starts a request to find all matches for the `text` in the web page and returns
-an `Integer` representing the request id used for the request. The result of
-the request can be obtained by subscribing to
-[`found-in-page`](http://electron.atom.io/docs/api/web-contents#event-found-in-page) event.
+웹 페이지에서 `text`에 일치하는 모든 대상을 찾는 요청을 시작하고 요청에 사용된 요청을
+표현하는 `정수(integer)`를 반환합니다. 요청의 결과는
+[`found-in-page`](http://electron.atom.io/docs/api/web-contents#event-found-in-page) 이벤트를 통해 취득할 수
+있습니다.
 
-#### `contents.stopFindInPage(action)`
+### `webContents.stopFindInPage(action)`
 
-* `action` String - Specifies the action to take place when ending
-  [`webContents.findInPage`](http://electron.atom.io/docs/api/web-contents#webcontentfindinpage) request.
-  * `clearSelection` - Clear the selection.
-  * `keepSelection` - Translate the selection into a normal selection.
-  * `activateSelection` - Focus and click the selection node.
+* `action` String - [`webContents.findInPage`](http://electron.atom.io/docs/api/web-contents#webcontentfindinpage)
+  요청이 종료되었을 때 일어날 수 있는 작업을 지정합니다.
+  * `clearSelection` - 선택을 취소합니다.
+  * `keepSelection` - 선택을 일반 선택으로 변경합니다.
+  * `activateSelection` - 포커스한 후 선택된 노드를 클릭합니다.
 
-Stops any `findInPage` request for the `webContents` with the provided `action`.
+제공된 `action`에 대한 `webContents`의 모든 `findInPage` 요청을 중지합니다.
 
 ```javascript
-const {webContents} = require('electron')
 webContents.on('found-in-page', (event, result) => {
-  if (result.finalUpdate) webContents.stopFindInPage('clearSelection')
-})
+  if (result.finalUpdate)
+    webContents.stopFindInPage('clearSelection');
+});
 
-const requestId = webContents.findInPage('api')
-console.log(requestId)
+const requestId = webContents.findInPage('api');
 ```
 
-#### `contents.capturePage([rect, ]callback)`
+### `webContents.capturePage([rect, ]callback)`
 
-* `rect` Object (optional) - The area of the page to be captured
+* `rect` Object (optional) - 캡쳐할 페이지의 영역
   * `x` Integer
   * `y` Integer
   * `width` Integer
   * `height` Integer
 * `callback` Function
 
-Captures a snapshot of the page within `rect`. Upon completion `callback` will
-be called with `callback(image)`. The `image` is an instance of
-[NativeImage](http://electron.atom.io/docs/api/native-image) that stores data of the snapshot. Omitting
-`rect` will capture the whole visible page.
+페이지의 스크린샷을 `rect`에 설정한 만큼 캡처합니다. 캡처가 완료되면 `callback`이
+`callback(image)` 형식으로 호출됩니다. `image`는 [NativeImage](http://electron.atom.io/docs/api/native-image)의
+인스턴스이며 스크린샷 데이터를 담고있습니다. `rect`를 생략하면 페이지 전체를 캡처합니다.
 
-#### `contents.hasServiceWorker(callback)`
-
-* `callback` Function
-
-Checks if any ServiceWorker is registered and returns a boolean as
-response to `callback`.
-
-#### `contents.unregisterServiceWorker(callback)`
+### `webContents.hasServiceWorker(callback)`
 
 * `callback` Function
 
-Unregisters any ServiceWorker if present and returns a boolean as
-response to `callback` when the JS promise is fulfilled or false
-when the JS promise is rejected.
+ServiceWorker가 등록되어있는지 확인하고 `callback`에 대한 응답으로 boolean 값을
+반환합니다.
 
-#### `contents.print([options])`
+### `webContents.unregisterServiceWorker(callback)`
 
-* `options` Object (optional)
-  * `silent` Boolean - Don't ask user for print settings. Default is `false`.
-  * `printBackground` Boolean - Also prints the background color and image of
-    the web page. Default is `false`.
+* `callback` Function
 
-Prints window's web page. When `silent` is set to `true`, Electron will pick
-up system's default printer and default settings for printing.
+ServiceWorker가 존재하면 모두 등록을 해제하고 JS Promise가 만족될 때 `callback`에
+대한 응답으로 boolean을 반환하거나 JS Promise가 만족되지 않을 때 `false`를 반환합니다.
 
-Calling `window.print()` in web page is equivalent to calling
-`webContents.print({silent: false, printBackground: false})`.
+### `webContents.print([options])`
 
-Use `page-break-before: always; ` CSS style to force to print to a new page.
+`options` Object (optional)
+  * `silent` Boolean - 사용자에게 프린트 설정을 묻지 않습니다. 기본값을 `false`입니다.
+  * `printBackground` Boolean - 웹 페이지의 배경 색과 이미지를 출력합니다. 기본값은
+  	`false`입니다.
 
-#### `contents.printToPDF(options, callback)`
+윈도우의 웹 페이지를 프린트합니다. `silent`가 `true`로 지정되어있을 땐, Electron이
+시스템의 기본 프린터와 기본 프린터 설정을 가져옵니다.
+
+웹 페이지에서 `window.print()`를 호출하는 것은
+`webContents.print({silent: false, printBackground: false})`를 호출하는 것과
+같습니다.
+
+### `webContents.printToPDF(options, callback)`
 
 * `options` Object
-  * `marginsType` Integer - Specifies the type of margins to use. Uses 0 for
-    default margin, 1 for no margin, and 2 for minimum margin.
-  * `pageSize` String - Specify page size of the generated PDF. Can be `A3`,
-    `A4`, `A5`, `Legal`, `Letter`, `Tabloid` or an Object containing `height`
-    and `width` in microns.
-  * `printBackground` Boolean - Whether to print CSS backgrounds.
-  * `printSelectionOnly` Boolean - Whether to print selection only.
-  * `landscape` Boolean - `true` for landscape, `false` for portrait.
-* `callback` Function
+  * `marginsType` Integer - 사용할 마진의 종류를 지정합니다. 0 부터 2 사이 값을 사용할
+    수 있고 각각 기본 마진, 마진 없음, 최소 마진입니다.
+  * `pageSize` String - 생성되는 PDF의 페이지 크기를 지정합니다. 값은 `A3`, `A4`,
+    `A5`, `Legal`, `Letter`, `Tabloid` 또는 마이크론 단위의 `height` & `width`가
+    포함된 객체를 사용할 수 있습니다.
+  * `printBackground` Boolean - CSS 배경을 프린트할지 여부를 정합니다.
+  * `printSelectionOnly` Boolean - 선택된 영역만 프린트할지 여부를 정합니다.
+  * `landscape` Boolean - landscape을 위해선 `true`를, portrait를 위해선 `false`를
+  	사용합니다.
+* `callback` Function - `(error, data) => {}`
 
-Prints window's web page as PDF with Chromium's preview printing custom
-settings.
+Chromium의 미리보기 프린팅 커스텀 설정을 이용하여 윈도우의 웹 페이지를 PDF로
+프린트합니다.
 
-The `callback` will be called with `callback(error, data)` on completion. The
-`data` is a `Buffer` that contains the generated PDF data.
+`callback`은 작업이 완료되면 `callback(error, data)` 형식으로 호출됩니다. `data`는
+생성된 PDF 데이터를 담고있는 `Buffer`입니다.
 
-By default, an empty `options` will be regarded as:
+기본으로 비어있는 `options`은 다음과 같이 여겨지게 됩니다:
 
 ```javascript
 {
@@ -908,111 +762,109 @@ By default, an empty `options` will be regarded as:
 }
 ```
 
-Use `page-break-before: always; ` CSS style to force to print to a new page.
-
-An example of `webContents.printToPDF`:
+다음은 `webContents.printToPDF`의 예시입니다:
 
 ```javascript
-const {BrowserWindow} = require('electron')
-const fs = require('fs')
+const {BrowserWindow} = require('electron');
+const fs = require('fs');
 
-let win = new BrowserWindow({width: 800, height: 600})
-win.loadURL('http://github.com')
+let win = new BrowserWindow({width: 800, height: 600});
+win.loadURL('http://github.com');
 
 win.webContents.on('did-finish-load', () => {
-  // Use default printing options
+  // 기본 프린트 옵션을 사용합니다
   win.webContents.printToPDF({}, (error, data) => {
-    if (error) throw error
+    if (error) throw error;
     fs.writeFile('/tmp/print.pdf', data, (error) => {
-      if (error) throw error
-      console.log('Write PDF successfully.')
-    })
-  })
-})
+      if (error)
+        throw error;
+      console.log('Write PDF successfully.');
+    });
+  });
+});
 ```
 
-#### `contents.addWorkSpace(path)`
+### `webContents.addWorkSpace(path)`
 
 * `path` String
 
-Adds the specified path to DevTools workspace. Must be used after DevTools
-creation:
+특정 경로를 개발자 도구의 워크스페이스에 추가합니다. 반드시 개발자 도구의 생성이 완료된
+이후에 사용해야 합니다.
 
 ```javascript
-const {BrowserWindow} = require('electron')
-let win = new BrowserWindow()
 win.webContents.on('devtools-opened', () => {
-  win.webContents.addWorkSpace(__dirname)
-})
+  win.webContents.addWorkSpace(__dirname);
+});
 ```
 
-#### `contents.removeWorkSpace(path)`
+### `webContents.removeWorkSpace(path)`
 
 * `path` String
 
-Removes the specified path from DevTools workspace.
+특정 경로를 개발자 도구의 워크스페이스에서 제거합니다.
 
-#### `contents.openDevTools([options])`
+### `webContents.openDevTools([options])`
 
 * `options` Object (optional)
-  * `mode` String - Opens the devtools with specified dock state, can be
-  `right`, `bottom`, `undocked`, `detach`. Defaults to last used dock state.
-  In `undocked` mode it's possible to dock back. In `detach` mode it's not.
+  * `detach` Boolean - 새 창에서 개발자 도구를 엽니다.
+  * `mode` String - 개발자 도구 표시 상태를 지정합니다. 옵션은 "right", "bottom",
+    "undocked", "detach"가 될 수 있습니다. 기본값은 마지막 표시 상태를
+    사용합니다. `undocked` 모드에선 다시 도킹할 수 있습니다. 하지만 `detach`
+    모드에선 할 수 없습니다.
 
-Opens the devtools.
+개발자 도구를 엽니다.
 
-#### `contents.closeDevTools()`
+### `webContents.closeDevTools()`
 
-Closes the devtools.
+개발자 도구를 닫습니다.
 
-#### `contents.isDevToolsOpened()`
+### `webContents.isDevToolsOpened()`
 
-Returns whether the devtools is opened.
+개발자 도구가 열려있는지 여부를 반환합니다.
 
-#### `contents.isDevToolsFocused()`
+### `webContents.isDevToolsFocused()`
 
-Returns whether the devtools view is focused .
+개발자 도구에 포커스 되어있는지 여부를 반환합니다.
 
-#### `contents.toggleDevTools()`
+### `webContents.toggleDevTools()`
 
-Toggles the developer tools.
+개발자 도구를 토글합니다.
 
-#### `contents.inspectElement(x, y)`
+### `webContents.inspectElement(x, y)`
 
 * `x` Integer
 * `y` Integer
 
-Starts inspecting element at position (`x`, `y`).
+(`x`, `y`)위치의 요소를 조사합니다.
 
-#### `contents.inspectServiceWorker()`
+### `webContents.inspectServiceWorker()`
 
-Opens the developer tools for the service worker context.
+서비스 워커 컨텍스트(service worker context)를 위한 개발자 도구를 엽니다.
 
-#### `contents.send(channel[, arg1][, arg2][, ...])`
+### `webContents.send(channel[, arg1][, arg2][, ...])`
 
 * `channel` String
+* `arg` (optional)
 
-Send an asynchronous message to renderer process via `channel`, you can also
-send arbitrary arguments. Arguments will be serialized in JSON internally and
-hence no functions or prototype chain will be included.
+`channel`을 통하여 렌더러 프로세스에 비동기 메시지를 보냅니다. 임의의 인수를 보낼수도
+있습니다. 인수들은 내부적으로 JSON 포맷으로 직렬화 되며, 이후 함수와 프로토타입 체인은
+포함되지 않게 됩니다.
 
-The renderer process can handle the message by listening to `channel` with the
-`ipcRenderer` module.
+렌더러 프로세스는 `ipcRenderer` 모듈을 통하여 `channel`를 리스닝하여 메시지를 처리할
+수 있습니다.
 
-An example of sending messages from the main process to the renderer process:
+메인 프로세스에서 렌더러 프로세스로 메시지를 보내는 예시 입니다:
 
 ```javascript
 // In the main process.
-const {app, BrowserWindow} = require('electron')
-let win = null
-
+let win = null;
 app.on('ready', () => {
-  win = new BrowserWindow({width: 800, height: 600})
-  win.loadURL(`file://${__dirname}/index.html`)
+  win = new BrowserWindow({width: 800, height: 600});
+  win.loadURL('file://' + __dirname + '/index.html');
   win.webContents.on('did-finish-load', () => {
-    win.webContents.send('ping', 'whoooooooh!')
-  })
-})
+    win.webContents.send('ping', 'whoooooooh!');
+  });
+});
 ```
 
 ```html
@@ -1021,78 +873,80 @@ app.on('ready', () => {
 <body>
   <script>
     require('electron').ipcRenderer.on('ping', (event, message) => {
-      console.log(message)  // Prints 'whoooooooh!'
-    })
+      console.log(message);  // "whoooooooh!" 출력
+    });
   </script>
 </body>
 </html>
 ```
 
-#### `contents.enableDeviceEmulation(parameters)`
+### `webContents.enableDeviceEmulation(parameters)`
 
-* `parameters` Object
-  * `screenPosition` String - Specify the screen type to emulate
-      (default: `desktop`)
-    * `desktop` String - Desktop screen type
-    * `mobile` String - Mobile screen type
-  * `screenSize` Object - Set the emulated screen size (screenPosition == mobile)
-    * `width` Integer - Set the emulated screen width
-    * `height` Integer - Set the emulated screen height
-  * `viewPosition` Object - Position the view on the screen
-      (screenPosition == mobile) (default: `{x: 0, y: 0}`)
-    * `x` Integer - Set the x axis offset from top left corner
-    * `y` Integer - Set the y axis offset from top left corner
-  * `deviceScaleFactor` Integer - Set the device scale factor (if zero defaults to
-      original device scale factor) (default: `0`)
-  * `viewSize` Object - Set the emulated view size (empty means no override)
-    * `width` Integer - Set the emulated view width
-    * `height` Integer - Set the emulated view height
-  * `fitToView` Boolean - Whether emulated view should be scaled down if
-      necessary to fit into available space (default: `false`)
-  * `offset` Object - Offset of the emulated view inside available space (not in
-      fit to view mode) (default: `{x: 0, y: 0}`)
-    * `x` Float - Set the x axis offset from top left corner
-    * `y` Float - Set the y axis offset from top left corner
-  * `scale` Float - Scale of emulated view inside available space (not in fit to
-      view mode) (default: `1`)
+`parameters` Object, properties:
 
-Enable device emulation with the given parameters.
+* `screenPosition` String - 에뮬레이트 할 화면 종료를 지정합니다
+    (기본값: `desktop`)
+  * `desktop`
+  * `mobile`
+* `screenSize` Object - 에뮬레이트 화면의 크기를 지정합니다 (screenPosition ==
+  mobile)
+  * `width` Integer - 에뮬레이트 화면의 너비를 지정합니다
+  * `height` Integer - 에뮬레이트 화면의 높이를 지정합니다
+* `viewPosition` Object - 화면에서 뷰의 위치 (screenPosition == mobile) (기본값:
+  `{x: 0, y: 0}`)
+  * `x` Integer - 좌상단 모서리로부터의 x 축의 오프셋
+  * `y` Integer - 좌상단 모서리로부터의 y 축의 오프셋
+* `deviceScaleFactor` Integer - 디바이스의 스케일 팩터(scale factor)를 지정합니다.
+	(0일 경우 기본 디바이스 스케일 팩터를 기본으로 사용합니다. 기본값: `0`)
+* `viewSize` Object - 에뮬레이트 된 뷰의 크기를 지정합니다 (빈 값은 덮어쓰지 않는
+  다는 것을 의미합니다)
+  * `width` Integer - 에뮬레이트 된 뷰의 너비를 지정합니다
+  * `height` Integer - 에뮬레이트 된 뷰의 높이를 지정합니다
+* `fitToView` Boolean - 에뮬레이트의 뷰가 사용 가능한 공간에 맞추어 스케일 다운될지를
+		지정합니다 (기본값: `false`)
+* `offset` Object - 사용 가능한 공간에서 에뮬레이트 된 뷰의 오프셋을 지정합니다 (fit
+  to view 모드 외에서) (기본값: `{x: 0, y: 0}`)
+  * `x` Float - 좌상단 모서리에서 x 축의 오프셋을 지정합니다
+  * `y` Float - 좌상단 모서리에서 y 축의 오프셋을 지정합니다
+* `scale` Float - 사용 가능한 공간에서 에뮬레이드 된 뷰의 스케일 (fit to view 모드
+  외에서, 기본값: `1`)
 
-#### `contents.disableDeviceEmulation()`
+`parameters`로 디바이스 에뮬레이션을 사용합니다.
 
-Disable device emulation enabled by `webContents.enableDeviceEmulation`.
+### `webContents.disableDeviceEmulation()`
 
-#### `contents.sendInputEvent(event)`
+`webContents.enableDeviceEmulation`로 활성화된 디바이스 에뮬레이선을 비활성화 합니다.
+
+### `webContents.sendInputEvent(event)`
 
 * `event` Object
-  * `type` String (**required**) - The type of the event, can be `mouseDown`,
-    `mouseUp`, `mouseEnter`, `mouseLeave`, `contextMenu`, `mouseWheel`,
-    `mouseMove`, `keyDown`, `keyUp`, `char`.
-  * `modifiers` Array - An array of modifiers of the event, can
-    include `shift`, `control`, `alt`, `meta`, `isKeypad`, `isAutoRepeat`,
+  * `type` String (**required**) - 이벤트의 종류. 다음 값들을 사용할 수 있습니다:
+    `mouseDown`,     `mouseUp`, `mouseEnter`, `mouseLeave`, `contextMenu`,
+    `mouseWheel`, `mouseMove`, `keyDown`, `keyUp`, `char`.
+  * `modifiers` Array - 이벤트의 수정자(modifier)들에 대한 배열. 다음 값들을 포함
+    할 수 있습니다: `shift`, `control`, `alt`, `meta`, `isKeypad`, `isAutoRepeat`,
     `leftButtonDown`, `middleButtonDown`, `rightButtonDown`, `capsLock`,
     `numLock`, `left`, `right`.
 
-Sends an input `event` to the page.
+Input `event`를 웹 페이지로 전송합니다.
 
-For keyboard events, the `event` object also have following properties:
+키보드 이벤트들에 대해서는 `event` 객체는 다음 속성들을 사용할 수 있습니다:
 
-* `keyCode` String (**required**) - The character that will be sent
-  as the keyboard event. Should only use the valid key codes in
-  [Accelerator](http://electron.atom.io/docs/api/accelerator).
+* `keyCode` String (**required**) - 키보드 이벤트가 발생할 때 보내질 문자.
+  [Accelerator](http://electron.atom.io/docs/api/accelerator)의 올바른 키 코드만 사용해야 합니다.
 
-For mouse events, the `event` object also have following properties:
+마우스 이벤트들에 대해서는 `event` 객체는 다음 속성들을 사용할 수 ���습니다:
 
 * `x` Integer (**required**)
 * `y` Integer (**required**)
-* `button` String - The button pressed, can be `left`, `middle`, `right`
+* `button` String - 눌린 버튼. 다음 값들이 가능합니다. `left`, `middle`, `right`
 * `globalX` Integer
 * `globalY` Integer
 * `movementX` Integer
 * `movementY` Integer
 * `clickCount` Integer
 
-For the `mouseWheel` event, the `event` object also have following properties:
+`mouseWheel` 이벤트에 대해서는 `event` 객체는 다음 속성들을 사용할 수 있습니다:
 
 * `deltaX` Integer
 * `deltaY` Integer
@@ -1103,203 +957,154 @@ For the `mouseWheel` event, the `event` object also have following properties:
 * `hasPreciseScrollingDeltas` Boolean
 * `canScroll` Boolean
 
-#### `contents.beginFrameSubscription([onlyDirty ,]callback)`
+### `webContents.beginFrameSubscription([onlyDirty ,]callback)`
 
-* `onlyDirty` Boolean (optional) - Defaults to `false`
+* `onlyDirty` Boolean (optional) - 기본값은 `false`입니다.
 * `callback` Function
 
-Begin subscribing for presentation events and captured frames, the `callback`
-will be called with `callback(frameBuffer, dirtyRect)` when there is a
-presentation event.
+캡처된 프레임과 프레젠테이션 이벤트를 구독하기 시작합니다. `callback`은
+프레젠테이션 이벤트가 발생했을 때 `callback(frameBuffer, dirtyRect)` 형태로
+호출됩니다.
 
-The `frameBuffer` is a `Buffer` that contains raw pixel data. On most machines,
-the pixel data is effectively stored in 32bit BGRA format, but the actual
-representation depends on the endianness of the processor (most modern
-processors are little-endian, on machines with big-endian processors the data
-is in 32bit ARGB format).
+`frameBuffer`는 raw 픽셀 데이터를 가지고 있는 `Buffer` 객체입니다. 많은 장치에서
+32비트 BGRA 포맷을 사용하여 효율적으로 픽셀 데이터를 저장합니다. 하지만 실질적인
+데이터 저장 방식은 프로세서의 엔디안 방식에 따라서 달라집니다. (따라서 현대의 많은
+프로세서에선 little-endian 방식을 사용하므로 위의 포맷을 그대로 표현합니다. 하지만
+몇몇 프로세서는 big-endian 방식을 사용하는데, 이 경우 32비트 ARGB 포맷을 사용합니다)
 
-The `dirtyRect` is an object with `x, y, width, height` properties that
-describes which part of the page was repainted. If `onlyDirty` is set to
-`true`, `frameBuffer` will only contain the repainted area. `onlyDirty`
-defaults to `false`.
+`dirtyRect`는 페이지의 어떤 부분이 다시 그려졌는지를 표현하는 `x, y, width, height`
+속성을 포함하는 객체입니다. 만약 `onlyDirty`가 `true`로 지정되어 있으면,
+`frameBuffer`가 다시 그려진 부분만 포함합니다. `onlyDirty`의 기본값은 `false`입니다.
 
-#### `contents.endFrameSubscription()`
+### `webContents.endFrameSubscription()`
 
-End subscribing for frame presentation events.
+프레임 프레젠테이션 이벤트들에 대한 구독을 중지합니다.
 
-#### `contents.startDrag(item)`
+### `webContents.startDrag(item)`
 
 * `item` object
   * `file` String
   * `icon` [NativeImage](http://electron.atom.io/docs/api/native-image)
 
-Sets the `item` as dragging item for current drag-drop operation, `file` is the
-absolute path of the file to be dragged, and `icon` is the image showing under
-the cursor when dragging.
+현재 진행중인 드래그-드롭에 `item`을 드래그 중인 아이템으로 설정합니다. `file`은
+드래그될 파일의 절대 경로입니다. 그리고 `icon`은 드래그 도중 커서 밑에 표시될
+이미지입니다.
 
-#### `contents.savePage(fullPath, saveType, callback)`
+### `webContents.savePage(fullPath, saveType, callback)`
 
-* `fullPath` String - The full file path.
-* `saveType` String - Specify the save type.
-  * `HTMLOnly` - Save only the HTML of the page.
-  * `HTMLComplete` - Save complete-html page.
-  * `MHTML` - Save complete-html page as MHTML.
+* `fullPath` String - 전체 파일 경로.
+* `saveType` String - 저장 종류를 지정합니다.
+  * `HTMLOnly` - 페이지의 HTML만 저장합니다.
+  * `HTMLComplete` - 페이지의 완성된 HTML을 저장합니다.
+  * `MHTML` - 페이지의 완성된 HTML을 MHTML로 저장합니다.
 * `callback` Function - `(error) => {}`.
   * `error` Error
 
-Returns true if the process of saving page has been initiated successfully.
+만약 페이지를 저장하는 프로세스가 성공적으로 끝났을 경우 true를 반환합니다.
 
 ```javascript
-const {BrowserWindow} = require('electron')
-let win = new BrowserWindow()
-
-win.loadURL('https://github.com')
+win.loadURL('https://github.com');
 
 win.webContents.on('did-finish-load', () => {
   win.webContents.savePage('/tmp/test.html', 'HTMLComplete', (error) => {
-    if (!error) console.log('Save page successfully')
-  })
-})
+    if (!error)
+      console.log('Save page successfully');
+  });
+});
 ```
 
-#### `contents.showDefinitionForSelection()` _macOS_
+### `webContents.showDefinitionForSelection()` _macOS_
 
-Shows pop-up dictionary that searches the selected word on the page.
+페이지에서 선택된 단어에 대한 사전 검색 결과 팝업을 표시합니다.
 
-#### `contents.isOffscreen()`
+## Instance Properties
 
-Indicates whether *offscreen rendering* is enabled.
+`WebContents`객체들은 다음 속성들을 가지고 있습니다:
 
-#### `contents.startPainting()`
+### `webContents.id`
 
-If *offscreen rendering* is enabled and not painting, start painting.
+이 WebContents의 유일 ID.
 
-#### `contents.stopPainting()`
+### `webContents.session`
 
-If *offscreen rendering* is enabled and painting, stop painting.
+이 webContents에서 사용하는 [session](http://electron.atom.io/docs/api/session) 객체를 반환합니다.
 
-#### `contents.isPainting()`
+### `webContents.hostWebContents`
 
-If *offscreen rendering* is enabled returns whether it is currently painting.
+현재 `WebContents`를 소유하는 `WebContents`를 반환합니다.
 
-#### `contents.setFrameRate(fps)`
+### `webContents.devToolsWebContents`
 
-* `fps` Integer
+이 `WebContents`에 대한 개발자 도구의 `WebContents`를 가져옵니다.
 
-If *offscreen rendering* is enabled sets the frame rate to the specified number.
-Only values between 1 and 60 are accepted.
+**참고:** 사용자가 절대로 이 객체를 저장해서는 안 됩니다. 개발자 도구가 닫혔을 때,
+`null`이 반환될 수 있습니다.
 
-#### `contents.getFrameRate()`
+### `webContents.debugger`
 
-If *offscreen rendering* is enabled returns the current frame rate.
-
-#### `contents.invalidate()`
-
-If *offscreen rendering* is enabled invalidates the frame and generates a new
-one through the `'paint'` event.
-
-### Instance Properties
-
-#### `contents.id`
-
-The unique ID of this WebContents.
-
-#### `contents.session`
-
-Returns the [session](http://electron.atom.io/docs/api/session) object used by this webContents.
-
-#### `contents.hostWebContents`
-
-Returns the `WebContents` that might own this `WebContents`.
-
-#### `contents.devToolsWebContents`
-
-Get the `WebContents` of DevTools for this `WebContents`.
-
-**Note:** Users should never store this object because it may become `null`
-when the DevTools has been closed.
-
-#### `contents.debugger`
-
-Get the debugger instance for this webContents.
-
-## Class: Debugger
-
-> An alternate transport for Chrome's remote debugging protocol.
-
-Chrome Developer Tools has a [special binding][rdp] available at JavaScript
-runtime that allows interacting with pages and instrumenting them.
+디버거 API는 [원격 디버깅 프로토콜][rdp]에 대한 대체 수송자 역할을 합니다.
 
 ```javascript
-const {BrowserWindow} = require('electron')
-let win = new BrowserWindow()
-
 try {
-  win.webContents.debugger.attach('1.1')
-} catch (err) {
-  console.log('Debugger attach failed : ', err)
-}
+  win.webContents.debugger.attach('1.1');
+} catch(err) {
+  console.log('Debugger attach failed : ', err);
+};
 
 win.webContents.debugger.on('detach', (event, reason) => {
-  console.log('Debugger detached due to : ', reason)
-})
+  console.log('Debugger detached due to : ', reason);
+});
 
 win.webContents.debugger.on('message', (event, method, params) => {
   if (method === 'Network.requestWillBeSent') {
-    if (params.request.url === 'https://www.github.com') {
-      win.webContents.debugger.detach()
-    }
+    if (params.request.url === 'https://www.github.com')
+      win.webContents.debugger.detach();
   }
-})
+});
 
-win.webContents.debugger.sendCommand('Network.enable')
+win.webContents.debugger.sendCommand('Network.enable');
 ```
 
-### Instance Methods
+#### `webContents.debugger.attach([protocolVersion])`
 
-#### `debugger.attach([protocolVersion])`
+* `protocolVersion` String (optional) - 요쳥할 디버깅 프로토콜의 버전.
 
-* `protocolVersion` String (optional) - Requested debugging protocol version.
+`webContents`에 디버거를 부착합니다.
 
-Attaches the debugger to the `webContents`.
+#### `webContents.debugger.isAttached()`
 
-#### `debugger.isAttached()`
+디버거가 `webContents`에 부착되어 있는지 여부를 반환합니다.
 
-Returns a boolean indicating whether a debugger is attached to the `webContents`.
+#### `webContents.debugger.detach()`
 
-#### `debugger.detach()`
+`webContents`로부터 디버거를 분리시킵니다.
 
-Detaches the debugger from the `webContents`.
+#### `webContents.debugger.sendCommand(method[, commandParams, callback])`
 
-#### `debugger.sendCommand(method[, commandParams, callback])`
+* `method` String - 메서드 이름, 반드시 원격 디버깅 프로토콜에 의해 정의된 메서드중
+  하나가 됩니다.
+* `commandParams` Object (optional) - 요청 인수를 표현한 JSON 객체.
+* `callback` Function (optional) - 응답
+  * `error` Object -  커맨드의 실패를 표시하는 에러 메시지.
+  * `result` Object - 원격 디버깅 프로토콜에서 커맨드 설명의 'returns' 속성에 의해
+    정의된 응답
 
-* `method` String - Method name, should be one of the methods defined by the
-   remote debugging protocol.
-* `commandParams` Object (optional) - JSON object with request parameters.
-* `callback` Function (optional) - Response
-  * `error` Object - Error message indicating the failure of the command.
-  * `result` Object - Response defined by the 'returns' attribute of
-     the command description in the remote debugging protocol.
-
-Send given command to the debugging target.
-
-### Instance Events
+지정한 커맨드를 디버깅 대상에게 전송합니다.
 
 #### Event: 'detach'
 
 * `event` Event
-* `reason` String - Reason for detaching debugger.
+* `reason` String - 디버거 분리 사유.
 
-Emitted when debugging session is terminated. This happens either when
-`webContents` is closed or devtools is invoked for the attached `webContents`.
+디버깅 세션이 종료될 때 발생하는 이벤트입니다. `webContents`가 닫히거나 개발자 도구가
+부착된 `webContents`에 대해 호출될 때 발생합니다.
 
 #### Event: 'message'
 
 * `event` Event
-* `method` String - Method name.
-* `params` Object - Event parameters defined by the 'parameters'
-   attribute in the remote debugging protocol.
+* `method` String - 메서드 이름.
+* `params` Object - 원격 디버깅 프로토콜의 'parameters' 속성에서 정의된 이벤트 인수
 
-Emitted whenever debugging target issues instrumentation event.
+디버깅 타겟이 관련 이벤트를 발생시킬 때 마다 발생하는 이벤트입니다.
 
 [rdp]: https://developer.chrome.com/devtools/docs/debugger-protocol

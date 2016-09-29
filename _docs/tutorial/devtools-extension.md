@@ -1,89 +1,84 @@
 ---
-version: v1.4.1
-category: Tutorial
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/tutorial/devtools-extension/
-    - /docs/v0.25.0/tutorial/devtools-extension/
-    - /docs/v0.26.0/tutorial/devtools-extension/
-    - /docs/v0.27.0/tutorial/devtools-extension/
-    - /docs/v0.28.0/tutorial/devtools-extension/
-    - /docs/v0.29.0/tutorial/devtools-extension/
-    - /docs/v0.30.0/tutorial/devtools-extension/
-    - /docs/v0.31.0/tutorial/devtools-extension/
-    - /docs/v0.32.0/tutorial/devtools-extension/
-    - /docs/v0.33.0/tutorial/devtools-extension/
-    - /docs/v0.34.0/tutorial/devtools-extension/
-    - /docs/v0.35.0/tutorial/devtools-extension/
-    - /docs/v0.36.0/tutorial/devtools-extension/
-    - /docs/v0.36.3/tutorial/devtools-extension/
-    - /docs/v0.36.4/tutorial/devtools-extension/
-    - /docs/v0.36.5/tutorial/devtools-extension/
-    - /docs/v0.36.6/tutorial/devtools-extension/
-    - /docs/v0.36.7/tutorial/devtools-extension/
-    - /docs/v0.36.8/tutorial/devtools-extension/
-    - /docs/v0.36.9/tutorial/devtools-extension/
-    - /docs/v0.36.10/tutorial/devtools-extension/
-    - /docs/v0.36.11/tutorial/devtools-extension/
-    - /docs/v0.37.0/tutorial/devtools-extension/
-    - /docs/v0.37.1/tutorial/devtools-extension/
-    - /docs/v0.37.2/tutorial/devtools-extension/
-    - /docs/v0.37.3/tutorial/devtools-extension/
-    - /docs/v0.37.4/tutorial/devtools-extension/
-    - /docs/v0.37.5/tutorial/devtools-extension/
-    - /docs/v0.37.6/tutorial/devtools-extension/
-    - /docs/v0.37.7/tutorial/devtools-extension/
-    - /docs/v0.37.8/tutorial/devtools-extension/
-    - /docs/latest/tutorial/devtools-extension/
-source_url: 'https://github.com/electron/electron/blob/master/docs/tutorial/devtools-extension.md'
-title: "DevTools Extension"
-sort_title: "devtools extension"
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+    - /docs-translations/ko-KR/tutorial/devtools-extension/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/devtools-extension.md'
+title: "개발자 도구 확장 기능"
+sort_title: ""
 ---
 
-# DevTools Extension
+# 개발자 도구 확장 기능
 
-Electron supports the [Chrome DevTools Extension][devtools-extension], which can
-be used to extend the ability of devtools for debugging popular web frameworks.
+애플리케이션의 디버깅을 쉽게 하기 위해 Electron은 기본적으로
+[Chrome DevTools Extension][devtools-extension]을 지원합니다.
 
-## How to load a DevTools Extension
+Electron은 유명한 웹 프레임워크를 디버깅하기 위해 사용할 수 있는 개발자 도구 확장
+기능을 사용할 수 있도록 [Chrome 개발자 도구 확장 기능][devtools-extension]을
+지원합니다.
 
-This document outlines the process for manually loading an extension.
-You may also try
-[electron-devtools-installer](https://github.com/GPMDP/electron-devtools-installer),
-a third-party tool that downloads extensions directly from the Chrome WebStore.
+## 개발자 도구는 어떻게 로드하나요
 
-To load an extension in Electron, you need to download it in Chrome browser,
-locate its filesystem path, and then load it by calling the
-`BrowserWindow.addDevToolsExtension(extension)` API.
+Electron에 확장 기능을 로드하려면, Chrome 브라우저에서 다운로드 해야 하며, 파일 시스템 경로를 지정해야 합니다. 그리고 `BrowserWindow.addDevToolsExtension(extension)`를 호출함으로써 기능을 로드할 수 있습니다.
 
-Using the [React Developer Tools][react-devtools] as example:
+예시로 [React Developer Tools][react-devtools]를 사용한다면:
 
-1. Install it in Chrome browser.
-1. Navigate to `chrome://extensions`, and find its extension ID, which is a hash
-   string like `fmkadmapgofadopljbjfkapdkoienihi`.
-1. Find out filesystem location used by Chrome for storing extensions:
-   * on Windows it is `%LOCALAPPDATA%\Google\Chrome\User Data\Default\Extensions`;
-   * on Linux it could be:
+1. Chrome 브라우저를 설치합니다.
+2. `chrome://extensions`로 이동한 후 해시된 `fmkadmapgofadopljbjfkapdkoienihi`
+  같이 생긴 확장 기능의 ID를 찾습니다.
+3. Chrome에서 사용하는 확장 기능을 저장해둔 파일 시스템 경로를 찾습니다:
+   * Windows에선 `%LOCALAPPDATA%\Google\Chrome\User Data\Default\Extensions`;
+   * Linux에선:
      * `~/.config/google-chrome/Default/Extensions/`
      * `~/.config/google-chrome-beta/Default/Extensions/`
      * `~/.config/google-chrome-canary/Default/Extensions/`
      * `~/.config/chromium/Default/Extensions/`
-   * on macOS it is `~/Library/Application Support/Google/Chrome/Default/Extensions`.
-1. Pass the location of the extension to `BrowserWindow.addDevToolsExtension`
-   API, for the React Developer Tools, it is something like:
-   `~/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/0.15.0_0`
+   * macOS에선 `~/Library/Application Support/Google/Chrome/Default/Extensions`.
+4. 확장 기능의 경로를 `BrowserWindow.addDevToolsExtension` API로 전달합니다.
+   React Developer Tools의 경우 다음과 비슷해야 합니다:
+   `~/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/0.14.10_0`
 
-**Note:** The `BrowserWindow.addDevToolsExtension` API cannot be called before the
-ready event of the app module is emitted.
+확장 기능의 이름은 `BrowserWindow.addDevToolsExtension`에서 반환되며, 이 이름을
+`BrowserWindow.removeDevToolsExtension` API로 전달함으로써 해당하는 확장 기능을
+언로드할 수 있습니다.
 
-The name of the extension is returned by `BrowserWindow.addDevToolsExtension`,
-and you can pass the name of the extension to the `BrowserWindow.removeDevToolsExtension`
-API to unload it.
+## 지원하는 개발자 도구 확장 기능
 
-## Supported DevTools Extensions
-
-Electron only supports a limited set of `chrome.*` APIs, so some extensions
-using unsupported `chrome.*` APIs for chrome extension features may not work.
-Following Devtools Extensions are tested and guaranteed to work in Electron:
+Electron은 ���주 제한적인 `chrome.*` API만을 지원하므로 확장 기능이 지원하지 않는
+`chrome.*` API를 사용한다면 해당 기능은 작동하지 않을 것입니다. 다음 개발자 도구들은
+Electron에서 정상적으로 작동하는 것을 확인했으며 작동 여부를 보장할 수 있는 확장
+기능입니다:
 
 * [Ember Inspector](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
 * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
@@ -91,16 +86,15 @@ Following Devtools Extensions are tested and guaranteed to work in Electron:
 * [jQuery Debugger](https://chrome.google.com/webstore/detail/jquery-debugger/dbhhnnnpaeobfddmlalhnehgclcmjimi)
 * [AngularJS Batarang](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk)
 * [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-* [Cerebral Debugger](http://www.cerebraljs.com/documentation/the_debugger)
 
-### What should I do if a DevTools Extension is not working?
+### 개발자 도구가 작동하지 않을 때 어떻게 해야 하나요?
 
-First please make sure the extension is still being maintained, some extensions
-can not even work for recent versions of Chrome browser, and we are not able to
-do anything for them.
+먼저 해당 확장 기능이 확실히 계속 유지되고 있는지를 확인하세요. 몇몇 확장 기능들은
+최신 버전의 Chrome 브라우저에서도 작동하지 않습니다. 그리고 이러한 확장 기능에 대해선
+Electron 개발팀에 해줄 수 있는 것이 아무것도 없습니다.
 
-Then file a bug at Electron's issues list, and describe which part of the
-extension is not working as expected.
+위와 같은 상황이 아니라면 Electron의 이슈 리스트에 버그 보고를 추가한 후 예상한 것과
+달리 확장 기능의 어떤 부분의 정상적으로 작동하지 않았는지 설명하세요.
 
 [devtools-extension]: https://developer.chrome.com/extensions/devtools
 [react-devtools]: https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi

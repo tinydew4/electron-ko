@@ -1,53 +1,54 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/locales/
-    - /docs/v0.25.0/api/locales/
-    - /docs/v0.26.0/api/locales/
-    - /docs/v0.27.0/api/locales/
-    - /docs/v0.28.0/api/locales/
-    - /docs/v0.29.0/api/locales/
-    - /docs/v0.30.0/api/locales/
-    - /docs/v0.31.0/api/locales/
-    - /docs/v0.32.0/api/locales/
-    - /docs/v0.33.0/api/locales/
-    - /docs/v0.34.0/api/locales/
-    - /docs/v0.35.0/api/locales/
-    - /docs/v0.36.0/api/locales/
-    - /docs/v0.36.3/api/locales/
-    - /docs/v0.36.4/api/locales/
-    - /docs/v0.36.5/api/locales/
-    - /docs/v0.36.6/api/locales/
-    - /docs/v0.36.7/api/locales/
-    - /docs/v0.36.8/api/locales/
-    - /docs/v0.36.9/api/locales/
-    - /docs/v0.36.10/api/locales/
-    - /docs/v0.36.11/api/locales/
-    - /docs/v0.37.0/api/locales/
-    - /docs/v0.37.1/api/locales/
-    - /docs/v0.37.2/api/locales/
-    - /docs/v0.37.3/api/locales/
-    - /docs/v0.37.4/api/locales/
-    - /docs/v0.37.5/api/locales/
-    - /docs/v0.37.6/api/locales/
-    - /docs/v0.37.7/api/locales/
-    - /docs/v0.37.8/api/locales/
-    - /docs/latest/api/locales/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/locales.md'
-excerpt: "Locale values returned by <code>app.getLocale()</code>."
-title: "Locales"
-sort_title: "locales"
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+    - /docs-translations/ko-KR/api/locales/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/locales.md'
+excerpt: "<code>app.getLocale()</code>&#xC5D0;&#xC11C; &#xBC18;&#xD658;&#xB418;&#xB294; &#xB85C;&#xCF00;&#xC77C; &#xAC12;."
+title: "로케일"
+sort_title: ""
 ---
 
-# Locales
+# 로케일
 
-> Locale values returned by `app.getLocale()`.
+> `app.getLocale()`에서 반환되는 로케일 값.
 
-Electron uses Chromium's `l10n_util` library to fetch the locale. Possible
-values are listed below:
+Electron은 로케일을 가져오기 위해 Chromium의 `l10n_util` 라이브러리를 사용합니다.
+반환될 수 있는 값은 다음과 같습니다:
 
-| Language Code | Language Name |
+
+| 언어 코드 | 언어 이름 |
 |---------------|---------------|
 | af | Afrikaans |
 | ar-AE | Arabic (U.A.E.) |

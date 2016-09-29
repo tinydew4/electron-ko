@@ -1,93 +1,90 @@
 ---
-version: v1.4.1
-category: Development
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.25.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.26.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.27.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.28.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.29.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.30.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.31.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.32.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.33.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.34.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.35.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.36.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.36.3/development/atom-shell-vs-node-webkit/
-    - /docs/v0.36.4/development/atom-shell-vs-node-webkit/
-    - /docs/v0.36.5/development/atom-shell-vs-node-webkit/
-    - /docs/v0.36.6/development/atom-shell-vs-node-webkit/
-    - /docs/v0.36.7/development/atom-shell-vs-node-webkit/
-    - /docs/v0.36.8/development/atom-shell-vs-node-webkit/
-    - /docs/v0.36.9/development/atom-shell-vs-node-webkit/
-    - /docs/v0.36.10/development/atom-shell-vs-node-webkit/
-    - /docs/v0.36.11/development/atom-shell-vs-node-webkit/
-    - /docs/v0.37.0/development/atom-shell-vs-node-webkit/
-    - /docs/v0.37.1/development/atom-shell-vs-node-webkit/
-    - /docs/v0.37.2/development/atom-shell-vs-node-webkit/
-    - /docs/v0.37.3/development/atom-shell-vs-node-webkit/
-    - /docs/v0.37.4/development/atom-shell-vs-node-webkit/
-    - /docs/v0.37.5/development/atom-shell-vs-node-webkit/
-    - /docs/v0.37.6/development/atom-shell-vs-node-webkit/
-    - /docs/v0.37.7/development/atom-shell-vs-node-webkit/
-    - /docs/v0.37.8/development/atom-shell-vs-node-webkit/
-    - /docs/latest/development/atom-shell-vs-node-webkit/
-source_url: 'https://github.com/electron/electron/blob/master/docs/development/atom-shell-vs-node-webkit.md'
-title: "Technical Differences Between Electron and NW.js (formerly node-webkit)"
-sort_title: "technical differences between electron and nw.js (formerly node-webkit)"
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+    - /docs-translations/ko-KR/development/atom-shell-vs-node-webkit/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/development/atom-shell-vs-node-webkit.md'
+title: "Electron이 NW.js(node-webkit)와 기술적으로 다른점"
+sort_title: "electron이 nw.js(node-webkit)와 기술적으로 다른점"
 ---
 
-# Technical Differences Between Electron and NW.js (formerly node-webkit)
+# Electron이 NW.js(node-webkit)와 기술적으로 다른점
 
-__Note: Electron was previously named Atom Shell.__
+__참고: Electron은 Atom Shell의 새로운 이름입니다.__
 
-Like NW.js, Electron provides a platform to write desktop applications
-with JavaScript and HTML and has Node integration to grant access to the low
-level system from web pages.
+NW.js 처럼 Electron은 JavaScript와 HTML 그리고 Node 통합 환경을 제공함으로써 웹
+페이지에서 저 수준 시스템에 접근할 수 있도록 하여 웹 기반 데스크탑 애플리케이션을
+작성할 수 있도록 하는 프레임워크 입니다.
 
-But there are also fundamental differences between the two projects that make
-Electron a completely separate product from NW.js:
+하지만 Electron과 NW.js는 근본적인 개발흐름의 차이도 있습니다:
 
-__1. Entry of Application__
+__1. 애플리케이션의 엔트리 포인트__
 
-In NW.js the main entry point of an application is a web page. You specify a
-main page URL in the `package.json` and it is opened in a browser window as
-the application's main window.
+NW.js에선 애플리케이션의 엔트리 포인트로 웹 페이지를 사용합니다. `package.json`내의
+main 필드에 메인 웹 페이지(index.html) URL을 지정하면 애플리케이션의 메인 윈도우로
+열리게 됩니다.
 
-In Electron, the entry point is a JavaScript script. Instead of
-providing a URL directly, you manually create a browser window and load
-an HTML file using the API. You also need to listen to window events
-to decide when to quit the application.
+Electron에선 JavaScript를 엔트리 포인트로 사용합니다. URL을 직접 제공하는 대신 API를
+사용하여 직접 브라우저 창과 HTML 파일을 로드할 수 있습니다. 또한 윈도우의 종료시기를
+결정하는 이벤트를 리스닝해야 합니다.
 
-Electron works more like the Node.js runtime. Electron's APIs are lower level
-so you can use it for browser testing in place of [PhantomJS](http://phantomjs.org/).
+Electron은 Node.js 런타임과 비슷하게 작동합니다. Electron의 API는 저수준이기에
+브라우저 테스팅을 위해 [PhantomJS](http://phantomjs.org/)를 사용할 수도 있습니다.
 
-__2. Build System__
+__2. 빌드 시스템__
 
-In order to avoid the complexity of building all of Chromium, Electron uses [`libchromiumcontent`](https://github.com/brightray/libchromiumcontent) to access
-Chromium's Content API. `libchromiumcontent` is a single shared library that
-includes the Chromium Content module and all of its dependencies. Users don't
-need a powerful machine to build Electron.
+Electron은 Chromium의 모든것을 빌드하는 복잡성을 피하기 위해
+[libchromiumcontent](https://github.com/brightray/libchromiumcontent)를 사용하여
+Chromium의 Content API에 접근합니다. libchromiumcontent은 단일 공유 라이브러리이고
+Chromium Content 모듈과 종속성 라이브러리들을 포함합니다. 유저는 Electron을 빌드 하기
+위해 높은 사양의 빌드용 컴퓨터를 구비할 필요가 없습니다.
 
-__3. Node Integration__
+__3. Node 통합__
 
-In NW.js, the Node integration in web pages requires patching Chromium to
-work, while in Electron we chose a different way to integrate the libuv loop
-with each platform's message loop to avoid hacking Chromium. See the
-[`node_bindings`][node-bindings] code for how that was done.
+NW.js는 웹 페이지에서 require를 사용할 수 있도록 Chromium을 패치했습니다. 한편
+Electron은 Chromium의 해킹을 방지하기 위해 libuv loop와 각 플랫폼의 메시지 루프에
+통합하는 다른 방법을 채택하였습니다. [`node_bindings`][node-bindings]의 코드를 보면
+이 부분이 어떻게 구현됬는지 알 수 있습니다.
 
-__4. Multi-context__
+__4. 다중 컨텍스트__
 
-If you are an experienced NW.js user, you should be familiar with the
-concept of Node context and web context. These concepts were invented because
-of how NW.js was implemented.
+만약 NW.js를 사용해본 적이 있다면 Node context와 Web context의 개념을 잘 알고 있을
+겁니다. 이러한 개념은 NW.js가 구현되기 위해 만들어졌습니다.
 
-By using the [multi-context](http://strongloop.com/strongblog/whats-new-node-js-v0-12-multiple-context-execution/)
-feature of Node, Electron doesn't introduce a new JavaScript context in web
-pages.
+Node의 [다중 컨텍스트](http://strongloop.com/strongblog/whats-new-node-js-v0-12-multiple-context-execution/)를
+사용하기 때문에 Electron은 웹 페이지의 새로운 JavaScript 컨텍스트를 생성하지 않습니다.
 
-Note: NW.js has optionally supported multi-context since 0.13.
+참고: NW.js는 0.13 버전부터 선택적으로 다중 컨텍스트를 지원합니다.
 
 [node-bindings]: https://github.com/electron/electron/tree/master/atom/common

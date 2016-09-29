@@ -1,139 +1,116 @@
 ---
-version: v1.4.1
-category: Tutorial
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/tutorial/security/
-    - /docs/v0.25.0/tutorial/security/
-    - /docs/v0.26.0/tutorial/security/
-    - /docs/v0.27.0/tutorial/security/
-    - /docs/v0.28.0/tutorial/security/
-    - /docs/v0.29.0/tutorial/security/
-    - /docs/v0.30.0/tutorial/security/
-    - /docs/v0.31.0/tutorial/security/
-    - /docs/v0.32.0/tutorial/security/
-    - /docs/v0.33.0/tutorial/security/
-    - /docs/v0.34.0/tutorial/security/
-    - /docs/v0.35.0/tutorial/security/
-    - /docs/v0.36.0/tutorial/security/
-    - /docs/v0.36.3/tutorial/security/
-    - /docs/v0.36.4/tutorial/security/
-    - /docs/v0.36.5/tutorial/security/
-    - /docs/v0.36.6/tutorial/security/
-    - /docs/v0.36.7/tutorial/security/
-    - /docs/v0.36.8/tutorial/security/
-    - /docs/v0.36.9/tutorial/security/
-    - /docs/v0.36.10/tutorial/security/
-    - /docs/v0.36.11/tutorial/security/
-    - /docs/v0.37.0/tutorial/security/
-    - /docs/v0.37.1/tutorial/security/
-    - /docs/v0.37.2/tutorial/security/
-    - /docs/v0.37.3/tutorial/security/
-    - /docs/v0.37.4/tutorial/security/
-    - /docs/v0.37.5/tutorial/security/
-    - /docs/v0.37.6/tutorial/security/
-    - /docs/v0.37.7/tutorial/security/
-    - /docs/v0.37.8/tutorial/security/
-    - /docs/latest/tutorial/security/
-source_url: 'https://github.com/electron/electron/blob/master/docs/tutorial/security.md'
-excerpt: ":warning: Under no circumstances should you load and execute remote code with
-    Node integration enabled. Instead, use only local files (packaged together with
-    your application) to execute Node code. To display remote content, use the
-    <code>webview</code> tag and make sure to disable the <code>nodeIntegration</code>."
-title: "Security, Native Capabilities, and Your Responsibility"
-sort_title: "security, native capabilities, and your responsibility"
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+    - /docs-translations/ko-KR/tutorial/security/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/security.md'
+title: "보안, 네이티브 호환성, 그리고 신뢰성"
+sort_title: ""
 ---
 
-# Security, Native Capabilities, and Your Responsibility
+# 보안, 네이티브 호환성, 그리고 신뢰성
 
-As web developers, we usually enjoy the strong security net of the browser - the
-risks associated with the code we write are relatively small.  Our websites are
-granted limited powers in a sandbox, and we trust that our users enjoy a browser
-built by a large team of engineers that is able to quickly respond to newly
-discovered security threats.
+웹 개발자로써, 우리는 일반적으로 브라우저의 강력한 웹 보안을 잘 이용해왔습니다 - 작성한
+코드에 관련된 보안 문제는 아주 적었습니다. 우리는 웹 사이트의 샌드박스안에서 허용된
+상당히 제한된 권한과 기능에 의존해왔으며, 우리는 새로운 보안 위협에 대해 발 빠르게
+대응할 수 있는 엔지니어들로 이루어진 커다란 팀으로부터 만들어진 브라우저를 사용자들이
+마음 놓고 즐길 것이라고 믿어왔습니다.
 
-When working with Electron, it is important to understand that Electron is not
-a web browser. It allows you to build feature-rich desktop applications with
-familiar web technologies, but your code wields much greater power. JavaScript
-can access the filesystem, user shell, and more. This allows you to build
-high quality native applications, but the inherent security risks scale with the
-additional powers granted to your code.
+하지만 Electron을 사용하여 작업한다면, Electron은 웹 브라우저가 아니라는 것을 기억해
+두어야 합니다. Electron은 친근한 웹 기술을 사용하여 풍부한 기능의 데스크톱
+애플리케이션을 만들 수 있도록 해주지만 그만큼 코드가 더 큰 힘을 사용합니다.
+JavaScript가 파일 시스템, 유저 쉘, 그외 여러가지 기능에 접근할 수 있습니다. 이러한
+능력은 높은 퀄리티를 가진 네이티브 애플리케이션을 개발할 수 있도록 해주지만 코드에
+부여된 추가적인 기능만큼 고유한 보안 문제가 발생할 가능성이 있습니다.
 
-With that in mind, be aware that displaying arbitrary content from untrusted
-sources poses a severe security risk that Electron is not intended to handle.
-In fact, the most popular Electron apps (Atom, Slack, Visual Studio Code, etc)
-display primarily local content (or trusted, secure remote content without Node
-integration) – if your application executes code from an online source, it is
-your responsibility to ensure that the code is not malicious.
+이를 염두해두고, 신뢰할 수 없는 출처의 임의의 콘텐츠를 표시할 때 Electron에서
+자체적으로 처리하지 않는 심각한 보안 문제를 야기할 수 있다는 점을 주의해야 합니다.
+실제로도, 가장 유명한 Electron 애플리케이션들은 (Atom, Slack, Visual Studio Code,
+등) 주로 로컬 콘텐츠를 (또는 Node 통합이 제외된 신뢰된, 보안된 원격 콘텐츠) 사용합니다
+- 만약 애플리케이션이 온라인 출처에서 가져온 코드를 실행한다면, 그 코드가 악성 코드가
+아닌지 판별하는 것은 본인의 책임입니다.
 
-## Chromium Security Issues and Upgrades
+## Chromium 보안 문제와 업그레이드
 
-While Electron strives to support new versions of Chromium as soon as possible,
-developers should be aware that upgrading is a serious undertaking - involving
-hand-editing dozens or even hundreds of files. Given the resources and
-contributions available today, Electron will often not be on the very latest
-version of Chromium, lagging behind by either days or weeks.
+Electron이 새로운 버전의 Chromium을 가능한 한 빠르게 지원하려고 노력하지만,
+개발자는 이러한 업그레이딩 작업은 매우 힘든 작업이라는 것을 알아야 합니다 - 각 관련된
+수십에서 심지어 백자리 개수의 파일들을 손수 수정해야 합니다. 주어진 자원과 현재
+기여도를 생각한다면, Electron은 항상 최신 버전의 Chromium을 유지하지 못할 수 있으며,
+며칠부터 몇 주까지 더 걸릴 수 있습니다.
 
-We feel that our current system of updating the Chromium component strikes an
-appropriate balance between the resources we have available and the needs of the
-majority of applications built on top of the framework. We definitely are
-interested in hearing more about specific use cases from the people that build
-things on top of Electron. Pull requests and contributions supporting this
-effort are always very welcome.
+현재 Chromium 구성 요소를 업데이트하는 시스템은 우리가 사용할 수 있는 자원과 이
+프레임워크를 기반으로 구축된 대부분의 애플리케이션이 요구하는 것 사이에서 적절한 균형을
+유지하고 있다고 느끼고 있습니다. 우리는 확실히 Electron 위에 무언가를 만드는 사람들의
+사용 사례에 대한 자세한 내용을 듣는 것에 관심이 있습니다. 이러한 노력을 지원하는 Pull
+request와 기여는 언제나 환영합니다.
 
-## Ignoring Above Advice
+## 위 조언 무시하기
 
-A security issue exists whenever you receive code from a remote destination and
-execute it locally. As an example, consider a remote website being displayed
-inside a browser window. If an attacker somehow manages to change said content
-(either by attacking the source directly, or by sitting between your app and
-the actual destination), they will be able to execute native code on the user's
-machine.
+원격 위치에서 받아온 코드를 로컬에서 실행하는 경우 언제나 보안 문제가 존재합니다.
+예를 들어, 원격 웹 사이트가 브라우저 윈도우에서 표시될 때를 생각해볼 때, 만약 공격자가
+어떠한 방법으로 웹 페이지의 콘텐츠를 변경하는 경우 (소스를 직접적으로 공격하거나
+애플리케이션과 실질적인 위치 사이에서 공격하는 등), 공갹자는 사용자의 기기에서 네이티브
+코드를 실행할 수 있습니다.
 
-> :warning: Under no circumstances should you load and execute remote code with
-Node integration enabled. Instead, use only local files (packaged together with
-your application) to execute Node code. To display remote content, use the
-`webview` tag and make sure to disable the `nodeIntegration`.
+> :warning: 어떠한 상황에서도 원격 코드를 로드하고 실행할 땐 Node 통합 기능을
+비활성화하고, 로컬 파일만 (애플리케이션 패키지 내부에 포함된) Node 코드를 실행시킬 수
+있도록 하는 것이 좋습니다. 원격 콘텐츠를 표시할 땐, 항상 `webview`를 사용하고
+`nodeIntegration`이 비활성화되어있는지 확인하세요.
 
-#### Checklist
+#### 체크 리스트
 
-This is not bulletproof, but at the least, you should attempt the following:
+이 리스트는 완벽하지 않습니다, 하지만 최소한 다음 사항은 확인하는 것이 좋습니다:
 
-* Only display secure (https) content
-* Disable the Node integration in all renderers that display remote content
-  (using `webPreferences`)
-* Do not disable `webSecurity`. Disabling it will disable the same-origin policy.
-* Define a [`Content-Security-Policy`](http://www.html5rocks.com/en/tutorials/security/content-security-policy/)
-, and use restrictive rules (i.e. `script-src 'self'`)
-* [Override and disable `eval`](https://github.com/nylas/N1/blob/0abc5d5defcdb057120d726b271933425b75b415/static/index.js#L6-L8)
-, which allows strings to be executed as code.
-* Do not set `allowDisplayingInsecureContent` to true.
-* Do not set `allowRunningInsecureContent` to true.
-* Do not enable `experimentalFeatures` or `experimentalCanvasFeatures` unless
-  you know what you're doing.
-* Do not use `blinkFeatures` unless you know what you're doing.
-* WebViews: Set `nodeintegration` to false
-* WebViews: Do not use `disablewebsecurity`
-* WebViews: Do not use `allowpopups`
-* WebViews: Do not use `insertCSS` or `executeJavaScript` with remote CSS/JS.
+* 보안된 (https) 콘텐츠만 표시합니다.
+* 원격 콘텐츠를 표시하는 모든 렌더러에서 Node 통합 기능을 비활성화합니다.
+  (`webPreferences` 사용)
+* `webSecurity`를 비활성화하지 않습니다. 이 옵션을 비활성화하면 동일-출처 정책도
+  비활성화됩니다.
+* [`Content-Security-Policy`](http://www.html5rocks.com/en/tutorials/security/content-security-policy/)
+  를 정의하고, 한정적인 규칙을 사용하세요 (i.e. `script-src 'self'`)
+* 문자열을 코드로 실행할 수 있는
+  [`eval`을 덮어쓰고 비활성화](https://github.com/nylas/N1/blob/0abc5d5defcdb057120d726b271933425b75b415/static/index.js#L6-L8)하세요.
+* `allowDisplayingInsecureContent`를 `true`로 설정하지 마세요.
+* `allowRunningInsecureContent`를 `true`로 설정하지 마세요.
+* 무엇을 하고 있는지 확실히 알고 있지않는 이상 `experimentalFeatures` 또는
+  `experimentalCanvasFeatures`를 활성화하지 마세요.
+* 무엇을 하고 있는지 확실히 알고 있지않는 이상 `blinkFeatures`를 활성화하지 마세요.
+* WebViews: `nodeintegration`를 `false`로 설정하세요.
+* WebViews: `disablewebsecurity`를 사용하지 마세요.
+* WebViews: `allowpopups`를 사용하지 마세요.
+* WebViews: 원격 CSS/JS와 `insertCSS` 또는 `executeJavaScript`를 함께 사용하지
+  마세요.
 
-Again, this list merely minimizes the risk, it does not remove it. If your goal
-is to display a website, a browser will be a more secure option.
-
-## Buffer Global
-
-Node's [Buffer](https://nodejs.org/api/buffer.html) class is currently available
-as a global even when `nodeIntegration` is set to `false`. You can delete
-this in your app by doing the following in your `preload` script:
-
-```js
-delete global.Buffer
-```
-
-Deleting it may break Node modules used in your preload script and app since
-many libraries expect it to be a global instead of requiring it directly via:
-
-```js
-const {Buffer} = require('buffer')
-```
-
-The `Buffer` global may be removed in future major versions of Electron.
+다시 말하지만, 이 리스트는 그저 위험을 최소화할 뿐이며 완전히 제거하지 않습니다. 만약
+목적이 그저 웹 사이트를 보여주는 것이라면 일반 웹 브라우저가 더 안전한 방법입니다.

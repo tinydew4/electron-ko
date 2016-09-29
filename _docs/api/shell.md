@@ -1,131 +1,92 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/shell/
-    - /docs/v0.25.0/api/shell/
-    - /docs/v0.26.0/api/shell/
-    - /docs/v0.27.0/api/shell/
-    - /docs/v0.28.0/api/shell/
-    - /docs/v0.29.0/api/shell/
-    - /docs/v0.30.0/api/shell/
-    - /docs/v0.31.0/api/shell/
-    - /docs/v0.32.0/api/shell/
-    - /docs/v0.33.0/api/shell/
-    - /docs/v0.34.0/api/shell/
-    - /docs/v0.35.0/api/shell/
-    - /docs/v0.36.0/api/shell/
-    - /docs/v0.36.3/api/shell/
-    - /docs/v0.36.4/api/shell/
-    - /docs/v0.36.5/api/shell/
-    - /docs/v0.36.6/api/shell/
-    - /docs/v0.36.7/api/shell/
-    - /docs/v0.36.8/api/shell/
-    - /docs/v0.36.9/api/shell/
-    - /docs/v0.36.10/api/shell/
-    - /docs/v0.36.11/api/shell/
-    - /docs/v0.37.0/api/shell/
-    - /docs/v0.37.1/api/shell/
-    - /docs/v0.37.2/api/shell/
-    - /docs/v0.37.3/api/shell/
-    - /docs/v0.37.4/api/shell/
-    - /docs/v0.37.5/api/shell/
-    - /docs/v0.37.6/api/shell/
-    - /docs/v0.37.7/api/shell/
-    - /docs/v0.37.8/api/shell/
-    - /docs/latest/api/shell/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/shell.md'
-excerpt: "Manage files and URLs using their default applications."
-title: "shell"
-sort_title: "shell"
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+    - /docs-translations/ko-KR/api/shell/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/shell.md'
+excerpt: "&#xD30C;&#xC77C;&#xACFC; URL&#xC744; &#xAC01; &#xAE30;&#xBCF8; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD1B5;&#xD574; &#xAD00;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# shell
+﻿# shell
 
-> Manage files and URLs using their default applications.
+> 파일과 URL을 각 기본 애플리케이션을 통해 관리합니다.
 
-The `shell` module provides functions related to desktop integration.
+`shell` 모듈은 데스크톱 환경 통합에 관련한 유틸리티를 제공하는 모듈입니다.
 
-An example of opening a URL in the user's default browser:
+다음 예시는 설정된 URL을 유저의 기본 브라우저로 엽니다:
 
 ```javascript
-const {shell} = require('electron')
+const {shell} = require('electron');
 
-shell.openExternal('https://github.com')
+shell.openExternal('https://github.com');
 ```
 
 ## Methods
 
-The `shell` module has the following methods:
+`shell` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
 ### `shell.showItemInFolder(fullPath)`
 
 * `fullPath` String
 
-Show the given file in a file manager. If possible, select the file. Returns
-true if the item was successfully shown, false otherwise.
+지정한 파일을 탐색기에서 보여줍니다. 가능한 경우 탐색기 내에서 파일을 선택합니다.
 
 ### `shell.openItem(fullPath)`
 
 * `fullPath` String
 
-Open the given file in the desktop's default manner. Returns true if the item
-was successfully opened, false otherwise.
+지정한 파일을 데스크톱 기본 프로그램으로 엽니다.
 
 ### `shell.openExternal(url[, options])`
 
 * `url` String
 * `options` Object (optional) _macOS_
-  * `activate` Boolean - `true` to bring the opened application to the
-    foreground. The default is `true`.
+  * `activate` Boolean - `true`로 설정하면 애플리케이션을 바로 활성화 상태로
+    실행합니다. 기본값은 `true`입니다.
 
-Open the given external protocol URL in the desktop's default manner. (For
-example, mailto: URLs in the user's default mail agent.) Returns true if an
-application was available to open the URL, false otherwise.
+제공된 외부 프로토콜 URL을 기반으로 데스크톱의 기본 프로그램으로 엽니다. (예를 들어
+mailto: URL은 유저의 기본 이메일 에이전트로 URL을 엽니다.) 애플리케이션이 해당 URL을
+열 수 있을 때 `true`를 반환합니다. 아니라면 `false`를 반환합니다.
+
+**역자주:** 탐색기로 폴더만 표시하려면 `'file://경로'`와 같이 지정하여 열 수 있습니다.
 
 ### `shell.moveItemToTrash(fullPath)`
 
 * `fullPath` String
 
-Move the given file to trash and returns a boolean status for the operation.
-Returns true if the item was successfully moved to the trash, false otherwise.
+지정한 파일을 휴지통으로 이동합니다. 작업의 성공여부를 boolean 형으로 리턴합니다.
 
 ### `shell.beep()`
 
-Play the beep sound.
-
-### `shell.writeShortcutLink(shortcutPath[, operation], options)` _Windows_
-
-* `shortcutPath` String
-* `operation` String (optional) - Default is `create`, can be one of followings:
-  * `create` - Creates a new shortcut, overwriting if necessary.
-  * `update` - Updates specified properties only on an existing shortcut.
-  * `replace` - Overwrites an existing shortcut, fails if the shortcut doesn't
-    exist.
-* `options` Object
-  * `target` String - The target to launch from this shortcut.
-  * `cwd` String (optional) - The working directory. Default
-    is empty.
-  * `args` String (optional) - The arguments to be applied to `target` when
-    launching from this shortcut. Default is empty.
-  * `description` String (optional) - The description of the shortcut. Default
-    is empty.
-  * `icon` String (optional) - The path to the icon, can be a DLL or EXE. `icon`
-    and `iconIndex` have to be set together. Default is empty, which uses the
-    target's icon.
-  * `iconIndex` Integer (optional) - The resource ID of icon when `icon` is a
-    DLL or EXE. Default is 0.
-  * `appUserModelId` String (optional) - The Application User Model ID. Default
-    is empty.
-
-Creates or updates a shortcut link at `shortcutPath`. On success `true` is
-returned, otherwise `false` is returned.
-
-### `shell.readShortcutLink(shortcutPath)` _Windows_
-
-* `shortcutPath` String
-
-Resolves the shortcut link at `shortcutPath`. An object is returned with the
-fields described in the `options` of `shell.writeShortcutLink`.
-
-An exception will be thrown when any error happens.
+비프음을 재생합니다.

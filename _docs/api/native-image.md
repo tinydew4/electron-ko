@@ -1,108 +1,89 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/native-image/
-    - /docs/v0.25.0/api/native-image/
-    - /docs/v0.26.0/api/native-image/
-    - /docs/v0.27.0/api/native-image/
-    - /docs/v0.28.0/api/native-image/
-    - /docs/v0.29.0/api/native-image/
-    - /docs/v0.30.0/api/native-image/
-    - /docs/v0.31.0/api/native-image/
-    - /docs/v0.32.0/api/native-image/
-    - /docs/v0.33.0/api/native-image/
-    - /docs/v0.34.0/api/native-image/
-    - /docs/v0.35.0/api/native-image/
-    - /docs/v0.36.0/api/native-image/
-    - /docs/v0.36.3/api/native-image/
-    - /docs/v0.36.4/api/native-image/
-    - /docs/v0.36.5/api/native-image/
-    - /docs/v0.36.6/api/native-image/
-    - /docs/v0.36.7/api/native-image/
-    - /docs/v0.36.8/api/native-image/
-    - /docs/v0.36.9/api/native-image/
-    - /docs/v0.36.10/api/native-image/
-    - /docs/v0.36.11/api/native-image/
-    - /docs/v0.37.0/api/native-image/
-    - /docs/v0.37.1/api/native-image/
-    - /docs/v0.37.2/api/native-image/
-    - /docs/v0.37.3/api/native-image/
-    - /docs/v0.37.4/api/native-image/
-    - /docs/v0.37.5/api/native-image/
-    - /docs/v0.37.6/api/native-image/
-    - /docs/v0.37.7/api/native-image/
-    - /docs/v0.37.8/api/native-image/
-    - /docs/latest/api/native-image/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/native-image.md'
-excerpt: "Create tray, dock, and application icons using PNG or JPG files."
-title: "nativeImage"
-sort_title: "nativeimage"
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+    - /docs-translations/ko-KR/api/native-image/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/native-image.md'
+excerpt: "PNG &#xB610;&#xB294; JPG &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD2B8;&#xB808;&#xC774;, &#xB3C5;, &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC544;&#xC774;&#xCF58;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# nativeImage
+﻿# nativeImage
 
-> Create tray, dock, and application icons using PNG or JPG files.
+> PNG 또는 JPG 파일을 사용하여 트레이, 독, 애플리케이션 아이콘을 생성합니다.
 
-In Electron, for the APIs that take images, you can pass either file paths or
-`NativeImage` instances. An empty image will be used when `null` is passed.
+Electron은 파일 경로 또는 `nativeImage` 인스턴스를 통해 이미지를 사용할 수 있는 API를
+가지고 있습니다. `null`을 전달할 경우 빈 이미지가 생성됩니다.
 
-For example, when creating a tray or setting a window's icon, you can pass an
-image file path as a `String`:
-
-```javascript
-const {BrowserWindow, Tray} = require('electron')
-
-const appIcon = new Tray('/Users/somebody/images/icon.png')
-let win = new BrowserWindow({icon: '/Users/somebody/images/window.png'})
-console.log(appIcon, win)
-```
-
-Or read the image from the clipboard which returns a `nativeImage`:
+예를 들어 트레이 메뉴를 만들거나 윈도우의 아이콘을 설정할 때 다음과 같이 파일 경로를
+전달하여 이미지를 사용할 수 있습니다:
 
 ```javascript
-const {clipboard, Tray} = require('electron')
-const image = clipboard.readImage()
-const appIcon = new Tray(image)
-console.log(appIcon)
+const appIcon = new Tray('/Users/somebody/images/icon.png');
+let win = new BrowserWindow({icon: '/Users/somebody/images/window.png'});
 ```
 
-## Supported Formats
+이 예시는 클립보드로부터 가져온 `nativeImage`로 트레이 메뉴를 생성합니다:
 
-Currently `PNG` and `JPEG` image formats are supported. `PNG` is recommended
-because of its support for transparency and lossless compression.
+```javascript
+const image = clipboard.readImage();
+const appIcon = new Tray(image);
+```
 
-On Windows, you can also load `ICO` icons from file paths. For best visual
-quality it is recommended to include at least the following sizes in the:
+## 지원하는 포맷
 
-* Small icon
- * 16x16 (100% DPI scale)
- * 20x20 (125% DPI scale)
- * 24x24 (150% DPI scale)
- * 32x32 (200% DPI scale)
-* Large icon
- * 32x32 (100% DPI scale)
- * 40x40 (125% DPI scale)
- * 48x48 (150% DPI scale)
- * 64x64 (200% DPI scale)
+현재 `PNG` 와 `JPEG` 이미지 포맷을 지원하고 있습니다.
+손실 없는 이미지 압축과 투명도 지원을 위해 `PNG` 사용을 권장합니다.
+
+Windows에서는 파일 경로로부터 `ICO` 포맷도 사용할 수 있으며, 가장 좋은 시각적 효과를
+얻기 위해 최소한 아이콘에 다음 사이즈를 포함하는 것을 권장합니다:
+
+* 16x16
+* 32x32
+* 64x64
 * 256x256
 
-Check the *Size requirements* section in [this article][icons].
+## 고해상도 이미지
 
-[icons]:https://msdn.microsoft.com/en-us/library/windows/desktop/dn742485(v=vs.85).aspx
+플랫폼이 high-DPI를 지원하는 경우 `@2x`와 같이 이미지의 파일명 뒤에 접미사를 추가하여
+고해상도 이미지로 지정할 수 있습니다.
 
-## High Resolution Image
+예를 들어 `icon.png` 라는 기본 해상도의 이미지를 기준으로 크기를 두 배로 늘린 이미지를
+`icon@2x.png` 처럼 지정하면 고해상도 이미지로 처리됩니다.
 
-On platforms that have high-DPI support such as Apple Retina displays, you can
-append `@2x` after image's base filename to mark it as a high resolution image.
-
-For example if `icon.png` is a normal image that has standard resolution, then
-`icon@2x.png` will be treated as a high resolution image that has double DPI
-density.
-
-If you want to support displays with different DPI densities at the same time,
-you can put images with different sizes in the same folder and use the filename
-without DPI suffixes. For example:
+서로 다른 해상도(DPI)의 이미지를 같이 지원하고 싶다면 다중 해상도의 이미지를 접미사를
+붙여 한 폴더에 같이 넣으면 됩니다. 이 이미지를 사용(로드)할 땐 따로 접미사를 붙이지
+않습니다:
 
 ```text
 images/
@@ -113,12 +94,10 @@ images/
 
 
 ```javascript
-const {Tray} = require('electron')
-let appIcon = new Tray('/Users/somebody/images/icon.png')
-console.log(appIcon)
+let appIcon = new Tray('/Users/somebody/images/icon.png');
 ```
 
-Following suffixes for DPI are also supported:
+지원하는 DPI 접미사는 다음과 같습니다:
 
 * `@1x`
 * `@1.25x`
@@ -132,45 +111,40 @@ Following suffixes for DPI are also supported:
 * `@4x`
 * `@5x`
 
-## Template Image
+## 템플릿 이미지
 
-Template images consist of black and clear colors (and an alpha channel).
-Template images are not intended to be used as standalone images and are usually
-mixed with other content to create the desired final appearance.
+템플릿 이미지는 검은색과 명확한 색상(알파 채널)으로 이루어져 있습니다. 템플릿 이미지는
+단독 이미지로 사용되지 않고 다른 콘텐츠와 혼합되어 최종 외관 만드는데 사용됩니다.
 
-The most common case is to use template images for a menu bar icon so it can
-adapt to both light and dark menu bars.
+가장 일반적으로 템플릿 이미지는 밝고 어두운 테마 색상으로 변경할 수 있는 메뉴 바 아이콘
+등에 사용되고 있습니다.
 
-**Note:** Template image is only supported on macOS.
+**참고:** 템플릿 이미지는 macOS 운영체제만 지원합니다.
 
-To mark an image as a template image, its filename should end with the word
-`Template`. For example:
+템플릿 이미지를 지정하려면 다음 예시와 같이 파일명에 `Template` 문자열을 추가해야
+합니다:
 
 * `xxxTemplate.png`
 * `xxxTemplate@2x.png`
 
 ## Methods
 
-The `nativeImage` module has the following methods, all of which return
-an instance of the `NativeImage` class:
+`nativeImage` 클래스는 다음과 같은 메서드를 가지고 있습니다:
 
 ### `nativeImage.createEmpty()`
 
-Creates an empty `NativeImage` instance.
+빈 `nativeImage` 인스턴스를 만듭니다.
 
 ### `nativeImage.createFromPath(path)`
 
 * `path` String
 
-Creates a new `NativeImage` instance from a file located at `path`. This method
-returns an empty image if the `path` does not exist, cannot be read, or is not
-a valid image.
+`path`로부터 이미지를 로드하여 새로운 `nativeImage` 인스턴스를 만듭니다.
 
 ```javascript
-const nativeImage = require('electron').nativeImage
+const nativeImage = require('electron').nativeImage;
 
-let image = nativeImage.createFromPath('/Users/somebody/images/icon.png')
-console.log(image)
+let image = nativeImage.createFromPath('/Users/somebody/images/icon.png');
 ```
 
 ### `nativeImage.createFromBuffer(buffer[, scaleFactor])`
@@ -178,75 +152,58 @@ console.log(image)
 * `buffer` [Buffer][buffer]
 * `scaleFactor` Double (optional)
 
-Creates a new `NativeImage` instance from `buffer`. The default `scaleFactor` is
-1.0.
+`buffer`로부터 이미지를 로드하여 새로운 `nativeImage` 인스턴스를 만듭니다.
+`scaleFactor`의 기본값은 1.0 입니다.
 
 ### `nativeImage.createFromDataURL(dataURL)`
 
 * `dataURL` String
 
-Creates a new `NativeImage` instance from `dataURL`.
+`dataURL`로부터 이미지를 로드하여 새로운 `nativeImage` 인스턴스를 만듭니다.
 
-## Class: NativeImage
+## Instance Methods
 
-> Natively wrap images such as tray, dock, and application icons.
+`nativeImage` 인스턴스 객체에서 사용할 수 있는 메서드입니다.
 
-### Instance Methods
+### `image.toPNG()`
 
-The following methods are available on instances of the `NativeImage` class:
+`PNG` 이미지를 인코딩한 데이터를 [Buffer][buffer]로 반환합니다.
 
-#### `image.toPNG()`
+### `image.toJPEG(quality)`
 
-Returns a [Buffer][buffer] that contains the image's `PNG` encoded data.
+* `quality` Integer (**required**) 0 - 100 사이의 값
 
-#### `image.toJPEG(quality)`
+`JPEG` 이미지를 인코딩한 데이터를 [Buffer][buffer]로 반환합니다.
 
-* `quality` Integer (**required**) - Between 0 - 100.
+### `image.toDataURL()`
 
-Returns a [Buffer][buffer] that contains the image's `JPEG` encoded data.
+이미지를 data URL로 반환합니다.
 
-#### `image.toBitmap()`
+### `image.getNativeHandle()` _macOS_
 
-Returns a [Buffer][buffer] that contains a copy of the image's raw bitmap pixel
-data.
+이미지의 네이티브 핸들 밑에 있는 C 포인터를 담은 [Buffer][buffer]을 반환합니다.
+macOS에선, `NSImage` 인스턴스가 반환됩니다.
 
-#### `image.toDataURL()`
+참고로 반환된 포인터는 복사본이 아닌 네이티브 이미지의 밑에 있는 약한 포인터이며,
+따라서 반드시 관련된 `nativeImage` 인스턴스가 확실하게 유지되고 있는지를 인지해야
+합니다.
 
-Returns the data URL of the image.
+### `image.isEmpty()`
 
-#### `image.getBitmap()`
+이미지가 비었는지 확인합니다.
 
-Returns a [Buffer][buffer] that contains the image's raw bitmap pixel data.
+### `image.getSize()`
 
-The difference between `getBitmap()` and `toBitmap()` is, `getBitmap()` does not
-copy the bitmap data, so you have to use the returned Buffer immediately in
-current event loop tick, otherwise the data might be changed or destroyed.
+이미지의 사이즈를 반환합니다.
 
-#### `image.getNativeHandle()` _macOS_
-
-Returns a [Buffer][buffer] that stores C pointer to underlying native handle of
-the image. On macOS, a pointer to `NSImage` instance would be returned.
-
-Notice that the returned pointer is a weak pointer to the underlying native
-image instead of a copy, so you _must_ ensure that the associated
-`nativeImage` instance is kept around.
-
-#### `image.isEmpty()`
-
-Returns a boolean whether the image is empty.
-
-#### `image.getSize()`
-
-Returns the size of the image.
-
-[buffer]: https://nodejs.org/api/buffer.html#buffer_class_buffer
-
-#### `image.setTemplateImage(option)`
+### `image.setTemplateImage(option)`
 
 * `option` Boolean
 
-Marks the image as a template image.
+해당 이미지를 템플릿 이미지로 설정합니다.
 
-#### `image.isTemplateImage()`
+### `image.isTemplateImage()`
 
-Returns a boolean whether the image is a template image.
+이미지가 템플릿 이미지인지 확인합니다.
+
+[buffer]: https://nodejs.org/api/buffer.html#buffer_class_buffer

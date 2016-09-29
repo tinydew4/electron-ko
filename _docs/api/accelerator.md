@@ -1,97 +1,95 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/accelerator/
-    - /docs/v0.25.0/api/accelerator/
-    - /docs/v0.26.0/api/accelerator/
-    - /docs/v0.27.0/api/accelerator/
-    - /docs/v0.28.0/api/accelerator/
-    - /docs/v0.29.0/api/accelerator/
-    - /docs/v0.30.0/api/accelerator/
-    - /docs/v0.31.0/api/accelerator/
-    - /docs/v0.32.0/api/accelerator/
-    - /docs/v0.33.0/api/accelerator/
-    - /docs/v0.34.0/api/accelerator/
-    - /docs/v0.35.0/api/accelerator/
-    - /docs/v0.36.0/api/accelerator/
-    - /docs/v0.36.3/api/accelerator/
-    - /docs/v0.36.4/api/accelerator/
-    - /docs/v0.36.5/api/accelerator/
-    - /docs/v0.36.6/api/accelerator/
-    - /docs/v0.36.7/api/accelerator/
-    - /docs/v0.36.8/api/accelerator/
-    - /docs/v0.36.9/api/accelerator/
-    - /docs/v0.36.10/api/accelerator/
-    - /docs/v0.36.11/api/accelerator/
-    - /docs/v0.37.0/api/accelerator/
-    - /docs/v0.37.1/api/accelerator/
-    - /docs/v0.37.2/api/accelerator/
-    - /docs/v0.37.3/api/accelerator/
-    - /docs/v0.37.4/api/accelerator/
-    - /docs/v0.37.5/api/accelerator/
-    - /docs/v0.37.6/api/accelerator/
-    - /docs/v0.37.7/api/accelerator/
-    - /docs/v0.37.8/api/accelerator/
-    - /docs/latest/api/accelerator/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/accelerator.md'
-excerpt: "Define keyboard shortcuts."
-title: "Accelerator"
-sort_title: "accelerator"
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+    - /docs-translations/ko-KR/api/accelerator/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/accelerator.md'
+excerpt: "&#xD0A4;&#xBCF4;&#xB4DC; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# Accelerator
+﻿# Accelerator
 
-> Define keyboard shortcuts.
+> 키보드 단축키를 정의합니다.
 
-Accelerators can contain multiple modifiers and key codes, combined by
-the `+` character.
+Accelerator는 `+` 문자를 통해 여러 혼합키와 키코드를 결합할 수 있습니다.
 
-Examples:
+예시:
 
 * `CommandOrControl+A`
 * `CommandOrControl+Shift+Z`
 
-## Platform notice
+## 플랫폼에 관련하여 주의할 점
 
-On Linux and Windows, the `Command` key does not have any effect so
-use `CommandOrControl` which represents `Command` on macOS and `Control` on
-Linux and Windows to define some accelerators.
+Linux와 Windows에서는 `Command`키가 없으므로 작동하지 않습니다. 대신에
+`CommandOrControl`을 사용하면 macOS의 `Command`와 Linux, Windows의 `Control` 모두
+지원할 수 있습니다.
 
-Use `Alt` instead of `Option`. The `Option` key only exists on macOS, whereas
-the `Alt` key is available on all platforms.
+`Option` 대신 `Alt`을 사용하는게 좋습니다. `Option` 키는 macOS에만 있으므로
+모든 플랫폼에서 사용할 수 있는 `Alt` 키를 권장합니다.
 
-The `Super` key is mapped to the `Windows` key on Windows and Linux and
-`Cmd` on macOS.
+`Super`키는 Windows와 Linux 에서는 `윈도우`키를, macOS에서는 `Cmd`키로 맵핑됩니다.
 
-## Available modifiers
+## 사용 가능한 혼합키
 
-* `Command` (or `Cmd` for short)
-* `Control` (or `Ctrl` for short)
-* `CommandOrControl` (or `CmdOrCtrl` for short)
+* `Command` (단축어 `Cmd`)
+* `Control` (단축어 `Ctrl`)
+* `CommandOrControl` (단축어 `CmdOrCtrl`)
 * `Alt`
 * `Option`
 * `AltGr`
 * `Shift`
 * `Super`
 
-## Available key codes
+## 사용 가능한 전체 키코드
 
-* `0` to `9`
-* `A` to `Z`
-* `F1` to `F24`
-* Punctuations like `~`, `!`, `@`, `#`, `$`, etc.
+* `0` 부터 `9` 까지
+* `A` 부터 `Z` 까지
+* `F1` 부터 `F24` 까지
+* `~`, `!`, `@`, `#`, `$`, etc 와 같은 구두점 기호들
 * `Plus`
 * `Space`
 * `Tab`
 * `Backspace`
 * `Delete`
 * `Insert`
-* `Return` (or `Enter` as alias)
-* `Up`, `Down`, `Left` and `Right`
-* `Home` and `End`
-* `PageUp` and `PageDown`
-* `Escape` (or `Esc` for short)
-* `VolumeUp`, `VolumeDown` and `VolumeMute`
-* `MediaNextTrack`, `MediaPreviousTrack`, `MediaStop` and `MediaPlayPause`
+* `Return` (또는 `Enter`)
+* `Up`, `Down`, `Left` 와 `Right`
+* `Home` 그리고 `End`
+* `PageUp` 그리고 `PageDown`
+* `Escape` (단축어 `Esc`)
+* `VolumeUp`, `VolumeDown` 그리고 `VolumeMute`
+* `MediaNextTrack`, `MediaPreviousTrack`, `MediaStop` 그리고 `MediaPlayPause`
 * `PrintScreen`
+
+__키코드는 `단축어`로도 사용할 수 있습니다__

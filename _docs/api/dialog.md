@@ -1,67 +1,65 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/dialog/
-    - /docs/v0.25.0/api/dialog/
-    - /docs/v0.26.0/api/dialog/
-    - /docs/v0.27.0/api/dialog/
-    - /docs/v0.28.0/api/dialog/
-    - /docs/v0.29.0/api/dialog/
-    - /docs/v0.30.0/api/dialog/
-    - /docs/v0.31.0/api/dialog/
-    - /docs/v0.32.0/api/dialog/
-    - /docs/v0.33.0/api/dialog/
-    - /docs/v0.34.0/api/dialog/
-    - /docs/v0.35.0/api/dialog/
-    - /docs/v0.36.0/api/dialog/
-    - /docs/v0.36.3/api/dialog/
-    - /docs/v0.36.4/api/dialog/
-    - /docs/v0.36.5/api/dialog/
-    - /docs/v0.36.6/api/dialog/
-    - /docs/v0.36.7/api/dialog/
-    - /docs/v0.36.8/api/dialog/
-    - /docs/v0.36.9/api/dialog/
-    - /docs/v0.36.10/api/dialog/
-    - /docs/v0.36.11/api/dialog/
-    - /docs/v0.37.0/api/dialog/
-    - /docs/v0.37.1/api/dialog/
-    - /docs/v0.37.2/api/dialog/
-    - /docs/v0.37.3/api/dialog/
-    - /docs/v0.37.4/api/dialog/
-    - /docs/v0.37.5/api/dialog/
-    - /docs/v0.37.6/api/dialog/
-    - /docs/v0.37.7/api/dialog/
-    - /docs/v0.37.8/api/dialog/
-    - /docs/latest/api/dialog/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/dialog.md'
-excerpt: "Display native system dialogs for opening and saving files, alerting, etc."
-title: "dialog"
-sort_title: "dialog"
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+    - /docs-translations/ko-KR/api/dialog/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/dialog.md'
+excerpt: "&#xD30C;&#xC77C;&#xC744; &#xC5F4;&#xAC70;&#xB098; &#xC800;&#xC7A5;&#xD558;&#xACE0;, &#xC54C;&#xB9BC;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC2DC;&#xC2A4;&#xD15C; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# dialog
+﻿# dialog
 
-> Display native system dialogs for opening and saving files, alerting, etc.
+> 파일을 열거나 저장하고, 알림을 표시하기 위한 네이티브 시스템 대화 상자를 표시합니다.
 
-An example of showing a dialog to select multiple files and directories:
+다음 예시는 파일과 디렉터리를 다중으로 선택하는 대화 상자를 표시하는 예시입니다:
 
 ```javascript
-const {dialog} = require('electron')
-console.log(dialog.showOpenDialog({properties: ['openFile', 'openDirectory', 'multiSelections']}))
+let win = ...;  // 대화 상자를 사용할 BrowserWindow 객체
+const {dialog} = require('electron');
+console.log(dialog.showOpenDialog({properties: ['openFile', 'openDirectory', 'multiSelections']}));
 ```
 
-The Dialog is opened from Electron's main thread. If you want to use the dialog
-object from a renderer process, remember to access it using the remote:
+대화 상자는 Electron의 메인 스레드에서 열립니다. 만약 렌더러 프로세스에서 대화 상자
+객체를 사용하고 싶다면, `remote`를 통해 접근하는 방법을 고려해야 합니다:
 
 ```javascript
-const {dialog} = require('electron').remote
-console.log(dialog)
+const {dialog} = require('electron').remote;
 ```
 
 ## Methods
 
-The `dialog` module has the following methods:
+`dialog` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
 ### `dialog.showOpenDialog([browserWindow, ]options[, callback])`
 
@@ -69,19 +67,22 @@ The `dialog` module has the following methods:
 * `options` Object
   * `title` String
   * `defaultPath` String
-  * `buttonLabel` String - Custom label for the confirmation button, when
-    left empty the default label will be used.
+  * `buttonLabel` String - 확인 버튼을 위한 커스텀 라벨이며, 빈칸으로 둘 경우 기본
+    라벨이 사용됩니다.
   * `filters` Array
-  * `properties` Array - Contains which features the dialog should use, can
-    contain `openFile`, `openDirectory`, `multiSelections`, `createDirectory`
-    and `showHiddenFiles`.
+  * `properties` Array - 대화 상자가 사용할 기능(모드)이 담긴 배열입니다.
+    다음을 포함할 수 있습니다: `openFile`, `openDirectory`, `multiSelections`,
+    `createDirectory`, `showHiddenFiles`.
 * `callback` Function (optional)
 
-On success this method returns an array of file paths chosen by the user,
-otherwise it returns `undefined`.
+사용할 대화 상자의 기능이 담긴 배열입니다. 다음을 포함할 수 있습니다: `openFile`,
+`openDirectory`, `multiSelections`, `createDirectory`
 
-The `filters` specifies an array of file types that can be displayed or
-selected when you want to limit the user to a specific type. For example:
+작업에 성공하면 콜백으로 유저가 선택한 파일의 경로를 포함한 배열을 반환합니다. 그 외의
+경우엔 `undefined`를 반환합니다.
+
+`filters`를 지정하면 유저가 선택 가능한 파일 형식을 지정할 수 있습니다. 유저가 선택할
+수 있는 타입에 제한을 두려면 다음과 같이 할 수 있습니다:
 
 ```javascript
 {
@@ -94,17 +95,17 @@ selected when you want to limit the user to a specific type. For example:
 }
 ```
 
-The `extensions` array should contain extensions without wildcards or dots (e.g.
-`'png'` is good but `'.png'` and `'*.png'` are bad). To show all files, use the
-`'*'` wildcard (no other wildcard is supported).
+`extensions` 배열은 반드시 와일드카드와 마침표를 제외한 파일 확장자를 포함시켜야
+합니다. (예를 들어 `'png'`는 가능하지만 `'.png'`와 `'*.png'`는 안됩니다) 모든 파일을
+보여주려면 `'*'`와 같은 와일드카드를 사용하면 됩니다. (다른 와일드카드는 지원하지
+  않습니다)
 
-If a `callback` is passed, the API call will be asynchronous and the result
-will be passed via `callback(filenames)`
+`callback`이 전달되면 메서드가 비동기로 작동되며 결과는 `callback(filenames)`을
+통해 전달됩니다.
 
-**Note:** On Windows and Linux an open dialog can not be both a file selector
-and a directory selector, so if you set `properties` to
-`['openFile', 'openDirectory']` on these platforms, a directory selector will be
-shown.
+**참고:** Windows와 Linux에선 파일 선택 모드, 디렉터리 선택 모드를 동시에 사용할 수
+없습니다. 이러한 이유로 `properties`를 `['openFile', 'openDirectory']`로 설정하면
+디렉터리 선택 대화 상자가 표시됩니다.
 
 ### `dialog.showSaveDialog([browserWindow, ]options[, callback])`
 
@@ -112,70 +113,72 @@ shown.
 * `options` Object
   * `title` String
   * `defaultPath` String
-  * `buttonLabel` String - Custom label for the confirmation button, when
-    left empty the default label will be used.
+  * `buttonLabel` String - 확인 버튼을 위한 커스텀 라벨이며, 빈칸으로 둘 경우 기본
+    라벨이 사용됩니다.
   * `filters` Array
 * `callback` Function (optional)
 
-On success this method returns the path of the file chosen by the user,
-otherwise it returns `undefined`.
+작업에 성공하면 콜백으로 유저가 선택한 파일의 경로를 포함한 배열을 반환합니다. 그 외엔
+`undefined`를 반환합니다.
 
-The `filters` specifies an array of file types that can be displayed, see
-`dialog.showOpenDialog` for an example.
+`filters`를 지정하면 유저가 저장 가능한 파일 형식을 지정할 수 있습니다. 사용 방법은
+`dialog.showOpenDialog`의 `filters` 속성과 같습니다.
 
-If a `callback` is passed, the API call will be asynchronous and the result
-will be passed via `callback(filename)`
+`callback`이 전달되면 메서드가 비동기로 작동되며 결과는 `callback(filename)`을 통해
+전달됩니다.
 
 ### `dialog.showMessageBox([browserWindow, ]options[, callback])`
 
 * `browserWindow` BrowserWindow (optional)
 * `options` Object
-  * `type` String - Can be `"none"`, `"info"`, `"error"`, `"question"` or
-  `"warning"`. On Windows, "question" displays the same icon as "info", unless
-  you set an icon using the "icon" option.
-  * `buttons` Array - Array of texts for buttons. On Windows, an empty array
-    will result in one button labeled "OK".
-  * `defaultId` Integer - Index of the button in the buttons array which will
-    be selected by default when the message box opens.
-  * `title` String - Title of the message box, some platforms will not show it.
-  * `message` String - Content of the message box.
-  * `detail` String - Extra information of the message.
+  * `type` String - `"none"`, `"info"`, `"error"`, `"question"`, `"warning"` 중
+    하나를 사용할 수 있습니다. Windows에선 따로 `icon`을 설정하지 않은 이상
+    "question"과 "info"는 같은 아이콘으로 표시됩니다.
+  * `buttons` Array - 버튼들의 라벨을 포함한 배열입니다. Windows에서 빈 배열로 둘
+    경우, "OK" 버튼 하나가 포함됩니다.
+  * `defaultId` Integer - 메시지 박스가 열렸을 때 기본적으로 선택될 버튼 배열의
+    버튼 인덱스입니다.
+  * `title` String - 대화 상자의 제목입니다. 몇몇 플랫폼에선 보이지 않을 수 있습니다.
+  * `message` String - 대화 상자의 본문 내용입니다.
+  * `detail` String - 메시지의 추가 정보입니다.
   * `icon` [NativeImage](http://electron.atom.io/docs/api/native-image)
-  * `cancelId` Integer - The value will be returned when user cancels the dialog
-    instead of clicking the buttons of the dialog. By default it is the index
-    of the buttons that have "cancel" or "no" as label, or 0 if there is no such
-    buttons. On macOS and Windows the index of "Cancel" button will always be
-    used as `cancelId`, not matter whether it is already specified.
-  * `noLink` Boolean - On Windows Electron will try to figure out which one of
-    the `buttons` are common buttons (like "Cancel" or "Yes"), and show the
-    others as command links in the dialog. This can make the dialog appear in
-    the style of modern Windows apps. If you don't like this behavior, you can
-    set `noLink` to `true`.
-* `callback` Function
+  * `cancelId` Integer - 유저가 대화 상자의 버튼을 클릭하지 않고 대화 상자를 취소했을
+    때 반환되는 버튼의 인덱스입니다. 기본적으로 버튼 리스트가 "cancel" 또는 "no"
+    라벨을 가지고 있을 때 해당 버튼의 인덱스를 반환합니다. 따로 두 라벨이 지정되지
+    않은 경우 0을 반환합니다. macOS와 Windows에선 `cancelId` 지정 여부에 상관없이
+    "Cancel" 버튼이 언제나 `cancelId`로 지정됩니다.
+  * `noLink` Boolean - Windows에서 Electron은 ("Cancel"이나 "Yes"와 같은) 흔히
+    사용되는 버튼을 찾으려고 시도하고 대화 상자 내에서 해당 버튼을 커맨드 링크처럼
+    만듭니다. 이 기능으로 앱을 좀 더 현대적인 Windows 앱처럼 만들 수 있습니다. 이
+    기능을 원하지 않으면 `noLink`를 true로 지정하면 됩니다.
+* `callback` Function (optional)
 
-Shows a message box, it will block the process until the message box is closed.
-It returns the index of the clicked button.
+대화 상자를 표시합니다. `browserWindow`를 지정하면 대화 상자가 완전히 닫힐 때까지
+지정한 창을 사용할 수 없습니다. 완료 시 유저가 선택한 버튼의 인덱스를 반환합니다.
 
-If a `callback` is passed, the API call will be asynchronous and the result
-will be passed via `callback(response)`.
+**역자주:** 부정을 표현하는 "아니오", "취소"와 같은 한글 단어는 지원되지 않습니다. 만약
+macOS 또는 Windows에서 "확인", "취소"와 같은 순서로 버튼을 지정하게 될 때 Alt + f4로
+해당 대화 상자를 끄게 되면 "확인"을 누른 것으로 판단되어 버립니다. 이를 해결하려면
+"Cancel"을 대신 사용하거나 BrowserWindow API를 사용하여 대화 상자를 직접 구현해야
+합니다.
+
+`callback`이 전달되면 메서드가 비동기로 작동되며 결과는 `callback(response)`을 통해
+전달됩니다.
 
 ### `dialog.showErrorBox(title, content)`
 
-* `title` String - The title to display in the error box
-* `content` String - The text content to display in the error box
+에러 메시지를 보여주는 대화 상자를 표시합니다.
 
-Displays a modal dialog that shows an error message.
-
-This API can be called safely before the `ready` event the `app` module emits,
-it is usually used to report errors in early stage of startup.  If called
-before the app `ready`event on Linux, the message will be emitted to stderr,
-and no GUI dialog will appear.
+이 함수는 `app` 모듈의 `ready` 이벤트가 발생하기 전까지 사용할 수 있습니다. 이 메서드는
+보통 애플리케이션이 시작되기 전에 특정한 에러를 표시하기 위해 사용됩니다. 만약
+Linux에서 `ready` 이벤트가 발생하기 전에 이 API를 호출할 경우, 메시지는 stderr를
+통해서 표시되며 GUI 대화 상자는 표시되지 않습니다.
 
 ## Sheets
 
-On macOS, dialogs are presented as sheets attached to a window if you provide
-a `BrowserWindow` reference in the `browserWindow` parameter, or modals if no
-window is provided.
+macOS에선, `browserWindow` 인수에 `BrowserWindow` 객체 참조를 전달하면 대화
+상자가 해당 윈도우에 시트처럼 표시되도록 표현할 수 있습니다. 윈도우의 객체 참조가
+제공되지 않으면 모달 형태로 표시됩니다.
 
-You can call `BrowserWindow.getCurrentWindow().setSheetOffset(offset)` to change
-the offset from the window frame where sheets are attached.
+`BrowserWindow.getCurrentWindow().setSheetOffset(offset)`을 통해 윈도우에 부착될
+시트의 위치를 조정할 수 있습니다.

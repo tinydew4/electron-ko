@@ -1,87 +1,83 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/content-tracing/
-    - /docs/v0.25.0/api/content-tracing/
-    - /docs/v0.26.0/api/content-tracing/
-    - /docs/v0.27.0/api/content-tracing/
-    - /docs/v0.28.0/api/content-tracing/
-    - /docs/v0.29.0/api/content-tracing/
-    - /docs/v0.30.0/api/content-tracing/
-    - /docs/v0.31.0/api/content-tracing/
-    - /docs/v0.32.0/api/content-tracing/
-    - /docs/v0.33.0/api/content-tracing/
-    - /docs/v0.34.0/api/content-tracing/
-    - /docs/v0.35.0/api/content-tracing/
-    - /docs/v0.36.0/api/content-tracing/
-    - /docs/v0.36.3/api/content-tracing/
-    - /docs/v0.36.4/api/content-tracing/
-    - /docs/v0.36.5/api/content-tracing/
-    - /docs/v0.36.6/api/content-tracing/
-    - /docs/v0.36.7/api/content-tracing/
-    - /docs/v0.36.8/api/content-tracing/
-    - /docs/v0.36.9/api/content-tracing/
-    - /docs/v0.36.10/api/content-tracing/
-    - /docs/v0.36.11/api/content-tracing/
-    - /docs/v0.37.0/api/content-tracing/
-    - /docs/v0.37.1/api/content-tracing/
-    - /docs/v0.37.2/api/content-tracing/
-    - /docs/v0.37.3/api/content-tracing/
-    - /docs/v0.37.4/api/content-tracing/
-    - /docs/v0.37.5/api/content-tracing/
-    - /docs/v0.37.6/api/content-tracing/
-    - /docs/v0.37.7/api/content-tracing/
-    - /docs/v0.37.8/api/content-tracing/
-    - /docs/latest/api/content-tracing/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/content-tracing.md'
-excerpt: "Collect tracing data from Chromium&apos;s content module for finding performance
-    bottlenecks and slow operations."
-title: "contentTracing"
-sort_title: "contenttracing"
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+    - /docs-translations/ko-KR/api/content-tracing/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/content-tracing.md'
+excerpt: "&#xC131;&#xB2A5;&#xC0C1;&#xC758; &#xBCD1;&#xBAA9; &#xD604;&#xC0C1;&#xACFC; &#xB290;&#xB9B0; &#xC791;&#xC5C5;&#xC744; &#xCC3E;&#xAE30; &#xC704;&#xD574; Chromium&#xC758; &#xCF58;&#xD150;&#xCE20; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; &#xCD94;&#xC801; &#xB370;&#xC774;&#xD130;&#xB97C;
+    &#xC218;&#xC9D1;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# contentTracing
+﻿# contentTracing
 
-> Collect tracing data from Chromium's content module for finding performance
-bottlenecks and slow operations.
+> 성능상의 병목 현상과 느린 작업을 찾기 위해 Chromium의 콘텐츠 모듈에서 추적 데이터를
+수집합니다.
 
-This module does not include a web interface so you need to open
-`chrome://tracing/` in a Chrome browser and load the generated file to view the
-result.
+이 모듈은 웹 인터페이스를 포함하고 있지 않으며 Chrome 브라우저에서
+`chrome://tracing/` 페이지를 열고 생성된 파일을 로드하면 결과를 볼 수 있습니다.
 
 ```javascript
-const {contentTracing} = require('electron')
+const {contentTracing} = require('electron');
 
 const options = {
   categoryFilter: '*',
   traceOptions: 'record-until-full,enable-sampling'
-}
+};
 
 contentTracing.startRecording(options, () => {
-  console.log('Tracing started')
+  console.log('Tracing started');
 
   setTimeout(() => {
     contentTracing.stopRecording('', (path) => {
-      console.log('Tracing data recorded to ' + path)
-    })
-  }, 5000)
-})
+      console.log('Tracing data recorded to ' + path);
+    });
+  }, 5000);
+});
 ```
 
 ## Methods
 
-The `contentTracing` module has the following methods:
+`content-tracing` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
 ### `contentTracing.getCategories(callback)`
 
 * `callback` Function
 
-Get a set of category groups. The category groups can change as new code paths
-are reached.
+카테고리 그룹 세트를 가져옵니다. 카테고리 그룹은 도달된 코드 경로를 변경할 수 있습니다.
 
-Once all child processes have acknowledged the `getCategories` request the
-`callback` is invoked with an array of category groups.
+모든 child 프로세스가 `getCategories` 요청을 승인하면 `callback`이 한 번 호출되며
+인수에 카테고리 그룹의 배열이 전달됩니다.
 
 ### `contentTracing.startRecording(options, callback)`
 
@@ -90,25 +86,26 @@ Once all child processes have acknowledged the `getCategories` request the
   * `traceOptions` String
 * `callback` Function
 
-Start recording on all processes.
+모든 프로세스에서 레코딩을 시작합니다.
 
-Recording begins immediately locally and asynchronously on child processes
-as soon as they receive the EnableRecording request. The `callback` will be
-called once all child processes have acknowledged the `startRecording` request.
+레코딩은 지역적으로 즉시 실행됩니다. 그리고 비동기로 child 프로세스는 곧
+EnableRecording 요청을 받게 됩니다. 모든 child 프로세스가 `startRecording` 요청을
+승인하면 `callback`이 한 번 호출됩니다.
 
-`categoryFilter` is a filter to control what category groups should be
-traced. A filter can have an optional `-` prefix to exclude category groups
-that contain a matching category. Having both included and excluded
-category patterns in the same list is not supported.
+`categoryFilter`는 어떤 카테고리 그룹이 트레이싱 되어야 하는지 필터링할 수 있습니다.
+필터는 `-` 접두사를 통해 특정 카테고리 그룹을 제외할 수 있습니다. 카테고리 패턴은 같은
+리스트 내에서 포함과 제외를 함께 사용할 수 없습니다.
 
-Examples:
+예시:
 
 * `test_MyTest*`,
 * `test_MyTest*,test_OtherStuff`,
 * `"-excluded_category1,-excluded_category2`
 
-`traceOptions` controls what kind of tracing is enabled, it is a comma-delimited
-list. Possible options are:
+`traceOptions`은 어떤 종류의 트레이싱을 사용할 수 있는지 지정하고 콤마로 리스트를
+구분합니다.
+
+사용할 수 있는 옵션은 다음과 같습니다:
 
 * `record-until-full`
 * `record-continuously`
@@ -116,34 +113,34 @@ list. Possible options are:
 * `enable-sampling`
 * `enable-systrace`
 
-The first 3 options are trace recoding modes and hence mutually exclusive.
-If more than one trace recording modes appear in the `traceOptions` string,
-the last one takes precedence. If none of the trace recording modes are
-specified, recording mode is `record-until-full`.
+첫번째부터 3번째까지의 옵션은 추적 레코딩 모드입니다. 이에 따라 상호 배타적입니다.
+만약 레코딩 모드가 한 개 이상 지정되면 마지막 지정한 모드만 사용됩니다. 어떤 모드도
+설정되지 않았다면 `record-until-full` 모드가 기본으로 사용됩니다.
 
-The trace option will first be reset to the default option (`record_mode` set to
-`record-until-full`, `enable_sampling` and `enable_systrace` set to `false`)
-before options parsed from `traceOptions` are applied on it.
+추적 옵션은 `traceOptions`이 파싱되어 적용되기 전까지 다음과 같은 기본값이 사용됩니다.
 
-### `contentTracing.stopRecording(resultFilePath, callback)`
+`record-until-full`이 기본 모드, `enable-sampling`과 `enable-systrace`옵션은
+포함되지 않음
+
+## `contentTracing.stopRecording(resultFilePath, callback)`
 
 * `resultFilePath` String
 * `callback` Function
 
-Stop recording on all processes.
+모든 프로세스에서 레코딩을 중지합니다.
 
-Child processes typically cache trace data and only rarely flush and send
-trace data back to the main process. This helps to minimize the runtime overhead
-of tracing since sending trace data over IPC can be an expensive operation. So,
-to end tracing, we must asynchronously ask all child processes to flush any
-pending trace data.
+Child 프로세스는 일반적으로 추적 데이터와 희귀한 플러시 그리고 추적 데이터를 메인
+프로세스로 보내는 작업에 대해 캐싱 합니다. 이러한 일을 하는 이유는 IPC를 통해 추적
+데이터를 보내는 작업은 매우 비싼 연산을 동반하기 때문입니다. 우리는 추적에 의한 런타임
+오버헤드를 피하고자 합니다. 그래서 추적이 끝나면 모든 child 프로세스에 보류된 추적
+데이터를 플러시 할 것인지 물어봅니다.
 
-Once all child processes have acknowledged the `stopRecording` request,
-`callback` will be called with a file that contains the traced data.
+모든 child 프로세스가 `stopRecording` 요청을 승인하면 `callback`에 추적 데이터
+파일을 포함하여 한 번 호출됩니다.
 
-Trace data will be written into `resultFilePath` if it is not empty or into a
-temporary file. The actual file path will be passed to `callback` if it's not
-`null`.
+추적 데이터는 `resultFilePath` 해당 경로가 비어있는 경우에 한 해 해당 경로에
+작성되거나 임시 파일에 작성됩니다. 실제 파일 경로는 null이 아닌 이상 `callback`을
+통해 전달됩니다.
 
 ### `contentTracing.startMonitoring(options, callback)`
 
@@ -152,47 +149,43 @@ temporary file. The actual file path will be passed to `callback` if it's not
   * `traceOptions` String
 * `callback` Function
 
-Start monitoring on all processes.
+모든 프로세스에서 모니터링을 시작합니다.
 
-Monitoring begins immediately locally and asynchronously on child processes as
-soon as they receive the `startMonitoring` request.
+모니터링은 지역적으로 즉시 시작됩니다. 그리고 이내 자식 프로세스들이
+`startMonitoring` 비동기 요청을 받습니다.
 
-Once all child processes have acknowledged the `startMonitoring` request the
-`callback` will be called.
+모든 자식 프로세스가 `startMonitoring` 요청을 승인하면 `callback`이 한 번 호출됩니다.
 
 ### `contentTracing.stopMonitoring(callback)`
 
 * `callback` Function
 
-Stop monitoring on all processes.
+모든 프로세스에서 모니터링을 중단합니다.
 
-Once all child processes have acknowledged the `stopMonitoring` request the
-`callback` is called.
+모든 자식 프로세스가 `stopMonitoring` 요청을 승인하면 `callback`이 한 번 호출됩니다.
 
 ### `contentTracing.captureMonitoringSnapshot(resultFilePath, callback)`
 
 * `resultFilePath` String
 * `callback` Function
 
-Get the current monitoring traced data.
+현재 모니터링 추적 데이터를 가져옵니다.
 
-Child processes typically cache trace data and only rarely flush and send
-trace data back to the main process. This is because it may be an expensive
-operation to send the trace data over IPC and we would like to avoid unneeded
-runtime overhead from tracing. So, to end tracing, we must asynchronously ask
-all child processes to flush any pending trace data.
+자식 프로세스들은 일반적으로 추적 데이터를 캐싱하며 드물게 플러시 하거나 메인
+프로세스로 추적 데이터를 보냅니다. 왜냐하면 IPC를 통해 추적 데이터를 보내는데에는
+많은 자원을 소비하기 때문입니다. 그리고 우리는 추적시 발생하는 불필요한 런타임
+오버헤드를 피하고자 합니다. 그래서 추적이 끝나면 반드시 비동기로 자식 프로세스들의
+보류된 추적 데이터를 플러시 할 것인지 물어봅니다.
 
-Once all child processes have acknowledged the `captureMonitoringSnapshot`
-request the `callback` will be called with a file that contains the traced data.
-
+모든 자식 프로세스가 `captureMonitoringSnapshot` 요청을 승인하면 추적 데이터 파일을
+포함하는 `callback`이 한 번 호출됩니다.
 
 ### `contentTracing.getTraceBufferUsage(callback)`
 
 * `callback` Function
 
-Get the maximum usage across processes of trace buffer as a percentage of the
-full state. When the TraceBufferUsage value is determined the `callback` is
-called.
+추적 버퍼 % 전체 상태의 프로세스간 최대치를 가져옵니다. TraceBufferUsage 값이
+결정되면 `callback`이 한 번 호출됩니다.
 
 ### `contentTracing.setWatchEvent(categoryName, eventName, callback)`
 
@@ -200,10 +193,9 @@ called.
 * `eventName` String
 * `callback` Function
 
-`callback` will be called every time the given event occurs on any
-process.
+`callback`은 지정된 이벤트가 어떤 작업을 발생시킬 때마다 호출됩니다.
 
 ### `contentTracing.cancelWatchEvent()`
 
-Cancel the watch event. This may lead to a race condition with the watch event
-callback if tracing is enabled.
+Watch 이벤트를 중단합니다. 만약 추적이 활성화되어 있다면 이 메서드는 watch 이벤트
+콜백과 race가 일어날 것입니다.

@@ -1,57 +1,55 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/download-item/
-    - /docs/v0.25.0/api/download-item/
-    - /docs/v0.26.0/api/download-item/
-    - /docs/v0.27.0/api/download-item/
-    - /docs/v0.28.0/api/download-item/
-    - /docs/v0.29.0/api/download-item/
-    - /docs/v0.30.0/api/download-item/
-    - /docs/v0.31.0/api/download-item/
-    - /docs/v0.32.0/api/download-item/
-    - /docs/v0.33.0/api/download-item/
-    - /docs/v0.34.0/api/download-item/
-    - /docs/v0.35.0/api/download-item/
-    - /docs/v0.36.0/api/download-item/
-    - /docs/v0.36.3/api/download-item/
-    - /docs/v0.36.4/api/download-item/
-    - /docs/v0.36.5/api/download-item/
-    - /docs/v0.36.6/api/download-item/
-    - /docs/v0.36.7/api/download-item/
-    - /docs/v0.36.8/api/download-item/
-    - /docs/v0.36.9/api/download-item/
-    - /docs/v0.36.10/api/download-item/
-    - /docs/v0.36.11/api/download-item/
-    - /docs/v0.37.0/api/download-item/
-    - /docs/v0.37.1/api/download-item/
-    - /docs/v0.37.2/api/download-item/
-    - /docs/v0.37.3/api/download-item/
-    - /docs/v0.37.4/api/download-item/
-    - /docs/v0.37.5/api/download-item/
-    - /docs/v0.37.6/api/download-item/
-    - /docs/v0.37.7/api/download-item/
-    - /docs/v0.37.8/api/download-item/
-    - /docs/latest/api/download-item/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/download-item.md'
-excerpt: "Control file downloads from remote sources."
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+    - /docs-translations/ko-KR/api/download-item/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/download-item.md'
+excerpt: "&#xC6D0;&#xACA9; &#xC18C;&#xC2A4;&#xB85C;&#xBD80;&#xD130;&#xC758; &#xD30C;&#xC77C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xB97C; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;."
 title: "DownloadItem"
 sort_title: "downloaditem"
 ---
 
 # DownloadItem
 
-> Control file downloads from remote sources.
+> 원격 소스로부터의 파일 다운로드를 제어합니다.
 
-`DownloadItem` is an `EventEmitter` that represents a download item in Electron.
-It is used in `will-download` event of `Session` class, and allows users to
-control the download item.
+`DownloadItem`은 `EventEmitter`를 상속받았으며 Electron의 다운로드 아이템을
+표현합니다. 이 클래스 객체는 `Session` 클래스의 `will-download` 이벤트에 사용되며
+사용자가 다운로드 아이템을 다룰 수 있도록 도와줍니다.
 
 ```javascript
-// In the main process.
-const {BrowserWindow} = require('electron')
-let win = new BrowserWindow()
+// 메인 프로세스
 win.webContents.session.on('will-download', (event, item, webContents) => {
   // Set the save path, making Electron not to prompt a save dialog.
   item.setSavePath('/tmp/save.pdf')
@@ -86,12 +84,12 @@ Returns:
 * `event` Event
 * `state` String
 
-Emitted when the download has been updated and is not done.
+다운로드가 업데이트되었으며 아직 끝나지 않았을 때 발생하는 이벤트입니다.
 
-The `state` can be one of following:
+`state`는 다음 중 하나가 될 수 있습니다:
 
-* `progressing` - The download is in-progress.
-* `interrupted` - The download has interrupted and can be resumed.
+* `progressing` - 다운로드가 진행중입니다.
+* `interrupted` - 다운로드가 중지되었으며 다시 재개할 수 있습니다.
 
 ### Event: 'done'
 
@@ -100,95 +98,88 @@ Returns:
 * `event` Event
 * `state` String
 
-Emitted when the download is in a terminal state. This includes a completed
-download, a cancelled download(via `downloadItem.cancel()`), and interrupted
-download that can't be resumed.
+다운로드가 종료될 때 발생하는 이벤트입니다. 이 이벤트는 다운로드 중 문제가 발생하여
+중단되거나, 모두 성공적으로 완료된 경우, `downloadItem.cancel()` 같은 메서드를 통해
+취소하는 경우의 종료 작업이 모두 포함됩니다.
 
-The `state` can be one of following:
+`state`는 다음 중 하나가 될 수 있습니다:
 
-* `completed` - The download completed successfully.
-* `cancelled` - The download has been cancelled.
-* `interrupted` - The download has interrupted and can not resume.
+* `completed` - 다운로드가 성공적으로 완료되었습니다.
+* `cancelled` - 다운로드가 취소되었습니다.
+* `interrupted` - 다운로드가 중지되었으며 다시 재개할 수 있습니다.
 
 ## Methods
 
-The `downloadItem` object has the following methods:
+`downloadItem` 객체는 다음과 같은 메서드를 가지고 있습니다:
 
 ### `downloadItem.setSavePath(path)`
 
-* `path` String - Set the save file path of the download item.
+* `path` String - 다운로드 아이템을 저장할 파일 경로를 지정합니다.
 
-The API is only available in session's `will-download` callback function.
-If user doesn't set the save path via the API, Electron will use the original
-routine to determine the save path(Usually prompts a save dialog).
-
-### `downloadItem.getSavePath()`
-
-Returns the save path of the download item. This will be either the path
-set via `downloadItem.setSavePath(path)` or the path selected from the shown
-save dialog.
+이 API는 세션의 `will-download` 콜백 함수에서만 사용할 수 있습니다. 사용자가 API를
+통해 아무 경로도 설정하지 않을 경우 Electron은 기본 루틴 파일 저장을 실행합니다.
+(파일 대화 상자를 엽니다)
 
 ### `downloadItem.pause()`
 
-Pauses the download.
+다운로드를 일시 중지합니다.
 
 ### `downloadItem.isPaused()`
 
-Returns whether the download is paused.
+다운로드가 일시 중지되었는지 여부를 반환합니다.
 
 ### `downloadItem.resume()`
 
-Resumes the download that has been paused.
+중디된 다운로드를 재개합니다.
 
 ### `downloadItem.canResume()`
 
-Resumes whether the download can resume.
+다운로드를 재개할 수 있는지 여부를 반환합니다.
 
 ### `downloadItem.cancel()`
 
-Cancels the download operation.
+다운로드를 취소합니다.
 
 ### `downloadItem.getURL()`
 
-Returns a `String` represents the origin url where the item is downloaded from.
+다운로드 아이템의 URL을 표현하는 문자열을 반환합니다.
 
 ### `downloadItem.getMimeType()`
 
-Returns a `String` represents the mime type.
+다우로드 아이템의 MIME 타입을 표현하는 문자열을 반환합니다.
 
 ### `downloadItem.hasUserGesture()`
 
-Returns a `Boolean` indicates whether the download has user gesture.
+현재 다운로드가 유저 제스쳐(작업)로인한 다운로드인지 여부를 반환합니다.
 
 ### `downloadItem.getFilename()`
 
-Returns a `String` represents the file name of the download item.
+다운로드 아이템의 파일 이름을 표현하는 문자열을 반환합니다.
 
-**Note:** The file name is not always the same as the actual one saved in local
-disk. If user changes the file name in a prompted download saving dialog, the
-actual name of saved file will be different.
+**참고:** 실제 파일 이름과 로컬 디스크에 저장되는 파일의 이름은 서로 다를 수 있습니다.
+예를 들어 만약 사용자가 파일을 저장할 때 파일 이름을 바꿨다면 실제 파일 이름과 저장
+파일 이름은 서로 달라지게 됩니다.
 
 ### `downloadItem.getTotalBytes()`
 
-Returns a `Integer` represents the total size in bytes of the download item.
-If the size is unknown, it returns 0.
+현재 아이템의 전체 다운로드 크기를 정수로 반환합니다. 크기가 unknown이면 0을
+반환합니다.
 
 ### `downloadItem.getReceivedBytes()`
 
-Returns a `Integer` represents the received bytes of the download item.
+현재 아이템의 다운로드 완료된 바이트 값을 정수로 반환합니다.
 
 ### `downloadItem.getContentDisposition()`
 
-Returns a `String` represents the Content-Disposition field from the response
-header.
+응답 헤더에서 Content-Disposition 필드를 문자열로 반환합니다.
 
 ### `downloadItem.getState()`
 
-Returns current state as `String`.
+현재 상태를 `String` 타입으로 가져옵니다.
 
-Possible values are:
+값은 다음이 될 수 있습니다:
 
-* `progressing` - The download is in-progress.
-* `completed` - The download completed successfully.
-* `cancelled` - The download has been cancelled.
-* `interrupted` - The download has interrupted.
+* `progressing` - 다운로드가 진행중입니다.
+* `completed` - 다운로드가 성공적으로 완료되었습니다.
+* `cancelled` - 다운로드가 취소되었습니다.
+* `interrupted` - 다운로드가 중지되었습니다.

@@ -1,60 +1,57 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/desktop-capturer/
-    - /docs/v0.25.0/api/desktop-capturer/
-    - /docs/v0.26.0/api/desktop-capturer/
-    - /docs/v0.27.0/api/desktop-capturer/
-    - /docs/v0.28.0/api/desktop-capturer/
-    - /docs/v0.29.0/api/desktop-capturer/
-    - /docs/v0.30.0/api/desktop-capturer/
-    - /docs/v0.31.0/api/desktop-capturer/
-    - /docs/v0.32.0/api/desktop-capturer/
-    - /docs/v0.33.0/api/desktop-capturer/
-    - /docs/v0.34.0/api/desktop-capturer/
-    - /docs/v0.35.0/api/desktop-capturer/
-    - /docs/v0.36.0/api/desktop-capturer/
-    - /docs/v0.36.3/api/desktop-capturer/
-    - /docs/v0.36.4/api/desktop-capturer/
-    - /docs/v0.36.5/api/desktop-capturer/
-    - /docs/v0.36.6/api/desktop-capturer/
-    - /docs/v0.36.7/api/desktop-capturer/
-    - /docs/v0.36.8/api/desktop-capturer/
-    - /docs/v0.36.9/api/desktop-capturer/
-    - /docs/v0.36.10/api/desktop-capturer/
-    - /docs/v0.36.11/api/desktop-capturer/
-    - /docs/v0.37.0/api/desktop-capturer/
-    - /docs/v0.37.1/api/desktop-capturer/
-    - /docs/v0.37.2/api/desktop-capturer/
-    - /docs/v0.37.3/api/desktop-capturer/
-    - /docs/v0.37.4/api/desktop-capturer/
-    - /docs/v0.37.5/api/desktop-capturer/
-    - /docs/v0.37.6/api/desktop-capturer/
-    - /docs/v0.37.7/api/desktop-capturer/
-    - /docs/v0.37.8/api/desktop-capturer/
-    - /docs/latest/api/desktop-capturer/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/desktop-capturer.md'
-excerpt: "Access information about media sources that can be used to capture audio and
-    video from the desktop using the <a href=\"https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia\"><code>navigator.webkitGetUserMedia</code></a> API."
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+    - /docs-translations/ko-KR/api/desktop-capturer/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/desktop-capturer.md'
+excerpt: "&#xB9C8;&#xC774;&#xD06C;, &#xCE74;&#xBA54;&#xB77C; &#xB610;&#xB294; &#xD654;&#xBA74;&#xC5D0;&#xC11C; &#xC624;&#xB514;&#xC624;, &#xBE44;&#xB514;&#xC624; &#xADF8;&#xB9AC;&#xACE0; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xCEA1;&#xCCD0;&#xD558;&#xAE30; &#xC704;&#xD55C;
+    <code>getUserMedia</code> &#xC18C;&#xC2A4;&#xB97C; &#xB098;&#xC5F4;&#xD569;&#xB2C8;&#xB2E4;."
 title: "desktopCapturer"
 sort_title: "desktopcapturer"
 ---
 
 # desktopCapturer
 
-> Access information about media sources that can be used to capture audio and
-> video from the desktop using the [`navigator.webkitGetUserMedia`] API.
-
-The following example shows how to capture video from a desktop window whose
-title is `Electron`:
+> 마이크, 카메라 또는 화면에서 오디오, 비디오 그리고 이미지를 캡쳐하기 위한
+`getUserMedia` 소스를 나열합니다.
 
 ```javascript
-// In the renderer process.
-const {desktopCapturer} = require('electron')
+// 렌더러 프로세스 내부
+const {desktopCapturer} = require('electron');
 
 desktopCapturer.getSources({types: ['window', 'screen']}, (error, sources) => {
-  if (error) throw error
+  if (error) throw error;
   for (let i = 0; i < sources.length; ++i) {
     if (sources[i].name === 'Electron') {
       navigator.webkitGetUserMedia({
@@ -69,60 +66,56 @@ desktopCapturer.getSources({types: ['window', 'screen']}, (error, sources) => {
             maxHeight: 720
           }
         }
-      }, handleStream, handleError)
-      return
+      }, gotStream, getUserMediaError);
+      return;
     }
   }
-})
+});
 
-function handleStream (stream) {
-  document.querySelector('video').src = URL.createObjectURL(stream)
+function gotStream(stream) {
+  document.querySelector('video').src = URL.createObjectURL(stream);
 }
 
-function handleError (e) {
-  console.log(e)
+function getUserMediaError(e) {
+  console.log('getUserMediaError');
 }
 ```
 
-To capture video from a source provided by `desktopCapturer` the constraints
-passed to [`navigator.webkitGetUserMedia`] must include
-`chromeMediaSource: 'desktop'`, and `audio: false`.
+`navigator.webkitGetUserMedia` 호출에 대해 제약된 객체를 생성할 때
+`desktopCapturer`에서 소스를 사용한다면 `chromeMediaSource`은 반드시
+`"desktop"`으로 지정되어야 하며, `audio` 도 반드시 `false`로 지정되어야 합니다.
 
-To capture both audio and video from the entire desktop the constraints passed
-to [`navigator.webkitGetUserMedia`] must include `chromeMediaSource: 'screen'`,
-and `audio: true`, but should not include a `chromeMediaSourceId` constraint.
+만약 전체 데스크탑에서 오디오와 비디오 모두 캡쳐를 하고 싶을 땐 `chromeMediaSource`를
+`"screen"` 그리고 `audio`를 `true`로 지정할 수 있습니다. 이 방법을 사용하면
+`chromeMediaSourceId`를 지정할 수 없습니다.
+
 
 ## Methods
 
-The `desktopCapturer` module has the following methods:
+`desktopCapturer` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
 ### `desktopCapturer.getSources(options, callback)`
 
 * `options` Object
-  * `types` Array - An array of String that lists the types of desktop sources
-    to be captured, available types are `screen` and `window`.
-  * `thumbnailSize` Object (optional) - The suggested size that the media source
-    thumbnail should be scaled to, defaults to `{width: 150, height: 150}`.
+  * `types` Array - 캡쳐될 데스크탑 소스의 타입에 대한 리스트를 배열로 지정합니다.
+    사용 가능한 타입은 `screen`과 `window`입니다.
+  * `thumbnailSize` Object (optional) - 섬네일 크기를 조정할 때 최대한 맞춰질 크기,
+    기본값은 `{width: 150, height: 150}`입니다.
 * `callback` Function
 
-Starts gathering information about all available desktop media sources,
-and calls `callback(error, sources)` when finished.
+모든 데스크탑 소스를 요청합니다. 요청의 처리가 완료되면 `callback`은
+`callback(error, sources)` 형식으로 호출됩니다.
 
-`sources` is an array of `Source` objects, each `Source` represents a
-screen or an individual window that can be captured, and has the following
-properties:
+`sources`는 `Source` 객체의 배열입니다. 각 `Source`는 캡쳐된 화면과 독립적인
+윈도우를 표현합니다. 그리고 다음과 같은 속성을 가지고 있습니다:
 
-* `id` String - The identifier of a window or screen that can be used as a
-  `chromeMediaSourceId` constraint when calling
-  [`navigator.webkitGetUserMedia`]. The format of the identifier will be
-  `window:XX` or `screen:XX`, where `XX` is a random generated number.
-* `name` String - A screen source will be named either `Entire Screen` or
-  `Screen <index>`, while the name of a window source will match the window
-  title.
-* `thumbnail` [NativeImage](http://electron.atom.io/docs/api/native-image) - A thumbnail image. **Note:**
-  There is no guarantee that the size of the thumbnail is the same as the
-  `thumnbailSize` specified in the `options` passed to
-  `desktopCapturer.getSources`. The actual size depends on the scale of the
-  screen or window.
+* `id` String - `navigator.webkitGetUserMedia` API에서 사용할 수 있는 캡쳐된 윈도우
+  또는 화면의 id입니다. 포맷은 `window:XX` 또는 `screen:XX`로 표현되며 `XX` 는
+  무작위로 생성된 숫자입니다.
+* `name` String - 캡쳐된 화면과 윈도우에 대해 묘사된 이름입니다. 만약 소스가
+  화면이라면, `Entire Screen` 또는 `Screen <index>`가 될 것이고 소스가 윈도우라면,
+  해당 윈도우의 제목이 반환됩니다.
+* `thumbnail` [NativeImage](http://electron.atom.io/docs/api/native-image) - 섬네일 네이티브 이미지.
 
-[`navigator.webkitGetUserMedia`]: https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia
+**참고:** `source.thumbnail`의 크기는 언제나 `options`의 `thumnbailSize`와 같다고
+보장할 수 없습니다. 섬네일의 크기는 화면과 윈도우의 크기에 의존하여 조정됩니다.

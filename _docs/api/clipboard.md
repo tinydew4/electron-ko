@@ -1,128 +1,125 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/clipboard/
-    - /docs/v0.25.0/api/clipboard/
-    - /docs/v0.26.0/api/clipboard/
-    - /docs/v0.27.0/api/clipboard/
-    - /docs/v0.28.0/api/clipboard/
-    - /docs/v0.29.0/api/clipboard/
-    - /docs/v0.30.0/api/clipboard/
-    - /docs/v0.31.0/api/clipboard/
-    - /docs/v0.32.0/api/clipboard/
-    - /docs/v0.33.0/api/clipboard/
-    - /docs/v0.34.0/api/clipboard/
-    - /docs/v0.35.0/api/clipboard/
-    - /docs/v0.36.0/api/clipboard/
-    - /docs/v0.36.3/api/clipboard/
-    - /docs/v0.36.4/api/clipboard/
-    - /docs/v0.36.5/api/clipboard/
-    - /docs/v0.36.6/api/clipboard/
-    - /docs/v0.36.7/api/clipboard/
-    - /docs/v0.36.8/api/clipboard/
-    - /docs/v0.36.9/api/clipboard/
-    - /docs/v0.36.10/api/clipboard/
-    - /docs/v0.36.11/api/clipboard/
-    - /docs/v0.37.0/api/clipboard/
-    - /docs/v0.37.1/api/clipboard/
-    - /docs/v0.37.2/api/clipboard/
-    - /docs/v0.37.3/api/clipboard/
-    - /docs/v0.37.4/api/clipboard/
-    - /docs/v0.37.5/api/clipboard/
-    - /docs/v0.37.6/api/clipboard/
-    - /docs/v0.37.7/api/clipboard/
-    - /docs/v0.37.8/api/clipboard/
-    - /docs/latest/api/clipboard/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/clipboard.md'
-excerpt: "Perform copy and paste operations on the system clipboard."
-title: "clipboard"
-sort_title: "clipboard"
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+    - /docs-translations/ko-KR/api/clipboard/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/clipboard.md'
+excerpt: "&#xC2DC;&#xC2A4;&#xD15C; &#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xC5D0; &#xBCF5;&#xC0AC;&#xC640; &#xBD99;&#xC5EC;&#xB123;&#xAE30;&#xB97C; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# clipboard
+﻿# clipboard
 
-> Perform copy and paste operations on the system clipboard.
+> 시스템 클립보드에 복사와 붙여넣기를 수행합니다.
 
-The following example shows how to write a string to the clipboard:
+다음 예시는 클립보드에 문자열을 쓰는 방법을 보여줍니다:
 
 ```javascript
-const {clipboard} = require('electron')
-clipboard.writeText('Example String')
+const {clipboard} = require('electron');
+clipboard.writeText('Example String');
 ```
 
-On X Window systems, there is also a selection clipboard. To manipulate it
-you need to pass `selection` to each method:
+X Window 시스템에선 selection 클립보드도 존재합니다. 이를 사용하려면 인수 뒤에
+`selection` 문자열을 같이 지정해주어야 합니다:
 
 ```javascript
-const {clipboard} = require('electron')
-clipboard.writeText('Example String', 'selection')
-console.log(clipboard.readText('selection'))
+clipboard.writeText('Example String', 'selection');
+console.log(clipboard.readText('selection'));
 ```
 
 ## Methods
 
-The `clipboard` module has the following methods:
+`clipboard` 모듈은 다음과 같은 메서드를 가지고 있습니다:
 
-**Note:** Experimental APIs are marked as such and could be removed in future.
+**참고:** Experimental 마크가 붙은 API는 실험적인 기능이며 차후 최신 버전에서 제거될
+수 있습니다.
 
 ### `clipboard.readText([type])`
 
 * `type` String (optional)
 
-Returns the content in the clipboard as plain text.
+클립보드 콘텐츠를 `plain text`로 반환합니다.
 
 ### `clipboard.writeText(text[, type])`
 
 * `text` String
 * `type` String (optional)
 
-Writes the `text` into the clipboard as plain text.
+클립보드에 `plain text`로 문자열을 씁니다.
 
 ### `clipboard.readHTML([type])`
 
 * `type` String (optional)
 
-Returns the content in the clipboard as markup.
+클립보드 콘텐츠를 `markup`으로 반환합니다.
 
 ### `clipboard.writeHTML(markup[, type])`
 
 * `markup` String
 * `type` String (optional)
 
-Writes `markup` to the clipboard.
+클립보드에 `markup`으로 씁니다.
 
 ### `clipboard.readImage([type])`
 
 * `type` String (optional)
 
-Returns the content in the clipboard as a [NativeImage](http://electron.atom.io/docs/api/native-image).
+클립보드로부터 [NativeImage](http://electron.atom.io/docs/api/native-image)로 이미지를 읽어들입니다.
 
 ### `clipboard.writeImage(image[, type])`
 
 * `image` [NativeImage](http://electron.atom.io/docs/api/native-image)
 * `type` String (optional)
 
-Writes `image` to the clipboard.
+클립보드에 `image`를 씁니다.
 
 ### `clipboard.readRTF([type])`
 
 * `type` String (optional)
 
-Returns the content in the clipboard as RTF.
+클립보드로부터 RTF 형식으로 콘텐츠를 읽어옵니다.
 
 ### `clipboard.writeRTF(text[, type])`
 
 * `text` String
 * `type` String (optional)
 
-Writes the `text` into the clipboard in RTF.
+클립보드에 `text`를 RTF 형식으로 씁니다.
 
 ### `clipboard.readBookmark()` _macOS_ _Windows_
 
-Returns an Object containing `title` and `url` keys representing the bookmark in
-the clipboard. The `title` and `url` values will be empty strings when the
-bookmark is unavailable.
+클립보드로부터 북마크 형식으로 표현된 `title`와 `url` 키를 담은 객체를 반환합니다.
+`title`과 `url` 값들은 북마크를 사용할 수 없을 때 빈 문자열을 포함합니다.
 
 ### `clipboard.writeBookmark(title, url[, type])` _macOS_ _Windows_
 
@@ -130,41 +127,27 @@ bookmark is unavailable.
 * `url` String
 * `type` String (optional)
 
-Writes the `title` and `url` into the clipboard as a bookmark.
-
-**Note:** Most apps on Windows don't support pasting bookmarks into them so
-you can use `clipboard.write` to write both a bookmark and fallback text to the
-clipboard.
-
-```js
-clipboard.write({
-  text: 'http://electron.atom.io',
-  bookmark: 'Electron Homepage'
-})
-```
+`title`과 `url`을 클립보드에 북마크 형식으로 씁니다.
 
 ### `clipboard.clear([type])`
 
 * `type` String (optional)
 
-Clears the clipboard content.
+클립보드에 저장된 모든 콘텐츠를 삭제합니다.
 
-### `clipboard.availableFormats([type])`
+### clipboard.availableFormats([type])
 
-* `type` String (optional)
+클립보드의 `type`에 해당하는 지원하는 `format`을 문자열로 반환합니다.
 
-Returns an array of supported formats for the clipboard `type`.
-
-### `clipboard.has(data[, type])` _Experimental_
+### `clipboard.has(data[, type])`
 
 * `data` String
 * `type` String (optional)
 
-Returns whether the clipboard supports the format of specified `data`.
+클립보드가 지정한 `data`의 형식을 지원하는지 확인합니다.
 
 ```javascript
-const {clipboard} = require('electron')
-console.log(clipboard.has('<p>selection</p>'))
+console.log(clipboard.has('<p>selection</p>'));
 ```
 
 ### `clipboard.read(data[, type])` _Experimental_
@@ -172,20 +155,20 @@ console.log(clipboard.has('<p>selection</p>'))
 * `data` String
 * `type` String (optional)
 
-Reads `data` from the clipboard.
+클립보드로부터 `data`를 읽어들입니다.
 
-### `clipboard.write(data[, type])`
+### `clipboard.write(data[, type])` _Experimental_
 
 * `data` Object
   * `text` String
   * `html` String
   * `image` [NativeImage](http://electron.atom.io/docs/api/native-image)
   * `rtf` String
-  * `bookmark` String - The title of the url at `text`.
+  * `bookmark` String - `text`에 있는 URL의 텍스트.
 * `type` String (optional)
 
 ```javascript
-const {clipboard} = require('electron')
-clipboard.write({text: 'test', html: '<b>test</b>'})
+clipboard.write({text: 'test', html: '<b>test</b>'});
 ```
-Writes `data` to the clipboard.
+
+`data`를 클립보드에 씁니다.

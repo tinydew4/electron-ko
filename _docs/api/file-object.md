@@ -1,55 +1,52 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/file-object/
-    - /docs/v0.25.0/api/file-object/
-    - /docs/v0.26.0/api/file-object/
-    - /docs/v0.27.0/api/file-object/
-    - /docs/v0.28.0/api/file-object/
-    - /docs/v0.29.0/api/file-object/
-    - /docs/v0.30.0/api/file-object/
-    - /docs/v0.31.0/api/file-object/
-    - /docs/v0.32.0/api/file-object/
-    - /docs/v0.33.0/api/file-object/
-    - /docs/v0.34.0/api/file-object/
-    - /docs/v0.35.0/api/file-object/
-    - /docs/v0.36.0/api/file-object/
-    - /docs/v0.36.3/api/file-object/
-    - /docs/v0.36.4/api/file-object/
-    - /docs/v0.36.5/api/file-object/
-    - /docs/v0.36.6/api/file-object/
-    - /docs/v0.36.7/api/file-object/
-    - /docs/v0.36.8/api/file-object/
-    - /docs/v0.36.9/api/file-object/
-    - /docs/v0.36.10/api/file-object/
-    - /docs/v0.36.11/api/file-object/
-    - /docs/v0.37.0/api/file-object/
-    - /docs/v0.37.1/api/file-object/
-    - /docs/v0.37.2/api/file-object/
-    - /docs/v0.37.3/api/file-object/
-    - /docs/v0.37.4/api/file-object/
-    - /docs/v0.37.5/api/file-object/
-    - /docs/v0.37.6/api/file-object/
-    - /docs/v0.37.7/api/file-object/
-    - /docs/v0.37.8/api/file-object/
-    - /docs/latest/api/file-object/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/file-object.md'
-excerpt: "Use the HTML5 <code>File</code> API to work natively with files on the filesystem."
-title: "File Object"
-sort_title: "file object"
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+    - /docs-translations/ko-KR/api/file-object/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/file-object.md'
+excerpt: "HTML5 <code>File</code> API&#xB97C; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xD30C;&#xC77C; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xD30C;&#xC77C;&#xCC98;&#xB7FC; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# `File` Object
+﻿# `File` 객체
 
-> Use the HTML5 `File` API to work natively with files on the filesystem.
+> HTML5 `File` API를 기본적인 파일 시스템의 파일처럼 사용합니다.
 
-The DOM's File interface provides abstraction around native files in order to
-let users work on native files directly with the HTML5 file API. Electron has
-added a `path` attribute to the `File` interface which exposes the file's real
-path on filesystem.
+DOM의 File 인터페이스는 네이티브 파일을 추상화 합니다. 사용자가 직접 HTML5 File
+API를 사용하여 작업할 때 선택된 파일의 경로를 알 수 있도록, Electron은 파일의 실제
+경로를 담은 `path` 속성을 File 인터페이스에 추가했습니다.
 
-Example on getting a real path from a dragged-onto-the-app file:
+다음 예시는 앱으로 드래그 앤 드롭한 파일의 실제 경로를 가져옵니다:
 
 ```html
 <div id="holder">
@@ -57,19 +54,18 @@ Example on getting a real path from a dragged-onto-the-app file:
 </div>
 
 <script>
-  const holder = document.getElementById('holder')
+  const holder = document.getElementById('holder');
   holder.ondragover = () => {
     return false;
-  }
+  };
   holder.ondragleave = holder.ondragend = () => {
     return false;
-  }
+  };
   holder.ondrop = (e) => {
-    e.preventDefault()
-    for (let f of e.dataTransfer.files) {
-      console.log('File(s) you dragged here: ', f.path)
-    }
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    console.log('File you dragged here is', file.path);
     return false;
-  }
+  };
 </script>
 ```

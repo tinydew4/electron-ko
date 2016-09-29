@@ -1,90 +1,88 @@
 ---
-version: v1.4.1
-category: API
+version: v1.3.7
+category: Ko-KR
 redirect_from:
-    - /docs/v0.24.0/api/menu-item/
-    - /docs/v0.25.0/api/menu-item/
-    - /docs/v0.26.0/api/menu-item/
-    - /docs/v0.27.0/api/menu-item/
-    - /docs/v0.28.0/api/menu-item/
-    - /docs/v0.29.0/api/menu-item/
-    - /docs/v0.30.0/api/menu-item/
-    - /docs/v0.31.0/api/menu-item/
-    - /docs/v0.32.0/api/menu-item/
-    - /docs/v0.33.0/api/menu-item/
-    - /docs/v0.34.0/api/menu-item/
-    - /docs/v0.35.0/api/menu-item/
-    - /docs/v0.36.0/api/menu-item/
-    - /docs/v0.36.3/api/menu-item/
-    - /docs/v0.36.4/api/menu-item/
-    - /docs/v0.36.5/api/menu-item/
-    - /docs/v0.36.6/api/menu-item/
-    - /docs/v0.36.7/api/menu-item/
-    - /docs/v0.36.8/api/menu-item/
-    - /docs/v0.36.9/api/menu-item/
-    - /docs/v0.36.10/api/menu-item/
-    - /docs/v0.36.11/api/menu-item/
-    - /docs/v0.37.0/api/menu-item/
-    - /docs/v0.37.1/api/menu-item/
-    - /docs/v0.37.2/api/menu-item/
-    - /docs/v0.37.3/api/menu-item/
-    - /docs/v0.37.4/api/menu-item/
-    - /docs/v0.37.5/api/menu-item/
-    - /docs/v0.37.6/api/menu-item/
-    - /docs/v0.37.7/api/menu-item/
-    - /docs/v0.37.8/api/menu-item/
-    - /docs/latest/api/menu-item/
-source_url: 'https://github.com/electron/electron/blob/master/docs/api/menu-item.md'
-excerpt: "Add items to native application menus and context menus."
-title: "MenuItem"
-sort_title: "menuitem"
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+    - /docs-translations/ko-KR/api/menu-item/
+source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/menu-item.md'
+excerpt: "&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xBA54;&#xB274;&#xC640; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xC5D0; &#xC544;&#xC774;&#xD15C;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;."
 ---
 
-# MenuItem
+﻿# MenuItem
 
-> Add items to native application menus and context menus.
+> 네이티브 애플리케이션 메뉴와 컨텍스트 메뉴에 아이템을 추가합니다.
 
-See [`Menu`](http://electron.atom.io/docs/api/menu) for examples.
+[`Menu`](http://electron.atom.io/docs/api/menu)에서 예시를 확인할 수 있습니다.
 
 ## Class: MenuItem
 
-Create a new `MenuItem` with the following method:
+`MenuItem` 인스턴스 객체에서 사용할 수 있는 메서드입니다:
 
-### `new MenuItem(options)`
+### new MenuItem(options)
 
 * `options` Object
-  * `click` Function - Will be called with
-    `click(menuItem, browserWindow, event)` when the menu item is clicked.
-  * `role` String - Define the action of the menu item, when specified the
-    `click` property will be ignored.
-  * `type` String - Can be `normal`, `separator`, `submenu`, `checkbox` or
-    `radio`.
+  * `click` Function - 메뉴 아이템이 클릭될 때 `click(menuItem, browserWindow,
+    event)` 형태로 호출 되는 콜백 함수.
+  * `role` String - 메뉴 아이템의 액션을 정의합니다. 이 속성을 지정하면 `click`
+    속성이 무시됩니다.
+  * `type` String - `MenuItem`의 타입 `normal`, `separator`, `submenu`,
+    `checkbox` 또는 `radio`를 사용할 수 있습니다. 만약 값이 `Menu`가 아니면
+    `Menu.buildFromTemplate`를 통해 자동으로 변환됩니다.
   * `label` String
   * `sublabel` String
   * `accelerator` [Accelerator](http://electron.atom.io/docs/api/accelerator)
   * `icon` [NativeImage](http://electron.atom.io/docs/api/native-image)
-  * `enabled` Boolean - If false, the menu item will be greyed out and
-    unclickable.
-  * `visible` Boolean - If false, the menu item will be entirely hidden.
-  * `checked` Boolean - Should only be specified for `checkbox` or `radio` type
-    menu items.
-  * `submenu` Menu - Should be specified for `submenu` type menu items. If
-    `submenu` is specified, the `type: 'submenu'` can be omitted. If the value
-    is not a `Menu` then it will be automatically converted to one using
-    `Menu.buildFromTemplate`.
-  * `id` String - Unique within a single menu. If defined then it can be used
-    as a reference to this item by the position attribute.
-  * `position` String - This field allows fine-grained definition of the
-    specific location within a given menu.
+  * `enabled` Boolean - 만약 `false`로 설정되면, 메뉴 아이템이 회색으로 변하며
+    클릭할 수 없게 됩니다.
+  * `visible` Boolean - 만약 `false`로 설정되면, 메뉴 아이템이 완전히 숨겨집니다.
+  * `checked` Boolean - 반드시 `checkbox` 또는 `radio` 타입의 메뉴 아이템에만
+    지정해야 합니다.
+  * `submenu` Menu - 반드시 `submenu` 타입의 메뉴 아이템에만 지정해야 합니다. 만약
+    `submenu`가 지정되면 `type: 'submenu'`는 생략될 수 있습니다. 만약 값이 `Menu`가
+    아닐 경우 `Menu.buildFromTemplate`을 통해 자동적으로 변환됩니다.     
+  * `id` String - 현재 메뉴 아이템에 대해 유일키를 지정합니다. 이 키는 이후
+    `position` 옵션에서 사용할 수 있습니다.
+  * `position` String - 미리 지정한 `id`를 이용하여 메뉴 아이템의 위치를 세밀하게
+    조정합니다.
 
-It is best to specify `role` for any menu item that matches a standard role,
-rather than trying to manually implement the behavior in a `click` function.
-The built-in `role` behavior will give the best native experience.
+어떠한 메뉴 아이템이 표준 롤에 일치한다면, `role`을 지정하는 것이 동작을 `click`
+함수로 일일이 구현하려 시도하는 것 보다 더 좋을 수 있습니다. 빌트-인 `role` 동작은
+더 좋은 네이티브 경험을 제공할 것입니다.
 
-The `label` and `accelerator` are optional when using a `role` and will default
-to appropriate values for each platform.
+`role`을 사용하는 동안에는 `label`과 `accelerator`는 필수가 아니며 각 플랫폼에 대해
+적합한 값이 기본값으로 사용됩니다.
 
-The `role` property can have following values:
+`role` 속성은 다음 값을 가질 수 있습니다:
 
 * `undo`
 * `redo`
@@ -94,54 +92,48 @@ The `role` property can have following values:
 * `pasteandmatchstyle`
 * `selectall`
 * `delete`
-* `minimize` - Minimize current window
-* `close` - Close current window
-* `quit`- Quit the application
-* `togglefullscreen`- Toggle full screen mode on the current window
-* `resetzoom` - Reset the focused page's zoom level to the original size
-* `zoomin` - Zoom in the focused page by 10%
-* `zoomout` - Zoom out the focused page by 10%
+* `minimize` - 현재 윈도우를 최소화합니다
+* `close` - 현재 윈도우를 닫습니다
+* `quit`- 애플리케이션을 닫습니다
+* `togglefullscreen` - 현재 윈도우에서 전체 화면 모드를 토글합니다
 
-On macOS `role` can also have following additional values:
+macOS에서의 `role`은 다음 값을 추가로 가질 수 있습니다:
 
-* `about` - Map to the `orderFrontStandardAboutPanel` action
-* `hide` - Map to the `hide` action
-* `hideothers` - Map to the `hideOtherApplications` action
-* `unhide` - Map to the `unhideAllApplications` action
-* `startspeaking` - Map to the `startSpeaking` action
-* `stopspeaking` - Map to the `stopSpeaking` action
-* `front` - Map to the `arrangeInFront` action
-* `zoom` - Map to the `performZoom` action
-* `window` - The submenu is a "Window" menu
-* `help` - The submenu is a "Help" menu
-* `services` - The submenu is a "Services" menu
+* `about` - `orderFrontStandardAboutPanel` 액션에 대응
+* `hide` - `hide` 액션에 대응
+* `hideothers` - `hideOtherApplications` 액션에 대응
+* `unhide` - `unhideAllApplications` 액션에 대응
+* `front` - `arrangeInFront` 액션에 대응
+* `zoom` - `performZoom` 액션에 대응
+* `window` - 부 메뉴를 가지는 "Window" 메뉴
+* `help` - 부 메뉴를 가지는 "Help" 메뉴
+* `services` - 부 메뉴를 가지는 "Services" 메뉴
 
-When specifying `role` on macOS, `label` and `accelerator` are the only options
-that will affect the MenuItem. All other options will be ignored.
+macOS에서는 `role`을 지정할 때, `label`과 `accelerator`만 MenuItem에 효과가
+적용되도록 변경되며, 다른 옵션들은 모두 무시됩니다.
 
 ### Instance Properties
 
-The following properties are available on instances of `MenuItem`:
+다음은 `MenuItem`의 인스턴스에서 사용할 수 있는 속성입니다:
 
 #### `menuItem.enabled`
 
-A Boolean indicating whether the item is enabled, this property can be
-dynamically changed.
+아이템이 활성화되어있는지 여부를 표시하는 Boolean 값입니다. 이 속성은 동적으로 변경될
+수 있습니다.
 
 #### `menuItem.visible`
 
-A Boolean indicating whether the item is visible, this property can be
-dynamically changed.
+아이템이 보여지고있는지 여부를 표시하는 Boolean 값입니다. 이 속성은 동적으로 변경될
+수 있습니다.
 
 #### `menuItem.checked`
 
-A Boolean indicating whether the item is checked, this property can be
-dynamically changed.
+아이템이 선택되어있는지 여부를 반환하는 Boolean 값입니다. 이 속성은 동적으로 변경될
+수 있습니다.
 
-A `checkbox` menu item will toggle the `checked` property on and off when
-selected.
+`checkbox` 메뉴 아이템은 선택되면 `checked` 속성을 토글합니다.
 
-A `radio` menu item will turn on its `checked` property when clicked, and
-will turn off that property for all adjacent items in the same menu.
+`radio` 메뉴 아이템은 클릭되었을 때 `checked` 속성을 활성화 합니다. 그리고
+같은 메뉴의 모든 인접한 아이템에 대한 속성이 꺼집니다.
 
-You can add a `click` function for additional behavior.
+추가적인 작업을 위해 `click` 함수를 추가할 수도 있습니다.
