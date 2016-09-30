@@ -6,13 +6,13 @@ var updateDownloadLink = function () {
 
   if (/mac/i.test(platform)) {
     assetName = 'electron-api-demos-mac.zip'
-    osLabel = 'Mac'
+    osLabel = '맥'
   } else if (/windows/i.test(platform)) {
     assetName = 'ElectronAPIDemosSetup.exe'
-    osLabel = 'Windows'
+    osLabel = '윈도우'
   } else if (/ubuntu|linux/i.test(platform)) {
     assetName = 'electron-api-demos-linux.zip'
-    osLabel = 'Linux'
+    osLabel = '리눅스'
   } else {
     return
   }
@@ -21,7 +21,7 @@ var updateDownloadLink = function () {
     .setAttribute('href', releaseServer + assetName)
 
   document.querySelector('#download-latest-release .label')
-    .textContent = 'Download for ' + osLabel
+    .textContent = osLabel + '용 다운로드'
 
   document.querySelector('#download-alternatives')
     .style.display = 'inline-block'
