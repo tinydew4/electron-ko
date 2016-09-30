@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/frameless-window/
     - /docs-translations/ko-KR/api/frameless-window/
@@ -46,12 +46,12 @@ sort_title: "frameless 윈도우"
 
 Frameless 윈도우는 [창 테두리](https://developer.mozilla.org/ko/docs/Glossary/Chrome)가
 없는 윈도우를 말합니다. 이 기능은 윈도우의 일부분인 툴바와 같이 웹 페이지의 일부분이
-아닌 부분을 보이지 않도록 합니다. [`BrowserWindow`](http://electron.atom.io/docs/api/browser-window) 클래스의
+아닌 부분을 보이지 않도록 합니다. [`BrowserWindow`](http://tinydew4.github.io/electron-ko/docs/api/browser-window) 클래스의
 옵션에서 설정할 수 있습니다.
 
 ## Frameless 윈도우 만들기
 
-Frameless 윈도우를 만드려면 [BrowserWindow](http://electron.atom.io/docs/api/browser-window) 객체의
+Frameless 윈도우를 만드려면 [BrowserWindow](http://tinydew4.github.io/electron-ko/docs/api/browser-window) 객체의
 `options` 객체에서 `frame` 옵션을 `false`로 지정하면 됩니다:
 
 ```javascript
@@ -61,7 +61,7 @@ let win = new BrowserWindow({width: 800, height: 600, frame: false})
 
 ### 최신 macOS에서 사용할 수 있는 대안
 
-macOS 10.10 Yosemite 이후의 최신 버전부터는 테두리가 없는 창을 만들 때 새로운 방법을
+macOS 10.9 Mavericks 이후의 최신 버전부터는 테두리가 없는 창을 만들 때 새로운 방법을
 사용할 수 있습니다. `frame` 옵션을 `false`로 지정하여 제목과 창 구성 요소를 모두
 비활성화하는 대신 새로운 `titleBarStyle` 옵션을 통해 제목만 숨기고 창 구성 요소
 ("신호등 버튼")의 기능과 창 크기를 그대로 유지할 수 있습니다:
@@ -154,4 +154,4 @@ Frameless 윈도우에서 텍스트가 선택되는 드래그 동작은 혼란�
 컨텍스트 메뉴 지정 시 모든 플랫폼에서 정상적으로 작동하게 하려면 커스텀 컨텍스트 메뉴를
 드래그 영역 내에 만들어선 안됩니다.
 
-[ignore-mouse-events]: http://electron.atom.io/docs/api/browser-window#winsetignoremouseeventsignore
+[ignore-mouse-events]: http://tinydew4.github.io/electron-ko/docs/api/browser-window#winsetignoremouseeventsignore

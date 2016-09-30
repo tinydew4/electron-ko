@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Tutorial
 redirect_from:
     - /docs-translations/ko-KR/tutorial/application-packaging/
     - /docs-translations/ko-KR/tutorial/application-packaging/
@@ -35,9 +35,11 @@ redirect_from:
     - /docs-translations/ko-KR/tutorial/application-packaging/
     - /docs-translations/ko-KR/tutorial/application-packaging/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/application-packaging.md'
+title: "애플리케이션 패키징"
+sort_title: ""
 ---
 
-﻿# 애플리케이션 패키징
+# 애플리케이션 패키징
 
 Windows에서 일어나는 긴 경로 이름에 대한 [issues](https://github.com/joyent/node/issues/6960)를
 완화하고 `require` 속도를 약간 빠르게 하며 애플리케이션의 리소스와 소스 코드를 좋지 않은
@@ -74,7 +76,7 @@ Electron에선 `fs.readFile`과 `require` 같은 Node API들을 지원하기 위
 아카이브가 가상의 디렉터리 구조를 가지도록 패치했습니다. 그래서 아카이브 내부
 리소스들을 정상적인 파일 시스템처럼 접근할 수 있습니다.
 
-예를 들어 `/path/to`라는 경로에 `example.asar`라는 아카이브가 있다고 가정하면:
+예를 들어 `/path/to`라는 경로에 `example.asar`라는 아카이브가 있다��� 가정하면:
 
 ```bash
 $ asar list /path/to/example.asar
@@ -89,29 +91,29 @@ $ asar list /path/to/example.asar
 `asar` 아카이브에선 다음과 같이 파일을 읽을 수 있습니다:
 
 ```javascript
-const fs = require('fs');
-fs.readFileSync('/path/to/example.asar/file.txt');
+const fs = require('fs')
+fs.readFileSync('/path/to/example.asar/file.txt')
 ```
 
 아카이브 내의 루트 디렉터리를 리스팅합니다:
 
 ```javascript
-const fs = require('fs');
-fs.readdirSync('/path/to/example.asar');
+const fs = require('fs')
+fs.readdirSync('/path/to/example.asar')
 ```
 
 아카이브 안의 모듈 사용하기:
 
 ```javascript
-require('/path/to/example.asar/dir/module.js');
+require('/path/to/example.asar/dir/module.js')
 ```
 
 `BrowserWindow` 클래스를 이용해 원하는 웹 페이지도 표시할 수 있습니다:
 
 ```javascript
-const {BrowserWindow} = require('electron');
-let win = new BrowserWindow({width: 800, height: 600});
-win.loadURL('file:///path/to/example.asar/static/index.html');
+const {BrowserWindow} = require('electron')
+let win = new BrowserWindow({width: 800, height: 600})
+win.loadURL('file:///path/to/example.asar/static/index.html')
 ```
 
 ### Web API
@@ -123,10 +125,10 @@ win.loadURL('file:///path/to/example.asar/static/index.html');
 
 ```html
 <script>
-let $ = require('./jquery.min.js');
+let $ = require('./jquery.min.js')
 $.get('file:///path/to/example.asar/file.txt', (data) => {
-  console.log(data);
-});
+  console.log(data)
+})
 </script>
 ```
 
@@ -138,16 +140,16 @@ $.get('file:///path/to/example.asar/file.txt', (data) => {
 읽어들입니다:
 
 ```javascript
-const originalFs = require('original-fs');
-originalFs.readFileSync('/path/to/example.asar');
+const originalFs = require('original-fs')
+originalFs.readFileSync('/path/to/example.asar')
 ```
 
 또한 `process.noAsar`를 `true`로 지정하면 `fs` 모듈의 `asar` 지원을 비활성화 시킬 수
 있습니다.
 
 ```javascript
-process.noAsar = true;
-fs.readFileSync('/path/to/example.asar');
+process.noAsar = true
+fs.readFileSync('/path/to/example.asar')
 ```
 
 ## Node API의 한계

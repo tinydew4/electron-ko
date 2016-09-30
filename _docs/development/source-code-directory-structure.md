@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Development
 redirect_from:
     - /docs-translations/ko-KR/development/source-code-directory-structure/
     - /docs-translations/ko-KR/development/source-code-directory-structure/
@@ -35,9 +35,11 @@ redirect_from:
     - /docs-translations/ko-KR/development/source-code-directory-structure/
     - /docs-translations/ko-KR/development/source-code-directory-structure/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/development/source-code-directory-structure.md'
+title: "소스 코드 디렉터리 구조"
+sort_title: ""
 ---
 
-﻿# 소스 코드 디렉터리 구조
+# 소스 코드 디렉터리 구조
 
 Electron의 소스 코드는 몇 개의 파트로 분리되어 있습니다. 그리고 Chromium의 분리
 규칙(separation conventions)을 주로 따르고 있습니다.

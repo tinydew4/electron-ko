@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Development
 redirect_from:
     - /docs-translations/ko-KR/development/coding-style/
     - /docs-translations/ko-KR/development/coding-style/
@@ -35,9 +35,11 @@ redirect_from:
     - /docs-translations/ko-KR/development/coding-style/
     - /docs-translations/ko-KR/development/coding-style/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/development/coding-style.md'
+title: "코딩 스타일"
+sort_title: ""
 ---
 
-﻿# 코딩 스타일
+# 코딩 스타일
 
 이 가이드는 Electron의 코딩 스타일에 관해 설명합니다.
 
@@ -63,7 +65,6 @@ C++ 코드는 많은 Chromium의 추상화와 타입을 사용합니다. 따라�
 ## JavaScript
 
 * [표준](http://npm.im/standard) JavaScript 코딩 스타일을 사용합니다.
-* Google의 코딩 스타일에도 맞추기 위해 파일의 끝에는 **절대** 개행을 삽입해선 안됩니다.
 * 파일 이름의 공백은 `_`대신에 `-`을 사용하여야 합니다. 예를 들어
 `file_name.js`를 `file-name.js`로 고쳐야 합니다. 왜냐하면
 [github/atom](https://github.com/github/atom)에서 사용되는 모듈의 이름은 보통

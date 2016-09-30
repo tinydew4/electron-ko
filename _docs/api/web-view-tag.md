@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/web-view-tag/
     - /docs-translations/ko-KR/api/web-view-tag/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/web-view-tag/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/web-view-tag.md'
 excerpt: "&#xC678;&#xBD80; &#xC6F9; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xACE0;&#xB9BD;&#xB41C; &#xD504;&#xB808;&#xC784;&#xACFC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;."
+title: "&lt;webview&gt; 태그"
+sort_title: "webview> 태그"
 ---
 
-﻿# `<webview>` 태그
+# `<webview>` 태그
 
 > 외부 웹 콘텐츠를 고립된 프레임과 프로세스에서 표시합니다.
 
@@ -72,20 +74,20 @@ excerpt: "&#xC678;&#xBD80; &#xC6F9; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xACE0;&#x
 ```html
 <script>
   onload = () => {
-    const webview = document.getElementById('foo');
-    const indicator = document.querySelector('.indicator');
+    const webview = document.getElementById('foo')
+    const indicator = document.querySelector('.indicator')
 
     const loadstart = () => {
-      indicator.innerText = 'loading...';
-    };
+      indicator.innerText = 'loading...'
+    }
 
     const loadstop = () => {
-      indicator.innerText = '';
-    };
+      indicator.innerText = ''
+    }
 
-    webview.addEventListener('did-start-loading', loadstart);
-    webview.addEventListener('did-stop-loading', loadstop);
-  };
+    webview.addEventListener('did-start-loading', loadstart)
+    webview.addEventListener('did-stop-loading', loadstop)
+  }
 </script>
 ```
 
@@ -155,9 +157,6 @@ excerpt: "&#xC678;&#xBD80; &#xC6F9; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xACE0;&#x
 
 "on"으로 지정하면 `webview` 페이지 내에서 `require`와 `process 객체`같은 node.js
 API를 사용할 수 있습니다. 이를 지정하면 내부에서 로우레벨 리소스에 접근할 수 있습니다.
-
-**참고:** Node 통합 기능은 `webview`에서 부모 윈도우가 해당 옵션이 비활성화되어있는
-경우 항상 비활성화됩니다.
 
 ### `plugins`
 
@@ -250,6 +249,20 @@ API를 사용할 수 있습니다. 이를 지정하면 내부에서 로우레벨
 문자열의 전체 목록은 [RuntimeEnabledFeatures.in][blink-feature-string] 파일에서
 찾을 수 있습니다.
 
+### `guestinstance`
+
+```html
+<webview src="https://www.github.com/" guestinstance="3"></webview>
+```
+
+webview 를 특정 webContents 와 연결해주는 값 입니다. webview 가 처음 로드될 때
+새 webContents 가 생성되고 이 속성이 그 인스턴스의 식별자로 설정됩니다. 새로운
+또는 기존 webview 에 이 속성을 설정하면 다른 webview 에서 현재 렌더링하는 기존
+webContents 와 연결합니다.
+
+기존 webview 는 `destroy` 이벤트가 발생하고 새 URL 이 로드될 때 새 webContens
+가 생성될 것 입니다.
+
 ## Methods
 
 `webview` 태그는 다음과 같은 메서드를 가지고 있습니다:
@@ -259,9 +272,10 @@ API를 사용할 수 있습니다. 이를 지정하면 내부에서 로우레벨
 **예시**
 
 ```javascript
+const webview = document.getElementById('foo')
 webview.addEventListener('dom-ready', () => {
-  webview.openDevTools();
-});
+  webview.openDevTools()
+})
 ```
 
 ### `<webview>.loadURL(url[, options])`
@@ -404,6 +418,16 @@ Webview에 웹 페이지 `url`을 로드합니다. `url`은 `http://`, `file://`
 
 Service worker에 대한 개발자 도구를 엽니다.
 
+### `<webview>.setAudioMuted(muted)`
+
+* `muted` Boolean
+
+게스트 페이지 음소거 설정.
+
+### `<webview>.isAudioMuted()`
+
+Returns `Boolean` - 게스트 페이지 음소거 여부.
+
 ### `<webview>.undo()`
 
 페이지에서 실행 취소 커맨드를 실행합니다.
@@ -476,12 +500,12 @@ Service worker에 대한 개발자 도구를 엽니다.
 
 웹 페이지에서 `text`에 일치하는 모든 대상을 찾는 요청을 시작하고 요청에 사용된 요청을
 표현하는 `정수(integer)`를 반환합니다. 요청의 결과는
-[`found-in-page`](http://electron.atom.io/docs/api/web-view-tag#event-found-in-page) 이벤트를 통해 취득할 수
+[`found-in-page`](http://tinydew4.github.io/electron-ko/docs/api/web-view-tag#event-found-in-page) 이벤트를 통해 취득할 수
 있습니다.
 
 ### `webContents.stopFindInPage(action)`
 
-* `action` String - [`<webview>.findInPage`](http://electron.atom.io/docs/api/web-view-tag#webviewtagfindinpage)
+* `action` String - [`<webview>.findInPage`](http://tinydew4.github.io/electron-ko/docs/api/web-view-tag#webviewtagfindinpage)
   요청이 종료되었을 때 일어날 수 있는 작업을 지정합니다.
   * `clearSelection` - 선택을 취소합니다.
   * `keepSelection` - 선택을 일반 선택으로 변경합니다.
@@ -512,7 +536,7 @@ Service worker에 대한 개발자 도구를 엽니다.
 임의의 인수를 보낼 수도 있습니다. 렌더러 프로세스는 `ipcRenderer` 모듈의 `channel`
 이벤트로 이 메시지를 받아 처리할 수 있습니다.
 
-예시는 [webContents.send](http://electron.atom.io/docs/api/web-contents#webcontentssendchannel-args)를 참고하세요.
+예시는 [webContents.send](http://tinydew4.github.io/electron-ko/docs/api/web-contents#webcontentssendchannel-args)를 참고하세요.
 
 ### `<webview>.sendInputEvent(event)`
 
@@ -520,8 +544,21 @@ Service worker에 대한 개발자 도구를 엽니다.
 
 페이지에 입력 `event`를 보냅니다.
 
-`event` 객체에 대해 자세히 알아보려면 [webContents.sendInputEvent](http://electron.atom.io/docs/api/web-contents#webcontentssendinputeventevent)를
+`event` 객체에 대해 자세히 알아보려면 [webContents.sendInputEvent](http://tinydew4.github.io/electron-ko/docs/api/web-contents#webcontentssendinputeventevent)를
 참고하세요.
+
+### `<webview>.setZoomFactor(factor)`
+
+* `factor` Number - 줌 수치.
+
+지정한 수치로 줌 수치를 변경합니다. 줌 수치는 100으로 나눈 값이며 300%는 3.0이 됩니다.
+
+### `<webview>.setZoomLevel(level)`
+
+* `level` Number - 줌 레벨.
+
+지정한 수준으로 줌 수준을 변경합니다. 원본 크기는 0이고 각 값의 증가와 감소는 현재 줌을
+20% 크거나 작게 표현하고 각 크기는 원본 크기의 300%와 50%로 제한됩니다.
 
 ### `<webview>.showDefinitionForSelection()` _macOS_
 
@@ -529,7 +566,7 @@ Service worker에 대한 개발자 도구를 엽니다.
 
 ### `<webview>.getWebContents()`
 
-이 `webview`에 해당하는 [WebContents](http://electron.atom.io/docs/api/web-contents)를 반환합니다.
+이 `webview`에 해당하는 [WebContents](http://tinydew4.github.io/electron-ko/docs/api/web-contents)를 반환합니다.
 
 ## DOM 이벤트
 
@@ -624,7 +661,7 @@ URL에서 합성(synthesised)된 제목인 경우 false로 표시됩니다.
 
 Returns:
 
-* `favicons` Array - URL 배열
+* `favicons` String[] - URL 배열
 
 페이지가 favicon URL을 받았을 때 발생하는 이벤트입니다.
 
@@ -651,9 +688,10 @@ Returns:
 콘솔에 다시 로깅하는 예시입니다.
 
 ```javascript
+const webview = document.getElementById('foo')
 webview.addEventListener('console-message', (e) => {
-  console.log('Guest page logged a message:', e.message);
-});
+  console.log('Guest page logged a message:', e.message)
+})
 ```
 
 ### Event: 'found-in-page'
@@ -667,16 +705,17 @@ Returns:
   * `matches` Integer (optional) - 일치하는 개수.
   * `selectionArea` Object (optional) - 첫 일치 부위의 좌표.
 
-[`webContents.findInPage`](http://electron.atom.io/docs/api/web-contents#webcontentsfindinpage) 요청의 결과를
+[`webContents.findInPage`](http://tinydew4.github.io/electron-ko/docs/api/web-contents#webcontentsfindinpage) 요청의 결과를
 사용할 수 있을 때 발생하는 이벤트입니다.
 
 ```javascript
+const webview = document.getElementById('foo')
 webview.addEventListener('found-in-page', (e) => {
-  if (e.result.finalUpdate)
-    webview.stopFindInPage('keepSelection');
-});
+  webview.stopFindInPage('keepSelection')
+})
 
-const requestId = webview.findInPage('test');
+const requestId = webview.findInPage('test')
+console.log(requestId)
 ```
 
 ### Event: 'new-window'
@@ -686,22 +725,23 @@ Returns:
 * `url` String
 * `frameName` String
 * `disposition` String - `default`, `foreground-tab`, `background-tab`,
-  `new-window`, `other`를 사용할 수 있습니다.
-* `options` Object - 새로운 `BrowserWindow`를 만들 ��� 사용되어야 하는 옵션.
+  `new-window`, `save-to-disk`, `other`를 사용할 수 있습니다.
+* `options` Object - 새로운 `BrowserWindow`를 만들 때 사용되어야 하는 옵션.
 
 페이지가 새로운 브라우저 창을 생성할 때 발생하는 이벤트입니다.
 
 다음 예시 코드는 새 URL을 시스템의 기본 브라우저로 여는 코드입니다.
 
 ```javascript
-const {shell} = require('electron');
+const {shell} = require('electron')
+const webview = document.getElementById('foo')
 
 webview.addEventListener('new-window', (e) => {
-  const protocol = require('url').parse(e.url).protocol;
+  const protocol = require('url').parse(e.url).protocol
   if (protocol === 'http:' || protocol === 'https:') {
-    shell.openExternal(e.url);
+    shell.openExternal(e.url)
   }
-});
+})
 ```
 
 ### Event: 'will-navigate'
@@ -737,6 +777,7 @@ Returns:
 Returns:
 
 * `url` String
+* `isMainFrame` Boolean
 
 페이지 내의 탐색이 완료되면 발생하는 이벤트입니다.
 
@@ -752,9 +793,10 @@ Returns:
 이동시키는 예시입니다.
 
 ```javascript
+const webview = document.getElementById('foo')
 webview.addEventListener('close', () => {
-  webview.src = 'about:blank';
-});
+  webview.src = 'about:blank'
+})
 ```
 
 ### Event: 'ipc-message'
@@ -771,19 +813,20 @@ Returns:
 
 ```javascript
 // In embedder page.
+const webview = document.getElementById('foo')
 webview.addEventListener('ipc-message', (event) => {
-  console.log(event.channel);
+  console.log(event.channel)
   // Prints "pong"
-});
-webview.send('ping');
+})
+webview.send('ping')
 ```
 
 ```javascript
 // In guest page.
-const {ipcRenderer} = require('electron');
+const {ipcRenderer} = require('electron')
 ipcRenderer.on('ping', () => {
-  ipcRenderer.sendToHost('pong');
-});
+  ipcRenderer.sendToHost('pong')
+})
 ```
 
 ### Event: 'crashed'

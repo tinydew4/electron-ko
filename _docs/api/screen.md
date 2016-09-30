@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/screen/
     - /docs-translations/ko-KR/api/screen/
@@ -36,14 +36,16 @@ redirect_from:
     - /docs-translations/ko-KR/api/screen/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/screen.md'
 excerpt: "&#xD654;&#xBA74; &#xD06C;&#xAE30;, &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;, &#xCEE4;&#xC11C; &#xC704;&#xCE58; &#xB4F1;&#xC758; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;."
+title: "screen"
+sort_title: "screen"
 ---
 
-﻿# screen
+# screen
 
 > 화면 크기, 디스플레이, 커서 위치 등의 정보를 가져옵니다.
 
-이 모듈은 `app` 모듈의 `ready` 이벤트가 발생하기 전까지 사용할 수 없습니다. (호출 또는
-모듈 포함)
+이 모듈은 `app` 모듈의 `ready` 이벤트가 발생하기 전까지 포함하거나 사용할 수
+없습니다.
 
 `screen`은 [EventEmitter](http://nodejs.org/api/events.html#events_class_events_eventemitter)를
 상속 받았습니다.
@@ -63,7 +65,7 @@ let win
 app.on('ready', () => {
   const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
   win = new BrowserWindow({width, height})
-});
+})
 ```
 
 다음 예시는 확장 디스플레이에 윈도우를 생성합니다:
@@ -135,7 +137,7 @@ Returns:
 
 * `event` Event
 * `display` Object
-* `changedMetrics` Array
+* `changedMetrics` String[]
 
 `display`에서 하나 또는 다수의 매트릭스가 변경될 때 발생하는 이벤트입니다.
 `changedMetrics`는 변경에 대한 정보를 담은 문자열의 배열입니다.
@@ -147,15 +149,19 @@ Returns:
 
 ### `screen.getCursorScreenPoint()`
 
-현재 마우스 포인터의 절대 위치를 반환합니다.
+Returns `Object`:
+* `x` Integer
+* `y` Integer
+
+현재 마우스 포인터의 절대 위치.
 
 ### `screen.getPrimaryDisplay()`
 
-기본 디스플레이를 반환합니다.
+Returns `Display` - 기본 디스플레이.
 
 ### `screen.getAllDisplays()`
 
-사용 가능한 모든 디스플레이를 배열로 반환합니다.
+Returns `Display[]` - 사용 가능한 모든 디스플레이의 배열.
 
 ### `screen.getDisplayNearestPoint(point)`
 
@@ -163,7 +169,7 @@ Returns:
   * `x` Integer
   * `y` Integer
 
-지정한 좌표에 가까운 디스플레이를 반환합니다.
+Returns `Display` - 지정한 좌표에 가까운 디스플레이.
 
 ### `screen.getDisplayMatching(rect)`
 
@@ -173,4 +179,4 @@ Returns:
   * `width` Integer
   * `height` Integer
 
-지정한 범위에 가장 가깝게 교차한 디스플레이를 반환합니다.
+Returns `Display` - 지정한 범위에 가장 가깝게 교차한 디스플레이.

@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/ipc-main/
     - /docs-translations/ko-KR/api/ipc-main/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/ipc-main/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/ipc-main.md'
 excerpt: "&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xBE44;&#xB3D9;&#xAE30; &#xD1B5;&#xC2E0;&#xC744; &#xD569;&#xB2C8;&#xB2E4;."
+title: "ipcMain"
+sort_title: "ipcmain"
 ---
 
-﻿# ipcMain
+# ipcMain
 
 > 메인 프로세스에서 렌더러 프로세스로 비동기 통신을 합니다.
 
@@ -60,27 +62,27 @@ excerpt: "&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB
 
 ```javascript
 // 메인 프로세스
-const {ipcMain} = require('electron');
+const {ipcMain} = require('electron')
 ipcMain.on('asynchronous-message', (event, arg) => {
-  console.log(arg);  // "ping" 출력
-  event.sender.send('asynchronous-reply', 'pong');
-});
+  console.log(arg)  // "ping" 출력
+  event.sender.send('asynchronous-reply', 'pong')
+})
 
 ipcMain.on('synchronous-message', (event, arg) => {
-  console.log(arg);  // "ping" 출력
-  event.returnValue = 'pong';
-});
+  console.log(arg)  // "ping" 출력
+  event.returnValue = 'pong'
+})
 ```
 
 ```javascript
 // 렌더러 프로세스 (웹 페이지)
-const {ipcRenderer} = require('electron');
-console.log(ipc.sendSync('synchronous-message', 'ping')); // "pong" 출력
+const {ipcRenderer} = require('electron')
+console.log(ipc.sendSync('synchronous-message', 'ping')) // "pong" 출력
 
 ipcRenderer.on('asynchronous-reply', (arg) => {
-  console.log(arg); // "pong" 출력
-});
-ipcRenderer.send('asynchronous-message', 'ping');
+  console.log(arg) // "pong" 출력
+})
+ipcRenderer.send('asynchronous-message', 'ping')
 ```
 
 ## 메시지 리스닝
@@ -134,4 +136,4 @@ ipcRenderer.send('asynchronous-message', 'ping');
 비동기로 메시지를 전달할 수 있습니다. 자세한 내용은
 [webContents.send][web-contents-send]를 참고하세요.
 
-[web-contents-send]: http://electron.atom.io/docs/api/web-contents#webcontentssendchannel-arg1-arg2-
+[web-contents-send]: http://tinydew4.github.io/electron-ko/docs/api/web-contents#webcontentssendchannel-arg1-arg2-

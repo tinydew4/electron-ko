@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Development
 redirect_from:
     - /docs-translations/ko-KR/development/setting-up-symbol-server/
     - /docs-translations/ko-KR/development/setting-up-symbol-server/

@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/chrome-command-line-switches/
     - /docs-translations/ko-KR/api/chrome-command-line-switches/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/chrome-command-line-switches/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/chrome-command-line-switches.md'
 excerpt: "Electron&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xCEE4;&#xB9E8;&#xB4DC; &#xBA85;&#xB839;&#xC904; &#xC2A4;&#xC704;&#xCE58;&#xC785;&#xB2C8;&#xB2E4;."
+title: "크롬 명령줄 스위치 지원"
+sort_title: ""
 ---
 
-﻿# 크롬 명령줄 스위치 지원
+# 크롬 명령줄 스위치 지원
 
 > Electron에서 지원하는 커맨드 명령줄 스위치입니다.
 
@@ -47,13 +49,13 @@ excerpt: "Electron&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xCEE4;&#xB
 명령줄 옵션을 추가로 지정할 수 있습니다:
 
 ```javascript
-const {app} = require('electron');
-app.commandLine.appendSwitch('remote-debugging-port', '8315');
-app.commandLine.appendSwitch('host-rules', 'MAP * 127.0.0.1');
+const {app} = require('electron')
+app.commandLine.appendSwitch('remote-debugging-port', '8315')
+app.commandLine.appendSwitch('host-rules', 'MAP * 127.0.0.1')
 
 app.on('ready', () => {
   // Your code here
-});
+})
 ```
 
 ## --ignore-connections-limit=`domains`
@@ -98,7 +100,7 @@ Electron이 세미콜론으로 구분된 호스트 리스트에서 지정한 프
 예시:
 
 ```javascript
-app.commandLine.appendSwitch('proxy-bypass-list', '<local>;*.google.com;*foo.com;1.2.3.4:5678');
+app.commandLine.appendSwitch('proxy-bypass-list', '<local>;*.google.com;*foo.com;1.2.3.4:5678')
 ```
 
 위 예시는 로컬 주소(`localhost`, `127.0.0.1`, 등)와 `google.com`의 서브도메인,
@@ -212,7 +214,7 @@ Chromium의 로그를 콘솔에 출력합니다.
 
 이 스위치는 `--enable-logging` 스위치를 같이 지정해야 작동합니다.
 
-[app]: http://electron.atom.io/docs/api/app
-[append-switch]: http://electron.atom.io/docs/api/app#appcommandlineappendswitchswitch-value
-[ready]: http://electron.atom.io/docs/api/app#event-ready
+[app]: http://tinydew4.github.io/electron-ko/docs/api/app
+[append-switch]: http://tinydew4.github.io/electron-ko/docs/api/app#appcommandlineappendswitchswitch-value
+[ready]: http://tinydew4.github.io/electron-ko/docs/api/app#event-ready
 [play-silent-audio]: https://github.com/atom/atom/pull/9485/files

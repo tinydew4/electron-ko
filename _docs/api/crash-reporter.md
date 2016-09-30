@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/crash-reporter/
     - /docs-translations/ko-KR/api/crash-reporter/
@@ -36,23 +36,25 @@ redirect_from:
     - /docs-translations/ko-KR/api/crash-reporter/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/crash-reporter.md'
 excerpt: "&#xC6D0;&#xACA9; &#xC11C;&#xBC84;&#xC5D0; &#xD06C;&#xB798;&#xC2DC; &#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xACE0;&#xD569;&#xB2C8;&#xB2E4;."
+title: "crashReporter"
+sort_title: "crashreporter"
 ---
 
-﻿# crashReporter
+# crashReporter
 
 > 원격 서버에 크래시 정보를 보고합니다.
 
 다음 예시는 윈격 서버에 애플리케이션 크래시 정보를 자동으로 보고하는 예시입니다:
 
 ```javascript
-const {crashReporter} = require('electron');
+const {crashReporter} = require('electron')
 
 crashReporter.start({
   productName: 'YourName',
   companyName: 'YourCompany',
   submitURL: 'https://your-domain.com/url-to-submit',
   autoSubmit: true
-});
+})
 ```
 
 서버가 크래시 리포트를 받을 수 있도록 설정하기 위해 다음과 같은 프로젝트를 사용할 수도
@@ -86,10 +88,18 @@ crashReporter.start({
 
 ### `crashReporter.getLastCrashReport()`
 
+Returns `Object`:
+* `date` String
+* `ID` Integer
+
 마지막 크래시 리포트의 날짜와 ID를 반환합니다.
 이전 크래시 리포트가 없거나 Crash Reporter가 시작되지 않았을 경우 `null`이 반환됩니다.
 
 ### `crashReporter.getUploadedReports()`
+
+Returns `Object[]`:
+* `date` String
+* `ID` Integer
 
 모든 업로드된 크래시 리포트를 반환합니다. 각 보고는 날짜와 업로드 ID를 포함하고 있습니다.
 

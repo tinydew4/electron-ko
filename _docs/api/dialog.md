@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/dialog/
     - /docs-translations/ko-KR/api/dialog/
@@ -36,25 +36,27 @@ redirect_from:
     - /docs-translations/ko-KR/api/dialog/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/dialog.md'
 excerpt: "&#xD30C;&#xC77C;&#xC744; &#xC5F4;&#xAC70;&#xB098; &#xC800;&#xC7A5;&#xD558;&#xACE0;, &#xC54C;&#xB9BC;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC2DC;&#xC2A4;&#xD15C; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;."
+title: "dialog"
+sort_title: "dialog"
 ---
 
-﻿# dialog
+# dialog
 
 > 파일을 열거나 저장하고, 알림을 표시하기 위한 네이티브 시스템 대화 상자를 표시합니다.
 
 다음 예시는 파일과 디렉터리를 다중으로 선택하는 대화 상자를 표시하는 예시입니다:
 
 ```javascript
-let win = ...;  // 대화 상자를 사용할 BrowserWindow 객체
-const {dialog} = require('electron');
-console.log(dialog.showOpenDialog({properties: ['openFile', 'openDirectory', 'multiSelections']}));
+const {dialog} = require('electron')
+console.log(dialog.showOpenDialog({properties: ['openFile', 'openDirectory', 'multiSelections']}))
 ```
 
 대화 상자는 Electron의 메인 스레드에서 열립니다. 만약 렌더러 프로세스에서 대화 상자
 객체를 사용하고 싶다면, `remote`를 통해 접근하는 방법을 고려해야 합니다:
 
 ```javascript
-const {dialog} = require('electron').remote;
+const {dialog} = require('electron').remote
+console.log(dialog)
 ```
 
 ## Methods
@@ -69,8 +71,8 @@ const {dialog} = require('electron').remote;
   * `defaultPath` String
   * `buttonLabel` String - 확인 버튼을 위한 커스텀 라벨이며, 빈칸으로 둘 경우 기본
     라벨이 사용됩니다.
-  * `filters` Array
-  * `properties` Array - 대화 상자가 사용할 기능(모드)이 담긴 배열입니다.
+  * `filters` String[]
+  * `properties` String[] - 대화 상자가 사용할 기능(모드)이 담긴 배열입니다.
     다음을 포함할 수 있습니다: `openFile`, `openDirectory`, `multiSelections`,
     `createDirectory`, `showHiddenFiles`.
 * `callback` Function (optional)
@@ -115,7 +117,7 @@ const {dialog} = require('electron').remote;
   * `defaultPath` String
   * `buttonLabel` String - 확인 버튼을 위한 커스텀 라벨이며, 빈칸으로 둘 경우 기본
     라벨이 사용됩니다.
-  * `filters` Array
+  * `filters` String[]
 * `callback` Function (optional)
 
 작업에 성공하면 콜백으로 유저가 선택한 파일의 경로를 포함한 배열을 반환합니다. 그 외엔
@@ -134,14 +136,14 @@ const {dialog} = require('electron').remote;
   * `type` String - `"none"`, `"info"`, `"error"`, `"question"`, `"warning"` 중
     하나를 사용할 수 있습니다. Windows에선 따로 `icon`을 설정하지 않은 이상
     "question"과 "info"는 같은 아이콘으로 표시됩니다.
-  * `buttons` Array - 버튼들의 라벨을 포함한 배열입니다. Windows에서 빈 배열로 둘
+  * `buttons` String[] - 버튼들의 라벨을 포함한 배열입니다. Windows에서 빈 배열로 둘
     경우, "OK" 버튼 하나가 포함됩니다.
   * `defaultId` Integer - 메시지 박스가 열렸을 때 기본적으로 선택될 버튼 배열의
     버튼 인덱스입니다.
   * `title` String - 대화 상자의 제목입니다. 몇몇 플랫폼에선 보이지 않을 수 있습니다.
   * `message` String - 대화 상자의 본문 내용입니다.
   * `detail` String - 메시지의 추가 정보입니다.
-  * `icon` [NativeImage](http://electron.atom.io/docs/api/native-image)
+  * `icon` [NativeImage](http://tinydew4.github.io/electron-ko/docs/api/native-image)
   * `cancelId` Integer - 유저가 대화 상자의 버튼을 클릭하지 않고 대화 상자를 취소했을
     때 반환되는 버튼의 인덱스입니다. 기본적으로 버튼 리스트가 "cancel" 또는 "no"
     라벨을 가지고 있을 때 해당 버튼의 인덱스를 반환합니다. 따로 두 라벨이 지정되지
@@ -166,6 +168,9 @@ macOS 또는 Windows에서 "확인", "취소"와 같은 순서로 버튼을 지�
 전달됩니다.
 
 ### `dialog.showErrorBox(title, content)`
+
+* `title` String - 오류 상자에서 표시할 제목
+* `content` String - 오류 상자에서 표시할 텍스트
 
 에러 메시지를 보여주는 대화 상자를 표시합니다.
 

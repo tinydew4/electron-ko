@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/tray/
     - /docs-translations/ko-KR/api/tray/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/tray/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/tray.md'
 excerpt: "&#xC544;&#xC774;&#xCF58;&#xACFC; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xB97C; &#xC2DC;&#xC2A4;&#xD15C; &#xC54C;&#xB9BC; &#xC601;&#xC5ED;&#xC5D0; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;."
+title: "Tray"
+sort_title: "tray"
 ---
 
-﻿# Tray
+# Tray
 
 > 아이콘과 컨텍스트 메뉴를 시스템 알림 영역에 추가합니다.
 
@@ -53,7 +55,7 @@ app.on('ready', () => {
     {label: 'Item2', type: 'radio'},
     {label: 'Item3', type: 'radio', checked: true},
     {label: 'Item4', type: 'radio'}
-  ]);
+  ])
   tray.setToolTip('이것은 나의 애플리케이션 입니다!')
   tray.setContextMenu(contextMenu)
 })
@@ -86,7 +88,7 @@ appIcon.setContextMenu(contextMenu)
 
 ### `new Tray(image)`
 
-* `image` [NativeImage](http://electron.atom.io/docs/api/native-image)
+* `image` [NativeImage](http://tinydew4.github.io/electron-ko/docs/api/native-image)
 
 전달된 `image`를 이용하여 트레이 아이콘을 만듭니다.
 
@@ -158,9 +160,16 @@ appIcon.setContextMenu(contextMenu)
 #### Event: 'drop-files' _macOS_
 
 * `event` Event
-* `files` Array - 드롭된 파일의 경로
+* `files` String[] - 드롭된 파일의 경로
 
 트레이 아이콘에 파일이 드롭되면 발생하는 이벤트입니다.
+
+#### Event: 'drop-text' _macOS_
+
+* `event` Event
+* `text` String - 드롭된 텍스트의 문자열
+
+드래그된 텍스트가 트레이 아이콘에 드롭되면 발생하는 이벤트입니다.
 
 #### Event: 'drag-enter' _macOS_
 
@@ -184,13 +193,13 @@ appIcon.setContextMenu(contextMenu)
 
 #### `tray.setImage(image)`
 
-* `image` [NativeImage](http://electron.atom.io/docs/api/native-image)
+* `image` [NativeImage](http://tinydew4.github.io/electron-ko/docs/api/native-image)
 
 `image`를 사용하여 트레이 아이콘의 이미지를 설정합니다.
 
 #### `tray.setPressedImage(image)` _macOS_
 
-* `image` [NativeImage](http://electron.atom.io/docs/api/native-image)
+* `image` [NativeImage](http://tinydew4.github.io/electron-ko/docs/api/native-image)
 
 `image`를 사용하여 트레이 아이콘이 눌렸을 때의 이미지를 설정합니다.
 
@@ -206,17 +215,40 @@ appIcon.setContextMenu(contextMenu)
 
 상태바에서 트레이 아이콘 옆에 표시되는 제목 텍스트를 설정합니다.
 
-#### `tray.setHighlightMode(highlight)` _macOS_
+#### `tray.setHighlightMode(mode)` _macOS_
 
-* `highlight` Boolean
+* `mode` String - 다음 값 중 하나가 될 수 있는 하이라이트 모드:
+  * `selection` - 트레이 아이콘이 클릭되었을 때와 콘텍스트 메뉴가 열렸을 때
+    하이라이트를 적용합니다. 이 값이 기본값입니다.
+  * `always` - 언제나 트레이 아이콘에 하이라이트를 적용합니다.
+  * `never` - 트레이 아이콘에 하이라이트를 아예 적용하지 않습니다.
 
-트레이 아이콘이 클릭됐을 때 아이콘의 배경이 파���색으로 하이라이트 될지 여부를 지정합니다.
-기본값은 true입니다.
+트레이 아이콘의 배경이 하이라이팅될 때를 지정합니다. (파란색)
+
+**참고:**  [`BrowserWindow`](http://tinydew4.github.io/electron-ko/docs/api/browser-window)와 함께 `highlightMode`를 윈도우
+가시성에 따라 `'never'`와 `'always'` 사이에서 키거나 끌 수 있습니다.
+
+```javascript
+const {BrowserWindow, Tray} = require('electron')
+
+const win = new BrowserWindow({width: 800, height: 600})
+const tray = new Tray('/path/to/my/icon')
+
+tray.on('click', () => {
+  win.isVisible() ? win.hide() : win.show()
+})
+win.on('show', () => {
+  tray.setHighlightMode('always')
+})
+win.on('hide', () => {
+  tray.setHighlightMode('never')
+})
+```
 
 #### `tray.displayBalloon(options)` _Windows_
 
 * `options` Object
-  * `icon` [NativeImage](http://electron.atom.io/docs/api/native-image)
+  * `icon` [NativeImage](http://tinydew4.github.io/electron-ko/docs/api/native-image)
   * `title` String
   * `content` String
 
@@ -242,12 +274,12 @@ appIcon.setContextMenu(contextMenu)
 
 ### `tray.getBounds()` _macOS_ _Windows_
 
-이 트레이 아이콘의 `bounds`를 `Object` 형식으로 반환합니다.
+Returns `Object`:
+* `x` Integer
+* `y` Integer
+* `width` Integer
+* `height` Integer
 
-* `bounds` Object
-  * `x` Integer
-  * `y` Integer
-  * `width` Integer
-  * `height` Integer
+이 트레이 아이콘의 `Object` 형식의 `bounds`.
 
 [event-emitter]: http://nodejs.org/api/events.html#events_class_events_eventemitter

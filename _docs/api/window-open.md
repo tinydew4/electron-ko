@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/window-open/
     - /docs-translations/ko-KR/api/window-open/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/window-open/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/window-open.md'
 excerpt: "&#xC0C8; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xC5F4;&#xACE0; URL&#xC744; &#xB85C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;."
+title: "window.open 함수"
+sort_title: "window.open 함수"
 ---
 
-﻿# `window.open` 함수
+# `window.open` 함수
 
 > 새 윈도우를 열고 URL을 로드합니다.
 
@@ -77,33 +79,35 @@ excerpt: "&#xC0C8; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xC5F4;&#xACE0; URL&#xC744;
 
 ## Class: BrowserWindowProxy
 
-### `BrowserWindowProxy.blur()`
+> 자식 브라우저 윈도우를 조작합니다
+
+### Instance Methods
+
+`BrowserWindowProxy` 객체는 다음과 같은 인스턴스 메서드를 가지고 있습니다:
+
+#### `win.blur()`
 
 자식 윈도우의 포커스를 해제합니다.
 
-### `BrowserWindowProxy.close()`
+#### `win.close()`
 
-자식 윈도우를 강제로 닫습니다. unload 이벤트가 발생하지 않습니다.
+자식 윈도우를 강제로 닫습니다. unload 이벤트가 발생하지 않습니다.  
 
-### `BrowserWindowProxy.closed`
-
-자식 윈도우가 닫히면 true로 설정됩니다.
-
-### `BrowserWindowProxy.eval(code)`
+#### `win.eval(code)`
 
 * `code` String
 
 자식 윈도우에서 특정 스크립트를 실행합니다.
 
-### `BrowserWindowProxy.focus()`
+#### `win.focus()`
 
 자식 윈도우에 포커스를 맞춥니다. (창을 맨 앞으로 가져옵니다)
 
-### `BrowserWindowProxy.print()`
+#### `win.print()`
 
 자식 윈도우에 프린트 대화 상자를 호출합니다.
 
-### `BrowserWindowProxy.postMessage(message, targetOrigin)`
+#### `win.postMessage(message, targetOrigin)`
 
 * `message` String
 * `targetOrigin` String
@@ -113,3 +117,11 @@ excerpt: "&#xC0C8; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xC5F4;&#xACE0; URL&#xC744;
 
 참고로 자식 윈도우의 `window.opener` 객체에는 다른 속성 없이 이 메서드 한 개만
 구현되어 있습니다.
+
+### Instance Properties
+
+`BrowserWindowProxy` 객체는 다음과 같은 인스턴스 속성을 가지고 있습니다:
+
+#### `win.closed`
+
+자식 윈도우가 닫히면 true로 설정됩니다.

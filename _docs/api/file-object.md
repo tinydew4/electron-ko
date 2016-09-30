@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/file-object/
     - /docs-translations/ko-KR/api/file-object/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/file-object/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/file-object.md'
 excerpt: "HTML5 <code>File</code> API&#xB97C; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xD30C;&#xC77C; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xD30C;&#xC77C;&#xCC98;&#xB7FC; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;."
+title: "File 객체"
+sort_title: "file 객체"
 ---
 
-﻿# `File` 객체
+# `File` 객체
 
 > HTML5 `File` API를 기본적인 파일 시스템의 파일처럼 사용합니다.
 
@@ -63,8 +65,9 @@ API를 사용하여 작업할 때 선택된 파일의 경로를 알 수 있도�
   };
   holder.ondrop = (e) => {
     e.preventDefault();
-    const file = e.dataTransfer.files[0];
-    console.log('File you dragged here is', file.path);
+    for (let f of e.dataTransfer.files) {
+      console.log('File(s) you dragged here: ', f.path);
+    }
     return false;
   };
 </script>

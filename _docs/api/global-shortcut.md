@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/global-shortcut/
     - /docs-translations/ko-KR/api/global-shortcut/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/global-shortcut/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/global-shortcut.md'
 excerpt: "&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0; &#xD0A4;&#xBCF4;&#xB4DC; &#xD3EC;&#xCEE4;&#xC2A4;&#xAC00; &#xC5C6;&#xC744; &#xB54C;&#xB3C4; &#xD0A4;&#xBCF4;&#xB4DC; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;."
+title: "globalSortcut"
+sort_title: "globalsortcut"
 ---
 
-﻿# globalSortcut
+# globalSortcut
 
 > 애플리케이션에 키보드 포커스가 없을 때도 키보드 이벤트를 받을 수 있도록 합니다.
 
@@ -51,29 +53,29 @@ excerpt: "&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0; &#xD0A4;&#xBC
 사용할 수 없습니다.
 
 ```javascript
-const {app, globalShortcut} = require('electron');
+const {app, globalShortcut} = require('electron')
 
 app.on('ready', () => {
   // 'CommandOrControl+X' 단축키를 리스너에 등록합니다.
   const ret = globalShortcut.register('CommandOrControl+X', () => {
-    console.log('CommandOrControl+X is pressed');
-  });
+    console.log('CommandOrControl+X is pressed')
+  })
 
   if (!ret) {
-    console.log('registration failed');
+    console.log('registration failed')
   }
 
   // 단축키가 등록되었는지 확인합니다.
-  console.log(globalShortcut.isRegistered('CommandOrControl+X'));
-});
+  console.log(globalShortcut.isRegistered('CommandOrControl+X'))
+})
 
 app.on('will-quit', () => {
   // 단축키의 등록을 해제합니다.
-  globalShortcut.unregister('CommandOrControl+X');
+  globalShortcut.unregister('CommandOrControl+X')
 
   // 모든 단축키의 등록을 해제합니다.
-  globalShortcut.unregisterAll();
-});
+  globalShortcut.unregisterAll()
+})
 ```
 
 ## Methods
@@ -82,7 +84,7 @@ app.on('will-quit', () => {
 
 ### `globalShortcut.register(accelerator, callback)`
 
-* `accelerator` [Accelerator](http://electron.atom.io/docs/api/accelerator)
+* `accelerator` [Accelerator](http://tinydew4.github.io/electron-ko/docs/api/accelerator)
 * `callback` Function
 
 `accelerator`의 전역 단축키를 등록합니다. 유저로부터 등록된 단축키가 눌렸을 경우
@@ -94,9 +96,9 @@ accelerator가 이미 다른 애플리케이션에서 사용 중일 경우, 이 
 
 ### `globalShortcut.isRegistered(accelerator)`
 
-* `accelerator` [Accelerator](http://electron.atom.io/docs/api/accelerator)
+* `accelerator` [Accelerator](http://tinydew4.github.io/electron-ko/docs/api/accelerator)
 
-지정된 `accelerator` 단축키가 등록되었는지 여부를 확인합니다.
+Returns `Boolean` - `accelerator` 가 등록되었는지 여부.
 
 Accelerator가 이미 다른 애플리케이션에서 사용 중일 경우, 여전히 `false`를 반환합니다.
 이러한 동작은 애플리케이션이 전역 키보드 단축키를 가지고 충돌이 일어나지 않도록 하기
@@ -104,7 +106,7 @@ Accelerator가 이미 다른 애플리케이션에서 사용 중일 경우, 여�
 
 ### `globalShortcut.unregister(accelerator)`
 
-* `accelerator` [Accelerator](http://electron.atom.io/docs/api/accelerator)
+* `accelerator` [Accelerator](http://tinydew4.github.io/electron-ko/docs/api/accelerator)
 
 `accelerator`에 해당하는 전역 단축키를 등록 해제합니다.
 

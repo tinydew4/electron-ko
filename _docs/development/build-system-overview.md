@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Development
 redirect_from:
     - /docs-translations/ko-KR/development/build-system-overview/
     - /docs-translations/ko-KR/development/build-system-overview/

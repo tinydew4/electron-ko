@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/auto-updater/
     - /docs-translations/ko-KR/api/auto-updater/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/auto-updater/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/auto-updater.md'
 excerpt: "&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xB97C; &#xC9C4;&#xD589;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xAE30;&#xB2A5;&#xC744; &#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;."
+title: "autoUpdater"
+sort_title: "autoupdater"
 ---
 
-﻿# autoUpdater
+# autoUpdater
 
 > 애플리케이션이 자동으로 업데이트를 진행할 수 있도록 기능을 활성화합니다.
 
@@ -143,6 +145,10 @@ Returns:
 * `requestHeaders` Object _macOS_ - HTTP 요청 헤더.
 
 `url`을 설정하고 자동 업데이터를 초기화합니다.
+
+### `autoUpdater.getFeedURL()`
+
+Returns `String` - 현재 업데이트 피드 URL.
 
 ### `autoUpdater.checkForUpdates()`
 

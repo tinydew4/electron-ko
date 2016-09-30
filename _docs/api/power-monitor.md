@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/power-monitor/
     - /docs-translations/ko-KR/api/power-monitor/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/power-monitor/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/power-monitor.md'
 excerpt: "&#xD30C;&#xC6CC;&#xC758; &#xC0C1;&#xD0DC; &#xBCC0;&#xACBD;&#xC744; &#xBAA8;&#xB2C8;&#xD130;&#xB9C1;&#xD569;&#xB2C8;&#xB2E4;."
+title: "powerMonitor"
+sort_title: "powermonitor"
 ---
 
-﻿# powerMonitor
+# powerMonitor
 
 > 파워의 상태 변경을 모니터링합니다.
 
@@ -48,18 +50,19 @@ excerpt: "&#xD30C;&#xC6CC;&#xC758; &#xC0C1;&#xD0DC; &#xBCC0;&#xACBD;&#xC744; &#x
 예시:
 
 ```javascript
-const {app} = require('electron');
+const electron = require('electron')
+const {app} = electron
 
 app.on('ready', () => {
-  require('electron').powerMonitor.on('suspend', () => {
-    console.log('절전모드로 진입합니다!');
-  });
-});
+  electron.powerMonitor.on('suspend', () => {
+    console.log('절전모드로 진입합니다!')
+  })
+})
 ```
 
 ## Events
 
-`power-monitor` 모듈은 다음과 같은 이벤트를 가지고 있습니다:
+`powerMonitor` 모듈은 다음과 같은 이벤트를 가지고 있습니다:
 
 ## Event: `suspend`
 

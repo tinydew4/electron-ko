@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Development
 redirect_from:
     - /docs-translations/ko-KR/development/build-instructions-osx/
     - /docs-translations/ko-KR/development/build-instructions-osx/
@@ -35,9 +35,11 @@ redirect_from:
     - /docs-translations/ko-KR/development/build-instructions-osx/
     - /docs-translations/ko-KR/development/build-instructions-osx/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/development/build-instructions-osx.md'
+title: "빌드 설명서 (macOS)"
+sort_title: "macos)"
 ---
 
-﻿# 빌드 설명서 (macOS)
+# 빌드 설명서 (macOS)
 
 이 가이드는 macOS 운영체제에서 Electron을 빌드하는 방법을 설명합니다.
 
@@ -88,6 +90,14 @@ $ ./script/build.py -c D
 
 Electron은 현재 macOS 64비트만 지원하고 있습니다. 그리고 앞으로도 macOS 32비트는 지원할
 계획이 없습니다.
+
+## 정리하기
+
+빌드 파일들을 정리하려면:
+
+```bash
+$ npm run clean
+```
 
 ## 테스트
 

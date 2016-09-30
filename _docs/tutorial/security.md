@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Tutorial
 redirect_from:
     - /docs-translations/ko-KR/tutorial/security/
     - /docs-translations/ko-KR/tutorial/security/
@@ -35,6 +35,10 @@ redirect_from:
     - /docs-translations/ko-KR/tutorial/security/
     - /docs-translations/ko-KR/tutorial/security/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/security.md'
+excerpt: ":warning: &#xC5B4;&#xB5A0;&#xD55C; &#xC0C1;&#xD669;&#xC5D0;&#xC11C;&#xB3C4; &#xC6D0;&#xACA9; &#xCF54;&#xB4DC;&#xB97C; &#xB85C;&#xB4DC;&#xD558;&#xACE0; &#xC2E4;&#xD589;&#xD560; &#xB550; Node &#xD1B5;&#xD569; &#xAE30;&#xB2A5;&#xC744;
+    &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD558;&#xACE0;, &#xB85C;&#xCEEC; &#xD30C;&#xC77C;&#xB9CC; (&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xD328;&#xD0A4;&#xC9C0; &#xB0B4;&#xBD80;&#xC5D0; &#xD3EC;&#xD568;&#xB41C;) Node &#xCF54;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xC2DC;&#xD0AC; &#xC218;
+    &#xC788;&#xB3C4;&#xB85D; &#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC6D0;&#xACA9; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xD45C;&#xC2DC;&#xD560; &#xB550;, &#xD56D;&#xC0C1; <code>webview</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0;
+    <code>nodeIntegration</code>&#xC774; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xB418;&#xC5B4;&#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;."
 title: "보안, 네이티브 호환성, 그리고 신뢰성"
 sort_title: ""
 ---

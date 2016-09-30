@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/menu-item/
     - /docs-translations/ko-KR/api/menu-item/
@@ -36,19 +36,21 @@ redirect_from:
     - /docs-translations/ko-KR/api/menu-item/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/menu-item.md'
 excerpt: "&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xBA54;&#xB274;&#xC640; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xC5D0; &#xC544;&#xC774;&#xD15C;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;."
+title: "MenuItem"
+sort_title: "menuitem"
 ---
 
-﻿# MenuItem
+# MenuItem
 
 > 네이티브 애플리케이션 메뉴와 컨텍스트 메뉴에 아이템을 추가합니다.
 
-[`Menu`](http://electron.atom.io/docs/api/menu)에서 예시를 확인할 수 있습니다.
+[`Menu`](http://tinydew4.github.io/electron-ko/docs/api/menu)에서 예시를 확인할 수 있습니다.
 
 ## Class: MenuItem
 
 `MenuItem` 인스턴스 객체에서 사용할 수 있는 메서드입니다:
 
-### new MenuItem(options)
+### `new MenuItem(options)`
 
 * `options` Object
   * `click` Function - 메뉴 아이템이 클릭될 때 `click(menuItem, browserWindow,
@@ -60,8 +62,8 @@ excerpt: "&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC7
     `Menu.buildFromTemplate`를 통해 자동으로 변환됩니다.
   * `label` String
   * `sublabel` String
-  * `accelerator` [Accelerator](http://electron.atom.io/docs/api/accelerator)
-  * `icon` [NativeImage](http://electron.atom.io/docs/api/native-image)
+  * `accelerator` [Accelerator](http://tinydew4.github.io/electron-ko/docs/api/accelerator)
+  * `icon` [NativeImage](http://tinydew4.github.io/electron-ko/docs/api/native-image)
   * `enabled` Boolean - 만약 `false`로 설정되면, 메뉴 아이템이 회색으로 변하며
     클릭할 수 없게 됩니다.
   * `visible` Boolean - 만약 `false`로 설정되면, 메뉴 아이템이 완전히 숨겨집니다.
@@ -92,10 +94,13 @@ excerpt: "&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC7
 * `pasteandmatchstyle`
 * `selectall`
 * `delete`
-* `minimize` - 현재 윈도우를 최소화합니다
-* `close` - 현재 윈도우를 닫습니다
-* `quit`- 애플리케이션을 닫습니다
-* `togglefullscreen` - 현재 윈도우에서 전체 화면 모드를 토글합니다
+* `minimize` - 현재 윈도우를 최소화합니다.
+* `close` - 현재 윈도우를 닫습니다.
+* `quit`- 애플리케이션을 닫습니다.
+* `togglefullscreen` - 현재 윈도우에서 전체 화면 모드를 토글합니다.
+* `resetzoom` - 포커스된 페이지의 줌 레벨을 기본 크기로 초기화합니다.
+* `zoomin` - 포커스된 페이지를 10% 줌인합니다.
+* `zoomout` - 포커스된 페이지를 10% 줌아웃합니다.
 
 macOS에서의 `role`은 다음 값을 추가로 가질 수 있습니다:
 
@@ -103,6 +108,8 @@ macOS에서의 `role`은 다음 값을 추가로 가질 수 있습니다:
 * `hide` - `hide` 액션에 대응
 * `hideothers` - `hideOtherApplications` 액션에 대응
 * `unhide` - `unhideAllApplications` 액션에 대응
+* `startspeaking` - `startSpeaking` 액션에 대응
+* `stopspeaking` - `stopSpeaking` 액션에 대응
 * `front` - `arrangeInFront` 액션에 대응
 * `zoom` - `performZoom` 액션에 대응
 * `window` - 부 메뉴를 가지는 "Window" 메뉴

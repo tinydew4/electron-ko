@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/accelerator/
     - /docs-translations/ko-KR/api/accelerator/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/accelerator/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/accelerator.md'
 excerpt: "&#xD0A4;&#xBCF4;&#xB4DC; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;."
+title: "Accelerator"
+sort_title: "accelerator"
 ---
 
-﻿# Accelerator
+# Accelerator
 
 > 키보드 단축키를 정의합니다.
 

@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/content-tracing/
     - /docs-translations/ko-KR/api/content-tracing/
@@ -37,9 +37,11 @@ redirect_from:
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/content-tracing.md'
 excerpt: "&#xC131;&#xB2A5;&#xC0C1;&#xC758; &#xBCD1;&#xBAA9; &#xD604;&#xC0C1;&#xACFC; &#xB290;&#xB9B0; &#xC791;&#xC5C5;&#xC744; &#xCC3E;&#xAE30; &#xC704;&#xD574; Chromium&#xC758; &#xCF58;&#xD150;&#xCE20; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; &#xCD94;&#xC801; &#xB370;&#xC774;&#xD130;&#xB97C;
     &#xC218;&#xC9D1;&#xD569;&#xB2C8;&#xB2E4;."
+title: "contentTracing"
+sort_title: "contenttracing"
 ---
 
-﻿# contentTracing
+# contentTracing
 
 > 성능상의 병목 현상과 느린 작업을 찾기 위해 Chromium의 콘텐츠 모듈에서 추적 데이터를
 수집합니다.
@@ -48,22 +50,22 @@ excerpt: "&#xC131;&#xB2A5;&#xC0C1;&#xC758; &#xBCD1;&#xBAA9; &#xD604;&#xC0C1;&#xA
 `chrome://tracing/` 페이지를 열고 생성된 파일을 로드하면 결과를 볼 수 있습니다.
 
 ```javascript
-const {contentTracing} = require('electron');
+const {contentTracing} = require('electron')
 
 const options = {
   categoryFilter: '*',
   traceOptions: 'record-until-full,enable-sampling'
-};
+}
 
 contentTracing.startRecording(options, () => {
-  console.log('Tracing started');
+  console.log('Tracing started')
 
   setTimeout(() => {
     contentTracing.stopRecording('', (path) => {
-      console.log('Tracing data recorded to ' + path);
-    });
-  }, 5000);
-});
+      console.log('Tracing data recorded to ' + path)
+    })
+  }, 5000)
+})
 ```
 
 ## Methods

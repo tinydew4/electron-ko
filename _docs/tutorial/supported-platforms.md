@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Tutorial
 redirect_from:
     - /docs-translations/ko-KR/tutorial/supported-platforms/
     - /docs-translations/ko-KR/tutorial/supported-platforms/

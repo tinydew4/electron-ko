@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Tutorial
 redirect_from:
     - /docs-translations/ko-KR/tutorial/application-distribution/
     - /docs-translations/ko-KR/tutorial/application-distribution/
@@ -35,9 +35,11 @@ redirect_from:
     - /docs-translations/ko-KR/tutorial/application-distribution/
     - /docs-translations/ko-KR/tutorial/application-distribution/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/application-distribution.md'
+title: "애플리케이션 배포"
+sort_title: ""
 ---
 
-﻿# 애플리케이션 배포
+# 애플리케이션 배포
 
 Electron 애플리케이션을 배포하는 방법은 간단합니다.
 
@@ -90,7 +92,7 @@ electron/resources/
 └── app.asar
 ```
 
-자세한 내용은 [애플리케이션 패키징](http://electron.atom.io/docs/tutorial/application-packaging)에서 찾아볼 수 있습니다.
+자세한 내용은 [애플리케이션 패키징](http://tinydew4.github.io/electron-ko/docs/tutorial/application-packaging)에서 찾아볼 수 있습니다.
 
 ## 다운로드한 바이너리의 리소스를 앱에 맞게 수정하기
 
@@ -171,7 +173,7 @@ Electron의 소스 코드를 수정하고 다시 빌드하는 작업은 상당�
 
 Electron의 커스텀 포크를 만드는 것은 거의 확실히 앱을 만드는데 있어서 필요한 작업이
 아닐 수 있으며, 심지어 "제품 등급"의 애플리케이션이라도 필요하지 않습니다.
-`electron-packager` 또는 `electron-builder`와 같은 도구를 ���용하면 다른 특별한
+`electron-packager` 또는 `electron-builder`와 같은 도구를 사용하면 다른 특별한
 과정 없이 Electron을 "Rebrand" 할 수 있습니다.
 
 업스트림 단에서 추가될 수 없는 기능이나 이미 공식 버전에서 거부된 기능을 Electron에

@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: API
 redirect_from:
     - /docs-translations/ko-KR/api/ipc-renderer/
     - /docs-translations/ko-KR/api/ipc-renderer/
@@ -36,9 +36,11 @@ redirect_from:
     - /docs-translations/ko-KR/api/ipc-renderer/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/api/ipc-renderer.md'
 excerpt: "&#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xBE44;&#xB3D9;&#xAE30; &#xD1B5;&#xC2E0;&#xC744; &#xD569;&#xB2C8;&#xB2E4;."
+title: "ipcRenderer"
+sort_title: "ipcrenderer"
 ---
 
-﻿# ipcRenderer
+# ipcRenderer
 
 > 렌더러 프로세스에서 메인 프로세스로 비동기 통신을 합니다.
 
@@ -46,9 +48,9 @@ excerpt: "&#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC1
 인스턴스입니다. 렌더러 프로세스에서 메인 프로세스로 동기/비동기 메시지를 주고 받는
 방법을 제공합니다. 또한 메인 프로세스로부터 받은 메시지에 응답할 수도 있습니다.
 
-[ipcMain](http://electron.atom.io/docs/api/ipc-main)에서 코드 예시를 확인할 수 있습니다.
+[ipcMain](http://tinydew4.github.io/electron-ko/docs/api/ipc-main)에서 코드 예시를 확인할 수 있습니다.
 
-## 메시��� 리스닝
+## 메시지 리스닝
 
 `ipcRenderer`는 다음과 같은 이벤트 리스닝 메서드를 가지고 있습니다:
 

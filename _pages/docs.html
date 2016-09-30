@@ -71,7 +71,7 @@ layout: default
             <h3>메인 프로세스</h3>
             <ul class="docs-list">
             {% for doc in docs %}
-              {% if doc.category == 'API' and site.data.processes[doc.title] == 'Main Process' %}
+              {% if doc.category == 'API' and site.data.processes[doc.title] == '메인 프로세스' %}
               <li>
                 <a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a>
               </li>
@@ -81,7 +81,7 @@ layout: default
             <h3>렌더러 프로세스</h3>
             <ul class="docs-list">
             {% for doc in docs %}
-              {% if doc.category == 'API' and site.data.processes[doc.title] == 'Renderer Process' %}
+              {% if doc.category == 'API' and site.data.processes[doc.title] == '렌더러 프로세스' %}
               <li>
                 <a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a>
               </li>
@@ -91,7 +91,7 @@ layout: default
             <h3>모든 프로세스</h3>
             {% for doc in docs %}
             <ul class="docs-list">
-              {% if doc.category == 'API' and site.data.processes[doc.title] == 'Main and Renderer Process' %}
+              {% if doc.category == 'API' and site.data.processes[doc.title] == '메인 프로세스, 렌더러 프로세스' %}
               <li>
                 <a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a>
               </li>

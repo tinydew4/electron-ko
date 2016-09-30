@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Tutorial
 redirect_from:
     - /docs-translations/ko-KR/tutorial/using-pepper-flash-plugin/
     - /docs-translations/ko-KR/tutorial/using-pepper-flash-plugin/
@@ -35,9 +35,11 @@ redirect_from:
     - /docs-translations/ko-KR/tutorial/using-pepper-flash-plugin/
     - /docs-translations/ko-KR/tutorial/using-pepper-flash-plugin/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/using-pepper-flash-plugin.md'
+title: "Pepper 플래시 플러그인 사용하기"
+sort_title: "pepper 플래시 플러그인 사용하기"
 ---
 
-﻿# Pepper 플래시 플러그인 사용하기
+# Pepper 플래시 플러그인 사용하기
 
 Electron은 Pepper 플래시 플러그인을 지원합니다. Electron에서 Pepper 플래시
 플러그인을 사용하려면 Pepper 플래시 플러그인의 위치를 지정한 후 애플리케이션 내에서
@@ -87,7 +89,7 @@ app.on('ready', () => {
   })
   win.loadURL(`file://${__dirname}/index.html`)
   // 이외의 코드
-});
+})
 ```
 
 직접 플러그인을 삽입하는 대신 시스템의 Pepper Flash 플러그인을 사용할 수도 있습니다.

@@ -1,6 +1,6 @@
 ---
-version: v1.3.7
-category: Ko-KR
+version: v1.4.1
+category: Development
 redirect_from:
     - /docs-translations/ko-KR/development/debug-instructions-windows/
     - /docs-translations/ko-KR/development/debug-instructions-windows/
@@ -49,7 +49,7 @@ Electron 소스 코드가 중단점을 통해 순차적으로 쉽게 디버깅�
 ## 요구 사항
 
 * **Electron의 디버그 빌드**: 가장 쉬운 방법은 보통
-  [Windows용 빌드 설명서](http://electron.atom.io/docs/development/build-instructions-windows)에 명시된 요구 사항과 툴을
+  [Windows용 빌드 설명서](http://tinydew4.github.io/electron-ko/docs/development/build-instructions-windows)에 명시된 요구 사항과 툴을
   사용하여 스스로 빌드하는 것입니다. 물론 직접 다운로드 받은 Electron 바이너리에도
   디버거 연결 및 디버깅을 사용할 수 있지만, 실질적으로 디버깅이 까다롭게 고도의
   최적화가 되어있음을 발견하게 될 것입니다: 인라인화, 꼬리 호출, 이외 여러 가지
@@ -58,7 +58,7 @@ Electron 소스 코드가 중단점을 통해 순차적으로 쉽게 디버깅�
 
 * **Visual Studio와 C++ 툴**: Visual Studio 2013과 Visual Studio 2015 두 가지
   커뮤니티 에디션 모두 잘 작동합니다. 설치가 완료되면,
-  [Visual Studio가 GitHub의 Electron 심볼 서버를 사용하도록](http://electron.atom.io/docs/development/setting-up-symbol-server)
+  [Visual Studio가 GitHub의 Electron 심볼 서버를 사용하도록](http://tinydew4.github.io/electron-ko/docs/development/setting-up-symbol-server)
   설정해야 합니다. 이 작업은 Visual Studio가 Electron에서 무슨일이 일어나는지 더 잘
   이해할 수 있도록 하며 변수를 사람이 읽기 좋은 포맷으로 쉽게 표현할 수 있도록 합니다.
 
