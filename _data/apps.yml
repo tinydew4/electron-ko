@@ -748,32 +748,32 @@
   icon: "laverna.png"
 -
   name: "Electron Packager"
-  description: "앱 패키지"
+  description: "Package your apps"
   website: "https://github.com/electron-userland/electron-packager"
   featuredOpenSource: true
 -
   name: "Electron Builder"
-  description: "앱 배포"
+  description: "Deploy your apps"
   website: "https://github.com/electron-userland/electron-builder"
   featuredOpenSource: true
 -
   name: "Spectron"
-  description: "앱 테스트"
+  description: "Test your apps"
   website: "http://electron.atom.io/spectron"
   featuredOpenSource: true
 -
   name: "Devtron"
-  description: "앱 디버그"
+  description: "Debug your apps"
   website: "http://electron.atom.io/devtron"
   featuredOpenSource: true
 -
   name: "Electron Prebuilt"
-  description: "Electron 설치"
+  description: "Install Electron"
   website: "https://github.com/electron-userland/electron-prebuilt"
   featuredOpenSource: true
 -
   name: "Menubar"
-  description: "메뉴바 만들기"
+  description: "Create menubar apps"
   website: "https://github.com/maxogden/menubar"
   repository: ""
   keywords:
@@ -1982,3 +1982,23 @@
     - "Developer Tool"
   license: "MIT"
   icon: "ling.png"
+-
+  name: "Shortexts"
+  description: "Shortcuts for texts you copy frequently, folders and emojis"
+  website: "http://shortexts.com/"
+  keywords:
+    - "Productivity tool"
+    - "OSX "
+  license: "MIT"
+  icon: "shortexts.png"
+-
+  name: "Front-End Box"
+  description: "Set of front-end-code generators"
+  website: "http://frontendbox.io"
+  keywords:
+    - "CSS Triangle"
+    - "Base64 Encoder"
+    - "Web Fonts Converter"
+    - "Images Optimizer"
+    - "Developer Tool"
+  icon: "front-end-box.png"
