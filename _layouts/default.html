@@ -5,8 +5,8 @@
 
   <body>
     {% include header.html %}
-    {% if page.url == '/' %}{% include banner-ko.html %}{% endif %}
     {% if page.url == '/' %}{% include banner-1-0.html %}{% endif %}
+    {% if page.url == '/' %}{% include banner-ko.html %}{% endif %}
 
     {{ content }}
 
