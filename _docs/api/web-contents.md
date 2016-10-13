@@ -188,13 +188,17 @@ Returns:
 * `disposition` String - `default`, `foreground-tab`, `background-tab`,
   `new-window`, `save-to-disk`, `other`중 하나일 수 있습니다.
 * `options` Object - 새로운 `BrowserWindow` 객체를 만들 때 사용되는 옵션 객체입니다.
+* `additionalFeatures` Array - `window.open()` 에 주어진 (Chromium 또는 Electron
+  에 의해 처리되지 않는) 비표준 기능.
 
 페이지가 `url`에 대하여 새로운 윈도우를 열기위해 요청한 경우 발생하는 이벤트입니다.
 `window.open`이나 `<a target='_blank'>`과 같은 외부 링크에 의해 요청될 수 있습니다.
 
 기본값으로 `BrowserWindow`는 `url`을 기반으로 생성됩니다.
 
-`event.preventDefault()`를 호출하면 새로운 창이 생성되는 것을 방지할 수 있습니다.
+`event.preventDefault()`를 호출하면 새로운 창이 생성되는 것을 방지할 수
+있습니다. 이 경우, `event.newGuest` 는 Electron 의 런타임에 의해 사용할 수 있게
+`BrowserWindow` 인스턴스에 대한 참조를 설정할 수 있습니다.
 
 #### Event: 'will-navigate'
 
@@ -282,14 +286,7 @@ Returns:
 * `event` Event
 * `url` URL
 * `error` String - 에러 코드
-* `certificate` Object
-  * `data` String - PEM 인코딩된 데이터
-  * `issuerName` String - 인증서 발급자의 공통 이름
-  * `subjectName` String - 대상의 공통 이름
-  * `serialNumber` String - 문자열로 표현된 hex 값
-  * `validStart` Integer - 초 단위의 인증서가 유효하기 시작한 날짜
-  * `validExpiry` Integer - 초 단위의 인증서가 만료되는 날짜
-  * `fingerprint` String - 인증서의 지문
+* `certificate` structures/certificate
 * `callback` Function
 
 `url`에 대한 `certificate` 인증서의 유효성 검증에 실패했을 때 발생하는 이벤트입니다.
@@ -303,14 +300,7 @@ Returns:
 
 * `event` Event
 * `url` URL
-* `certificateList` [Objects]
-  * `data` String - PEM 인코딩된 데이터
-  * `issuerName` String - 인증서 발급자의 공통 이름
-  * `subjectName` String - 대상의 공통 이름
-  * `serialNumber` String - 문자열로 표현된 hex 값
-  * `validStart` Integer - 초 단위의 인증서가 유효하기 시작한 날짜
-  * `validExpiry` Integer - 초 단위의 인증서가 만료되는 날짜
-  * `fingerprint` String - 인증서의 지문
+* `certificateList` Certificate[]
 * `callback` Function
 
 클라이언트 인증이 요청되었을 때 발생하는 이벤트입니다.
@@ -351,7 +341,7 @@ Returns:
   * `matches` Integer (optional) - 일치하는 개수.
   * `selectionArea` Object (optional) - 첫 일치 부위의 좌표.
 
-[`webContents.findInPage`](http://tinydew4.github.io/electron-ko/docs/api/web-contents#webcontentsfindinpage) 요청의 결과를
+[`webContents.findInPage`] 요청의 결과를
 사용할 수 있을 때 발생하는 이벤트입니다.
 
 #### Event: 'media-started-playing'
@@ -405,8 +395,8 @@ Returns:
 `not-allowed`, `zoom-in`, `zoom-out`, `grab`, `grabbing`, `custom`.
 
 만약 `type` 인수가 `custom` 이고 `image` 인수가 `NativeImage`를 통한 커스텀
-커서를 지정했을 때, 해당 이미지로 커서가 변경됩니다. 또한 `scale`, `size` 그리고 `hotspot` 인수는
-커스텀 커서의 추가적인 정보를 포함합니다.
+커서를 지정했을 때, 해당 이미지로 커서가 변경됩니다. 또한 `scale`, `size` 그리고
+`hotspot` 인수는 커스텀 커서의 추가적인 정보를 포함합니다.
 
 #### Event: 'context-menu'
 
@@ -425,7 +415,7 @@ Returns:
     이미지, 오디오, 비디오입니다.
   * `mediaType` String - 컨텍스트 메뉴가 호출된 노드의 종류. 값은 `none`, `image`,
     `audio`, `video`, `canvas`, `file` 또는 `plugin`이 될 수 있습니다.
-  * `hasImageContents` Boolean - 컨텍스트 메뉴가 내용이 있는 이미지에서 호출되었는지
+  * `hasImageContents` Boolean - 컨텍스트 메���가 내용이 있는 이미지에서 호출되었는지
     여부.
   * `isEditable` Boolean - 컨텍스트를 편집할 수 있는지 여부.
   * `selectionText` String - 컨텍스트 메뉴가 호출된 부분에 있는 선택된 텍스트.
@@ -797,7 +787,7 @@ CSS 코드를 현재 웹 페이지에 삽입합니다.
 
 #### `contents.stopFindInPage(action)`
 
-* `action` String - [`webContents.findInPage`](http://tinydew4.github.io/electron-ko/docs/api/web-contents#webcontentfindinpage)
+* `action` String - [`webContents.findInPage`]
   요청이 종료되었을 때 일어날 수 있는 작업을 지정합니다.
   * `clearSelection` - 선택을 취소합니다.
   * `keepSelection` - 선택을 일반 선택으로 변경합니다.
@@ -1277,3 +1267,4 @@ win.webContents.debugger.sendCommand('Network.enable')
 디버깅 타겟이 관련 이벤트를 발생시킬 때 마다 발생하는 이벤트입니다.
 
 [rdp]: https://developer.chrome.com/devtools/docs/debugger-protocol
+[`webContents.findInPage`]: http://tinydew4.github.io/electron-ko/docs/api/web-contents#contentsfindinpagetext-options

@@ -76,7 +76,7 @@ Electron에선 `fs.readFile`과 `require` 같은 Node API들을 지원하기 위
 아카이브가 가상의 디렉터리 구조를 가지도록 패치했습니다. 그래서 아카이브 내부
 리소스들을 정상적인 파일 시스템처럼 접근할 수 있습니다.
 
-예를 들어 `/path/to`라는 경로에 `example.asar`라는 아카이브가 있다��� 가정하면:
+예를 들어 `/path/to`라는 경로에 `example.asar`라는 아카이브가 있다고 가정하면:
 
 ```bash
 $ asar list /path/to/example.asar

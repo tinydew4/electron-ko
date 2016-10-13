@@ -63,7 +63,7 @@ Windows 콘솔의 예시입니다:
 
 ## 제품 변수
 
-다음 환경 변수는 Electron 애플리케이션 패키지 실행에 우선적으로 사용된다.
+다음 환경 변수는 Electron 애플리케이션 패키지 실행에 우선적으로 사용됩니다.
 
 ### `GOOGLE_API_KEY`
 
@@ -84,9 +84,14 @@ https://www.chromium.org/developers/how-tos/api-keys
 위치정보 요청을 사용하려면 다음 페이지를 방문하세요:
 https://console.developers.google.com/apis/api/geolocation/overview
 
+### `ELECTRON_NO_ASAR`
+
+ASAR 지원을 비활성화합니다. 이 변수는 분기된 자식 프로세스와
+`ELECTRON_RUN_AS_NODE` 를 설정하여 생산된 자식 프로세스에서만 지원됩니다.
+
 ## 개발 변수
 
-다음 환경 변수는 개발과 디버깅시 우선적으로 사용된다.
+다음 환경 변수는 개발과 디버깅시 우선적으로 사용됩니다.
 
 ### `ELECTRON_RUN_AS_NODE`
 

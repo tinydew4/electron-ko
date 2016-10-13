@@ -416,7 +416,7 @@ Webview에 웹 페이지 `url`을 로드합니다. `url`은 `http://`, `file://`
 
 ### `<webview>.inspectServiceWorker()`
 
-Service worker에 대한 개발자 도구를 엽니다.
+Service worker��� 대한 개발자 도구를 엽니다.
 
 ### `<webview>.setAudioMuted(muted)`
 
@@ -848,7 +848,7 @@ Returns:
 
 ### Event: 'destroyed'
 
-WebContents가 파괴될 때 발생하는 이벤트입니다.
+WebContents가 소멸될 때 발생하는 이벤트입니다.
 
 ### Event: 'media-started-playing'
 

@@ -115,7 +115,7 @@ webFrame.setSpellCheckProvider('en-US', true, {
 `scheme`을 보안 스킴으로 등록합니다.
 
 보안 스킴은 혼합된 콘텐츠 경고를 발생시키지 않습니다. 예를 들어 `https` 와 `data`는
-네트워크 공격자로부터 손상될 가능성이 없기 때문에 보안 스킴이라고 할 수 있습니다.
+네트워크 공격자로부��� 손상될 가능성이 없기 때문에 보안 스킴이라고 할 수 있습니다.
 
 ### `webFrame.registerURLSchemeAsBypassingCSP(scheme)`
 
@@ -149,41 +149,11 @@ ServiceWorker의 등록과 fetch API를 사용할 수 있도록 지원합니다.
 ### `webFrame.getResourceUsage()`
 
 Returns `Object`:
-* `images` Object
-  * `count` Integer
-  * `size` Integer
-  * `liveSize` Integer
-  * `decodedSize` Integer
-  * `purgedSize` Integer
-  * `purgeableSize` Integer
-* `cssStyleSheets` Object
-  * `count` Integer
-  * `size` Integer
-  * `liveSize` Integer
-  * `decodedSize` Integer
-  * `purgedSize` Integer
-  * `purgeableSize` Integer
-* `xslStyleSheets` Object
-  * `count` Integer
-  * `size` Integer
-  * `liveSize` Integer
-  * `decodedSize` Integer
-  * `purgedSize` Integer
-  * `purgeableSize` Integer
-* `fonts` Object
-  * `count` Integer
-  * `size` Integer
-  * `liveSize` Integer
-  * `decodedSize` Integer
-  * `purgedSize` Integer
-  * `purgeableSize` Integer
-* `other` Object
-  * `count` Integer
-  * `size` Integer
-  * `liveSize` Integer
-  * `decodedSize` Integer
-  * `purgedSize` Integer
-  * `purgeableSize` Integer
+* `images` structures/memory-usage-details
+* `cssStyleSheets` structures/memory-usage-details
+* `xslStyleSheets` structures/memory-usage-details
+* `fonts` structures/memory-usage-details
+* `other` structures/memory-usage-details
 
 Blink의 내부 메모리 캐시 사용 정보를 담고있는 객체를 반환합니다.
 
@@ -207,7 +177,7 @@ console.log(webFrame.getResourceUsage())
   cssStyleSheets: { /* same with "images" */ },
   xslStyleSheets: { /* same with "images" */ },
   fonts: { /* same with "images" */ },
-  other: { /* same with "images" */ },
+  other: { /* same with "images" */ }
 }
 ```
 

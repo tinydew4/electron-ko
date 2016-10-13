@@ -50,7 +50,7 @@ $ code electron-quick-start
 
 ### 2. 다음 설정으로 `.vscode/launch.json` 파일 추가하기:
 
-```json
+```javascripton
 {
   "version": "0.2.0",
   "configurations": [
@@ -66,7 +66,8 @@ $ code electron-quick-start
 }
 ```
 
-**참고:** 윈도우에서, `runtimeExecutable` 을 위해 `"${workspaceRoot}/node_modules/.bin/electron.cmd"` 를 사용하세요.
+**참고:** 윈도우에서, `runtimeExecutable` 을 위해
+`"${workspaceRoot}/node_modules/.bin/electron.cmd"` 를 사용하세요.
 
 ### 3. 디버깅
 

@@ -35,6 +35,14 @@ redirect_from:
     - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
     - /docs-translations/ko-KR/tutorial/desktop-environment-integration/
 source_url: 'https://github.com/electron/electron/blob/master/docs-translations/ko-KR/tutorial/desktop-environment-integration.md'
+excerpt: "&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC791;&#xC5C5;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xAE30;&#xB2A5; &#xADF8;&#xB9AC;&#xACE0; &#xC8FC;&#xC694;&#xC0AC;&#xC591; &#xB450;&#xAC00;&#xC9C0;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC720;&#xC800;&#xC758; &#xD589;&#xB3D9;&#xC744;
+    &#xC608;&#xCE21;&#xD558;&#xC5EC; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;. &#xC2E4;&#xD589;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB294; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC791;&#xC5C5;&#xC740; &#xC791;&#xB3D9;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xB54C; &#xBC18;&#xB4DC;&#xC2DC;
+    context-free&#xB97C; &#xC720;&#xC9C0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC791;&#xC5C5;&#xC740; &#xC77C;&#xBC18; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xAC70;&#xB098; &#xC774;&#xBA54;&#xC77C;
+    &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC73C;&#xB85C; &#xC774;&#xBA54;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD558;&#xAC70;&#xB098; &#xB2EC;&#xB825;&#xC744; &#xBD88;&#xB7EC;&#xC624;&#xACE0;, &#xC6CC;&#xB4DC; &#xD504;&#xB85C;&#xC138;&#xC11C;&#xB85C; &#xC0C8; &#xBB38;&#xC11C;&#xB97C; &#xC791;&#xC131;,
+    &#xD2B9;&#xC815; &#xBAA8;&#xB4DC;, &#xBD80;&#xC18D; &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xB4F1;&#xC758; &#xD1B5;&#xACC4;&#xC801;, &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xAC00;&#xC7A5; &#xB9CE;&#xC774;
+    &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC791;&#xC5C5;&#xC778;&#xC9C0;&#xB97C; &#xACE0;&#xB824;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC791;&#xC5C5;&#xC740; &#xC77C;&#xBC18; &#xC720;&#xC800;&#xAC00; &#xD544;&#xC694;&#xB85C; &#xD558;&#xC9C0;
+    &#xC54A;&#xB294; &#xACE0;&#xAE09; &#xAE30;&#xB2A5;&#xC744; &#xC870;&#xC7A1;&#xD558;&#xAC8C; &#xCC44;&#xC6B0;&#xAC70;&#xB098; &#xB4F1;&#xB85D;&#xACFC; &#xAC19;&#xC740; &#xC77C;&#xD68C;&#xC131;&#xC758; &#xC791;&#xC5C5;&#xC744; &#xD3EC;&#xD568;&#xD574;&#xC120; &#xC548;&#xB429;&#xB2C8;&#xB2E4;.
+    &#xB610;&#xD55C; &#xC791;&#xC5C5;&#xC5D0; &#xD2B9;&#xBCC4; &#xC774;&#xBCA4;&#xD2B8; &#xB610;&#xB294; &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC; &#xB4F1;&#xC758; &#xD64D;&#xBCF4;&#xC131; &#xC791;&#xC5C5;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xBA74; &#xC548;&#xB429;&#xB2C8;&#xB2E4;."
 title: "데스크톱 환경 통합"
 sort_title: ""
 ---
@@ -48,7 +56,7 @@ sort_title: ""
 이 문서는 Electron API를 이용하여 각 운영체제 시스템의 기능을 활용하는 방법을
 설명합니다.
 
-## 데스크톱 알��� (Windows, Linux, macOS)
+## 데스크톱 알림 (Windows, Linux, macOS)
 
 Windows, Linux, macOS 운영체제 모두 기본적으로 애플리케이션에서 유저에게 알림을 보내는
 방법을 제공합니다. Electron은 [HTML5 Notification API](https://notifications.spec.whatwg.org/)를
@@ -157,10 +165,12 @@ const {app, Menu} = require('electron')
 
 const dockMenu = Menu.buildFromTemplate([
   {label: 'New Window', click () { console.log('New Window') }},
-  {label: 'New Window with Settings', submenu: [
-    {label: 'Basic'},
-    {label: 'Pro'}
-  ]},
+  {label: 'New Window with Settings',
+    submenu: [
+      {label: 'Basic'},
+      {label: 'Pro'}
+    ]
+  },
   {label: 'New Command...'}
 ])
 app.dock.setMenu(dockMenu)

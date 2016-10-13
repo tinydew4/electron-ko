@@ -103,11 +103,7 @@ appIcon.setContextMenu(contextMenu)
   * `shiftKey` Boolean
   * `ctrlKey` Boolean
   * `metaKey` Boolean
-* `bounds` Object _macOS_ _Windows_ - 트레이 아이콘의 범위
-  * `x` Integer
-  * `y` Integer
-  * `width` Integer
-  * `height` Integer
+* `bounds` structures/rectangle - 트레이 아이콘의 범위
 
 트레이 아이콘이 클릭될 때 발생하는 이벤트입니다.
 
@@ -118,11 +114,7 @@ appIcon.setContextMenu(contextMenu)
   * `shiftKey` Boolean
   * `ctrlKey` Boolean
   * `metaKey` Boolean
-* `bounds` Object - 트레이 아이콘의 범위
-  * `x` Integer
-  * `y` Integer
-  * `width` Integer
-  * `height` Integer
+* `bounds` structures/rectangle - 트레이 아이콘의 범위
 
 트레이 아이콘을 오른쪽 클릭될 때 호출 됩니다.
 
@@ -133,11 +125,7 @@ appIcon.setContextMenu(contextMenu)
   * `shiftKey` Boolean
   * `ctrlKey` Boolean
   * `metaKey` Boolean
-* `bounds` Object - 트레이 아이콘의 범위
-  * `x` Integer
-  * `y` Integer
-  * `width` Integer
-  * `height` Integer
+* `bounds` structures/rectangle - 트레이 아이콘의 범위
 
 트레이 아이콘이 더블 클릭될 때 발생하는 이벤트입니다.
 
@@ -162,7 +150,7 @@ appIcon.setContextMenu(contextMenu)
 * `event` Event
 * `files` String[] - 드롭된 파일의 경로
 
-트레이 아이콘에 파일이 드롭되면 발생하는 이벤트입니다.
+트���이 아이콘에 파일이 드롭되면 발생하는 이벤트입니다.
 
 #### Event: 'drop-text' _macOS_
 
@@ -266,20 +254,20 @@ win.on('hide', () => {
 
 `position`은 Windows에서만 사용할 수 있으며 기본값은 (0, 0)입니다.
 
-### `tray.setContextMenu(menu)`
+#### `tray.setContextMenu(menu)`
 
 * `menu` Menu
 
 트레이에 컨텍스트 메뉴를 설정합니다.
 
-### `tray.getBounds()` _macOS_ _Windows_
+#### `tray.getBounds()` _macOS_ _Windows_
 
-Returns `Object`:
-* `x` Integer
-* `y` Integer
-* `width` Integer
-* `height` Integer
+Returns structures/rectangle
 
 이 트레이 아이콘의 `Object` 형식의 `bounds`.
+
+#### `tray.isDestroyed()`
+
+Returns `Boolean` - 트레이 아이콘이 소멸되었는지 여부.
 
 [event-emitter]: http://nodejs.org/api/events.html#events_class_events_eventemitter
