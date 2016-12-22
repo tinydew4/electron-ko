@@ -74,12 +74,6 @@ macOS에선 `autoUpdater`가 [Squirrel.Mac][squirrel-mac]를 기반으로 작동
 
 ### Windows
 
-Windows에선 `autoUpdater`를 사용하기 전에 애플리케이션을 사용자의 장치에
-설치해야 합니다. [electron-winstaller][installer-lib],
-[electron-builder][electron-builder-lib] 또는
-[grunt-electron-installer][installer]를 사용하여 애플리케이션 인스톨러를 만드는 것을
-권장합니다.
-
 Windows에선 `autoUpdater` 모듈을 사용하기 전에 사용자의 장치에 애플리케이션을
 설치해야 합니다. 따라서 [electron-winstaller][installer-lib] 모듈이나
 [grunt-electron-installer][installer] 패키지를 사용하여 애플리케이션 인스톨러를
